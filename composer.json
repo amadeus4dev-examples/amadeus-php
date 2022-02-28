@@ -1,0 +1,26 @@
+{
+  "name": "vendor_name/amadeus-php",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "xliu",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "^6.5",
+    "psr/log": "^1.1",
+    "ext-json": "*",
+    "netresearch/jsonmapper": "^4.0",
+    "spatie/data-transfer-object": "^2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Amadeus\\": "src/",
+      "Amadeus\\Resource\\": "src/Resources",
+      "Amadeus\\Airport\\": "src/Airport"
+    }
+  }
+}
