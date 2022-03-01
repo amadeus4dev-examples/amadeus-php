@@ -3,7 +3,7 @@
 namespace Amadeus\Airport;
 
 use Amadeus\Amadeus;
-use Amadeus\Resource\Destination;
+use Amadeus\Resources\Destination;
 use JsonMapper;
 use JsonMapper_Exception;
 
@@ -25,7 +25,9 @@ class DirectDestinations
      */
     public function getDestinations(array $query) : iterable
     {
-        $header = array('Authorization' => $this->client->getToken()->getHeader());
+        $header = array(
+            'Authorization' => $this->client->authenticate()->getHeader()
+        );
 
         $response = $this->client->httpClient->get(
           '/v1/airport/direct-destinations',[

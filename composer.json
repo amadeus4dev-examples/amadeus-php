@@ -5,8 +5,8 @@
   "license": "proprietary",
   "authors": [
     {
-      "name": "xliu",
-      "email": "email@example.com"
+      "name": "XianqiLIU",
+      "email": "xianqi.liu@eamadeus.com"
     }
   ],
   "require": {
@@ -19,8 +19,10 @@
   "autoload": {
     "psr-4": {
       "Amadeus\\": "src/",
-      "Amadeus\\Resource\\": "src/Resources",
-      "Amadeus\\Airport\\": "src/Airport"
+      "Amadeus\\Resource\\": "src/resources",
+      "Amadeus\\Airport\\": "src/airport",
+      "Amadeus\\Shopping\\": "src/shopping",
+      "Amadeus\\Shopping\\Availability\\": "src/shopping/availability"
     }
   }
 }

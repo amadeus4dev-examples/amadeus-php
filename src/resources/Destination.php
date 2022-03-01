@@ -1,6 +1,13 @@
-<?php declare(strict_types=1);
+<?php
 
-namespace Amadeus\Resource;
+/**
+ * @noinspection PhpPropertyOnlyWrittenInspection
+ * @noinspection PhpUnused
+ */
+
+declare(strict_types=1);
+
+namespace Amadeus\Resources;
 
 class Destination
 {

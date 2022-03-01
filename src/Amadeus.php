@@ -11,14 +11,16 @@ class Amadeus
 {
     protected const BASE_URL = 'https://test.api.amadeus.com';
 
-    public String $clientId;
-    public String $clientSecret;
+    private String $clientId;
+    private String $clientSecret;
 
     public HttpClient $httpClient;
 
-    protected Token $token;
+    private Token $token;
 
     public Airport $airport;
+
+    public Shopping $shopping;
 
     /**
      * @throws JsonMapper_Exception
@@ -33,15 +35,16 @@ class Amadeus
         $this->clientSecret = $clientSecret;
 
         $this->httpClient = $this->createHttpClient();
-        $this->token = $this->getToken();
+        $this->token = $this->authenticate();
 
         $this->airport = new Airport($this);
+        $this->shopping = new Shopping($this);
     }
 
     /**
      * @throws JsonMapper_Exception
      */
-    public function getToken(): Token
+    public function authenticate(): Token
     {
         $response = $this->httpClient->post('/v1/security/oauth2/token', [
                 'headers' => [
@@ -58,6 +61,8 @@ class Amadeus
 
         //print_r($result->{'type'}); // case for how to get specific value
 
+        //print_r($response);
+
         $mapper = new JsonMapper();
         $mapper->bIgnoreVisibility = true;
 
@@ -71,6 +76,10 @@ class Amadeus
             'http_errors' => false,
             'verify' => '/CA/cacert.pem',
         ]);
+    }
+
+    public function getToken(): Token {
+        return $this->token;
     }
 
 }

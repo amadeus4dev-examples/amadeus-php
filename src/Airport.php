@@ -6,14 +6,14 @@ use Amadeus\Airport\DirectDestinations;
 
 class Airport
 {
-    public ?DirectDestinations $directDestination;
+    public ?DirectDestinations $directDestinations;
 
     /**
      * @param Amadeus $client
      */
     public function __construct(Amadeus $client)
     {
-        $this->directDestination = new DirectDestinations($client);
+        $this->directDestinations = new DirectDestinations($client);
     }
 
 }
