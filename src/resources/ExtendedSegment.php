@@ -9,6 +9,9 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+use JsonMapper;
+use JsonMapper_Exception;
+
 class ExtendedSegment
 {
     private string $closedStatus;
@@ -36,10 +39,16 @@ class ExtendedSegment
 
     /**
      * @return AvailabilityClass[]
+     * @throws JsonMapper_Exception
      */
     public function getAvailabilityClasses(): iterable
     {
-        return $this->availabilityClasses;
+        $mapper = new JsonMapper();
+        $mapper->bIgnoreVisibility = true;
+
+        return $mapper->mapArray(
+            $this->availabilityClasses, array(), AvailabilityClass::class
+        );
     }
 
     /**
@@ -68,10 +77,16 @@ class ExtendedSegment
 
     /**
      * @return Co2Emission[]
+     * @throws JsonMapper_Exception
      */
     public function getCo2Emissions(): iterable
     {
-        return $this->co2Emissions;
+        $mapper = new JsonMapper();
+        $mapper->bIgnoreVisibility = true;
+
+        return $mapper->mapArray(
+            $this->co2Emissions, array(), Co2Emission::class
+        );
     }
 
     /**
@@ -132,10 +147,16 @@ class ExtendedSegment
 
     /**
      * @return FlightStop[]
+     * @throws JsonMapper_Exception
      */
     public function getStops(): iterable
     {
-        return $this->stops;
+        $mapper = new JsonMapper();
+        $mapper->bIgnoreVisibility = true;
+
+        return $mapper->mapArray(
+            $this->stops,  array(), FlightStop::class
+        );
     }
 
 }

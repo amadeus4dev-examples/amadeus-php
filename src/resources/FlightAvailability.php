@@ -9,6 +9,9 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+use JsonMapper;
+use JsonMapper_Exception;
+
 class FlightAvailability
 {
     private string $type;
@@ -78,10 +81,16 @@ class FlightAvailability
 
     /**
      * @return ExtendedSegment[]
+     * @throws JsonMapper_Exception
      */
-    public function getSegments(): array
+    public function getSegments(): iterable
     {
-        return $this->segments;
+        $mapper = new JsonMapper();
+        $mapper->bIgnoreVisibility = true;
+
+        return $mapper->mapArray(
+            $this->segments, array(), ExtendedSegment::class
+        );
     }
 
 }
