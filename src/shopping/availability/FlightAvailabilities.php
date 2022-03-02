@@ -23,12 +23,12 @@ class FlightAvailabilities
      * @return FlightAvailability[]
      * @throws JsonMapper_Exception
      */
-    public function getFlightAvailabilities(string $body): iterable
+    public function post(string $body): iterable
     {
         $headers = array(
             'Content-Type' => 'application/vnd.amadeus+json',
             'Accept'=> 'application/json, application/vnd.amadeus+json',
-            'Authorization' => $this->client->authenticate()->getHeader()
+            'Authorization' => $this->client->getToken()->getHeader()
         );
 
         $response = $this->client->httpClient->post(
@@ -47,7 +47,5 @@ class FlightAvailabilities
         return $mapper->mapArray(
             $data, array(), FlightAvailability::class
         );
-
-        //return $data;
     }
 }

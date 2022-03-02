@@ -13,17 +13,17 @@ use Amadeus\resources\FlightAvailability\ExtendedSegment;
 
 class FlightAvailability
 {
-    private String $type;
-    private String $id;
-    private String $originDestinationId;
-    private String $source;
-    private Bool $instantTicketRequired;
-    private Bool $paymentCardRequired;
-    private String $duration;
+    private string $type;
+    private string $id;
+    private string $originDestinationId;
+    private string $source;
+    private bool $instantTicketRequired;
+    private bool $paymentCardRequired;
+    private string $duration;
     private array $segments;
 
     /**
-     * @return String
+     * @return string
      */
     public function getType(): string
     {
@@ -31,7 +31,7 @@ class FlightAvailability
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getId(): string
     {
@@ -39,7 +39,7 @@ class FlightAvailability
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getOriginDestinationId(): string
     {
@@ -47,7 +47,7 @@ class FlightAvailability
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getSource(): string
     {
@@ -71,7 +71,7 @@ class FlightAvailability
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getDuration(): string
     {
@@ -99,23 +99,23 @@ use Amadeus\resources\FlightAvailability\ExtendedSegment\OperatingFlight;
 
 class ExtendedSegment
 {
-    private String $closedStatus;
+    private string $closedStatus;
     private array $availabilityClasses;
-    private String $id;
-    private String $numberOfStops;
-    private Bool $blacklistedInEU;
+    private string $id;
+    private string $numberOfStops;
+    private bool $blacklistedInEU;
     private array $co2Emissions;
     private FlightEndpoint $departure;
     private FlightEndpoint $arrival;
-    private String $carrierCode;
-    private String $number;
+    private string $carrierCode;
+    private string $number;
     private AircraftEquipment $aircraft;
     private OperatingFlight $operating;
-    private String $duration;
+    private string $duration;
     private array $stops;
 
     /**
-     * @return String
+     * @return string
      */
     public function getClosedStatus(): string
     {
@@ -131,7 +131,7 @@ class ExtendedSegment
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getId(): string
     {
@@ -139,7 +139,7 @@ class ExtendedSegment
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getNumberOfStops(): string
     {
@@ -179,7 +179,7 @@ class ExtendedSegment
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getCarrierCode(): string
     {
@@ -187,7 +187,7 @@ class ExtendedSegment
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getNumber(): string
     {
@@ -211,7 +211,7 @@ class ExtendedSegment
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getDuration(): string
     {
@@ -235,8 +235,8 @@ use Amadeus\resources\FlightAvailability\AvailabilityClass\TourAllotment;
 class AvailabilityClass
 {
     private int $numberOfBookableSeats;
-    private String $class;
-    private String $closedStatus;
+    private string $class;
+    private string $closedStatus;
     private TourAllotment $tourAllotment;
 
     /**
@@ -248,7 +248,7 @@ class AvailabilityClass
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getClass(): string
     {
@@ -256,7 +256,7 @@ class AvailabilityClass
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getClosedStatus(): string
     {
@@ -276,8 +276,8 @@ class AvailabilityClass
 class Co2Emission
 {
     private int $weight;
-    private String $weightUnit;
-    private String $cabin;
+    private string $weightUnit;
+    private string $cabin;
 
     /**
      * @return int
@@ -288,7 +288,7 @@ class Co2Emission
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getWeightUnit(): string
     {
@@ -296,7 +296,7 @@ class Co2Emission
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getCabin(): string
     {
@@ -307,12 +307,12 @@ class Co2Emission
 
 class FlightEndpoint
 {
-    private String $iataCode;
-    private String $terminal;
-    private String $at;
+    private string $iataCode;
+    private string $terminal;
+    private string $at;
 
     /**
-     * @return String
+     * @return string
      */
     public function getIataCode(): string
     {
@@ -320,7 +320,7 @@ class FlightEndpoint
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getTerminal(): string
     {
@@ -328,7 +328,7 @@ class FlightEndpoint
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getAt(): string
     {
@@ -339,10 +339,10 @@ class FlightEndpoint
 
 class AircraftEquipment
 {
-    private String $code;
+    private string $code;
 
     /**
-     * @return String
+     * @return string
      */
     public function getCode(): string
     {
@@ -353,10 +353,10 @@ class AircraftEquipment
 
 class OperatingFlight
 {
-    private String $carrierCode;
+    private string $carrierCode;
 
     /**
-     * @return String
+     * @return string
      */
     public function getCarrierCode(): string
     {
@@ -367,13 +367,13 @@ class OperatingFlight
 
 class FlightStop
 {
-    private String $iataCode;
-    private String $duration;
-    private String $arrivalAt;
-    private String $departureAt;
+    private string $iataCode;
+    private string $duration;
+    private string $arrivalAt;
+    private string $departureAt;
 
     /**
-     * @return String
+     * @return string
      */
     public function getIataCode(): string
     {
@@ -381,7 +381,7 @@ class FlightStop
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getDuration(): string
     {
@@ -389,7 +389,7 @@ class FlightStop
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getArrivalAt(): string
     {
@@ -397,7 +397,7 @@ class FlightStop
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getDepartureAt(): string
     {
@@ -410,13 +410,13 @@ namespace Amadeus\resources\FlightAvailability\AvailabilityClass;
 
 class TourAllotment
 {
-    private String $tourName;
-    private String $tourReference;
-    private String $mode;
-    private String $remainingSeats;
+    private string $tourName;
+    private string $tourReference;
+    private string $mode;
+    private string $remainingSeats;
 
     /**
-     * @return String
+     * @return string
      */
     public function getTourName(): string
     {
@@ -424,7 +424,7 @@ class TourAllotment
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getTourReference(): string
     {
@@ -432,7 +432,7 @@ class TourAllotment
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getMode(): string
     {
@@ -440,7 +440,7 @@ class TourAllotment
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getRemainingSeats(): string
     {

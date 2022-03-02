@@ -23,15 +23,15 @@ class DirectDestinations
      * @return Destination[]
      * @throws JsonMapper_Exception
      */
-    public function getDestinations(array $query) : iterable
+    public function get(array $query) : iterable
     {
-        $header = array(
-            'Authorization' => $this->client->authenticate()->getHeader()
+        $headers = array(
+            'Authorization' => $this->client->getToken()->getHeader()
         );
 
         $response = $this->client->httpClient->get(
           '/v1/airport/direct-destinations',[
-              'headers' => $header,
+              'headers' => $headers,
               'query' => $query,
         ]);
 

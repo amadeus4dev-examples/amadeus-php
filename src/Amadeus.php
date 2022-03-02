@@ -11,12 +11,11 @@ class Amadeus
 {
     protected const BASE_URL = 'https://test.api.amadeus.com';
 
-    private String $clientId;
-    private String $clientSecret;
+    private string $clientId;
+    private string $clientSecret;
+    private Token $token;
 
     public HttpClient $httpClient;
-
-    private Token $token;
 
     public Airport $airport;
 
@@ -35,16 +34,67 @@ class Amadeus
         $this->clientSecret = $clientSecret;
 
         $this->httpClient = $this->createHttpClient();
-        $this->token = $this->authenticate();
+        $this->token = $this->authorizeToken();
 
         $this->airport = new Airport($this);
         $this->shopping = new Shopping($this);
     }
 
     /**
+     * @return Token
+     */
+    public function getToken(): Token
+    {
+        return $this->token;
+    }
+
+    /**
+     * @param string $path
+     * @param array $query
+     * @return object
+     */
+    public function get(string $path, array $query): object
+    {
+        $headers = array(
+            'Authorization' => $this->token->getHeader()
+        );
+
+        $response = $this->httpClient->get(
+            $path,[
+            'headers' => $headers,
+            'query' => $query,
+        ]);
+
+        return json_decode($response->getBody()->__toString());
+    }
+
+    /**
+     * @param string $path
+     * @param string $body
+     * @return object
+     */
+    public function post(string $path, string $body): object
+    {
+        $headers = array(
+            'Content-Type' => 'application/vnd.amadeus+json',
+            'Accept'=> 'application/json, application/vnd.amadeus+json',
+            'Authorization' => $this->token->getHeader()
+        );
+
+        $response = $this->httpClient->post(
+            $path,[
+            'headers' => $headers,
+            'body' => $body,
+        ]);
+
+        return json_decode($response->getBody()->__toString());
+    }
+
+    /**
+     * @return Token
      * @throws JsonMapper_Exception
      */
-    public function authenticate(): Token
+    protected function authorizeToken(): Token
     {
         $response = $this->httpClient->post('/v1/security/oauth2/token', [
                 'headers' => [
@@ -59,16 +109,15 @@ class Amadeus
 
         $result = json_decode($response->getBody()->__toString());
 
-        //print_r($result->{'type'}); // case for how to get specific value
-
-        //print_r($response);
-
         $mapper = new JsonMapper();
         $mapper->bIgnoreVisibility = true;
 
         return $mapper->map($result, new Token());
     }
 
+    /**
+     * @return HttpClient
+     */
     protected function createHttpClient(): HttpClient
     {
         return new HttpClient([
@@ -76,10 +125,6 @@ class Amadeus
             'http_errors' => false,
             'verify' => '/CA/cacert.pem',
         ]);
-    }
-
-    public function getToken(): Token {
-        return $this->token;
     }
 
 }
