@@ -34,7 +34,7 @@ class Amadeus
         $this->clientSecret = $clientSecret;
 
         $this->httpClient = $this->createHttpClient();
-        $this->token = $this->authorizeToken();
+        $this->token = $this->fetchToken();
 
         $this->airport = new Airport($this);
         $this->shopping = new Shopping($this);
@@ -42,10 +42,19 @@ class Amadeus
 
     /**
      * @return Token
+     * @throws JsonMapper_Exception
      */
     public function getToken(): Token
     {
-        return $this->token;
+        // Checks if the current access token expires.
+        if($this->token->getExpiresAt() < time()){
+            print_r('Token expired!');
+            // If expired then refresh the token
+            return $this->fetchToken();
+        }else{
+            // Else still return the current token
+            return $this->token;
+        }
     }
 
     /**
@@ -94,7 +103,7 @@ class Amadeus
      * @return Token
      * @throws JsonMapper_Exception
      */
-    protected function authorizeToken(): Token
+    protected function fetchToken(): Token
     {
         $response = $this->httpClient->post('/v1/security/oauth2/token', [
                 'headers' => [

@@ -20,6 +20,17 @@ class Token
     private int $expires_in;
     private string $state;
     private string $scope;
+    private int $expires_at;
+
+    /**
+     *
+     */
+    public function __construct()
+    {
+        // Renew the token 10 seconds earlier than required
+        // Cuz the token will expire in 1799 seconds
+        $this->expires_at = time()+1789;
+    }
 
     /**
      * @return string
@@ -93,10 +104,21 @@ class Token
         return $this->scope;
     }
 
+    /**
+     * @return int
+     */
+    public function getExpiresAt(): int
+    {
+        return $this->expires_at;
+    }
 
+    /**
+     * @return string
+     */
     public function getHeader(): string
     {
         return $this->getTokenType() . ' ' . $this->getAccessToken();
     }
+
 
 }
