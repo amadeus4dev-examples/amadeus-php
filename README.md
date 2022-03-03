@@ -4,8 +4,8 @@
 This SDK is still in developing, which has not been published to Composer. 
 But you can clone this repo just for fun :)
 
-And remember before coding your need to install the dependencies,
-which you just need to run the following in terminal
+And remember before coding you should install all the dependencies,
+which just need to run the following command in terminal
 ``` 
 composer install
 ```
