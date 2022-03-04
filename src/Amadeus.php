@@ -2,6 +2,7 @@
 
 namespace Amadeus;
 
+use Amadeus\Client\AccessToken;
 use GuzzleHttp\Client as HttpClient;
 use JsonMapper;
 use JsonMapper_Exception;
@@ -13,7 +14,7 @@ class Amadeus
 
     private string $clientId;
     private string $clientSecret;
-    private Token $token;
+    private AccessToken $token;
 
     public HttpClient $httpClient;
 
@@ -41,14 +42,14 @@ class Amadeus
     }
 
     /**
-     * @return Token
+     * @return AccessToken
      * @throws JsonMapper_Exception
      */
-    public function getToken(): Token
+    public function getToken(): AccessToken
     {
         // Checks if the current access token expires.
         if($this->token->getExpiresAt() < time()){
-            print_r('Token expired!');
+            print_r('AccessToken expired!');
             // If expired then refresh the token
             return $this->fetchToken();
         }else{
@@ -100,10 +101,10 @@ class Amadeus
     }
 
     /**
-     * @return Token
+     * @return AccessToken
      * @throws JsonMapper_Exception
      */
-    protected function fetchToken(): Token
+    protected function fetchToken(): AccessToken
     {
         $response = $this->httpClient->post('/v1/security/oauth2/token', [
                 'headers' => [
@@ -121,7 +122,7 @@ class Amadeus
         $mapper = new JsonMapper();
         $mapper->bIgnoreVisibility = true;
 
-        return $mapper->map($result, new Token());
+        return $mapper->map($result, new AccessToken());
     }
 
     /**

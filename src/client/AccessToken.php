@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Amadeus;
+namespace Amadeus\Client;
 
-class Token
+class AccessToken
 {
     private string $type;
     private string $username;

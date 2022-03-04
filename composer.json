@@ -18,8 +18,9 @@
   "autoload": {
     "psr-4": {
       "Amadeus\\": "src/",
-      "Amadeus\\Resource\\": "src/resources",
       "Amadeus\\Airport\\": "src/airport",
+      "Amadeus\\Client\\": "src/client",
+      "Amadeus\\Resource\\": "src/resources",
       "Amadeus\\Shopping\\": "src/shopping",
       "Amadeus\\Shopping\\Availability\\": "src/shopping/availability"
     }
