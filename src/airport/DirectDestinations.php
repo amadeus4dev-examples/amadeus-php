@@ -26,7 +26,7 @@ class DirectDestinations
     public function get(array $query) : iterable
     {
         $headers = array(
-            'Authorization' => $this->client->getToken()->getHeader()
+            'Authorization' => $this->client->getAuthorizedToken()->getHeader()
         );
 
         $response = $this->client->httpClient->get(

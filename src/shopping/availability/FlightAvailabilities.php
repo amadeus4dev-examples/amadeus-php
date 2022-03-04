@@ -28,7 +28,7 @@ class FlightAvailabilities
         $headers = array(
             'Content-Type' => 'application/vnd.amadeus+json',
             'Accept'=> 'application/json, application/vnd.amadeus+json',
-            'Authorization' => $this->client->getToken()->getHeader()
+            'Authorization' => $this->client->getAuthorizedToken()->getHeader()
         );
 
         $response = $this->client->httpClient->post(

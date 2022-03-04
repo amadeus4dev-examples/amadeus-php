@@ -14,7 +14,7 @@ class Amadeus
 
     private string $clientId;
     private string $clientSecret;
-    private AccessToken $token;
+    private AccessToken $accessToken;
 
     public HttpClient $httpClient;
 
@@ -35,7 +35,7 @@ class Amadeus
         $this->clientSecret = $clientSecret;
 
         $this->httpClient = $this->createHttpClient();
-        $this->token = $this->fetchToken();
+        $this->accessToken = $this->fetchAccessToken();
 
         $this->airport = new Airport($this);
         $this->shopping = new Shopping($this);
@@ -45,16 +45,16 @@ class Amadeus
      * @return AccessToken
      * @throws JsonMapper_Exception
      */
-    public function getToken(): AccessToken
+    public function getAuthorizedToken(): AccessToken
     {
         // Checks if the current access token expires.
-        if($this->token->getExpiresAt() < time()){
+        if($this->accessToken->getExpiresAt() < time()){
             print_r('AccessToken expired!');
             // If expired then refresh the token
-            return $this->fetchToken();
+            return $this->fetchAccessToken();
         }else{
             // Else still return the current token
-            return $this->token;
+            return $this->accessToken;
         }
     }
 
@@ -66,7 +66,7 @@ class Amadeus
     public function get(string $path, array $query): object
     {
         $headers = array(
-            'Authorization' => $this->token->getHeader()
+            'Authorization' => $this->accessToken->getHeader()
         );
 
         $response = $this->httpClient->get(
@@ -88,7 +88,7 @@ class Amadeus
         $headers = array(
             'Content-Type' => 'application/vnd.amadeus+json',
             'Accept'=> 'application/json, application/vnd.amadeus+json',
-            'Authorization' => $this->token->getHeader()
+            'Authorization' => $this->accessToken->getHeader()
         );
 
         $response = $this->httpClient->post(
@@ -104,7 +104,7 @@ class Amadeus
      * @return AccessToken
      * @throws JsonMapper_Exception
      */
-    protected function fetchToken(): AccessToken
+    protected function fetchAccessToken(): AccessToken
     {
         $response = $this->httpClient->post('/v1/security/oauth2/token', [
                 'headers' => [
