@@ -12,8 +12,8 @@ class Amadeus
 {
     protected const BASE_URL = 'https://test.api.amadeus.com';
 
-    private string $clientId;
-    private string $clientSecret;
+    private Configuration $configuration;
+
     private AccessToken $accessToken;
 
     public HttpClient $httpClient;
@@ -27,18 +27,24 @@ class Amadeus
      */
     public function __construct
     (
-        string $clientId,
-        string $clientSecret
+        Configuration $configuration
     )
     {
-        $this->clientId = $clientId;
-        $this->clientSecret = $clientSecret;
+        $this->configuration = $configuration;
 
         $this->httpClient = $this->createHttpClient();
         $this->accessToken = $this->fetchAccessToken();
 
         $this->airport = new Airport($this);
         $this->shopping = new Shopping($this);
+    }
+
+    /**
+     * @return Configuration
+     */
+    public function getConfiguration(): Configuration
+    {
+        return $this->configuration;
     }
 
     /**
@@ -114,8 +120,8 @@ class Amadeus
                 ],
                 'form_params' => [
                     'grant_type' => 'client_credentials',
-                    'client_id' => $this->clientId,
-                    'client_secret' => $this->clientSecret,
+                    'client_id' => $this->configuration->getClientId(),
+                    'client_secret' => $this->configuration->getClientSecret(),
                 ],
         ]);
 
@@ -137,6 +143,16 @@ class Amadeus
             'http_errors' => false,
             'verify' => '/CA/cacert.pem',
         ]);
+    }
+
+    /**
+     * @param string $clientId
+     * @param string $clientSecret
+     * @return Configuration
+     */
+    public static function builder(string $clientId, string $clientSecret): Configuration
+    {
+        return new Configuration($clientId,$clientSecret);
     }
 
 }
