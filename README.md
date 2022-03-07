@@ -23,12 +23,12 @@ use Amadeus\Amadeus;
 
 require './vendor/autoload.php';
 
-$amadeus = new Amadeus(
-    "REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET"
-);
-
 try
 {
+    $amadeus = Amadeus
+        ::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
+        ->build();
+
     $destinations = $amadeus->airport->directDestinations->get(
         array(
             "departureAirportCode" => "MAD",
