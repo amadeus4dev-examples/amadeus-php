@@ -66,7 +66,9 @@ class Amadeus
     public function get(string $path, array $query): object
     {
         $headers = array(
-            'Authorization' => $this->accessToken->getHeader()
+            'Content-Type' => 'application/vnd.amadeus+json',
+            'Accept'=> 'application/json, application/vnd.amadeus+json',
+            'Authorization' => $this->accessToken->getHeader(),
         );
 
         $response = $this->httpClient->get(
