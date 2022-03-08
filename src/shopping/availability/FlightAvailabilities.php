@@ -5,7 +5,6 @@ namespace Amadeus\Shopping\Availability;
 use Amadeus\Amadeus;
 use Amadeus\Resources\FlightAvailability;
 use Amadeus\Resources\Resource;
-use JsonMapper;
 use JsonMapper_Exception;
 
 class FlightAvailabilities
