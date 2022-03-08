@@ -37,17 +37,10 @@ class HTTPClient
      */
     public function get(string $path, array $query): object
     {
-        $headers = array(
-            'Content-Type' => 'application/vnd.amadeus+json',
-            'Accept'=> 'application/json, application/vnd.amadeus+json',
-            'Authorization' => $this->getAuthorizedToken()->getHeader(),
+        $options = Options::optionsParams4GET(
+            $query,$this->getAuthorizedToken()->getAccessToken()
         );
-
-        $response = $this->httpClient->get(
-            $path,[
-            'headers' => $headers,
-            'query' => $query,
-        ]);
+        $response = $this->httpClient->get($path, $options);
 
         return json_decode($response->getBody()->__toString());
     }
@@ -60,17 +53,10 @@ class HTTPClient
      */
     public function post(string $path, string $body): object
     {
-        $headers = array(
-            'Content-Type' => 'application/vnd.amadeus+json',
-            'Accept'=> 'application/json, application/vnd.amadeus+json',
-            'Authorization' => $this->getAuthorizedToken()->getHeader(),
+        $options = Options::optionsBody4POST(
+            $body, $this->getAuthorizedToken()->getAccessToken()
         );
-
-        $response = $this->httpClient->post(
-            $path,[
-            'headers' => $headers,
-            'body' => $body,
-        ]);
+        $response = $this->httpClient->post($path, $options);
 
         return json_decode($response->getBody()->__toString());
     }
@@ -123,14 +109,6 @@ class HTTPClient
     }
 
     /**
-     * @return Configuration
-     */
-    public function getConfiguration(): Configuration
-    {
-        return $this->configuration;
-    }
-
-    /**
      * @return GuzzleHttpClient
      */
     protected function createHttpClient(): GuzzleHttpClient
@@ -140,6 +118,14 @@ class HTTPClient
             'http_errors' => false,
             'verify' => '/CA/cacert.pem',
         ]);
+    }
+
+    /**
+     * @return Configuration
+     */
+    public function getConfiguration(): Configuration
+    {
+        return $this->configuration;
     }
 
 }
