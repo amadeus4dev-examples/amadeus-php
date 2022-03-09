@@ -44,5 +44,4 @@ class Configuration
     {
         return $this->clientSecret;
     }
-
 }

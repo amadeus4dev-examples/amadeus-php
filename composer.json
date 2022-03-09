@@ -20,7 +20,8 @@
       "Amadeus\\": "src/",
       "Amadeus\\Airport\\": "src/airport",
       "Amadeus\\Client\\": "src/client",
-      "Amadeus\\Resource\\": "src/resources",
+      "Amadeus\\Exceptions\\": "src/exceptions",
+      "Amadeus\\Resources\\": "src/resources",
       "Amadeus\\Shopping\\": "src/shopping",
       "Amadeus\\Shopping\\Availability\\": "src/shopping/availability"
     }

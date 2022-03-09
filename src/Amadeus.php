@@ -33,5 +33,4 @@ class Amadeus extends HTTPClient
     {
         return new Configuration($clientId,$clientSecret);
     }
-
 }

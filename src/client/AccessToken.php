@@ -111,14 +111,4 @@ class AccessToken
     {
         return $this->expires_at;
     }
-
-    /**
-     * @return string
-     */
-    public function getHeader(): string
-    {
-        return $this->getTokenType() . ' ' . $this->getAccessToken();
-    }
-
-
 }

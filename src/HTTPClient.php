@@ -3,9 +3,15 @@
 namespace Amadeus;
 
 use Amadeus\Client\AccessToken;
+use Amadeus\Exceptions\AuthenticationException;
+use Amadeus\Exceptions\ClientException;
+use Amadeus\Exceptions\NotFoundException;
+use Amadeus\Exceptions\ServerException;
+use Exception;
 use GuzzleHttp\Client as GuzzleHttpClient;
 use JsonMapper;
 use JsonMapper_Exception;
+use Psr\Http\Message\ResponseInterface;
 
 class HTTPClient
 {
@@ -41,7 +47,7 @@ class HTTPClient
             $query,$this->getAuthorizedToken()->getAccessToken()
         );
         $response = $this->httpClient->get($path, $options);
-
+        $this->detectError($response);
         return json_decode($response->getBody()->__toString());
     }
 
@@ -57,7 +63,7 @@ class HTTPClient
             $body, $this->getAuthorizedToken()->getAccessToken()
         );
         $response = $this->httpClient->post($path, $options);
-
+        $this->detectError($response);
         return json_decode($response->getBody()->__toString());
     }
 
@@ -86,6 +92,7 @@ class HTTPClient
     /**
      * @return AccessToken
      * @throws JsonMapper_Exception
+     * @throws Exception
      */
     protected function fetchAccessToken(): AccessToken
     {
@@ -99,13 +106,10 @@ class HTTPClient
                 'client_secret' => $this->configuration->getClientSecret(),
             ],
         ]);
-
-        $result = json_decode($response->getBody()->__toString());
-
+        $this->detectError($response);
         $mapper = new JsonMapper();
         $mapper->bIgnoreVisibility = true;
-
-        return $mapper->map($result, new AccessToken());
+        return $mapper->map(json_decode($response->getBody()->__toString()), new AccessToken());
     }
 
     /**
@@ -120,6 +124,44 @@ class HTTPClient
         ]);
     }
 
+
+    /**
+     * @param ResponseInterface $response
+     * @return void
+     */
+    protected function detectError(ResponseInterface $response): void
+    {
+        $exception = null;
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode >= 500)
+        {
+            $exception = new ServerException($response);
+        }
+        else if ($statusCode == 404)
+        {
+            $exception = new NotFoundException($response);
+        }
+        else if ($statusCode == 401)
+        {
+            $exception = new AuthenticationException($response);
+        }
+        else if ($statusCode == 400)
+        {
+            $exception = new ClientException($response);
+        }
+        else if ($statusCode == 204)
+        {
+            return;
+        }
+
+        if ($exception != null)
+        {
+            echo $exception->__toString();
+            echo "Trace:\n" . $exception->getTraceAsString();
+        }
+    }
+
     /**
      * @return Configuration
      */
@@ -127,5 +169,4 @@ class HTTPClient
     {
         return $this->configuration;
     }
-
 }

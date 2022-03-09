@@ -34,5 +34,4 @@ class Resource
         $mapper->bIgnoreVisibility = true;
         return $mapper->mapArray($data, array(), $class);
     }
-
 }
