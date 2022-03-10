@@ -13,9 +13,9 @@ class Resource
      * @return object
      * @throws JsonMapper_Exception
      */
-    public static function fromArray(object $response, object $object): object
+    public static function fromObject(object $response, object $object): object
     {
-        $data = $response->{'data'};
+        $data = $response->{'data'}; // $data is an object
         $mapper = new JsonMapper();
         $mapper->bIgnoreVisibility = true;
         return $mapper->map($data, $object);
@@ -27,9 +27,9 @@ class Resource
      * @return iterable
      * @throws JsonMapper_Exception
      */
-    public static function fromObject(object $response, string $class): iterable
+    public static function fromArray(object $response, string $class): iterable
     {
-        $data = $response->{'data'};
+        $data = $response->{'data'}; // $data is an array
         $mapper = new JsonMapper();
         $mapper->bIgnoreVisibility = true;
         return $mapper->mapArray($data, array(), $class);

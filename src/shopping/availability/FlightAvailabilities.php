@@ -28,6 +28,6 @@ class FlightAvailabilities
         $response = $this->client->post(
             '/v1/shopping/availability/flight-availabilities',$body);
 
-        return Resource::fromObject($response,FlightAvailability::class);
+        return Resource::fromArray($response,FlightAvailability::class);
     }
 }
