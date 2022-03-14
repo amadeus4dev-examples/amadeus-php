@@ -29,6 +29,7 @@ try
         ::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
         ->build();
 
+    // Airport Route API GET
     $destinations = $amadeus->airport->directDestinations->get(
         array(
             "departureAirportCode" => "MAD",
@@ -36,12 +37,45 @@ try
         )
     );
 
-    print_r($destinations);
+    print_r($destinations[0]);
+    
+    // Flight flightAvailabilitie Search API POST
+    $body =
+    '{
+        "originDestinations": [
+            {
+                "id": "1",
+                "originLocationCode": "BOS",
+                "destinationLocationCode": "MAD",
+                "departureDateTime": {
+                "date": "2022-04-01",
+                    "time": "21:15:00"
+                }
+            }
+        ],
+        "travelers": [
+            {
+                "id": "1",
+                "travelerType": "ADULT"
+            },
+            {
+                "id": "2",
+                "travelerType": "CHILD"
+            }
+        ],
+        "sources": [
+            "GDS"
+        ]
+    }';
+
+    $flightAvailabilities =
+        $amadeus->shopping->availability->flightAvailabilities->post($body);
+
+    print_r($flightAvailabilities[0]);
 
 } 
 catch (Exception $e) 
 {
     print_r($e);
-
 }
 ```
