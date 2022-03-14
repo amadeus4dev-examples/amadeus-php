@@ -2,21 +2,21 @@
 
 namespace Amadeus\Exceptions;
 
+use Amadeus\Response;
 use Exception;
-use Psr\Http\Message\ResponseInterface;
 
 class ResponseException extends Exception
 {
     /**
-     * @param ResponseInterface $response
+     * @param Response $response
      */
-    public function __construct(ResponseInterface $response)
+    public function __construct(Response $response)
     {
-        parent::__construct($response->getBody()->__toString(),$response->getStatusCode(),null);
+        parent::__construct(json_encode($response->getResult()),$response->getInfo()['http_code']);
     }
 
     public function __toString(): string
     {
-        return get_class($this) . ": [{$this->code}] {$this->message}\n";
+        return get_class($this) . ": [$this->code] $this->message\n";
     }
 }

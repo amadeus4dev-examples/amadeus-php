@@ -8,17 +8,11 @@ use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ServerException;
 use Exception;
-use GuzzleHttp\Client as GuzzleHttpClient;
 use JsonMapper;
 use JsonMapper_Exception;
-use Psr\Http\Message\ResponseInterface;
 
 class HTTPClient
 {
-    protected const BASE_URL = 'https://test.api.amadeus.com';
-
-    protected GuzzleHttpClient $httpClient;
-
     protected AccessToken $accessToken;
 
     private Configuration $configuration;
@@ -30,41 +24,78 @@ class HTTPClient
     public function __construct(Configuration $configuration)
     {
         $this->configuration = $configuration;
-
-        $this->httpClient = $this->createHttpClient();
         $this->accessToken = $this->fetchAccessToken();
+    }
+
+    /**
+     * @param $ch
+     * @param string $url
+     * @param array $headers
+     * @return void
+     */
+    private function setCurlOptions($ch, string $url, array $headers): void
+    {
+        // Url
+        curl_setopt($ch, CURLOPT_URL, $url);
+
+        // Header
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        // Transfer the return to string
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        // SSL
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
+        curl_setopt($ch, CURLOPT_CAINFO, "/CA/cacert.pem");
     }
 
     /**
      * @param string $path
      * @param array $query
-     * @return object
+     * @return Response
      * @throws JsonMapper_Exception
      */
-    public function get(string $path, array $query): object
+    public function get(string $path, array $query): Response
     {
-        $options = Options::optionsParams4GET(
-            $query,$this->getAuthorizedToken()->getAccessToken()
-        );
-        $response = $this->httpClient->get($path, $options);
+        $url = $this->configuration->getBaseUrl().$path.'?'.http_build_query($query);
+        $headers = $this->prepareHeaders();
+
+        $ch = curl_init();
+        $this->setCurlOptions($ch, $url, $headers);
+        $result = json_decode(curl_exec($ch));
+        $info = curl_getinfo($ch);
+        curl_close($ch);
+
+        $response = new Response($info, $result);
         $this->detectError($response);
-        return json_decode($response->getBody()->__toString());
+
+        return $response;
     }
 
     /**
      * @param string $path
      * @param string $body
-     * @return object
+     * @return Response
      * @throws JsonMapper_Exception
      */
-    public function post(string $path, string $body): object
+    public function post(string $path, string $body): Response
     {
-        $options = Options::optionsBody4POST(
-            $body, $this->getAuthorizedToken()->getAccessToken()
-        );
-        $response = $this->httpClient->post($path, $options);
+        $url = $this->configuration->getBaseUrl().$path;
+        $headers = $this->prepareHeaders();
+
+        $ch = curl_init();
+        $this->setCurlOptions($ch, $url, $headers);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $body);
+        $result = json_decode(curl_exec($ch));
+        $info = curl_getinfo($ch);
+        curl_close($ch);
+
+        $response = new Response($info, $result);
         $this->detectError($response);
-        return json_decode($response->getBody()->__toString());
+
+        return $response;
     }
 
     /**
@@ -96,43 +127,40 @@ class HTTPClient
      */
     protected function fetchAccessToken(): AccessToken
     {
-        $response = $this->httpClient->post('/v1/security/oauth2/token', [
-            'headers' => [
-                'Content-Type' => 'application/x-www-form-urlencoded',
-            ],
-            'form_params' => [
-                'grant_type' => 'client_credentials',
-                'client_id' => $this->configuration->getClientId(),
-                'client_secret' => $this->configuration->getClientSecret(),
-            ],
-        ]);
+        $url = $this->configuration->getBaseUrl().'/v1/security/oauth2/token';
+        $headers = array(
+            'Content-Type' => 'application/x-www-form-urlencoded'
+        );
+        $data = array(
+            'client_id' => $this->configuration->getClientId(),
+            'client_secret' => $this->configuration->getClientSecret(),
+            'grant_type' => 'client_credentials'
+        );
+
+        $ch = curl_init();
+        $this->setCurlOptions($ch, $url, $headers);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        $result = json_decode(curl_exec($ch));
+        $info = curl_getinfo($ch);
+        curl_close($ch);
+
+        $response = new Response($info,$result);
         $this->detectError($response);
+
         $mapper = new JsonMapper();
         $mapper->bIgnoreVisibility = true;
-        return $mapper->map(json_decode($response->getBody()->__toString()), new AccessToken());
+        return $mapper->map($response->getResult(), new AccessToken());
     }
 
     /**
-     * @return GuzzleHttpClient
-     */
-    protected function createHttpClient(): GuzzleHttpClient
-    {
-        return new GuzzleHttpClient([
-            'base_uri' => self::BASE_URL,
-            'http_errors' => false,
-            'verify' => '/CA/cacert.pem',
-        ]);
-    }
-
-
-    /**
-     * @param ResponseInterface $response
+     * @param Response response
      * @return void
      */
-    protected function detectError(ResponseInterface $response): void
+    protected function detectError(Response  $response): void
     {
         $exception = null;
-        $statusCode = $response->getStatusCode();
+        $statusCode = $response->getInfo()['http_code'];
 
         if ($statusCode >= 500)
         {
@@ -160,6 +188,19 @@ class HTTPClient
             echo $exception->__toString();
             echo "Trace:\n" . $exception->getTraceAsString();
         }
+    }
+
+    /**
+     * @return array
+     * @throws JsonMapper_Exception
+     */
+    private function prepareHeaders(): array
+    {
+        return array(
+            'Accept: application/json, application/vnd.amadeus+json',
+            'Authorization: Bearer ' .$this->getAuthorizedToken()->getAccessToken(),
+            'Content-Type: application/vnd.amadeus+json'
+        );
     }
 
     /**

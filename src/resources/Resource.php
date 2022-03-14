@@ -2,6 +2,7 @@
 
 namespace Amadeus\Resources;
 
+use Amadeus\Response;
 use JsonMapper;
 use JsonMapper_Exception;
 
@@ -22,14 +23,14 @@ class Resource
     }
 
     /**
-     * @param object $response
+     * @param Response $response
      * @param string $class
      * @return iterable
      * @throws JsonMapper_Exception
      */
-    public static function fromArray(object $response, string $class): iterable
+    public static function fromArray(Response $response, string $class): iterable
     {
-        $data = $response->{'data'}; // $data is an array
+        $data = $response->getResult()->{'data'}; // $data is an array
         $mapper = new JsonMapper();
         $mapper->bIgnoreVisibility = true;
         return $mapper->mapArray($data, array(), $class);

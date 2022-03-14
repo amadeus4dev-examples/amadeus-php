@@ -2,14 +2,14 @@
 
 namespace Amadeus\Exceptions;
 
-use Psr\Http\Message\ResponseInterface;
+use Amadeus\Response;
 
 class NotFoundException extends ResponseException
 {
     /**
-     * @param ResponseInterface $response
+     * @param Response $response
      */
-    public function __construct(ResponseInterface $response)
+    public function __construct(Response $response)
     {
         parent::__construct($response);
     }
