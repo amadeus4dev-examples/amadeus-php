@@ -11,12 +11,23 @@ namespace Amadeus\Resources;
 
 class AircraftEquipment
 {
-    private string $code;
+    private ?string $code = null;
 
     /**
-     * @return string
+     * @param object $object
      */
-    public function getCode(): string
+    public function __construct(object $object)
+    {
+        foreach($object as $key =>  $value)
+        {
+            $this->$key = $value;
+        }
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCode(): ?string
     {
         return $this->code;
     }

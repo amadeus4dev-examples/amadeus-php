@@ -11,12 +11,23 @@ namespace Amadeus\Resources;
 
 class OperatingFlight
 {
-    private string $carrierCode;
+    private ?string $carrierCode = null;
 
     /**
-     * @return string
+     * @param object $object
      */
-    public function getCarrierCode(): string
+    public function __construct(object $object)
+    {
+        foreach($object as $key =>  $value)
+        {
+            $this->$key = $value;
+        }
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCarrierCode(): ?string
     {
         return $this->carrierCode;
     }

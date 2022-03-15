@@ -11,39 +11,50 @@ namespace Amadeus\Resources;
 
 class TourAllotment
 {
-    private string $tourName;
-    private string $tourReference;
-    private string $mode;
-    private string $remainingSeats;
+    private ?string $tourName = null;
+    private ?string $tourReference = null;
+    private ?string $mode = null;
+    private ?string $remainingSeats = null;
 
     /**
-     * @return string
+     * @param object $object
      */
-    public function getTourName(): string
+    public function __construct(object $object)
+    {
+        foreach($object as $key =>  $value)
+        {
+            $this->$key = $value;
+        }
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTourName(): ?string
     {
         return $this->tourName;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getTourReference(): string
+    public function getTourReference(): ?string
     {
         return $this->tourReference;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getMode(): string
+    public function getMode(): ?string
     {
         return $this->mode;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getRemainingSeats(): string
+    public function getRemainingSeats(): ?string
     {
         return $this->remainingSeats;
     }

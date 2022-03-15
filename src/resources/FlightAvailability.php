@@ -9,88 +9,90 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-use JsonMapper;
-use JsonMapper_Exception;
-
 class FlightAvailability
 {
-    private string $type;
-    private string $id;
-    private string $originDestinationId;
-    private string $source;
-    private bool $instantTicketRequired;
-    private bool $paymentCardRequired;
-    private string $duration;
-    private array $segments;
+    private ?string $type = null;
+    private ?string $id = null;
+    private ?string $originDestinationId = null;
+    private ?string $source = null;
+    private ?bool $instantTicketRequired = null;
+    private ?bool $paymentCardRequired = null;
+    private ?string $duration = null;
+    private ?array $segments = null;
 
     /**
-     * @return string
+     * @param Object $object
      */
-    public function getType(): string
+    public function __construct(Object $object)
+    {
+        foreach($object as $key =>  $value)
+        {
+            $this->$key = $value;
+        }
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getType(): ?string
     {
         return $this->type;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getOriginDestinationId(): string
+    public function getOriginDestinationId(): ?string
     {
         return $this->originDestinationId;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getSource(): string
+    public function getSource(): ?string
     {
         return $this->source;
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isInstantTicketRequired(): bool
+    public function getInstantTicketRequired(): ?bool
     {
         return $this->instantTicketRequired;
     }
 
     /**
-     * @return bool
+     * @return bool|null
      */
-    public function isPaymentCardRequired(): bool
+    public function getPaymentCardRequired(): ?bool
     {
         return $this->paymentCardRequired;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDuration(): string
+    public function getDuration(): ?string
     {
         return $this->duration;
     }
 
     /**
      * @return ExtendedSegment[]
-     * @throws JsonMapper_Exception
      */
     public function getSegments(): iterable
     {
-        $mapper = new JsonMapper();
-        $mapper->bIgnoreVisibility = true;
-
-        return $mapper->mapArray(
-            $this->segments, array(), ExtendedSegment::class
-        );
+        return Resource::toResourceArray(
+            $this->segments, ExtendedSegment::class);
     }
-
 }

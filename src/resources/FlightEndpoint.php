@@ -11,30 +11,41 @@ namespace Amadeus\Resources;
 
 class FlightEndpoint
 {
-    private string $iataCode;
-    private string $terminal;
-    private string $at;
+    private ?string $iataCode = null;
+    private ?string $terminal = null;
+    private ?string $at = null;
 
     /**
-     * @return string
+     * @param object $object
      */
-    public function getIataCode(): string
+    public function __construct(object $object)
+    {
+        foreach($object as $key =>  $value)
+        {
+            $this->$key = $value;
+        }
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getIataCode(): ?string
     {
         return $this->iataCode;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getTerminal(): string
+    public function getTerminal(): ?string
     {
         return $this->terminal;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getAt(): string
+    public function getAt(): ?string
     {
         return $this->at;
     }

@@ -11,7 +11,6 @@
   ],
   "require": {
     "ext-json": "*",
-    "netresearch/jsonmapper": "^4.0",
     "ext-curl": "*"
   },
   "autoload": {

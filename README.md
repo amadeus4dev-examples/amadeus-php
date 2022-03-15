@@ -20,6 +20,7 @@ your first application.
 <?php
 
 use Amadeus\Amadeus;
+use Exception;
 
 require './vendor/autoload.php';
 
@@ -38,10 +39,10 @@ try
     );
 
     print_r($destinations[0]);
-    
-    // Flight flightAvailabilitie Search API POST
+
+    // Flight Availabilities Search API POST
     $body =
-    '{
+        '{
         "originDestinations": [
             {
                 "id": "1",
@@ -72,6 +73,17 @@ try
         $amadeus->shopping->availability->flightAvailabilities->post($body);
 
     print_r($flightAvailabilities[0]);
+
+    // Make arbitrary call
+    $destinations = $amadeus->get(
+        '/v1/airport/direct-destinations',
+        array(
+            "departureAirportCode" => "MAD",
+            "max" => 2
+        )
+    );
+
+    print_r($destinations->getResult()->{'data'});
 
 } 
 catch (Exception $e) 

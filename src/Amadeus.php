@@ -2,7 +2,7 @@
 
 namespace Amadeus;
 
-use JsonMapper_Exception;
+use Exception;
 
 class Amadeus extends HTTPClient
 {
@@ -11,7 +11,8 @@ class Amadeus extends HTTPClient
     public Shopping $shopping;
 
     /**
-     * @throws JsonMapper_Exception
+     * @param Configuration $configuration
+     * @throws Exception
      */
     public function __construct
     (

@@ -11,39 +11,50 @@ namespace Amadeus\Resources;
 
 class FlightStop
 {
-    private string $iataCode;
-    private string $duration;
-    private string $arrivalAt;
-    private string $departureAt;
+    private ?string $iataCode = null;
+    private ?string $duration = null;
+    private ?string $arrivalAt = null;
+    private ?string $departureAt = null;
 
     /**
-     * @return string
+     * @param object $object
      */
-    public function getIataCode(): string
+    public function __construct(object $object)
+    {
+        foreach($object as $key =>  $value)
+        {
+            $this->$key = $value;
+        }
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getIataCode(): ?string
     {
         return $this->iataCode;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDuration(): string
+    public function getDuration(): ?string
     {
         return $this->duration;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getArrivalAt(): string
+    public function getArrivalAt(): ?string
     {
         return $this->arrivalAt;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getDepartureAt(): string
+    public function getDepartureAt(): ?string
     {
         return $this->departureAt;
     }

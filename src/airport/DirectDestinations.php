@@ -5,7 +5,7 @@ namespace Amadeus\Airport;
 use Amadeus\Amadeus;
 use Amadeus\Resources\Destination;
 use Amadeus\Resources\Resource;
-use JsonMapper_Exception;
+use Exception;
 
 class DirectDestinations
 {
@@ -20,8 +20,9 @@ class DirectDestinations
     }
 
     /**
-     * @return Destination[]
-     * @throws JsonMapper_Exception
+     * @param array $query
+     * @return iterable
+     * @throws Exception
      */
     public function get(array $query) : iterable
     {

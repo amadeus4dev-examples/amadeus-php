@@ -3,36 +3,61 @@
 namespace Amadeus\Resources;
 
 use Amadeus\Response;
-use JsonMapper;
-use JsonMapper_Exception;
 
 class Resource
 {
     /**
      * @param object $response
-     * @param object $object
+     * @param string $class
      * @return object
-     * @throws JsonMapper_Exception
      */
-    public static function fromObject(object $response, object $object): object
+    public static function fromObject(object $response, string $class): object
     {
-        $data = $response->{'data'}; // $data is an object
-        $mapper = new JsonMapper();
-        $mapper->bIgnoreVisibility = true;
-        return $mapper->map($data, $object);
+        $data = $response->getResult()->{'data'}; // $data is an object
+        return new $class($data);
     }
 
     /**
      * @param Response $response
      * @param string $class
      * @return iterable
-     * @throws JsonMapper_Exception
      */
     public static function fromArray(Response $response, string $class): iterable
     {
         $data = $response->getResult()->{'data'}; // $data is an array
-        $mapper = new JsonMapper();
-        $mapper->bIgnoreVisibility = true;
-        return $mapper->mapArray($data, array(), $class);
+        $resultArray = array();
+        foreach ($data as $value)
+        {
+            $instance = new $class($value);
+            $resultArray[] = $instance;
+        }
+        return $resultArray;
     }
+
+    /**
+     * @param object $object
+     * @param string $class
+     * @return object
+     */
+    public static function toResourceObject(object $object, string $class): object
+    {
+        return new $class($object);
+    }
+
+    /**
+     * @param array $array
+     * @param string $class
+     * @return iterable
+     */
+    public static function toResourceArray(array $array, string $class): iterable
+    {
+        $resourceArray = array();
+        foreach($array as $value)
+        {
+            $instance = new $class($value);
+            $resourceArray[] = $instance;
+        }
+        return $resourceArray;
+    }
+
 }

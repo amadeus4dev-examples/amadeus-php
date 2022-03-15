@@ -11,30 +11,41 @@ namespace Amadeus\Resources;
 
 class Co2Emission
 {
-    private int $weight;
-    private string $weightUnit;
-    private string $cabin;
+    private ?int $weight = null;
+    private ?string $weightUnit = null;
+    private ?string $cabin = null;
 
     /**
-     * @return int
+     * @param object $object
      */
-    public function getWeight(): int
+    public function __construct(object $object)
+    {
+        foreach($object as $key =>  $value)
+        {
+            $this->$key = $value;
+        }
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getWeight(): ?int
     {
         return $this->weight;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getWeightUnit(): string
+    public function getWeightUnit(): ?string
     {
         return $this->weightUnit;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getCabin(): string
+    public function getCabin(): ?string
     {
         return $this->cabin;
     }

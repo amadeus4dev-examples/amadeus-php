@@ -8,8 +8,6 @@ use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ServerException;
 use Exception;
-use JsonMapper;
-use JsonMapper_Exception;
 
 class HTTPClient
 {
@@ -19,7 +17,7 @@ class HTTPClient
 
     /**
      * @param Configuration $configuration
-     * @throws JsonMapper_Exception
+     * @throws Exception
      */
     public function __construct(Configuration $configuration)
     {
@@ -54,7 +52,7 @@ class HTTPClient
      * @param string $path
      * @param array $query
      * @return Response
-     * @throws JsonMapper_Exception
+     * @throws Exception
      */
     public function get(string $path, array $query): Response
     {
@@ -77,7 +75,7 @@ class HTTPClient
      * @param string $path
      * @param string $body
      * @return Response
-     * @throws JsonMapper_Exception
+     * @throws Exception
      */
     public function post(string $path, string $body): Response
     {
@@ -100,7 +98,7 @@ class HTTPClient
 
     /**
      * @return AccessToken
-     * @throws JsonMapper_Exception
+     * @throws Exception
      */
     public function getAuthorizedToken(): AccessToken
     {
@@ -122,7 +120,6 @@ class HTTPClient
 
     /**
      * @return AccessToken
-     * @throws JsonMapper_Exception
      * @throws Exception
      */
     protected function fetchAccessToken(): AccessToken
@@ -148,9 +145,7 @@ class HTTPClient
         $response = new Response($info,$result);
         $this->detectError($response);
 
-        $mapper = new JsonMapper();
-        $mapper->bIgnoreVisibility = true;
-        return $mapper->map($response->getResult(), new AccessToken());
+        return new AccessToken($response->getResult());
     }
 
     /**
@@ -192,7 +187,7 @@ class HTTPClient
 
     /**
      * @return array
-     * @throws JsonMapper_Exception
+     * @throws Exception
      */
     private function prepareHeaders(): array
     {

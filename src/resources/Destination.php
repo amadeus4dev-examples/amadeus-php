@@ -11,39 +11,50 @@ namespace Amadeus\Resources;
 
 class Destination
 {
-    private string $type;
-    private string $subtype;
-    private string $name;
-    private string $iataCode;
+    private ?string $type = null;
+    private ?string $subtype = null;
+    private ?string $name = null;
+    private ?string $iataCode = null;
 
     /**
-     * @return string
+     * @param object $object
      */
-    public function getType(): string
+    public function __construct(object $object)
+    {
+        foreach($object as $key =>  $value)
+        {
+            $this->$key = $value;
+        }
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getType(): ?string
     {
         return $this->type;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getSubtype(): string
+    public function getSubtype(): ?string
     {
         return $this->subtype;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getIataCode(): string
+    public function getIataCode(): ?string
     {
         return $this->iataCode;
     }

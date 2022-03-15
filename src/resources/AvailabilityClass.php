@@ -11,41 +11,54 @@ namespace Amadeus\Resources;
 
 class AvailabilityClass
 {
-    private int $numberOfBookableSeats;
-    private string $class;
-    private string $closedStatus;
-    private TourAllotment $tourAllotment;
+    private ?int $numberOfBookableSeats = null;
+    private ?string $class = null;
+    private ?string $closedStatus = null;
+    private ?object $tourAllotment = null;
 
     /**
-     * @return int
+     * @param object $object
      */
-    public function getNumberOfBookableSeats(): int
+    public function __construct(object $object)
+    {
+        foreach($object as $key =>  $value)
+        {
+            $this->$key = $value;
+        }
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getNumberOfBookableSeats(): ?int
     {
         return $this->numberOfBookableSeats;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getClass(): string
+    public function getClass(): ?string
     {
         return $this->class;
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getClosedStatus(): string
+    public function getClosedStatus(): ?string
     {
         return $this->closedStatus;
     }
 
     /**
-     * @return TourAllotment
+     * @return object|null
      */
-    public function getTourAllotment(): TourAllotment
+    public function getTourAllotment(): ?object
     {
-        return $this->tourAllotment;
+        return Resource::toResourceObject(
+            $this->tourAllotment, TourAllotment::class
+        );
     }
 
 }

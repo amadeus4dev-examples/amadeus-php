@@ -5,7 +5,7 @@ namespace Amadeus\Shopping\Availability;
 use Amadeus\Amadeus;
 use Amadeus\Resources\FlightAvailability;
 use Amadeus\Resources\Resource;
-use JsonMapper_Exception;
+use Exception;
 
 class FlightAvailabilities
 {
@@ -21,7 +21,7 @@ class FlightAvailabilities
 
     /**
      * @return FlightAvailability[]
-     * @throws JsonMapper_Exception
+     * @throws Exception
      */
     public function post(string $body): iterable
     {
@@ -30,4 +30,5 @@ class FlightAvailabilities
 
         return Resource::fromArray($response,FlightAvailability::class);
     }
+
 }

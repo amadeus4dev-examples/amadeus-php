@@ -2,7 +2,7 @@
 
 namespace Amadeus;
 
-use JsonMapper_Exception;
+use Exception;
 
 class Configuration
 {
@@ -31,7 +31,7 @@ class Configuration
 
     /**
      * @return Amadeus
-     * @throws JsonMapper_Exception
+     * @throws Exception
      */
     public function build(): Amadeus
     {
