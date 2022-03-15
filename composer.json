@@ -1,7 +1,6 @@
 {
   "name": "xianqiliu/amadeus-php",
   "description": "PHP library for the Amadeus Self-Service travel APIs",
-  "minimum-stability": "dev",
   "license": "proprietary",
   "authors": [
     {
@@ -16,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Amadeus\\": "./src/",
+      "Amadeus\\": "src/",
       "Amadeus\\Airport\\": "src/airport",
       "Amadeus\\Client\\": "src/client",
       "Amadeus\\Exceptions\\": "src/exceptions",
