@@ -1,7 +1,7 @@
 {
   "name": "xianqiliu/amadeus-php",
   "description": "PHP library for the Amadeus Self-Service travel APIs",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "license": "proprietary",
   "authors": [
     {
