@@ -6,8 +6,15 @@ But you can clone this repo just for fun :)
 
 And remember before coding you should install all the dependencies,
 which just need to run the following command in terminal
-``` 
+
+- if you directly clone this repo
+```
 composer install
+```
+- if you want to use it as your libraries
+
+``` 
+composer require xianqiliu/amadeus-php:dev-master
 ```
 
 ## Getting Started
@@ -20,9 +27,9 @@ your first application.
 <?php
 
 use Amadeus\Amadeus;
-use Exception;
 
-require './vendor/autoload.php';
+// include composer autoloader
+require __DIR__ . '/vendor/autoload.php';
 
 try
 {
