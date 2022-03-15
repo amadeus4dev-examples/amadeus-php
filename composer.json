@@ -10,18 +10,19 @@
     }
   ],
   "require": {
+    "php": ">=7.4.0",
     "ext-json": "*",
     "ext-curl": "*"
   },
   "autoload": {
     "psr-4": {
       "Amadeus\\": "./src/",
-      "Amadeus\\Airport\\": "./src/airport",
-      "Amadeus\\Client\\": "./src/client",
-      "Amadeus\\Exceptions\\": "./src/exceptions",
-      "Amadeus\\Resources\\": "./src/resources",
-      "Amadeus\\Shopping\\": "./src/shopping",
-      "Amadeus\\Shopping\\Availability\\": "./src/shopping/availability"
+      "Amadeus\\Airport\\": "src/airport",
+      "Amadeus\\Client\\": "src/client",
+      "Amadeus\\Exceptions\\": "src/exceptions",
+      "Amadeus\\Resources\\": "src/resources",
+      "Amadeus\\Shopping\\": "src/shopping",
+      "Amadeus\\Shopping\\Availability\\": "src/shopping/availability"
     }
   }
 }
