@@ -1,6 +1,6 @@
 {
-  "name": "vendor_name/amadeus-php",
-  "description": "description",
+  "name": "xianqiliu/amadeus-php",
+  "description": "PHP library for the Amadeus Self-Service travel APIs",
   "minimum-stability": "stable",
   "license": "proprietary",
   "authors": [
@@ -15,13 +15,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Amadeus\\": "src/",
-      "Amadeus\\Airport\\": "src/airport",
-      "Amadeus\\Client\\": "src/client",
-      "Amadeus\\Exceptions\\": "src/exceptions",
-      "Amadeus\\Resources\\": "src/resources",
-      "Amadeus\\Shopping\\": "src/shopping",
-      "Amadeus\\Shopping\\Availability\\": "src/shopping/availability"
+      "Amadeus\\": "./src/",
+      "Amadeus\\Airport\\": "./src/airport",
+      "Amadeus\\Client\\": "./src/client",
+      "Amadeus\\Exceptions\\": "./src/exceptions",
+      "Amadeus\\Resources\\": "./src/resources",
+      "Amadeus\\Shopping\\": "./src/shopping",
+      "Amadeus\\Shopping\\Availability\\": "./src/shopping/availability"
     }
   }
 }
