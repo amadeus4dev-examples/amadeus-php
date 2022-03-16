@@ -21,7 +21,7 @@ class DirectDestinations
 
     /**
      * @param array $query
-     * @return iterable
+     * @return Destination[]
      * @throws Exception
      */
     public function get(array $query) : iterable
