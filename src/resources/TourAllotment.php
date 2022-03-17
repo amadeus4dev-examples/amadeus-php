@@ -17,17 +17,6 @@ class TourAllotment
     private ?string $remainingSeats = null;
 
     /**
-     * @param object $object
-     */
-    public function __construct(object $object)
-    {
-        foreach($object as $key =>  $value)
-        {
-            $this->$key = $value;
-        }
-    }
-
-    /**
      * @return string|null
      */
     public function getTourName(): ?string
@@ -57,6 +46,24 @@ class TourAllotment
     public function getRemainingSeats(): ?string
     {
         return $this->remainingSeats;
+    }
+
+    /**
+     * @param $name
+     * @param $value
+     * @return void
+     */
+    public function __set($name, $value)
+    {
+        $this->$name = $value;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return json_encode(get_object_vars($this))."\n";
     }
 
 }

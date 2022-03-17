@@ -6,32 +6,46 @@ use Amadeus\Response;
 
 class Resource
 {
+    private ?Response $response = null;
+
     /**
-     * @param object $response
+     * @param Response $response
      * @param string $class
      * @return object
      */
-    public static function fromObject(object $response, string $class): object
+    public static function fromObject(Response $response, string $class): object
     {
         $data = $response->getResult()->{'data'}; // $data is an object
-        return new $class($data);
+        $resource = new $class();
+        foreach($data as $key => $value)
+        {
+            $resource->__set($key, $value);
+        }
+        $resource->response = $response;
+        return $resource;
     }
 
     /**
      * @param Response $response
      * @param string $class
-     * @return iterable
+     * @return array
      */
-    public static function fromArray(Response $response, string $class): iterable
+    public static function fromArray(Response $response, string $class): array
     {
         $data = $response->getResult()->{'data'}; // $data is an array
-        $resultArray = array();
-        foreach ($data as $value)
+        $resources = array();
+        foreach ($data as $object)
         {
-            $instance = new $class($value);
-            $resultArray[] = $instance;
+            $resource = new $class();
+            foreach($object as $key => $value)
+            {
+                $resource->__set($key, $value);
+            }
+            $resource->response = $response; // plan A
+            $resources[] = $resource;
         }
-        return $resultArray;
+        //$resources['response'] = $response; //plan B
+        return $resources;
     }
 
     /**
@@ -41,7 +55,12 @@ class Resource
      */
     public static function toResourceObject(object $object, string $class): object
     {
-        return new $class($object);
+        $resourceObject = new $class();
+        foreach($object as $key => $value)
+        {
+            $resourceObject->__set($key, $value);
+        }
+        return $resourceObject;
     }
 
     /**
@@ -52,12 +71,24 @@ class Resource
     public static function toResourceArray(array $array, string $class): iterable
     {
         $resourceArray = array();
-        foreach($array as $value)
+        foreach($array as $element)
         {
-            $instance = new $class($value);
+            $instance = new $class($element);
+            foreach($element as $key => $value)
+            {
+                $instance->__set($key, $value);
+            }
             $resourceArray[] = $instance;
         }
         return $resourceArray;
+    }
+
+    /**
+     * @return Response|null
+     */
+    public function getResponse(): ?Response
+    {
+        return $this->response;
     }
 
 }

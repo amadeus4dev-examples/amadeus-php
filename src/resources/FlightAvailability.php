@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class FlightAvailability
+class FlightAvailability extends Resource
 {
     private ?string $type = null;
     private ?string $id = null;
@@ -19,17 +19,6 @@ class FlightAvailability
     private ?bool $paymentCardRequired = null;
     private ?string $duration = null;
     private ?array $segments = null;
-
-    /**
-     * @param Object $object
-     */
-    public function __construct(Object $object)
-    {
-        foreach($object as $key =>  $value)
-        {
-            $this->$key = $value;
-        }
-    }
 
     /**
      * @return string|null
@@ -88,11 +77,29 @@ class FlightAvailability
     }
 
     /**
-     * @return ExtendedSegment[]
+     * @return ExtendedSegment[]|null
      */
-    public function getSegments(): iterable
+    public function getSegments(): ?iterable
     {
         return Resource::toResourceArray(
             $this->segments, ExtendedSegment::class);
+    }
+
+    /**
+     * @param $name
+     * @param $value
+     * @return void
+     */
+    public function __set($name, $value)
+    {
+        $this->$name = $value;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return json_encode(get_object_vars($this))."\n";
     }
 }

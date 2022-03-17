@@ -31,7 +31,7 @@ class ExtendedSegment
      */
     public function __construct(Object $object)
     {
-        foreach($object as $key =>  $value)
+        foreach($object as $key => $value)
         {
             $this->$key = $value;
         }
@@ -90,7 +90,7 @@ class ExtendedSegment
     }
 
     /**
-     * @return object|null
+     * @return FlightEndpoint|null
      */
     public function getDeparture(): ?object
     {
@@ -100,7 +100,7 @@ class ExtendedSegment
     }
 
     /**
-     * @return object|null
+     * @return FlightEndpoint|null
      */
     public function getArrival(): ?object
     {
@@ -126,7 +126,7 @@ class ExtendedSegment
     }
 
     /**
-     * @return object|null
+     * @return AircraftEquipment|null
      */
     public function getAircraft(): ?object
     {
@@ -136,7 +136,7 @@ class ExtendedSegment
     }
 
     /**
-     * @return object|null
+     * @return OperatingFlight|null
      */
     public function getOperating(): ?object
     {
@@ -154,7 +154,7 @@ class ExtendedSegment
     }
 
     /**
-     * @return array|null
+     * @return FlightStop[]|null
      */
     public function getStops(): ?iterable
     {
@@ -163,4 +163,21 @@ class ExtendedSegment
         );
     }
 
+    /**
+     * @param $name
+     * @param $value
+     * @return void
+     */
+    public function __set($name, $value)
+    {
+        $this->$name = $value;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return json_encode(get_object_vars($this))."\n";
+    }
 }

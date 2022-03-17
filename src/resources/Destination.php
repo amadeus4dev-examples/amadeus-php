@@ -9,23 +9,12 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Destination
+class Destination extends Resource
 {
     private ?string $type = null;
     private ?string $subtype = null;
     private ?string $name = null;
     private ?string $iataCode = null;
-
-    /**
-     * @param object $object
-     */
-    public function __construct(object $object)
-    {
-        foreach($object as $key =>  $value)
-        {
-            $this->$key = $value;
-        }
-    }
 
     /**
      * @return string|null
@@ -59,4 +48,21 @@ class Destination
         return $this->iataCode;
     }
 
+    /**
+     * @param $name
+     * @param $value
+     * @return void
+     */
+    public function __set($name, $value)
+    {
+        $this->$name = $value;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return json_encode(get_object_vars($this))."\n";
+    }
 }

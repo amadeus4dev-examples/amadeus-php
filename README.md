@@ -45,7 +45,7 @@ try
         )
     );
 
-    print_r($destinations[0]);
+    print($destinations[0]);
 
     // Flight Availabilities Search API POST
     $body =
@@ -79,7 +79,7 @@ try
     $flightAvailabilities =
         $amadeus->shopping->availability->flightAvailabilities->post($body);
 
-    print_r($flightAvailabilities[0]);
+    print($flightAvailabilities[0]);
 
     // Make arbitrary call
     $destinations = $amadeus->get(
@@ -90,7 +90,7 @@ try
         )
     );
 
-    print_r($destinations->getResult()->{'data'});
+    print($destinations->getResult()->{'data'});
 
 } 
 catch (Exception $e) 

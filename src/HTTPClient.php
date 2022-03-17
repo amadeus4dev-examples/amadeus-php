@@ -194,7 +194,8 @@ class HTTPClient
         return array(
             'Accept: application/json, application/vnd.amadeus+json',
             'Authorization: Bearer ' .$this->getAuthorizedToken()->getAccessToken(),
-            'Content-Type: application/vnd.amadeus+json'
+            'Content-Type: application/vnd.amadeus+json',
+            'X-HTTP-Method-Override: GET'
         );
     }
 

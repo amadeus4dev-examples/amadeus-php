@@ -29,7 +29,7 @@ class DirectDestinations
         $response = $this->client->get(
             '/v1/airport/direct-destinations',$query);
 
-        return Resource::fromArray($response,Destination::class);
+        return Resource::fromArray($response, Destination::class);
     }
 
 }

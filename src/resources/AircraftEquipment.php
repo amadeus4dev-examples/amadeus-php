@@ -14,22 +14,29 @@ class AircraftEquipment
     private ?string $code = null;
 
     /**
-     * @param object $object
-     */
-    public function __construct(object $object)
-    {
-        foreach($object as $key =>  $value)
-        {
-            $this->$key = $value;
-        }
-    }
-
-    /**
      * @return string|null
      */
     public function getCode(): ?string
     {
         return $this->code;
+    }
+
+    /**
+     * @param $name
+     * @param $value
+     * @return void
+     */
+    public function __set($name, $value)
+    {
+        $this->$name = $value;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return json_encode(get_object_vars($this))."\n";
     }
 
 }
