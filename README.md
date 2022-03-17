@@ -90,7 +90,7 @@ try
         )
     );
 
-    print($destinations->getResult()->{'data'});
+    print($destinations);
 
 } 
 catch (Exception $e) 
