@@ -27,17 +27,6 @@ class ExtendedSegment
     private ?array $stops = null;
 
     /**
-     * @param Object $object
-     */
-    public function __construct(Object $object)
-    {
-        foreach($object as $key => $value)
-        {
-            $this->$key = $value;
-        }
-    }
-
-    /**
      * @return string|null
      */
     public function getClosedStatus(): ?string
