@@ -23,5 +23,13 @@
       "Amadeus\\Shopping\\": "src/shopping",
       "Amadeus\\Shopping\\Availability\\": "src/shopping/availability"
     }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Amadeus\\Tests\\": "tests/"
+    }
   }
 }
