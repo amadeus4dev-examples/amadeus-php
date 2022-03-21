@@ -19,7 +19,7 @@ jobs:
     - name: Checkout amadeus-php
       uses: actions/checkout@v2
 
-    - name: Install PHP
+    - name: Setup PHP
       uses: shivammathur/setup-php@master
       with:
         php-version: ${{ matrix.php }}
@@ -34,9 +34,7 @@ jobs:
       run: composer install
 
     - name: Run phpstan
-      uses: docker://oskarstark/phpstan-ga
-      with:
-        args: analyse src/
+      run: vendor/bin/phpstan analyse src
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
