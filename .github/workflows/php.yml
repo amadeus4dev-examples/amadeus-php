@@ -50,10 +50,9 @@ jobs:
       run: composer update --prefer-lowest --prefer-stable -n
 
     - name: Run phpstan
-      uses: actions-x/phpstan@v1
+      uses: docker://oskarstark/phpstan-ga
       with:
-        directories: src
-        level: 0
+        args: analyse src/
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
