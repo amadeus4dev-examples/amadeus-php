@@ -49,6 +49,12 @@ jobs:
       if: ${{ matrix.dependencies == 'lowest' }}
       run: composer update --prefer-lowest --prefer-stable -n
 
+    - name: Run phpstan
+      uses: actions-x/phpstan@v1
+      with:
+        directories: src
+        level: 0
+
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
