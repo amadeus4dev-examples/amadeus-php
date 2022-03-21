@@ -12,7 +12,10 @@ jobs:
 
     strategy:
       matrix:
-        php: [ 7.4 ]
+        php: [ 7.2, 7.3, 7.4, 8.0, 8.1 ]
+        dependencies:
+          - "lowest"
+          - "highest"
 
     name: PHP ${{ matrix.php }}
     steps:
@@ -32,6 +35,10 @@ jobs:
 
     - name: Install dependencies
       run: composer install
+
+    - name: Update Dependencies
+      if: ${{ matrix.dependencies == 'lowest' }}
+      run: composer update --prefer-lowest --prefer-stable -n
 
     - name: Run phpstan
       run: vendor/bin/phpstan analyse src test
