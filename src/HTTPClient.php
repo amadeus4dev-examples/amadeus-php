@@ -81,6 +81,10 @@ class HTTPClient
     {
         $url = $this->configuration->getBaseUrl().$path;
         $headers = $this->prepareHeaders();
+        if(in_array($path, Constants::API_NEED_EXTRA_HEADER))
+        {
+            $headers[] = "X-HTTP-Method-Override: GET";
+        }
 
         $ch = curl_init();
         $this->setCurlOptions($ch, $url, $headers);
@@ -149,7 +153,7 @@ class HTTPClient
     }
 
     /**
-     * @param Response response
+     * @param Response $response
      * @return void
      */
     protected function detectError(Response  $response): void
@@ -195,7 +199,6 @@ class HTTPClient
             'Accept: application/json, application/vnd.amadeus+json',
             'Authorization: Bearer ' .$this->getAuthorizedToken()->getAccessToken(),
             'Content-Type: application/vnd.amadeus+json',
-            'X-HTTP-Method-Override: GET'
         );
     }
 
