@@ -2,6 +2,7 @@
 
 namespace Amadeus;
 
+use Amadeus\Exceptions\ResponseException;
 use Exception;
 
 class Configuration
@@ -31,7 +32,7 @@ class Configuration
 
     /**
      * @return Amadeus
-     * @throws Exception
+     * @throws ResponseException
      */
     public function build(): Amadeus
     {

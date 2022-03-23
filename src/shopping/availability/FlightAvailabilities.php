@@ -3,9 +3,9 @@
 namespace Amadeus\Shopping\Availability;
 
 use Amadeus\Amadeus;
+use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\FlightAvailability;
 use Amadeus\Resources\Resource;
-use Exception;
 
 class FlightAvailabilities
 {
@@ -21,7 +21,7 @@ class FlightAvailabilities
 
     /**
      * @return FlightAvailability[]
-     * @throws Exception
+     * @throws ResponseException
      */
     public function post(string $body): iterable
     {

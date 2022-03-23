@@ -2,7 +2,7 @@
 
 namespace Amadeus;
 
-use Exception;
+use Amadeus\Exceptions\ResponseException;
 
 class Amadeus extends HTTPClient
 {
@@ -12,7 +12,7 @@ class Amadeus extends HTTPClient
 
     /**
      * @param Configuration $configuration
-     * @throws Exception
+     * @throws ResponseException
      */
     public function __construct
     (

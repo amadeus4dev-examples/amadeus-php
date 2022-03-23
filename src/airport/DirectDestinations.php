@@ -3,6 +3,7 @@
 namespace Amadeus\Airport;
 
 use Amadeus\Amadeus;
+use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\Destination;
 use Amadeus\Resources\Resource;
 use Exception;
@@ -22,7 +23,7 @@ class DirectDestinations
     /**
      * @param array $query
      * @return Destination[]
-     * @throws Exception
+     * @throws ResponseException
      */
     public function get(array $query) : iterable
     {

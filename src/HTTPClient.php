@@ -6,8 +6,8 @@ use Amadeus\Client\AccessToken;
 use Amadeus\Exceptions\AuthenticationException;
 use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\NotFoundException;
+use Amadeus\Exceptions\ResponseException;
 use Amadeus\Exceptions\ServerException;
-use Exception;
 
 class HTTPClient
 {
@@ -17,7 +17,7 @@ class HTTPClient
 
     /**
      * @param Configuration $configuration
-     * @throws Exception
+     * @throws ResponseException
      */
     public function __construct(Configuration $configuration)
     {
@@ -52,7 +52,7 @@ class HTTPClient
      * @param string $path
      * @param array $query
      * @return Response
-     * @throws Exception
+     * @throws ResponseException
      */
     public function get(string $path, array $query): Response
     {
@@ -75,7 +75,7 @@ class HTTPClient
      * @param string $path
      * @param string $body
      * @return Response
-     * @throws Exception
+     * @throws ResponseException
      */
     public function post(string $path, string $body): Response
     {
@@ -102,7 +102,7 @@ class HTTPClient
 
     /**
      * @return AccessToken
-     * @throws Exception
+     * @throws ResponseException
      */
     public function getAuthorizedToken(): AccessToken
     {
@@ -124,7 +124,7 @@ class HTTPClient
 
     /**
      * @return AccessToken
-     * @throws Exception
+     * @throws ResponseException
      */
     protected function fetchAccessToken(): AccessToken
     {
@@ -155,6 +155,7 @@ class HTTPClient
     /**
      * @param Response $response
      * @return void
+     * @throws ResponseException
      */
     protected function detectError(Response  $response): void
     {
@@ -184,8 +185,7 @@ class HTTPClient
 
         if ($exception != null)
         {
-            echo $exception->__toString();
-            echo "Trace:\n" . $exception->getTraceAsString();
+            throw $exception;
         }
     }
 
