@@ -110,17 +110,18 @@ class HTTPClient
     /**
      * @throws ResponseException
      */
-    public function updateAccessToken(): void
+    protected function updateAccessToken(): void
     {
         // Checks if the current access token expires.
         if($this->accessToken!=null){
             if($this->accessToken->getExpiresAt() < time()){
-                print_r('AccessToken expired!');
+                print_r('AccessToken expired!'."\n");
                 // If expired then refresh the token
                 $this->accessToken = $this->fetchAccessToken();
             }
         }else{
             // Else still return the current token
+            print_r("First time to fetch AccessToken!"."\n");
             $this->accessToken = $this->fetchAccessToken();
         }
     }

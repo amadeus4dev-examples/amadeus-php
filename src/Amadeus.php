@@ -12,7 +12,6 @@ class Amadeus extends HTTPClient
 
     /**
      * @param Configuration $configuration
-     * @throws ResponseException
      */
     public function __construct
     (
