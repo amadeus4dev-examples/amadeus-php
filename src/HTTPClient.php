@@ -117,18 +117,18 @@ class HTTPClient
             if($this->accessToken->getExpiresAt() < time()){
                 print_r('AccessToken expired!');
                 // If expired then refresh the token
-                $this->fetchAccessToken();
+                $this->accessToken = $this->fetchAccessToken();
             }
         }else{
             // Else still return the current token
-            $this->fetchAccessToken();
+            $this->accessToken = $this->fetchAccessToken();
         }
     }
 
     /**
      * @throws ResponseException
      */
-    public function fetchAccessToken(): void
+    public function fetchAccessToken(): AccessToken
     {
         $url = $this->configuration->getBaseUrl().'/v1/security/oauth2/token';
         $headers = array(
@@ -151,7 +151,7 @@ class HTTPClient
         $response = new Response($info,$result);
         $this->detectError($response);
 
-        $this->accessToken = new AccessToken($response->getResult());
+        return new AccessToken($response->getResult());
     }
 
     /**
