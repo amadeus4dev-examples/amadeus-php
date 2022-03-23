@@ -11,18 +11,16 @@ use Amadeus\Exceptions\ServerException;
 
 class HTTPClient
 {
-    protected AccessToken $accessToken;
+    protected ?AccessToken $accessToken = null;
 
     private Configuration $configuration;
 
     /**
      * @param Configuration $configuration
-     * @throws ResponseException
      */
     public function __construct(Configuration $configuration)
     {
         $this->configuration = $configuration;
-        $this->accessToken = $this->fetchAccessToken();
     }
 
     /**
@@ -101,32 +99,36 @@ class HTTPClient
     }
 
     /**
-     * @return AccessToken
      * @throws ResponseException
      */
     public function getAuthorizedToken(): AccessToken
     {
+        $this->updateAccessToken();
+        return $this->accessToken;
+    }
+
+    /**
+     * @throws ResponseException
+     */
+    public function updateAccessToken(): void
+    {
         // Checks if the current access token expires.
-        if($this->accessToken->getAccessToken()!=null){
+        if($this->accessToken!=null){
             if($this->accessToken->getExpiresAt() < time()){
                 print_r('AccessToken expired!');
                 // If expired then refresh the token
-                return $this->fetchAccessToken();
-            }else{
-                // Else still return the current token
-                return $this->accessToken;
+                $this->fetchAccessToken();
             }
         }else{
             // Else still return the current token
-            return $this->fetchAccessToken();
+            $this->fetchAccessToken();
         }
     }
 
     /**
-     * @return AccessToken
      * @throws ResponseException
      */
-    protected function fetchAccessToken(): AccessToken
+    public function fetchAccessToken(): void
     {
         $url = $this->configuration->getBaseUrl().'/v1/security/oauth2/token';
         $headers = array(
@@ -149,7 +151,7 @@ class HTTPClient
         $response = new Response($info,$result);
         $this->detectError($response);
 
-        return new AccessToken($response->getResult());
+        $this->accessToken = new AccessToken($response->getResult());
     }
 
     /**
@@ -191,7 +193,7 @@ class HTTPClient
 
     /**
      * @return array
-     * @throws Exception
+     * @throws ResponseException
      */
     private function prepareHeaders(): array
     {
