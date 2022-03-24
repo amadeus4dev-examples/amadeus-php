@@ -115,13 +115,13 @@ class HTTPClient
         // Checks if the current access token expires.
         if($this->accessToken!=null){
             if($this->accessToken->getExpiresAt() < time()){
-                print_r('AccessToken expired!'."\n");
+                //print_r('AccessToken expired!'."\n");
                 // If expired then refresh the token
                 $this->accessToken = $this->fetchAccessToken();
             }
         }else{
             // Else still return the current token
-            print_r("First time to fetch AccessToken!"."\n");
+            //print_r("First time to fetch AccessToken!"."\n");
             $this->accessToken = $this->fetchAccessToken();
         }
     }
@@ -188,7 +188,7 @@ class HTTPClient
 
         if ($exception != null)
         {
-            echo $exception."\n";
+            throw $exception;
         }
     }
 
