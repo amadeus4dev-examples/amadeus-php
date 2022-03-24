@@ -32,7 +32,6 @@ class Configuration
 
     /**
      * @return Amadeus
-     * @throws ResponseException
      */
     public function build(): Amadeus
     {

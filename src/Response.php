@@ -18,11 +18,11 @@ class Response
     }
 
     /**
-     * @return array
+     * @return object
      */
-    public function getInfo(): array
+    public function getInfo(): object
     {
-        return $this->info;
+        return (object)$this->info;
     }
 
     /**

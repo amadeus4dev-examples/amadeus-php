@@ -163,7 +163,7 @@ class HTTPClient
     protected function detectError(Response  $response): void
     {
         $exception = null;
-        $statusCode = $response->getInfo()['http_code'];
+        $statusCode = $response->getInfo()->{'http_code'};
 
         if ($statusCode >= 500)
         {
@@ -188,7 +188,7 @@ class HTTPClient
 
         if ($exception != null)
         {
-            throw $exception;
+            echo $exception."\n";
         }
     }
 

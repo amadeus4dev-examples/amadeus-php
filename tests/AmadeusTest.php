@@ -10,7 +10,7 @@ use TypeError;
 
 final class AmadeusTest extends TestCase
 {
-    public function testBuilder(): void
+    public function testBuilder()
     {
         $this->assertTrue(
             Amadeus::builder("id", "secret") instanceof Configuration,
@@ -18,18 +18,12 @@ final class AmadeusTest extends TestCase
         );
     }
 
-    /**
-     * @throws Exception
-     */
     public function testBuilderWithNullClientId()
     {
         $this->expectException(TypeError::class);
         Amadeus::builder(null,"secret")->build();
     }
 
-    /**
-     * @throws Exception
-     */
     public function testBuilderWithNullClientSecret()
     {
         $this->expectException(TypeError::class);
