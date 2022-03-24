@@ -12,7 +12,7 @@ class ResponseException extends Exception
      */
     public function __construct(Response $response)
     {
-        parent::__construct(json_encode($response->getResult()),$response->getInfo()['http_code']);
+        parent::__construct(json_encode($response->getResult()),$response->getInfo()->{'http_code'});
     }
 
     public function __toString(): string
