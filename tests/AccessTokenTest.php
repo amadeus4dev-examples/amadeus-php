@@ -10,28 +10,28 @@ use PHPUnit\Framework\TestCase;
 
 final class AccessTokenTest extends TestCase
 {
-    /**
-     * @var Amadeus
-     */
-    private $client;
-
-    protected function setUp(): void
-    {
-        $this->client = $this->createMock(Amadeus::class);
-
-        $configuration = new Configuration("client_id", "client_secret");
-        $this->client->expects($this->any())
-            ->method("getConfiguration")
-            ->willReturn($configuration);
-
-        $result = (object) [
-          "access_token" => "my_token",
-          "expires_at" => time() + 600
-        ];
-        $this->client->expects($this->any())
-            ->method("fetchAccessToken")
-            ->willReturn(new AccessToken($result));
-    }
+//    /**
+//     * @var Amadeus
+//     */
+//    private $client;
+//
+//    protected function setUp(): void
+//    {
+//        $this->client = $this->createMock(Amadeus::class);
+//
+//        $configuration = new Configuration("client_id", "client_secret");
+//        $this->client->expects($this->any())
+//            ->method("getConfiguration")
+//            ->willReturn($configuration);
+//
+//        $result = (object) [
+//          "access_token" => "my_token",
+//          "expires_at" => time() + 600
+//        ];
+//        $this->client->expects($this->any())
+//            ->method("fetchAccessToken")
+//            ->willReturn(new AccessToken($result));
+//    }
 
 //    /**
 //     * @throws ResponseException
