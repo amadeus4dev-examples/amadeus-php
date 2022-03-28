@@ -29,7 +29,7 @@ class HTTPClient
      * @param array $headers
      * @return void
      */
-    private function setCurlOptions($ch, string $url, array $headers): void
+    public function setCurlOptions($ch, string $url, array $headers): void
     {
         // Url
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -40,10 +40,9 @@ class HTTPClient
         // Transfer the return to string
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-        // SSL
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
-        curl_setopt($ch, CURLOPT_CAINFO, "/CA/cacert.pem");
+        //for debug only!
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     }
 
     /**
