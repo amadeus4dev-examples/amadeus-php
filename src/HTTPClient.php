@@ -15,6 +15,10 @@ class HTTPClient
 
     private Configuration $configuration;
 
+    private $ch = null;
+
+    private ?string $sslCertificate = null;
+
     /**
      * @param Configuration $configuration
      */
@@ -24,25 +28,42 @@ class HTTPClient
     }
 
     /**
-     * @param $ch
+     * @param string $filePath
+     * @return void
+     */
+    public function setSslVerify(string $filePath)
+    {
+        $this->sslCertificate = $filePath;
+    }
+
+    /**
      * @param string $url
      * @param array $headers
      * @return void
      */
-    public function setCurlOptions($ch, string $url, array $headers): void
+    private function setCurlOptions(string $url, array $headers): void
     {
         // Url
-        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($this->ch, CURLOPT_URL, $url);
 
         // Header
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($this->ch, CURLOPT_HTTPHEADER, $headers);
 
         // Transfer the return to string
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
 
-        //for debug only!
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        if($this->sslCertificate != null)
+        {
+            curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, 2);
+            curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, 1);
+            curl_setopt($this->ch, CURLOPT_CAINFO, $this->sslCertificate);
+        }
+        else
+        {
+            //for debug only!
+            curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, false);
+        }
     }
 
     /**
@@ -56,11 +77,11 @@ class HTTPClient
         $url = $this->configuration->getBaseUrl().$path.'?'.http_build_query($query);
         $headers = $this->prepareHeaders();
 
-        $ch = curl_init();
-        $this->setCurlOptions($ch, $url, $headers);
-        $result = json_decode(curl_exec($ch));
-        $info = curl_getinfo($ch);
-        curl_close($ch);
+        $this->ch = curl_init();
+        $this->setCurlOptions($url, $headers);
+        $result = json_decode(curl_exec($this->ch));
+        $info = curl_getinfo($this->ch);
+        curl_close($this->ch);
 
         $response = new Response($info, $result);
         $this->detectError($response);
@@ -83,13 +104,13 @@ class HTTPClient
             $headers[] = "X-HTTP-Method-Override: GET";
         }
 
-        $ch = curl_init();
-        $this->setCurlOptions($ch, $url, $headers);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch,CURLOPT_POSTFIELDS, $body);
-        $result = json_decode(curl_exec($ch));
-        $info = curl_getinfo($ch);
-        curl_close($ch);
+        $this->ch = curl_init();
+        $this->setCurlOptions($url, $headers);
+        curl_setopt($this->ch, CURLOPT_POST, true);
+        curl_setopt($this->ch,CURLOPT_POSTFIELDS, $body);
+        $result = json_decode(curl_exec($this->ch));
+        $info = curl_getinfo($this->ch);
+        curl_close($this->ch);
 
         $response = new Response($info, $result);
         $this->detectError($response);
@@ -140,13 +161,13 @@ class HTTPClient
             'grant_type' => 'client_credentials'
         );
 
-        $ch = curl_init();
-        $this->setCurlOptions($ch, $url, $headers);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-        $result = json_decode(curl_exec($ch));
-        $info = curl_getinfo($ch);
-        curl_close($ch);
+        $this->ch = curl_init();
+        $this->setCurlOptions($url, $headers);
+        curl_setopt($this->ch, CURLOPT_POST, true);
+        curl_setopt($this->ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        $result = json_decode(curl_exec($this->ch));
+        $info = curl_getinfo($this->ch);
+        curl_close($this->ch);
 
         $response = new Response($info,$result);
         $this->detectError($response);

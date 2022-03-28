@@ -36,6 +36,9 @@ try
     $amadeus = Amadeus
         ::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
         ->build();
+        
+    // Optionally open SSL verification
+    $amadeus->setSslVerify($YOUR_SSL_CERT_PATH);
 
     // Airport Route API GET
     $destinations = $amadeus->airport->directDestinations->get(
