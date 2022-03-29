@@ -7,9 +7,9 @@ use Amadeus\Response;
 class AuthenticationException extends ResponseException
 {
     /**
-     * @param Response $response
+     * @param Response|null $response
      */
-    public function __construct(Response $response)
+    public function __construct(?Response $response)
     {
         parent::__construct($response);
     }

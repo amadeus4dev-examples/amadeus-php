@@ -149,7 +149,7 @@ class HTTPClient
     /**
      * @throws ResponseException
      */
-    public function fetchAccessToken(): AccessToken
+    protected function fetchAccessToken(): AccessToken
     {
         $url = $this->configuration->getBaseUrl().'/v1/security/oauth2/token';
         $headers = array(
@@ -183,7 +183,7 @@ class HTTPClient
     protected function detectError(Response  $response): void
     {
         $exception = null;
-        $statusCode = $response->getInfo()->{'http_code'};
+        $statusCode = $response->getStatusCode();
 
         if ($statusCode >= 500)
         {
@@ -208,6 +208,7 @@ class HTTPClient
 
         if ($exception != null)
         {
+            print $exception;
             throw $exception;
         }
     }

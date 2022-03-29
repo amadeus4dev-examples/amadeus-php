@@ -15,7 +15,7 @@ class Resource
      */
     public static function fromObject(Response $response, string $class): object
     {
-        $data = $response->getResult()->{'data'}; // $data is an object
+        $data = $response->getData(); // $data is an object
         $resource = new $class();
         foreach($data as $key => $value)
         {
@@ -32,7 +32,7 @@ class Resource
      */
     public static function fromArray(Response $response, string $class): array
     {
-        $data = $response->getResult()->{'data'}; // $data is an array
+        $data = $response->getData(); // $data is an array
         $resources = array();
         foreach ($data as $object)
         {

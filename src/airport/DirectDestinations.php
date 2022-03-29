@@ -6,7 +6,6 @@ use Amadeus\Amadeus;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\Destination;
 use Amadeus\Resources\Resource;
-use Exception;
 
 class DirectDestinations
 {
