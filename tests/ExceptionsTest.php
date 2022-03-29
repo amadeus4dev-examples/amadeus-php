@@ -10,7 +10,7 @@ use Amadeus\Exceptions\ServerException;
 use Amadeus\Response;
 use PHPUnit\Framework\TestCase;
 
-final class ExceptionTest extends TestCase
+final class ExceptionsTest extends TestCase
 {
     public function testNoResponse()
     {
