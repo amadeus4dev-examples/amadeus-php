@@ -15,6 +15,9 @@ final class AccessTokenTest extends TestCase
      */
     private $client;
 
+    /**
+     * @Before
+     */
     protected function setUp(): void
     {
         $this->client = $this->createMock(Amadeus::class);
