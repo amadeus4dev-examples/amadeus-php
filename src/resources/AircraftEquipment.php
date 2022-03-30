@@ -36,7 +36,7 @@ class AircraftEquipment
      */
     public function __toString(): string
     {
-        return json_encode(get_object_vars($this))."\n";
+        return json_encode(get_object_vars($this));
     }
 
 }
