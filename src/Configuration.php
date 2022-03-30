@@ -2,9 +2,6 @@
 
 namespace Amadeus;
 
-use Amadeus\Exceptions\ResponseException;
-use Exception;
-
 class Configuration
 {
     private string $clientId;

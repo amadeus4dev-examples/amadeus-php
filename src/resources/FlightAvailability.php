@@ -1,11 +1,4 @@
-<?php
-
-/**
- * @noinspection PhpPropertyOnlyWrittenInspection
- * @noinspection PhpUnused
- */
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
@@ -85,11 +78,7 @@ class FlightAvailability extends Resource
             $this->segments, ExtendedSegment::class);
     }
 
-    /**
-     * @param $name
-     * @param $value
-     * @return void
-     */
+    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
