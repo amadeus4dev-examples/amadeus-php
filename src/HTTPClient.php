@@ -208,7 +208,18 @@ class HTTPClient
 
         if ($exception != null)
         {
-            print $exception;
+            // Log the error into file
+            if($this->configuration->getLogger() == true)
+            {
+                if($this->configuration->getMsgDestination())
+                {
+                    error_log($exception->__toString(), $this->configuration->getMsgType(), $this->configuration->getMsgDestination());
+                }
+                else
+                {
+                    error_log($exception->__toString(), $this->configuration->getMsgType());
+                }
+            }
             throw $exception;
         }
     }

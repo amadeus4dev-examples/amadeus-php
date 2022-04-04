@@ -2,8 +2,6 @@
 
 namespace Amadeus;
 
-use Amadeus\Exceptions\ResponseException;
-
 class Amadeus extends HTTPClient
 {
     public Airport $airport;

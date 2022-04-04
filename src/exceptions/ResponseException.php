@@ -38,6 +38,10 @@ class ResponseException extends Exception
 
     public function __toString(): string
     {
-        return get_class($this) . ": [$this->code]$this->message";
+        return '['.date("F j, Y, g:i a e O").']'."\n"
+            .get_class($this) .": [$this->code]" ."\n"
+            .$this->message ."\n"
+            .$this->getUrl() ."\n"
+            .$this->getTraceAsString()."\n";
     }
 }

@@ -4,7 +4,6 @@ namespace Amadeus\Tests;
 
 use Amadeus\Configuration;
 use PHPUnit\Framework\TestCase;
-use function PHPUnit\Framework\assertNotNull;
 
 final class ConfigurationTest extends TestCase
 {
@@ -51,6 +50,34 @@ final class ConfigurationTest extends TestCase
         $this->assertEquals(
           "https://api.amadeus.com",
           $configuration->getBaseUrl()
+        );
+    }
+
+    public function testBuildWithLoggerSystemPath()
+    {
+        $configuration = (new Configuration("id", "secret"))
+            ->setLogger(0);
+        $this->assertEquals(
+            true,
+            $configuration->getLogger()
+        );
+        $this->assertEquals(
+            0,
+            $configuration->getMsgType()
+        );
+    }
+
+    public function testBuildWithLoggerCustomPath()
+    {
+        $configuration = (new Configuration("id", "secret"))
+            ->setLogger(3, "./custom_path/amadeus.log");
+        $this->assertEquals(
+            true,
+            $configuration->getLogger()
+        );
+        $this->assertEquals(
+            "./custom_path/amadeus.log",
+            $configuration->getMsgDestination()
         );
     }
 }
