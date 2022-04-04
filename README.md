@@ -36,9 +36,6 @@ try
     $amadeus = Amadeus
         ::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
         ->build();
-        
-    // Optionally open SSL verification
-    $amadeus->setSslVerify($YOUR_SSL_CERT_PATH);
 
     // Airport Route API GET
     $destinations = $amadeus->airport->directDestinations->get(
@@ -100,4 +97,55 @@ catch (Exception $e)
 {
     print_r($e);
 }
+```
+
+## Initialization
+The client can be initialized directly:
+```PHP
+//Initialize using parameters
+$amadeus = Amadeus
+    ::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
+    ->build();
+```
+
+Your credentials can be found on the [Amadeus dashboard](https://developers.amadeus.com/my-apps).
+
+By default, the SDK is set to `test` environment. To switch to a `production` (pay-as-you-go) environment, please switch the hostname as follows:
+
+```PHP
+//Initialize using parameters
+$amadeus = Amadeus
+    ::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
+    ->setProductionEnvironment()
+    ->build();
+```
+
+## Use SSL certificate
+This library is using PHP core extension cURL for making Http Request but disabling the options for SSL verification. 
+Thus it is highly suggested using a certificate with PHP’s cURL functions.
+
+You can download the ```cacert.pem``` certificate bundle from the [official cURL website](https://curl.se/docs/caextract.html). 
+Once you have downloaded the ```cacert.pem``` file, you should move it to whatever directory makes the most sense for you and your setup. 
+```PHP
+// Set your certificate path for opening SSL verification
+$amadeus->setSslVerify($REPLACE_BY_YOUR_SSL_CERT_PATH);
+```
+
+## Error Log
+The SDK includes [error_log](https://www.php.net/manual/en/function.error-log.php) function, which makes it easier locate the error produced in this SDK.
+
+Error Message can be sent to PHP's system logger, using the Operating System's system logging mechanism or a file, depending on what the [error_log](https://www.php.net/manual/en/errorfunc.configuration.php#ini.error-log) configuration directive is set to. This is the default option.
+```PHP
+$amadeus = Amadeus
+    ::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
+    ->setLogger()
+    ->build();
+```
+
+Alternatively, Error Message can be appended to the file destination.
+```PHP
+$amadeus = Amadeus
+    ::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
+    ->setLogger("REPLACE_BY_YOUR_CUSTOM_LOG_FILE_PATH")
+    ->build();
 ```
