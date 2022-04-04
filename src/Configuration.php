@@ -82,14 +82,20 @@ class Configuration
     }
 
     /**
-     * @param int $msgType
      * @param string|null $msgDestination
      * @return Configuration
      */
-    public function setLogger(int $msgType, ?string $msgDestination=null): Configuration
+    public function setLogger(?string $msgDestination=null): Configuration
     {
         $this->logger = true;
-        $this->msgType = $msgType;
+        if($msgDestination != null)
+        {
+            $this->msgType = 3;
+        }
+        else
+        {
+            $this->msgType = 0;
+        }
         $this->msgDestination = $msgDestination;
         return new Configuration($this->clientId, $this->clientSecret, $this->base_url,
             $this->logger, $this->msgType, $this->msgDestination);

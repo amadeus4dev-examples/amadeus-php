@@ -56,7 +56,7 @@ final class ConfigurationTest extends TestCase
     public function testBuildWithLoggerSystemPath()
     {
         $configuration = (new Configuration("id", "secret"))
-            ->setLogger(0);
+            ->setLogger();
         $this->assertEquals(
             true,
             $configuration->getLogger()
@@ -70,7 +70,7 @@ final class ConfigurationTest extends TestCase
     public function testBuildWithLoggerCustomPath()
     {
         $configuration = (new Configuration("id", "secret"))
-            ->setLogger(3, "./custom_path/amadeus.log");
+            ->setLogger("./custom_path/amadeus.log");
         $this->assertEquals(
             true,
             $configuration->getLogger()
