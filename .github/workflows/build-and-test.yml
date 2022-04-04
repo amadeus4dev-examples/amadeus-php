@@ -37,7 +37,7 @@ jobs:
       run: composer update --ignore-platform-reqs
 
     - name: Run PHPStan
-      run: vendor/bin/phpstan analyse src tests
+      run: vendor/bin/phpstan analyse src tests --level 5
 
     - name: Run PHPUnit
       run: vendor/bin/phpunit tests
