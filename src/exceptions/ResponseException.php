@@ -40,8 +40,8 @@ class ResponseException extends Exception
     {
         return '['.date("F j, Y, g:i a e O").']'."\n"
             .get_class($this) .": [$this->code]" ."\n"
-            .$this->message ."\n"
-            .$this->getUrl() ."\n"
-            .$this->getTraceAsString()."\n";
+            ."Message: ".$this->message ."\n"
+            ."Url: ".$this->getUrl() ."\n"
+            ."Trace: ".$this->getTraceAsString()."\n";
     }
 }

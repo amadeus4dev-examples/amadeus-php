@@ -15,10 +15,13 @@ final class ExceptionsTest extends TestCase
     public function testNoResponse()
     {
         $error = new ResponseException(null);
-        print($error);
+        $error = explode("\n", $error->__toString());
         $this->assertEquals(
-            "Amadeus\Exceptions\ResponseException: [0]",
-            $error->__toString()
+            '['.date("F j, Y, g:i a e O").']'."\n"
+            ."Amadeus\Exceptions\ResponseException: [0]"."\n"
+            ."Message: "."\n"
+            ."Url: "."\n",
+            join("\n", array_slice($error, 0, 4))."\n"
         );
     }
 
@@ -30,10 +33,13 @@ final class ExceptionsTest extends TestCase
         $result = (object) null;
         $response = new Response($info, $result);
         $error = new ResponseException($response);
-        print($error);
+        $error = explode("\n", $error->__toString());
         $this->assertEquals(
-            "Amadeus\Exceptions\ResponseException: [0]",
-            $error->__toString()
+            '['.date("F j, Y, g:i a e O").']'."\n"
+            ."Amadeus\Exceptions\ResponseException: [0]"."\n"
+            ."Message: "."\n"
+            ."Url: "."\n",
+            join("\n", array_slice($error, 0, 4))."\n"
         );
     }
 
@@ -46,10 +52,13 @@ final class ExceptionsTest extends TestCase
         $result = (object) null;
         $response = new Response($info, $result);
         $error = new ResponseException($response);
-        print($error);
+        $error = explode("\n", $error->__toString());
         $this->assertEquals(
-            "Amadeus\Exceptions\ResponseException: [400]{}",
-            $error->__toString()
+            '['.date("F j, Y, g:i a e O").']'."\n"
+            ."Amadeus\Exceptions\ResponseException: [400]"."\n"
+            ."Message: {}"."\n"
+            ."Url: "."\n",
+            join("\n", array_slice($error, 0, 4))."\n"
         );
     }
 
@@ -64,10 +73,13 @@ final class ExceptionsTest extends TestCase
         ];
         $response = new Response($info, $result);
         $error = new ResponseException($response);
-        print($error);
+        $error = explode("\n", $error->__toString());
         $this->assertEquals(
-            "Amadeus\Exceptions\ResponseException: [401]{\"error_description\":\"error message\"}",
-            $error->__toString()
+            '['.date("F j, Y, g:i a e O").']'."\n"
+            ."Amadeus\Exceptions\ResponseException: [401]"."\n"
+            ."Message: {\"error_description\":\"error message\"}"."\n"
+            ."Url: "."\n",
+            join("\n", array_slice($error, 0, 4))."\n"
         );
     }
 
