@@ -95,7 +95,9 @@ class Response
      */
     public function __toString(): string
     {
-        return json_encode(get_object_vars($this));
+        return
+            "headers=".$this->headers
+            ."body=".$this->body;
     }
 
     /**
