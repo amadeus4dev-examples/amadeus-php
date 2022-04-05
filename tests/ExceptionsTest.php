@@ -17,7 +17,7 @@ final class ExceptionsTest extends TestCase
         $error = new ResponseException(null);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
-            '['.date("F j, Y, g:i a e O").']'."\n"
+            '['.date("F j, Y, g:i a").']'."\n"
             ."Amadeus\Exceptions\ResponseException: [0]"."\n"
             ."Message: "."\n"
             ."Url: "."\n",
@@ -36,7 +36,7 @@ final class ExceptionsTest extends TestCase
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
-            '['.date("F j, Y, g:i a e O").']'."\n"
+            '['.date("F j, Y, g:i a").']'."\n"
             ."Amadeus\Exceptions\ResponseException: [0]"."\n"
             ."Message: "."\n"
             ."Url: "."\n",
@@ -56,7 +56,7 @@ final class ExceptionsTest extends TestCase
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
-            '['.date("F j, Y, g:i a e O").']'."\n"
+            '['.date("F j, Y, g:i a").']'."\n"
             ."Amadeus\Exceptions\ResponseException: [400]"."\n"
             ."Message:   "."\n"
             ."Url: "."\n",
@@ -76,7 +76,7 @@ final class ExceptionsTest extends TestCase
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
-            '['.date("F j, Y, g:i a e O").']'."\n"
+            '['.date("F j, Y, g:i a").']'."\n"
             ."Amadeus\Exceptions\ResponseException: [401]"."\n"
             ."Message: message headers{message body}"."\n"
             ."Url: "."\n",
