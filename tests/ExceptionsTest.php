@@ -30,8 +30,9 @@ final class ExceptionsTest extends TestCase
         $info = array(
             "http_code" => null
         );
-        $result = (object) null;
-        $response = new Response($info, $result);
+        $headers = null;
+        $body =  null;
+        $response = new Response($info, $headers, $body);
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
@@ -49,14 +50,15 @@ final class ExceptionsTest extends TestCase
             "url" => null,
             "http_code" => 400
         );
-        $result = (object) null;
-        $response = new Response($info, $result);
+        $headers = " ";
+        $body =  " ";
+        $response = new Response($info, $headers, $body);
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
             '['.date("F j, Y, g:i a e O").']'."\n"
             ."Amadeus\Exceptions\ResponseException: [400]"."\n"
-            ."Message: {}"."\n"
+            ."Message:   "."\n"
             ."Url: "."\n",
             join("\n", array_slice($error, 0, 4))."\n"
         );
@@ -68,16 +70,15 @@ final class ExceptionsTest extends TestCase
             "url" => null,
             "http_code" => 401
         );
-        $result = (object)[
-            "error_description" => "error message"
-        ];
-        $response = new Response($info, $result);
+        $headers = "message headers";
+        $body = "{message body}";
+        $response = new Response($info, $headers, $body);
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
             '['.date("F j, Y, g:i a e O").']'."\n"
             ."Amadeus\Exceptions\ResponseException: [401]"."\n"
-            ."Message: {\"error_description\":\"error message\"}"."\n"
+            ."Message: message headers{message body}"."\n"
             ."Url: "."\n",
             join("\n", array_slice($error, 0, 4))."\n"
         );

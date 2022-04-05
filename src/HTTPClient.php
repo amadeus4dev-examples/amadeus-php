@@ -52,6 +52,9 @@ class HTTPClient
         // Transfer the return to string
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
 
+        // Include the header in the output
+        curl_setopt($this->ch, CURLOPT_HEADER, true);
+
         if($this->sslCertificate != null)
         {
             curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, 2);
@@ -79,11 +82,15 @@ class HTTPClient
 
         $this->ch = curl_init();
         $this->setCurlOptions($url, $headers);
-        $result = json_decode(curl_exec($this->ch));
+        $result = curl_exec($this->ch);
         $info = curl_getinfo($this->ch);
+        $headersSize = curl_getinfo($this->ch, CURLINFO_HEADER_SIZE);
         curl_close($this->ch);
 
-        $response = new Response($info, $result);
+        $headers = substr($result, 0, $headersSize);
+        $body = substr($result, $headersSize);
+
+        $response = new Response($info, $headers, $body);
         $this->detectError($response);
 
         return $response;
@@ -108,11 +115,15 @@ class HTTPClient
         $this->setCurlOptions($url, $headers);
         curl_setopt($this->ch, CURLOPT_POST, true);
         curl_setopt($this->ch,CURLOPT_POSTFIELDS, $body);
-        $result = json_decode(curl_exec($this->ch));
+        $result = curl_exec($this->ch);
         $info = curl_getinfo($this->ch);
+        $headersSize = curl_getinfo($this->ch, CURLINFO_HEADER_SIZE);
         curl_close($this->ch);
 
-        $response = new Response($info, $result);
+        $headers = substr($result, 0, $headersSize);
+        $body = substr($result, $headersSize);
+
+        $response = new Response($info, $headers, $body);
         $this->detectError($response);
 
         return $response;
@@ -165,14 +176,18 @@ class HTTPClient
         $this->setCurlOptions($url, $headers);
         curl_setopt($this->ch, CURLOPT_POST, true);
         curl_setopt($this->ch, CURLOPT_POSTFIELDS, http_build_query($data));
-        $result = json_decode(curl_exec($this->ch));
+        $result = curl_exec($this->ch);
         $info = curl_getinfo($this->ch);
+        $headersSize = curl_getinfo($this->ch, CURLINFO_HEADER_SIZE);
         curl_close($this->ch);
 
-        $response = new Response($info,$result);
+        $headers = substr($result, 0, $headersSize);
+        $body = substr($result, $headersSize);
+
+        $response = new Response($info, $headers, $body);
         $this->detectError($response);
 
-        return new AccessToken($response->getResult());
+        return new AccessToken($response->getBodyAsJsonObject());
     }
 
     /**
@@ -244,4 +259,5 @@ class HTTPClient
     {
         return $this->configuration;
     }
+
 }

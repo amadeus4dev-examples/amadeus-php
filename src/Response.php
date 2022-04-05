@@ -4,16 +4,18 @@ namespace Amadeus;
 
 class Response
 {
-    private ?object $result = null;
-
     private ?string $url = null;
     private ?int $statusCode = null;
 
+    private ?string $headers = null;
+    private ?string $body = null;
+
     /**
      * @param array|null $info
-     * @param object|null $result
+     * @param string|null $headers
+     * @param string|null $body
      */
-    public function __construct(?array $info, ?object $result)
+    public function __construct(?array $info, ?string $headers, ?string $body)
     {
         if($info != null)
         {
@@ -21,9 +23,14 @@ class Response
             if(array_key_exists('http_code', $info)) $this->statusCode = $info['http_code'];
         }
 
-        if($result != null)
+        if($headers != null)
         {
-            $this->result = $result;
+            $this->headers = $headers;
+        }
+
+        if($body != null)
+        {
+            $this->body = $body;
         }
     }
 
@@ -44,19 +51,43 @@ class Response
     }
 
     /**
-     * @return null|object
+     * @return string|null
      */
-    public function getResult(): ?object
+    public function getHeaders(): ?string
     {
-        return $this->result;
+        return $this->headers;
     }
 
     /**
-     * @return array|object
+     * @return array|null
+     */
+    public function getHeadersAsArray(): ?array
+    {
+        return $this->headersToArray($this->headers);
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getBody(): ?string
+    {
+        return $this->body;
+    }
+
+    /**
+     * @return object
+     */
+    public function getBodyAsJsonObject(): ?object
+    {
+        return json_decode($this->body);
+    }
+
+    /**
+     * @return array|null|object
      */
     public function getData()
     {
-        return $this->result->{'data'};
+        return $this->getBodyAsJsonObject()->{'data'};
     }
 
     /**
@@ -65,5 +96,31 @@ class Response
     public function __toString(): string
     {
         return json_encode(get_object_vars($this));
+    }
+
+    /**
+     * Convert the output header to array
+     * @param string $str
+     * @return array
+     */
+    public function headersToArray(string $str): array
+    {
+        $headers = array();
+        $headersTmpArray = explode( "\r\n" , $str );
+        for ( $i = 0 ; $i < count( $headersTmpArray ) ; ++$i )
+        {
+            // we don't care about the two \r\n lines at the end of the headers
+            if ( strlen( $headersTmpArray[$i] ) > 0 )
+            {
+                // the headers start with HTTP status codes, which do not contain a colon, so we can filter them out too
+                if ( strpos( $headersTmpArray[$i] , ":" ) )
+                {
+                    $headerName = substr( $headersTmpArray[$i] , 0 , strpos( $headersTmpArray[$i] , ":" ) );
+                    $headerValue = substr( $headersTmpArray[$i] , strpos( $headersTmpArray[$i] , ":" ) + 1 );
+                    $headers[$headerName] = $headerValue;
+                }
+            }
+        }
+        return $headers;
     }
 }

@@ -4,7 +4,6 @@ namespace Amadeus\Tests;
 
 use Amadeus\Amadeus;
 use Amadeus\Configuration;
-use Exception;
 use PHPUnit\Framework\TestCase;
 use TypeError;
 

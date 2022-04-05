@@ -21,9 +21,11 @@ class ResponseException extends Exception
                 $this->url = $response->getUrl();
             }
 
-            if($response->getResult() != null && $response->getStatusCode() != null)
+            if($response->getHeaders() != null
+                && $response->getBody() != null
+                && $response->getStatusCode() != null)
             {
-                parent::__construct(json_encode($response->getResult()), $response->getStatusCode());
+                parent::__construct($response->getHeaders().$response->getBody(), $response->getStatusCode());
             }
         }
     }
