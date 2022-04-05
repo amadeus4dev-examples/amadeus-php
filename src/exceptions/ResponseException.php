@@ -40,7 +40,7 @@ class ResponseException extends Exception
 
     public function __toString(): string
     {
-        return '['.date("F j, Y, g:i a e O").']'."\n"
+        return '['.date("F j, Y, g:i a").']'."\n"
             .get_class($this) .": [$this->code]" ."\n"
             ."Message: ".$this->message ."\n"
             ."Url: ".$this->getUrl() ."\n"
