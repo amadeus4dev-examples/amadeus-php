@@ -38,8 +38,8 @@ final class ConfigurationTest extends TestCase
     {
         $configuration = new Configuration("id", "secret");
         $this->assertEquals(
-            "https://test.api.amadeus.com",
-            $configuration->getBaseUrl()
+            "test.api.amadeus.com",
+            $configuration->getHost()
         );
     }
 
@@ -48,8 +48,8 @@ final class ConfigurationTest extends TestCase
         $configuration = (new Configuration("id", "secret"))
             ->setProductionEnvironment();
         $this->assertEquals(
-          "https://api.amadeus.com",
-          $configuration->getBaseUrl()
+          "api.amadeus.com",
+          $configuration->getHost()
         );
     }
 

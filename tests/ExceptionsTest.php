@@ -30,9 +30,8 @@ final class ExceptionsTest extends TestCase
         $info = array(
             "http_code" => null
         );
-        $headers = null;
-        $body =  null;
-        $response = new Response($info, $headers, $body);
+        $result = null;
+        $response = new Response($info, $result);
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
@@ -48,17 +47,17 @@ final class ExceptionsTest extends TestCase
     {
         $info = array(
             "url" => null,
-            "http_code" => 400
+            "http_code" => 400,
+            "header_size" => 0
         );
-        $headers = " ";
-        $body =  " ";
-        $response = new Response($info, $headers, $body);
+        $result = null;
+        $response = new Response($info, $result);
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
             '['.date("F j, Y, g:i a").']'."\n"
             ."Amadeus\Exceptions\ResponseException: [400]"."\n"
-            ."Message:   "."\n"
+            ."Message: "."\n"
             ."Url: "."\n",
             join("\n", array_slice($error, 0, 4))."\n"
         );
@@ -68,17 +67,17 @@ final class ExceptionsTest extends TestCase
     {
         $info = array(
             "url" => null,
-            "http_code" => 401
+            "http_code" => 401,
+            "header_size" => 0
         );
-        $headers = "message headers";
-        $body = "{message body}";
-        $response = new Response($info, $headers, $body);
+        $result = "message";
+        $response = new Response($info, $result);
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
             '['.date("F j, Y, g:i a").']'."\n"
             ."Amadeus\Exceptions\ResponseException: [401]"."\n"
-            ."Message: message headers{message body}"."\n"
+            ."Message: message"."\n"
             ."Url: "."\n",
             join("\n", array_slice($error, 0, 4))."\n"
         );

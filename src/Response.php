@@ -4,34 +4,55 @@ namespace Amadeus;
 
 class Response
 {
+    private ?array $info = null;
+    private ?string $result = null;
+
     private ?string $url = null;
     private ?int $statusCode = null;
+    private ?int $headerSize = null;
 
     private ?string $headers = null;
     private ?string $body = null;
 
     /**
      * @param array|null $info
-     * @param string|null $headers
-     * @param string|null $body
+     * @param string|null $result
      */
-    public function __construct(?array $info, ?string $headers, ?string $body)
+    public function __construct(?array $info, ?string $result)
     {
         if($info != null)
         {
+            $this->info = $info;
             if(array_key_exists('url', $info)) $this->url = $info['url'];
             if(array_key_exists('http_code', $info)) $this->statusCode = $info['http_code'];
-        }
 
-        if($headers != null)
-        {
-            $this->headers = $headers;
+            if($result != null)
+            {
+                $this->result = $result;
+                if(array_key_exists('header_size', $info))
+                {
+                    $this->headerSize = $info['header_size'];
+                    $this->headers = substr($this->result, 0, $this->headerSize);
+                    $this->body = substr($this->result, $this->headerSize);
+                }
+            }
         }
+    }
 
-        if($body != null)
-        {
-            $this->body = $body;
-        }
+    /**
+     * @return array|null
+     */
+    public function getInfo(): ?array
+    {
+        return $this->info;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getResult(): ?string
+    {
+        return $this->result;
     }
 
     /**
@@ -48,6 +69,14 @@ class Response
     public function getStatusCode(): ?int
     {
         return $this->statusCode;
+    }
+
+    /**
+     * @return int|mixed|null
+     */
+    public function getHeaderSize()
+    {
+        return $this->headerSize;
     }
 
     /**
@@ -95,9 +124,7 @@ class Response
      */
     public function __toString(): string
     {
-        return
-            "headers=".$this->headers
-            ."body=".$this->body;
+        return $this->result;
     }
 
     /**

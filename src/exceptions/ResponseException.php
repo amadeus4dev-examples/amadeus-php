@@ -21,11 +21,21 @@ class ResponseException extends Exception
                 $this->url = $response->getUrl();
             }
 
-            if($response->getHeaders() != null
-                && $response->getBody() != null
-                && $response->getStatusCode() != null)
+            if(($response->getResult() != null) && ($response->getStatusCode() != null))
             {
-                parent::__construct($response->getHeaders().$response->getBody(), $response->getStatusCode());
+                parent::__construct($response->getResult(), $response->getStatusCode());
+            }
+            else if($response->getResult() != null)
+            {
+                parent::__construct($response->getResult(), 0);
+            }
+            else if($response->getStatusCode() != null)
+            {
+                parent::__construct("", $response->getStatusCode());
+            }
+            else
+            {
+                parent::__construct();
             }
         }
     }

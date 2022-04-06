@@ -8,36 +8,28 @@ class Configuration
 
     private string $clientSecret;
 
-    private string $base_url;
+    private string $host = "test.api.amadeus.com";
 
-    private ?bool $logger;
-    private ?int $msgType;
-    private ?string $msgDestination;
+    private bool $ssl = true;
+
+    private int $port = 443;
+
+    private ?bool $logger = false;
+    private ?int $msgType = null;
+    private ?string $msgDestination = null;
 
     /**
      * @param string $clientId
      * @param string $clientSecret
-     * @param string $base_url
-     * @param bool|null $logger
-     * @param int|null $msgType
-     * @param string|null $msgDestination
      */
     public function __construct
     (
         string $clientId,
-        string $clientSecret,
-        string $base_url = 'https://test.api.amadeus.com',
-        ?bool $logger = false,
-        ?int $msgType = null,
-        ?string $msgDestination = null
+        string $clientSecret
     )
     {
         $this->clientId = $clientId;
         $this->clientSecret = $clientSecret;
-        $this->base_url = $base_url;
-        $this->logger = $logger;
-        $this->msgType = $msgType;
-        $this->msgDestination = $msgDestination;
     }
 
     /**
@@ -46,6 +38,29 @@ class Configuration
     public function build(): Amadeus
     {
         return new Amadeus($this);
+    }
+
+    /**
+     * @param bool $ssl
+     * @return Configuration
+     */
+    public function setSsl(bool $ssl): Configuration
+    {
+        $this->ssl = $ssl;
+        if(!$ssl && $this->port == 443)
+        {
+            $this->setPort(80);
+        }
+        return $this;
+    }
+
+    /**
+     * @param int $port
+     * @return void
+     */
+    public function setPort(int $port)
+    {
+        $this->port = $port;
     }
 
     /**
@@ -67,9 +82,9 @@ class Configuration
     /**
      * @return string
      */
-    public function getBaseUrl(): string
+    public function getHost(): string
     {
-        return $this->base_url;
+        return $this->host;
     }
 
     /**
@@ -77,8 +92,24 @@ class Configuration
      */
     public function setProductionEnvironment(): Configuration
     {
-        $this->base_url = 'https://api.amadeus.com';
-        return new Configuration($this->clientId, $this->clientSecret, $this->base_url);
+        $this->host = 'api.amadeus.com';
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isSsl(): bool
+    {
+        return $this->ssl;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPort(): int
+    {
+        return $this->port;
     }
 
     /**
@@ -97,8 +128,7 @@ class Configuration
             $this->msgType = 0;
         }
         $this->msgDestination = $msgDestination;
-        return new Configuration($this->clientId, $this->clientSecret, $this->base_url,
-            $this->logger, $this->msgType, $this->msgDestination);
+        return $this;
     }
 
     /**

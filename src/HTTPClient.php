@@ -15,8 +15,6 @@ class HTTPClient
 
     private Configuration $configuration;
 
-    private $ch = null;
-
     private ?string $sslCertificate = null;
 
     /**
@@ -37,39 +35,6 @@ class HTTPClient
     }
 
     /**
-     * @param string $url
-     * @param array $headers
-     * @return void
-     */
-    private function setCurlOptions(string $url, array $headers): void
-    {
-        // Url
-        curl_setopt($this->ch, CURLOPT_URL, $url);
-
-        // Header
-        curl_setopt($this->ch, CURLOPT_HTTPHEADER, $headers);
-
-        // Transfer the return to string
-        curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
-
-        // Include the header in the output
-        curl_setopt($this->ch, CURLOPT_HEADER, true);
-
-        if($this->sslCertificate != null)
-        {
-            curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, 2);
-            curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, 1);
-            curl_setopt($this->ch, CURLOPT_CAINFO, $this->sslCertificate);
-        }
-        else
-        {
-            //for debug only!
-            curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST, false);
-            curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, false);
-        }
-    }
-
-    /**
      * @param string $path
      * @param array $query
      * @return Response
@@ -77,23 +42,17 @@ class HTTPClient
      */
     public function get(string $path, array $query): Response
     {
-        $url = $this->configuration->getBaseUrl().$path.'?'.http_build_query($query);
-        $headers = $this->prepareHeaders();
+        $request = new Request(
+            curl_init(),
+            Constants::GET,
+            $path,
+            $query,
+            null,
+            $this->getAuthorizedToken()->getAccessToken(),
+            $this
+        );
 
-        $this->ch = curl_init();
-        $this->setCurlOptions($url, $headers);
-        $result = curl_exec($this->ch);
-        $info = curl_getinfo($this->ch);
-        $headersSize = curl_getinfo($this->ch, CURLINFO_HEADER_SIZE);
-        curl_close($this->ch);
-
-        $headers = substr($result, 0, $headersSize);
-        $body = substr($result, $headersSize);
-
-        $response = new Response($info, $headers, $body);
-        $this->detectError($response);
-
-        return $response;
+        return $this->execute($request);
     }
 
     /**
@@ -104,29 +63,17 @@ class HTTPClient
      */
     public function post(string $path, string $body): Response
     {
-        $url = $this->configuration->getBaseUrl().$path;
-        $headers = $this->prepareHeaders();
-        if(in_array($path, Constants::API_NEED_EXTRA_HEADER))
-        {
-            $headers[] = "X-HTTP-Method-Override: GET";
-        }
+        $request = new Request(
+            curl_init(),
+            Constants::POST,
+            $path,
+            null,
+            $body,
+            $this->getAuthorizedToken()->getAccessToken(),
+            $this
+        );
 
-        $this->ch = curl_init();
-        $this->setCurlOptions($url, $headers);
-        curl_setopt($this->ch, CURLOPT_POST, true);
-        curl_setopt($this->ch,CURLOPT_POSTFIELDS, $body);
-        $result = curl_exec($this->ch);
-        $info = curl_getinfo($this->ch);
-        $headersSize = curl_getinfo($this->ch, CURLINFO_HEADER_SIZE);
-        curl_close($this->ch);
-
-        $headers = substr($result, 0, $headersSize);
-        $body = substr($result, $headersSize);
-
-        $response = new Response($info, $headers, $body);
-        $this->detectError($response);
-
-        return $response;
+        return $this->execute($request);
     }
 
     /**
@@ -162,32 +109,42 @@ class HTTPClient
      */
     protected function fetchAccessToken(): AccessToken
     {
-        $url = $this->configuration->getBaseUrl().'/v1/security/oauth2/token';
-        $headers = array(
-            'Content-Type' => 'application/x-www-form-urlencoded'
-        );
         $data = array(
             'client_id' => $this->configuration->getClientId(),
             'client_secret' => $this->configuration->getClientSecret(),
             'grant_type' => 'client_credentials'
         );
 
-        $this->ch = curl_init();
-        $this->setCurlOptions($url, $headers);
-        curl_setopt($this->ch, CURLOPT_POST, true);
-        curl_setopt($this->ch, CURLOPT_POSTFIELDS, http_build_query($data));
-        $result = curl_exec($this->ch);
-        $info = curl_getinfo($this->ch);
-        $headersSize = curl_getinfo($this->ch, CURLINFO_HEADER_SIZE);
-        curl_close($this->ch);
+        $request = new Request(
+            curl_init(),
+            Constants::POST,
+            '/v1/security/oauth2/token',
+            null,
+            http_build_query($data),
+            null,
+            $this
+        );
 
-        $headers = substr($result, 0, $headersSize);
-        $body = substr($result, $headersSize);
-
-        $response = new Response($info, $headers, $body);
-        $this->detectError($response);
+        $response = $this->execute($request);
 
         return new AccessToken($response->getBodyAsJsonObject());
+    }
+
+    /**
+     * @param Request $request
+     * @return Response
+     * @throws ResponseException
+     */
+    private function execute(Request $request): Response
+    {
+        $result = curl_exec($request->getCurlHandle());
+        $info = curl_getinfo($request->getCurlHandle());
+        curl_close($request->getCurlHandle());
+
+        $response = new Response($info, $result);
+        $this->detectError($response);
+
+        return $response;
     }
 
     /**
@@ -240,19 +197,6 @@ class HTTPClient
     }
 
     /**
-     * @return array
-     * @throws ResponseException
-     */
-    private function prepareHeaders(): array
-    {
-        return array(
-            'Accept: application/json, application/vnd.amadeus+json',
-            'Authorization: Bearer ' .$this->getAuthorizedToken()->getAccessToken(),
-            'Content-Type: application/vnd.amadeus+json',
-        );
-    }
-
-    /**
      * @return Configuration
      */
     public function getConfiguration(): Configuration
@@ -260,4 +204,11 @@ class HTTPClient
         return $this->configuration;
     }
 
+    /**
+     * @return string|null
+     */
+    public function getSslCertificate(): ?string
+    {
+        return $this->sslCertificate;
+    }
 }
