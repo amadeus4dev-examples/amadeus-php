@@ -41,3 +41,6 @@ jobs:
 
     - name: Run PHPUnit
       run: vendor/bin/phpunit tests
+
+    - name: Run PHP-CS-Fixer for src
+      run: vendor/bin/php-cs-fixer fix src
