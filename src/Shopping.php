@@ -15,5 +15,6 @@ class Shopping
      */
     public function __construct(Amadeus $client)
     {
-        $this->availability = new Availability($client);}
+        $this->availability = new Availability($client);
+    }
 }
