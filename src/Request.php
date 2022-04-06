@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus;
 
@@ -44,8 +46,7 @@ class Request
      * @param string|null $bearerToken
      * @param HTTPClient $client
      */
-    public function __construct
-    (
+    public function __construct(
         $curlHandle,
         string $verb,
         string $path,
@@ -53,8 +54,7 @@ class Request
         ?string $body,
         ?string $bearerToken,
         HTTPClient $client
-    )
-    {
+    ) {
         $config = $client->getConfiguration();
 
         $this->curlHandle = $curlHandle;
@@ -80,12 +80,9 @@ class Request
      */
     private function determineScheme()
     {
-        if($this->isSsl())
-        {
+        if ($this->isSsl()) {
             $this->scheme = Constants::HTTPS;
-        }
-        else
-        {
+        } else {
             $this->scheme = Constants::HTTP;
         }
     }
@@ -93,7 +90,7 @@ class Request
     /**
      * @return void
      */
-    private function prepareUrl()
+    private function prepareUrl(): void
     {
         $this->uri = $this->scheme."://".$this->host.":".$this->port
             .$this->path."?".$this->getQueryParams();
@@ -102,19 +99,17 @@ class Request
     /**
      * @return void
      */
-    private function prepareHeaders()
+    private function prepareHeaders(): void
     {
         $this->headers = array();
         $this->headers[] = Constants::ACCEPT."application/json, application/vnd.amadeus+json";
 
-        if($this->bearerToken != null)
-        {
+        if ($this->bearerToken != null) {
             $this->headers[] = Constants::AUTHORIZATION.Constants::BEARER.$this->bearerToken;
             $this->headers[] = Constants::CONTENT_TYPE."application/vnd.amadeus+json";
 
-            if(in_array($this->path, Constants::API_NEED_EXTRA_HEADER)
-                && ($this->verb == Constants::POST))
-            {
+            if (in_array($this->path, Constants::API_NEED_EXTRA_HEADER)
+                && ($this->verb == Constants::POST)) {
                 $this->headers[] = Constants::X_HTTP_METHOD_OVERRIDE.Constants::GET;
             }
         }
@@ -125,12 +120,9 @@ class Request
      */
     private function getQueryParams(): string
     {
-        if($this->params != null)
-        {
+        if ($this->params != null) {
             return http_build_query($this->params);
-        }
-        else
-        {
+        } else {
             return "";
         }
     }
@@ -152,23 +144,19 @@ class Request
         // Include the header in the output
         curl_setopt($this->curlHandle, CURLOPT_HEADER, true);
 
-        if($this->sslCertificate != null)
-        {
+        if ($this->sslCertificate != null) {
             curl_setopt($this->curlHandle, CURLOPT_SSL_VERIFYHOST, 2);
             curl_setopt($this->curlHandle, CURLOPT_SSL_VERIFYPEER, 1);
             curl_setopt($this->curlHandle, CURLOPT_CAINFO, $this->sslCertificate);
-        }
-        else
-        {
+        } else {
             //for debug only!
             curl_setopt($this->curlHandle, CURLOPT_SSL_VERIFYHOST, false);
             curl_setopt($this->curlHandle, CURLOPT_SSL_VERIFYPEER, false);
         }
 
-        if($this->verb == Constants::POST)
-        {
+        if ($this->verb == Constants::POST) {
             curl_setopt($this->curlHandle, CURLOPT_POST, true);
-            curl_setopt($this->curlHandle,CURLOPT_POSTFIELDS, $this->body);
+            curl_setopt($this->curlHandle, CURLOPT_POSTFIELDS, $this->body);
         }
     }
 

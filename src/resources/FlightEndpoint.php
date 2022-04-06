@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
@@ -45,5 +47,4 @@ class FlightEndpoint
     {
         return json_encode(get_object_vars($this));
     }
-
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Amadeus;
 
 use Amadeus\Airport\DirectDestinations;
@@ -15,5 +17,4 @@ class Airport
     {
         $this->directDestinations = new DirectDestinations($client);
     }
-
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus;
 
@@ -91,13 +93,13 @@ class HTTPClient
     protected function updateAccessToken(): void
     {
         // Checks if the current access token expires.
-        if($this->accessToken!=null){
-            if($this->accessToken->getExpiresAt() < time()){
+        if ($this->accessToken!=null) {
+            if ($this->accessToken->getExpiresAt() < time()) {
                 //print_r('AccessToken expired!'."\n");
                 // If expired then refresh the token
                 $this->accessToken = $this->fetchAccessToken();
             }
-        }else{
+        } else {
             // Else still return the current token
             //print_r("First time to fetch AccessToken!"."\n");
             $this->accessToken = $this->fetchAccessToken();
@@ -157,38 +159,24 @@ class HTTPClient
         $exception = null;
         $statusCode = $response->getStatusCode();
 
-        if ($statusCode >= 500)
-        {
+        if ($statusCode >= 500) {
             $exception = new ServerException($response);
-        }
-        else if ($statusCode == 404)
-        {
+        } elseif ($statusCode == 404) {
             $exception = new NotFoundException($response);
-        }
-        else if ($statusCode == 401)
-        {
+        } elseif ($statusCode == 401) {
             $exception = new AuthenticationException($response);
-        }
-        else if ($statusCode == 400)
-        {
+        } elseif ($statusCode == 400) {
             $exception = new ClientException($response);
-        }
-        else if ($statusCode == 204)
-        {
+        } elseif ($statusCode == 204) {
             return;
         }
 
-        if ($exception != null)
-        {
+        if ($exception != null) {
             // Log the error into file
-            if($this->configuration->getLogger() == true)
-            {
-                if($this->configuration->getMsgDestination())
-                {
+            if ($this->configuration->getLogger() == true) {
+                if ($this->configuration->getMsgDestination()) {
                     error_log($exception->__toString(), $this->configuration->getMsgType(), $this->configuration->getMsgDestination());
-                }
-                else
-                {
+                } else {
                     error_log($exception->__toString(), $this->configuration->getMsgType());
                 }
             }

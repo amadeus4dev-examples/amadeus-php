@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
@@ -33,7 +35,8 @@ class ExtendedSegment
     public function getAvailabilityClasses(): ?iterable
     {
         return Resource::toResourceArray(
-            $this->availabilityClasses, AvailabilityClass::class
+            $this->availabilityClasses,
+            AvailabilityClass::class
         );
     }
 
@@ -67,7 +70,8 @@ class ExtendedSegment
     public function getCo2Emissions(): ?iterable
     {
         return Resource::toResourceArray(
-            $this->co2Emissions, Co2Emission::class
+            $this->co2Emissions,
+            Co2Emission::class
         );
     }
 
@@ -77,7 +81,8 @@ class ExtendedSegment
     public function getDeparture(): ?object
     {
         return Resource::toResourceObject(
-            $this->departure, FlightEndpoint::class
+            $this->departure,
+            FlightEndpoint::class
         );
     }
 
@@ -87,7 +92,8 @@ class ExtendedSegment
     public function getArrival(): ?object
     {
         return Resource::toResourceObject(
-            $this->arrival, FlightEndpoint::class
+            $this->arrival,
+            FlightEndpoint::class
         );
     }
 
@@ -113,7 +119,8 @@ class ExtendedSegment
     public function getAircraft(): ?object
     {
         return Resource::toResourceObject(
-          $this->aircraft, AircraftEquipment::class
+            $this->aircraft,
+            AircraftEquipment::class
         );
     }
 
@@ -123,7 +130,8 @@ class ExtendedSegment
     public function getOperating(): ?object
     {
         return Resource::toResourceObject(
-          $this->operating, OperatingFlight::class
+            $this->operating,
+            OperatingFlight::class
         );
     }
 
@@ -141,7 +149,8 @@ class ExtendedSegment
     public function getStops(): ?iterable
     {
         return Resource::toResourceArray(
-          $this->stops, FlightStop::class
+            $this->stops,
+            FlightStop::class
         );
     }
 

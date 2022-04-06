@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Client;
 
@@ -20,8 +22,7 @@ class AccessToken
      */
     public function __construct(object $object)
     {
-        foreach($object as $key =>  $value)
-        {
+        foreach ($object as $key =>  $value) {
             $this->$key = $value;
         }
 
@@ -117,5 +118,4 @@ class AccessToken
     {
         return json_encode(get_object_vars($this));
     }
-
 }

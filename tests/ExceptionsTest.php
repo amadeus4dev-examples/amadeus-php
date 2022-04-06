@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Tests;
 
@@ -12,7 +14,10 @@ use PHPUnit\Framework\TestCase;
 
 final class ExceptionsTest extends TestCase
 {
-    public function testNoResponse()
+    /**
+     * @return void
+     */
+    public function testNoResponse(): void
     {
         $error = new ResponseException(null);
         $error = explode("\n", $error->__toString());
@@ -25,7 +30,10 @@ final class ExceptionsTest extends TestCase
         );
     }
 
-    public function testNoStatusCode()
+    /**
+     * @return void
+     */
+    public function testNoStatusCode(): void
     {
         $info = array(
             "http_code" => null
@@ -43,7 +51,10 @@ final class ExceptionsTest extends TestCase
         );
     }
 
-    public function testNoMessage()
+    /**
+     * @return void
+     */
+    public function testNoMessage(): void
     {
         $info = array(
             "url" => null,
@@ -63,7 +74,10 @@ final class ExceptionsTest extends TestCase
         );
     }
 
-    public function testWithMessage()
+    /**
+     * @return void
+     */
+    public function testWithMessage(): void
     {
         $info = array(
             "url" => null,
@@ -83,7 +97,10 @@ final class ExceptionsTest extends TestCase
         );
     }
 
-    public function testOtherExceptions()
+    /**
+     * @return void
+     */
+    public function testOtherExceptions(): void
     {
         $this->assertTrue(new AuthenticationException(null) instanceof ResponseException);
         $this->assertTrue(new ClientException(null) instanceof ResponseException);

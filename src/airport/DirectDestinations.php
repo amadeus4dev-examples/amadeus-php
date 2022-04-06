@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Airport;
 
@@ -24,12 +26,13 @@ class DirectDestinations
      * @return Destination[]
      * @throws ResponseException
      */
-    public function get(array $query) : iterable
+    public function get(array $query): iterable
     {
         $response = $this->client->get(
-            '/v1/airport/direct-destinations',$query);
+            '/v1/airport/direct-destinations',
+            $query
+        );
 
         return Resource::fromArray($response, Destination::class);
     }
-
 }

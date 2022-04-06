@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Tests;
 
@@ -9,7 +11,10 @@ use TypeError;
 
 final class AmadeusTest extends TestCase
 {
-    public function testBuilder()
+    /**
+     * @return void
+     */
+    public function testBuilder(): void
     {
         $this->assertTrue(
             Amadeus::builder("id", "secret") instanceof Configuration,
@@ -17,18 +22,23 @@ final class AmadeusTest extends TestCase
         );
     }
 
-    public function testBuilderWithNullClientId()
+    /**
+     * @return void
+     */
+    public function testBuilderWithNullClientId(): void
     {
         $this->expectException(TypeError::class);
         /* @phpstan-ignore-next-line */
-        Amadeus::builder(null,"secret")->build();
+        Amadeus::builder(null, "secret")->build();
     }
 
-    public function testBuilderWithNullClientSecret()
+    /**
+     * @return void
+     */
+    public function testBuilderWithNullClientSecret(): void
     {
         $this->expectException(TypeError::class);
         /* @phpstan-ignore-next-line */
-        Amadeus::builder("id",null)->build();
+        Amadeus::builder("id", null)->build();
     }
-
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus;
 
@@ -20,17 +22,18 @@ class Response
      */
     public function __construct(?array $info, ?string $result)
     {
-        if($info != null)
-        {
+        if ($info != null) {
             $this->info = $info;
-            if(array_key_exists('url', $info)) $this->url = $info['url'];
-            if(array_key_exists('http_code', $info)) $this->statusCode = $info['http_code'];
+            if (array_key_exists('url', $info)) {
+                $this->url = $info['url'];
+            }
+            if (array_key_exists('http_code', $info)) {
+                $this->statusCode = $info['http_code'];
+            }
 
-            if($result != null)
-            {
+            if ($result != null) {
                 $this->result = $result;
-                if(array_key_exists('header_size', $info))
-                {
+                if (array_key_exists('header_size', $info)) {
                     $this->headerSize = $info['header_size'];
                     $this->headers = substr($this->result, 0, $this->headerSize);
                     $this->body = substr($this->result, $this->headerSize);
@@ -135,17 +138,14 @@ class Response
     public function headersToArray(string $str): array
     {
         $headers = array();
-        $headersTmpArray = explode( "\r\n" , $str );
-        for ( $i = 0 ; $i < count( $headersTmpArray ) ; ++$i )
-        {
+        $headersTmpArray = explode("\r\n", $str);
+        for ($i = 0 ; $i < count($headersTmpArray) ; ++$i) {
             // we don't care about the two \r\n lines at the end of the headers
-            if ( strlen( $headersTmpArray[$i] ) > 0 )
-            {
+            if (strlen($headersTmpArray[$i]) > 0) {
                 // the headers start with HTTP status codes, which do not contain a colon, so we can filter them out too
-                if ( strpos( $headersTmpArray[$i] , ":" ) )
-                {
-                    $headerName = substr( $headersTmpArray[$i] , 0 , strpos( $headersTmpArray[$i] , ":" ) );
-                    $headerValue = substr( $headersTmpArray[$i] , strpos( $headersTmpArray[$i] , ":" ) + 1 );
+                if (strpos($headersTmpArray[$i], ":")) {
+                    $headerName = substr($headersTmpArray[$i], 0, strpos($headersTmpArray[$i], ":"));
+                    $headerValue = substr($headersTmpArray[$i], strpos($headersTmpArray[$i], ":") + 1);
                     $headers[$headerName] = $headerValue;
                 }
             }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
@@ -39,7 +41,8 @@ class AvailabilityClass
     public function getTourAllotment(): ?object
     {
         return Resource::toResourceObject(
-            $this->tourAllotment, TourAllotment::class
+            $this->tourAllotment,
+            TourAllotment::class
         );
     }
 
@@ -56,5 +59,4 @@ class AvailabilityClass
     {
         return json_encode(get_object_vars($this));
     }
-
 }

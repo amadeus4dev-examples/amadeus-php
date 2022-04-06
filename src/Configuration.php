@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus;
 
@@ -22,12 +24,10 @@ class Configuration
      * @param string $clientId
      * @param string $clientSecret
      */
-    public function __construct
-    (
+    public function __construct(
         string $clientId,
         string $clientSecret
-    )
-    {
+    ) {
         $this->clientId = $clientId;
         $this->clientSecret = $clientSecret;
     }
@@ -47,8 +47,7 @@ class Configuration
     public function setSsl(bool $ssl): Configuration
     {
         $this->ssl = $ssl;
-        if(!$ssl && $this->port == 443)
-        {
+        if (!$ssl && $this->port == 443) {
             $this->setPort(80);
         }
         return $this;
@@ -58,7 +57,7 @@ class Configuration
      * @param int $port
      * @return void
      */
-    public function setPort(int $port)
+    public function setPort(int $port): void
     {
         $this->port = $port;
     }
@@ -119,12 +118,9 @@ class Configuration
     public function setLogger(?string $msgDestination=null): Configuration
     {
         $this->logger = true;
-        if($msgDestination != null)
-        {
+        if ($msgDestination != null) {
             $this->msgType = 3;
-        }
-        else
-        {
+        } else {
             $this->msgType = 0;
         }
         $this->msgDestination = $msgDestination;

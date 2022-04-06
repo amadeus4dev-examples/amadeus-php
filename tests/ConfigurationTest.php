@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Tests;
 
@@ -7,7 +9,10 @@ use PHPUnit\Framework\TestCase;
 
 final class ConfigurationTest extends TestCase
 {
-    public function testInitialize()
+    /**
+     * @return void
+     */
+    public function testInitialize(): void
     {
         $this->assertTrue(
             (new Configuration("id", "secret")) instanceof Configuration,
@@ -15,7 +20,10 @@ final class ConfigurationTest extends TestCase
         );
     }
 
-    public function testBuild()
+    /**
+     * @return void
+     */
+    public function testBuild(): void
     {
         $configuration = new Configuration("123", "234");
         $this->assertNotNull(
@@ -34,7 +42,10 @@ final class ConfigurationTest extends TestCase
         );
     }
 
-    public function testBuildDefault()
+    /**
+     * @return void
+     */
+    public function testBuildDefault(): void
     {
         $configuration = new Configuration("id", "secret");
         $this->assertEquals(
@@ -43,17 +54,23 @@ final class ConfigurationTest extends TestCase
         );
     }
 
-    public function testBuildWithProductionEnvironment()
+    /**
+     * @return void
+     */
+    public function testBuildWithProductionEnvironment(): void
     {
         $configuration = (new Configuration("id", "secret"))
             ->setProductionEnvironment();
         $this->assertEquals(
-          "api.amadeus.com",
-          $configuration->getHost()
+            "api.amadeus.com",
+            $configuration->getHost()
         );
     }
 
-    public function testBuildWithLoggerSystemPath()
+    /**
+     * @return void
+     */
+    public function testBuildWithLoggerSystemPath(): void
     {
         $configuration = (new Configuration("id", "secret"))
             ->setLogger();
@@ -67,7 +84,10 @@ final class ConfigurationTest extends TestCase
         );
     }
 
-    public function testBuildWithLoggerCustomPath()
+    /**
+     * @return void
+     */
+    public function testBuildWithLoggerCustomPath(): void
     {
         $configuration = (new Configuration("id", "secret"))
             ->setLogger("./custom_path/amadeus.log");

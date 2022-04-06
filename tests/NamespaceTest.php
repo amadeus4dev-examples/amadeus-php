@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Tests;
 
@@ -11,10 +13,12 @@ use PHPUnit\Framework\TestCase;
 
 final class NamespaceTest extends TestCase
 {
-    public function testAllNamespacesExist()
+    /**
+     * @return void
+     */
+    public function testAllNamespacesExist(): void
     {
-        $client = Amadeus::
-            builder("id", "secret")
+        $client = Amadeus::builder("id", "secret")
             ->build();
 
         // Airport
@@ -35,6 +39,7 @@ final class NamespaceTest extends TestCase
 
     /**
      * @Before
+     * @return void
      */
     public function setUp(): void
     {
@@ -61,9 +66,10 @@ final class NamespaceTest extends TestCase
     }
 
     /**
+     * @return void
      * @throws ResponseException
      */
-    public function testGetMethods()
+    public function testGetMethods(): void
     {
         // Testing Airport Routes GET API
         /* @phpstan-ignore-next-line */
@@ -74,13 +80,13 @@ final class NamespaceTest extends TestCase
         $directDestinations = new DirectDestinations($this->client);
         $this->assertNotNull($directDestinations->get($this->params));
         $this->assertEquals(2, sizeof($directDestinations->get($this->params)));
-
     }
 
     /**
+     * @return void
      * @throws ResponseException
      */
-    public function testPostMethods()
+    public function testPostMethods(): void
     {
         // Testing Flight Availabilities POST API
         /* @phpstan-ignore-next-line */
@@ -91,7 +97,5 @@ final class NamespaceTest extends TestCase
         $flightAvailabilities = new FlightAvailabilities($this->client);
         $this->assertNotNull($flightAvailabilities->post($this->body));
         $this->assertEquals(2, sizeof($flightAvailabilities->post($this->body)));
-
     }
-
 }

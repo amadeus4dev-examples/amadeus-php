@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
@@ -75,7 +77,9 @@ class FlightAvailability extends Resource
     public function getSegments(): ?iterable
     {
         return Resource::toResourceArray(
-            $this->segments, ExtendedSegment::class);
+            $this->segments,
+            ExtendedSegment::class
+        );
     }
 
     // Setter

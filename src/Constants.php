@@ -1,25 +1,26 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus;
 
 class Constants
 {
     // HTTP verbs
-    const GET = "GET";
-    const POST = "POST";
+    public const GET = "GET";
+    public const POST = "POST";
 
     // APIs which need an X-HTTP-Method-Override GET HEADER
-    const API_NEED_EXTRA_HEADER = array(
+    public const API_NEED_EXTRA_HEADER = array(
         "/v1/shopping/availability/flight-availabilities"
     );
 
-    const HTTPS = "https";
-    const HTTP = "http";
+    public const HTTPS = "https";
+    public const HTTP = "http";
 
-    const ACCEPT = "Accept: ";
-    const AUTHORIZATION = "Authorization: ";
-    const CONTENT_TYPE = "Content-Type: ";
-    const X_HTTP_METHOD_OVERRIDE = "X-HTTP-Method-Override: ";
-    const BEARER = "Bearer ";
-
+    public const ACCEPT = "Accept: ";
+    public const AUTHORIZATION = "Authorization: ";
+    public const CONTENT_TYPE = "Content-Type: ";
+    public const X_HTTP_METHOD_OVERRIDE = "X-HTTP-Method-Override: ";
+    public const BEARER = "Bearer ";
 }

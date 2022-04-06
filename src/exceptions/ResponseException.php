@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Exceptions;
 
@@ -14,27 +16,18 @@ class ResponseException extends Exception
      */
     public function __construct(?Response $response)
     {
-        if($response != null)
-        {
-            if($response->getUrl() != null)
-            {
+        if ($response != null) {
+            if ($response->getUrl() != null) {
                 $this->url = $response->getUrl();
             }
 
-            if(($response->getResult() != null) && ($response->getStatusCode() != null))
-            {
+            if (($response->getResult() != null) && ($response->getStatusCode() != null)) {
                 parent::__construct($response->getResult(), $response->getStatusCode());
-            }
-            else if($response->getResult() != null)
-            {
+            } elseif ($response->getResult() != null) {
                 parent::__construct($response->getResult(), 0);
-            }
-            else if($response->getStatusCode() != null)
-            {
+            } elseif ($response->getStatusCode() != null) {
                 parent::__construct("", $response->getStatusCode());
-            }
-            else
-            {
+            } else {
                 parent::__construct();
             }
         }

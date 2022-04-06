@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Tests;
 
@@ -10,13 +12,11 @@ use PHPUnit\Framework\TestCase;
 
 final class AccessTokenTest extends TestCase
 {
-    /**
-     * @var Amadeus
-     */
-    private $client;
+    private Amadeus $client;
 
     /**
      * @Before
+     * @return void
      */
     protected function setUp(): void
     {
@@ -37,9 +37,10 @@ final class AccessTokenTest extends TestCase
     }
 
     /**
+     * @return void
      * @throws ResponseException
      */
-    public function testNewToken()
+    public function testNewToken(): void
     {
         $this->assertEquals('my_token', $this->client->getAuthorizedToken()->getAccessToken());
     }

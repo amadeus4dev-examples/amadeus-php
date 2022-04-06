@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Shopping\Availability;
 
@@ -26,9 +28,10 @@ class FlightAvailabilities
     public function post(string $body): iterable
     {
         $response = $this->client->post(
-            '/v1/shopping/availability/flight-availabilities',$body);
+            '/v1/shopping/availability/flight-availabilities',
+            $body
+        );
 
-        return Resource::fromArray($response,FlightAvailability::class);
+        return Resource::fromArray($response, FlightAvailability::class);
     }
-
 }

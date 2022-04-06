@@ -17,8 +17,7 @@ class Resource
     {
         $data = $response->getData(); // $data is an object
         $resource = new $class();
-        foreach($data as $key => $value)
-        {
+        foreach ($data as $key => $value) {
             $resource->__set($key, $value);
         }
         $resource->response = $response;
@@ -34,11 +33,9 @@ class Resource
     {
         $data = $response->getData(); // $data is an array
         $resources = array();
-        foreach ($data as $object)
-        {
+        foreach ($data as $object) {
             $resource = new $class();
-            foreach($object as $key => $value)
-            {
+            foreach ($object as $key => $value) {
                 $resource->__set($key, $value);
             }
             $resource->response = $response; // plan A
@@ -56,8 +53,7 @@ class Resource
     public static function toResourceObject(object $object, string $class): object
     {
         $resourceObject = new $class();
-        foreach($object as $key => $value)
-        {
+        foreach ($object as $key => $value) {
             $resourceObject->__set($key, $value);
         }
         return $resourceObject;
@@ -71,11 +67,9 @@ class Resource
     public static function toResourceArray(array $array, string $class): iterable
     {
         $resourceArray = array();
-        foreach($array as $element)
-        {
+        foreach ($array as $element) {
             $instance = new $class($element);
-            foreach($element as $key => $value)
-            {
+            foreach ($element as $key => $value) {
                 $instance->__set($key, $value);
             }
             $resourceArray[] = $instance;
@@ -90,5 +84,4 @@ class Resource
     {
         return $this->response;
     }
-
 }

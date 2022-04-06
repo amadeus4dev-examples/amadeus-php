@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus;
 
@@ -11,11 +13,9 @@ class Amadeus extends HTTPClient
     /**
      * @param Configuration $configuration
      */
-    public function __construct
-    (
+    public function __construct(
         Configuration $configuration
-    )
-    {
+    ) {
         parent::__construct($configuration);
 
         $this->airport = new Airport($this);
@@ -29,6 +29,6 @@ class Amadeus extends HTTPClient
      */
     public static function builder(string $clientId, string $clientSecret): Configuration
     {
-        return new Configuration($clientId,$clientSecret);
+        return new Configuration($clientId, $clientSecret);
     }
 }
