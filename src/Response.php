@@ -16,12 +16,19 @@ class Response
     private ?string $headers = null;
     private ?string $body = null;
 
+    private ?Request $request = null;
+
     /**
+     * @param Request|null $request
      * @param array|null $info
      * @param string|null $result
      */
-    public function __construct(?array $info, ?string $result)
+    public function __construct(?Request $request, ?array $info, ?string $result)
     {
+        if ($request != null) {
+            $this->request = $request;
+        }
+
         if ($info != null) {
             $this->info = $info;
             if (array_key_exists('url', $info)) {
@@ -40,6 +47,14 @@ class Response
                 }
             }
         }
+    }
+
+    /**
+     * @return Request|null
+     */
+    public function getRequest(): ?Request
+    {
+        return $this->request;
     }
 
     /**

@@ -143,7 +143,7 @@ class HTTPClient
         $info = curl_getinfo($request->getCurlHandle());
         curl_close($request->getCurlHandle());
 
-        $response = new Response($info, $result);
+        $response = new Response($request, $info, $result);
         $this->detectError($response);
 
         return $response;

@@ -37,11 +37,12 @@ final class ExceptionsTest extends TestCase
 
     public function testNoStatusCode(): void
     {
+        $request = null;
         $info = array(
             "http_code" => null
         );
         $result = null;
-        $response = new Response($info, $result);
+        $response = new Response($request, $info, $result);
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
@@ -55,13 +56,14 @@ final class ExceptionsTest extends TestCase
 
     public function testNoMessage(): void
     {
+        $request = null;
         $info = array(
             "url" => null,
             "http_code" => 400,
             "header_size" => 0
         );
         $result = null;
-        $response = new Response($info, $result);
+        $response = new Response($request, $info, $result);
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
@@ -75,13 +77,14 @@ final class ExceptionsTest extends TestCase
 
     public function testWithMessage(): void
     {
+        $request = null;
         $info = array(
             "url" => null,
             "http_code" => 401,
             "header_size" => 0
         );
         $result = "message";
-        $response = new Response($info, $result);
+        $response = new Response($request, $info, $result);
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
