@@ -12,11 +12,16 @@ use Amadeus\Exceptions\ServerException;
 use Amadeus\Response;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \Amadeus\Response
+ * @covers \Amadeus\Exceptions\ResponseException
+ * @covers \Amadeus\Exceptions\AuthenticationException
+ * @covers \Amadeus\Exceptions\ClientException
+ * @covers \Amadeus\Exceptions\NotFoundException
+ * @covers \Amadeus\Exceptions\ServerException
+ */
 final class ExceptionsTest extends TestCase
 {
-    /**
-     * @return void
-     */
     public function testNoResponse(): void
     {
         $error = new ResponseException(null);
@@ -30,9 +35,6 @@ final class ExceptionsTest extends TestCase
         );
     }
 
-    /**
-     * @return void
-     */
     public function testNoStatusCode(): void
     {
         $info = array(
@@ -51,9 +53,6 @@ final class ExceptionsTest extends TestCase
         );
     }
 
-    /**
-     * @return void
-     */
     public function testNoMessage(): void
     {
         $info = array(
@@ -74,9 +73,6 @@ final class ExceptionsTest extends TestCase
         );
     }
 
-    /**
-     * @return void
-     */
     public function testWithMessage(): void
     {
         $info = array(
@@ -97,9 +93,6 @@ final class ExceptionsTest extends TestCase
         );
     }
 
-    /**
-     * @return void
-     */
     public function testOtherExceptions(): void
     {
         $this->assertTrue(new AuthenticationException(null) instanceof ResponseException);

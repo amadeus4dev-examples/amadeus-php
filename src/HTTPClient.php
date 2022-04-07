@@ -111,7 +111,7 @@ class HTTPClient
      */
     protected function fetchAccessToken(): AccessToken
     {
-        $data = array(
+        $params = array(
             'client_id' => $this->configuration->getClientId(),
             'client_secret' => $this->configuration->getClientSecret(),
             'grant_type' => 'client_credentials'
@@ -121,8 +121,8 @@ class HTTPClient
             curl_init(),
             Constants::POST,
             '/v1/security/oauth2/token',
+            $params,
             null,
-            http_build_query($data),
             null,
             $this
         );

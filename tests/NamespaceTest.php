@@ -4,22 +4,32 @@ declare(strict_types=1);
 
 namespace Amadeus\Tests;
 
+use Amadeus\Airport;
 use Amadeus\Airport\DirectDestinations;
 use Amadeus\Amadeus;
+use Amadeus\Configuration;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Response;
+use Amadeus\Shopping;
 use Amadeus\Shopping\Availability\FlightAvailabilities;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \Amadeus\Configuration
+ * @covers \Amadeus\Amadeus
+ * @covers \Amadeus\HTTPClient
+ * @covers \Amadeus\Resources\Resource
+ * @covers \Amadeus\Airport
+ * @covers \Amadeus\Airport\DirectDestinations
+ * @covers \Amadeus\Shopping
+ * @covers \Amadeus\Shopping\Availability
+ * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
+ */
 final class NamespaceTest extends TestCase
 {
-    /**
-     * @return void
-     */
     public function testAllNamespacesExist(): void
     {
-        $client = Amadeus::builder("id", "secret")
-            ->build();
+        $client = Amadeus::builder("id", "secret")->build();
 
         // Airport
         $this->assertNotNull($client->airport);
@@ -40,6 +50,8 @@ final class NamespaceTest extends TestCase
     /**
      * @Before
      * @return void
+     * @covers \Amadeus\Amadeus
+     * @covers \Amadeus\Response
      */
     public function setUp(): void
     {
@@ -68,6 +80,7 @@ final class NamespaceTest extends TestCase
     /**
      * @return void
      * @throws ResponseException
+     * @covers \Amadeus\Airport\DirectDestinations
      */
     public function testGetMethods(): void
     {
@@ -85,6 +98,7 @@ final class NamespaceTest extends TestCase
     /**
      * @return void
      * @throws ResponseException
+     * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
      */
     public function testPostMethods(): void
     {

@@ -17,6 +17,9 @@ final class AccessTokenTest extends TestCase
     /**
      * @Before
      * @return void
+     * @covers \Amadeus\Amadeus
+     * @covers \Amadeus\HTTPClient
+     * @covers \Amadeus\Configuration
      */
     protected function setUp(): void
     {
@@ -39,6 +42,7 @@ final class AccessTokenTest extends TestCase
     /**
      * @return void
      * @throws ResponseException
+     * @covers \Amadeus\HTTPClient
      */
     public function testNewToken(): void
     {

@@ -9,22 +9,20 @@ use Amadeus\Configuration;
 use PHPUnit\Framework\TestCase;
 use TypeError;
 
+/**
+ * @covers \Amadeus\Amadeus
+ * @covers \Amadeus\Configuration
+ */
 final class AmadeusTest extends TestCase
 {
-    /**
-     * @return void
-     */
     public function testBuilder(): void
     {
         $this->assertTrue(
             Amadeus::builder("id", "secret") instanceof Configuration,
-            "should return a Configuration"
+            "should return a Configuration instance"
         );
     }
 
-    /**
-     * @return void
-     */
     public function testBuilderWithNullClientId(): void
     {
         $this->expectException(TypeError::class);
@@ -32,9 +30,6 @@ final class AmadeusTest extends TestCase
         Amadeus::builder(null, "secret")->build();
     }
 
-    /**
-     * @return void
-     */
     public function testBuilderWithNullClientSecret(): void
     {
         $this->expectException(TypeError::class);

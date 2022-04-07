@@ -156,7 +156,11 @@ class Request
 
         if ($this->verb == Constants::POST) {
             curl_setopt($this->curlHandle, CURLOPT_POST, true);
-            curl_setopt($this->curlHandle, CURLOPT_POSTFIELDS, $this->body);
+            if ($this->body != null) {
+                curl_setopt($this->curlHandle, CURLOPT_POSTFIELDS, $this->body);
+            } elseif ($this->params != null) {
+                curl_setopt($this->curlHandle, CURLOPT_POSTFIELDS, http_build_query($this->params));
+            }
         }
     }
 
