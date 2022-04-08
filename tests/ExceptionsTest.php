@@ -80,7 +80,7 @@ final class ExceptionsTest extends TestCase
         $request = null;
         $info = array(
             "url" => null,
-            "http_code" => 401,
+            "http_code" => 200,
             "header_size" => 0
         );
         $result = "message";
@@ -89,7 +89,7 @@ final class ExceptionsTest extends TestCase
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
             '['.date("F j, Y, g:i a").']'."\n"
-            ."Amadeus\Exceptions\ResponseException: [401]"."\n"
+            ."Amadeus\Exceptions\ResponseException: [200]"."\n"
             ."Message: message"."\n"
             ."Url: "."\n",
             join("\n", array_slice($error, 0, 4))."\n"
