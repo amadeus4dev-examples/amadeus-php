@@ -9,19 +9,10 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \Amadeus\Response
- * @covers \Amadeus\Configuration
- * @covers \Amadeus\Amadeus
- * @covers \Amadeus\HTTPClient
  * @covers \Amadeus\Request
- * @covers \Amadeus\Airport
- * @covers \Amadeus\Airport\DirectDestinations
- * @covers \Amadeus\Shopping
- * @covers \Amadeus\Shopping\Availability
- * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
  */
 final class ResponseTest extends TestCase
 {
-    private Amadeus $client;
     private Request $request;
     private Response $response;
 
@@ -46,7 +37,6 @@ final class ResponseTest extends TestCase
         ;
         $this->request = $this->createMock(Request::class);
         $this->response = new Response($this->request, $info, $result);
-        $this->client = Amadeus::builder("id", "secret")->build();
     }
 
     public function testInitialize(): void
