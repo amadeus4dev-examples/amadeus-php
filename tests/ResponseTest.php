@@ -24,10 +24,10 @@ final class ResponseTest extends TestCase
         $info = array(
             "url" => "/foo/bar",
             "http_code" => 200,
-            "header_size" => 15
+            "header_size" => 8
         );
         $result =
-            "HTTP/1.1 200 OK"
+            "foo: bar"
             ." "
             ."{"
             ."\"data\" : [ {"
@@ -49,11 +49,11 @@ final class ResponseTest extends TestCase
         $this->assertNotNull($this->response->getInfo());
         $this->assertEquals("/foo/bar", $this->response->getUrl());
         $this->assertEquals(200, $this->response->getStatusCode());
-        $this->assertEquals(15, $this->response->getHeaderSize());
+        $this->assertEquals(8, $this->response->getHeaderSize());
 
         $this->assertNotNull($this->response->getResult());
         $this->assertEquals(
-            "HTTP/1.1 200 OK",
+            "foo: bar",
             $this->response->getHeaders()
         );
         $this->assertEquals(
@@ -71,5 +71,24 @@ final class ResponseTest extends TestCase
     {
         $data[] = (object) ['foo' => 'bar'];
         $this->assertEquals($data, $this->response->getData());
+    }
+
+    public function testGetHeadersAsArray(): void
+    {
+        $headers['foo'] = 'bar';
+        $this->assertEquals($headers, $this->response->getHeadersAsArray());
+    }
+
+    public function testToString(): void
+    {
+        $result =
+            "foo: bar"
+            ." "
+            ."{"
+            ."\"data\" : [ {"
+            ." \"foo\" : \"bar\""
+            ." } ]"
+            ."}";
+        $this->assertEquals($result, $this->response->__toString());
     }
 }
