@@ -4,7 +4,6 @@ namespace Amadeus\Tests;
 
 use Amadeus\Client\AccessToken;
 use Amadeus\Configuration;
-use Amadeus\Constants;
 use Amadeus\Exceptions\AuthenticationException;
 use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\NotFoundException;
@@ -77,7 +76,7 @@ final class HTTPClientTest extends TestCase
 
         $request = new Request(
             "GET",
-            "/foo",
+            $this->path,
             $this->params,
             null,
             $obj->getAuthorizedToken()->getAccessToken(),
@@ -106,7 +105,7 @@ final class HTTPClientTest extends TestCase
 
         $request = new Request(
             "POST",
-            "/foo",
+            $this->path,
             null,
             $this->body,
             $obj->getAuthorizedToken()->getAccessToken(),
