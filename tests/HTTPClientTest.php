@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Amadeus\Tests;
 
@@ -170,5 +172,4 @@ final class HTTPClientTest extends TestCase
         $this->expectException(ClientException::class);
         PHPUnitUtil::callMethod($this->client, 'detectError', array($response));
     }
-
 }
