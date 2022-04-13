@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
-use Amadeus\Amadeus;
+namespace Amadeus\Tests;
+
 use Amadeus\Request;
 use Amadeus\Response;
 use PHPUnit\Framework\TestCase;

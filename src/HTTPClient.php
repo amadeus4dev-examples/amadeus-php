@@ -45,7 +45,6 @@ class HTTPClient
     public function get(string $path, array $query): Response
     {
         $request = new Request(
-            curl_init(),
             Constants::GET,
             $path,
             $query,
@@ -66,7 +65,6 @@ class HTTPClient
     public function post(string $path, string $body): Response
     {
         $request = new Request(
-            curl_init(),
             Constants::POST,
             $path,
             null,
@@ -118,7 +116,6 @@ class HTTPClient
         );
 
         $request = new Request(
-            curl_init(),
             Constants::POST,
             '/v1/security/oauth2/token',
             $params,
@@ -137,11 +134,13 @@ class HTTPClient
      * @return Response
      * @throws ResponseException
      */
-    private function execute(Request $request): Response
+    protected function execute(Request $request): Response
     {
-        $result = curl_exec($request->getCurlHandle());
-        $info = curl_getinfo($request->getCurlHandle());
-        curl_close($request->getCurlHandle());
+        $curlHandle = curl_init();
+        $this->setCurlOptions($curlHandle, $request);
+        $result = curl_exec($curlHandle);
+        $info = curl_getinfo($curlHandle);
+        curl_close($curlHandle);
 
         $response = new Response($request, $info, $result);
         $this->detectError($response);
@@ -181,6 +180,45 @@ class HTTPClient
                 }
             }
             throw $exception;
+        }
+    }
+
+    /**
+     * @param mixed $curlHandle
+     * @param Request $request
+     * @return void
+     */
+    private function setCurlOptions($curlHandle, Request $request): void
+    {
+        // Url
+        curl_setopt($curlHandle, CURLOPT_URL, $request->getUri());
+
+        // Header
+        curl_setopt($curlHandle, CURLOPT_HTTPHEADER, $request->getHeaders());
+
+        // Transfer the return to string
+        curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
+
+        // Include the header in the output
+        curl_setopt($curlHandle, CURLOPT_HEADER, true);
+
+        if ($request->getSslCertificate() != null) {
+            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, 2);
+            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, 1);
+            curl_setopt($curlHandle, CURLOPT_CAINFO, $this->getSslCertificate());
+        } else {
+            //for debug only!
+            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, false);
+        }
+
+        if ($request->getVerb() == Constants::POST) {
+            curl_setopt($curlHandle, CURLOPT_POST, true);
+            if ($request->getBody() != null) {
+                curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $request->getBody());
+            } elseif ($request->getParams() != null) {
+                curl_setopt($curlHandle, CURLOPT_POSTFIELDS, http_build_query($request->getParams()));
+            }
         }
     }
 

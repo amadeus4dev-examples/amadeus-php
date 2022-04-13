@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Amadeus\Tests;
 
-use Amadeus\Amadeus;
 use Amadeus\Configuration;
 use PHPUnit\Framework\TestCase;
 
@@ -18,14 +17,6 @@ final class ConfigurationTest extends TestCase
         $this->assertTrue(
             (new Configuration("id", "secret")) instanceof Configuration,
             "should return a Configuration instance"
-        );
-    }
-
-    public function testBuild(): void
-    {
-        $this->assertTrue(
-            (new Configuration("123", "234"))->build() instanceof Amadeus,
-            "should return a Amadeus object"
         );
     }
 

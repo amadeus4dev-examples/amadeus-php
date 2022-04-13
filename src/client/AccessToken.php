@@ -22,13 +22,13 @@ class AccessToken
      */
     public function __construct(object $object)
     {
-        foreach ($object as $key =>  $value) {
-            $this->$key = $value;
-        }
-
         // Renew the token 10 seconds earlier than required
         // Cuz the token will expire in 1799 seconds
         $this->expires_at = time()+1789;
+
+        foreach ($object as $key =>  $value) {
+            $this->$key = $value;
+        }
     }
 
     /**

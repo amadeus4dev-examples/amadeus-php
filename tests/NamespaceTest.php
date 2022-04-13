@@ -4,13 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Tests;
 
-use Amadeus\Airport;
 use Amadeus\Airport\DirectDestinations;
 use Amadeus\Amadeus;
-use Amadeus\Configuration;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Response;
-use Amadeus\Shopping;
 use Amadeus\Shopping\Availability\FlightAvailabilities;
 use PHPUnit\Framework\TestCase;
 
