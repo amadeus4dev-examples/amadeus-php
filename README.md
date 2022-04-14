@@ -125,10 +125,11 @@ This library is using PHP core extension cURL for making Http Request but disabl
 Thus it is highly suggested using a certificate with PHP’s cURL functions.
 
 You can download the ```cacert.pem``` certificate bundle from the [official cURL website](https://curl.se/docs/caextract.html). 
-Once you have downloaded the ```cacert.pem``` file, you should move it to whatever directory makes the most sense for you and your setup. 
+Once you have downloaded the ```cacert.pem``` file, you should move it to whatever directory makes the most sense for you and your setup.
+
 ```PHP
 // Set your certificate path for opening SSL verification
-$amadeus->setSslVerify($REPLACE_BY_YOUR_SSL_CERT_PATH);
+$amadeus->setSslCertificate($REPLACE_BY_YOUR_SSL_CERT_PATH);
 ```
 
 ## Error Log

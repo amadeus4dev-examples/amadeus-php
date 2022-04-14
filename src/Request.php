@@ -118,51 +118,6 @@ class Request
         }
     }
 
-//    /**
-//     * @return void
-//     */
-//    private function setCurlOptions(): void
-//    {
-//        // Url
-//        curl_setopt($this->curlHandle, CURLOPT_URL, $this->uri);
-//
-//        // Header
-//        curl_setopt($this->curlHandle, CURLOPT_HTTPHEADER, $this->headers);
-//
-//        // Transfer the return to string
-//        curl_setopt($this->curlHandle, CURLOPT_RETURNTRANSFER, true);
-//
-//        // Include the header in the output
-//        curl_setopt($this->curlHandle, CURLOPT_HEADER, true);
-//
-//        if ($this->sslCertificate != null) {
-//            curl_setopt($this->curlHandle, CURLOPT_SSL_VERIFYHOST, 2);
-//            curl_setopt($this->curlHandle, CURLOPT_SSL_VERIFYPEER, 1);
-//            curl_setopt($this->curlHandle, CURLOPT_CAINFO, $this->sslCertificate);
-//        } else {
-//            //for debug only!
-//            curl_setopt($this->curlHandle, CURLOPT_SSL_VERIFYHOST, false);
-//            curl_setopt($this->curlHandle, CURLOPT_SSL_VERIFYPEER, false);
-//        }
-//
-//        if ($this->verb == Constants::POST) {
-//            curl_setopt($this->curlHandle, CURLOPT_POST, true);
-//            if ($this->body != null) {
-//                curl_setopt($this->curlHandle, CURLOPT_POSTFIELDS, $this->body);
-//            } elseif ($this->params != null) {
-//                curl_setopt($this->curlHandle, CURLOPT_POSTFIELDS, http_build_query($this->params));
-//            }
-//        }
-//    }
-
-//    /**
-//     * @return mixed
-//     */
-//    public function getCurlHandle()
-//    {
-//        return $this->curlHandle;
-//    }
-
     /**
      * @return string
      */

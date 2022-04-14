@@ -175,7 +175,7 @@ final class RequestTest extends TestCase
     public function testBuildRequestWithSslCert(): void
     {
         $amadeus = Amadeus::builder("123", " 234")->build();
-        $amadeus->setSslVerify("./cert.pem");
+        $amadeus->setSslCertificate("./cert.pem");
         $params = array("foo" => "bar");
         $request = new Request(
             "GET",

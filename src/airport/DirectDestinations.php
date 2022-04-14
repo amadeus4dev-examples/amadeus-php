@@ -28,7 +28,7 @@ class DirectDestinations
      */
     public function get(array $query): iterable
     {
-        $response = $this->client->get(
+        $response = $this->client->getWithArrayParams(
             '/v1/airport/direct-destinations',
             $query
         );

@@ -10,6 +10,7 @@ use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Exceptions\ServerException;
+use Amadeus\Resources\Resource;
 
 class HTTPClient
 {
@@ -31,7 +32,7 @@ class HTTPClient
      * @param string $filePath
      * @return void
      */
-    public function setSslVerify(string $filePath)
+    public function setSslCertificate(string $filePath)
     {
         $this->sslCertificate = $filePath;
     }
@@ -42,7 +43,7 @@ class HTTPClient
      * @return Response
      * @throws ResponseException
      */
-    public function get(string $path, array $query): Response
+    public function getWithArrayParams(string $path, array $query): Response
     {
         $request = new Request(
             Constants::GET,
@@ -62,7 +63,7 @@ class HTTPClient
      * @return Response
      * @throws ResponseException
      */
-    public function post(string $path, string $body): Response
+    public function postWithStringBody(string $path, string $body): Response
     {
         $request = new Request(
             Constants::POST,
@@ -171,14 +172,15 @@ class HTTPClient
         }
 
         if ($exception != null) {
+            // TODO: This function needs to be reviewed
             // Log the error into file
-            if ($this->configuration->getLogger() == true) {
-                if ($this->configuration->getMsgDestination()) {
-                    error_log($exception->__toString(), $this->configuration->getMsgType(), $this->configuration->getMsgDestination());
-                } else {
-                    error_log($exception->__toString(), $this->configuration->getMsgType());
-                }
-            }
+//            if ($this->configuration->getLogger() == true) {
+//                if ($this->configuration->getMsgDestination()) {
+//                    error_log($exception->__toString(), $this->configuration->getMsgType(), $this->configuration->getMsgDestination());
+//                } else {
+//                    error_log($exception->__toString(), $this->configuration->getMsgType());
+//                }
+//            }
             throw $exception;
         }
     }
@@ -205,7 +207,7 @@ class HTTPClient
         if ($request->getSslCertificate() != null) {
             curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, 2);
             curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, 1);
-            curl_setopt($curlHandle, CURLOPT_CAINFO, $this->getSslCertificate());
+            curl_setopt($curlHandle, CURLOPT_CAINFO, $request->getSslCertificate());
         } else {
             //for debug only!
             curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, false);
@@ -216,7 +218,8 @@ class HTTPClient
             curl_setopt($curlHandle, CURLOPT_POST, true);
             if ($request->getBody() != null) {
                 curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $request->getBody());
-            } elseif ($request->getParams() != null) {
+            }
+            if ($request->getParams() != null) {
                 curl_setopt($curlHandle, CURLOPT_POSTFIELDS, http_build_query($request->getParams()));
             }
         }

@@ -84,7 +84,7 @@ final class NamespaceTest extends TestCase
         // Testing Airport Routes GET API
         /* @phpstan-ignore-next-line */
         $this->client->expects($this->any())
-            ->method("get")
+            ->method("getWithArrayParams")
             ->with("/v1/airport/direct-destinations", $this->params)
             ->willReturn($this->multiResponse);
         $directDestinations = new DirectDestinations($this->client);
@@ -102,7 +102,7 @@ final class NamespaceTest extends TestCase
         // Testing Flight Availabilities POST API
         /* @phpstan-ignore-next-line */
         $this->client->expects($this->any())
-            ->method("post")
+            ->method("postWithStringBody")
             ->with("/v1/shopping/availability/flight-availabilities", $this->body)
             ->willReturn($this->multiResponse);
         $flightAvailabilities = new FlightAvailabilities($this->client);

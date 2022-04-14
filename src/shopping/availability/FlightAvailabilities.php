@@ -27,7 +27,7 @@ class FlightAvailabilities
      */
     public function post(string $body): iterable
     {
-        $response = $this->client->post(
+        $response = $this->client->postWithStringBody(
             '/v1/shopping/availability/flight-availabilities',
             $body
         );

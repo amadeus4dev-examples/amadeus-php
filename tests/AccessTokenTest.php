@@ -8,7 +8,9 @@ use Amadeus\Client\AccessToken;
 use Amadeus\Configuration;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\HTTPClient;
+use Amadeus\Request;
 use PHPUnit\Framework\TestCase;
+use ReflectionException;
 
 /**
  * @covers \Amadeus\Amadeus
@@ -19,6 +21,7 @@ use PHPUnit\Framework\TestCase;
 final class AccessTokenTest extends TestCase
 {
     private HTTPClient $client;
+    private Configuration $configuration;
     private object $result;
 
     /**
@@ -26,21 +29,21 @@ final class AccessTokenTest extends TestCase
      */
     protected function setUp(): void
     {
-        $configuration = new Configuration("client_id", "client_secret");
+        $this->configuration = new Configuration("client_id", "client_secret");
 
         $this->client = $this->getMockBuilder(HTTPClient::class)
-            ->setConstructorArgs(array($configuration))
+            ->setConstructorArgs(array($this->configuration))
             ->getMock();
 
         $this->client->expects($this->any())
             ->method("getConfiguration")
-            ->willReturn($configuration);
+            ->willReturn($this->configuration);
 
         $this->result = (object) [
             "type" => "amadeusOAuth2Token",
             "username" => "foo@bar.com",
             "application_name" => "foobar",
-            "client_id" => $configuration->getClientId(),
+            "client_id" => $this->configuration->getClientId(),
             "token_type" => "Bearer",
             "access_token" => "my_token",
             "expires_in" => 1799,
