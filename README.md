@@ -82,7 +82,7 @@ try
     print($flightAvailabilities[0]);
 
     // Make arbitrary call
-    $destinations = $amadeus->get(
+    $destinations = $amadeus->getWithArrayParams(
         '/v1/airport/direct-destinations',
         array(
             "departureAirportCode" => "MAD",
