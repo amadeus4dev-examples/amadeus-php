@@ -31,7 +31,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Amadeus\\Tests\\": "tests/"
+      "Amadeus\\Tests\\": "tests/",
+      "Amadeus\\Tests\\Resources\\": "tests/resources"
     }
   }
 }
