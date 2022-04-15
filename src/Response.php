@@ -45,6 +45,8 @@ class Response
                     $this->headers = substr($this->result, 0, $this->headerSize);
                     $this->body = substr($this->result, $this->headerSize);
                 }
+            } else {
+                $result = " ";
             }
         }
     }

@@ -10,7 +10,6 @@ use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Exceptions\ServerException;
-use Amadeus\Resources\Resource;
 
 class HTTPClient
 {
@@ -26,15 +25,6 @@ class HTTPClient
     public function __construct(Configuration $configuration)
     {
         $this->configuration = $configuration;
-    }
-
-    /**
-     * @param string $filePath
-     * @return void
-     */
-    public function setSslCertificate(string $filePath)
-    {
-        $this->sslCertificate = $filePath;
     }
 
     /**
@@ -169,6 +159,8 @@ class HTTPClient
             $exception = new ClientException($response);
         } elseif ($statusCode == 204) {
             return;
+        } elseif ($statusCode != 200) {
+            $exception = new ResponseException($response);
         }
 
         if ($exception != null) {
@@ -190,7 +182,7 @@ class HTTPClient
      * @param Request $request
      * @return void
      */
-    private function setCurlOptions($curlHandle, Request $request): void
+    protected function setCurlOptions($curlHandle, Request $request): void
     {
         // Url
         curl_setopt($curlHandle, CURLOPT_URL, $request->getUri());
@@ -223,6 +215,15 @@ class HTTPClient
                 curl_setopt($curlHandle, CURLOPT_POSTFIELDS, http_build_query($request->getParams()));
             }
         }
+    }
+
+    /**
+     * @param string $filePath
+     * @return void
+     */
+    public function setSslCertificate(string $filePath)
+    {
+        $this->sslCertificate = $filePath;
     }
 
     /**

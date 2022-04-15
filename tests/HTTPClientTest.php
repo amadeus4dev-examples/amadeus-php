@@ -36,6 +36,8 @@ final class HTTPClientTest extends TestCase
     private string $path;
     private array $params;
     private string $body;
+    private array $info;
+    private string $result;
     private AccessToken $accessToken;
 
     /**
@@ -47,20 +49,35 @@ final class HTTPClientTest extends TestCase
         $this->params = array("foo" => "bar");
         $this->body = "[{}]";
 
+        $this->info = array(
+            "url" => '/v1/security/oauth2/token',
+            "http_code" => 200,
+            "header_size" => 8
+        );
+        $this->result =
+            "foo: bar"
+            ." "
+            ."{"
+            ."\"data\" : [ {"
+            ." \"access_token\" : \"my_token\""
+            ." } ]"
+            ."}"
+        ;
+
         $this->configuration = new Configuration("client_id", "client_secret");
 
         $this->client = $this->getMockBuilder(HTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
             ->getMock();
 
-        $result = (object) [
+        $objAccessToken = (object) [
             "access_token" => "my_token",
         ];
         $this->client->expects($this->any())
             ->method("getAuthorizedToken")
-            ->willReturn(new AccessToken($result));
+            ->willReturn(new AccessToken($objAccessToken));
 
-        $this->accessToken = new AccessToken($result);
+        $this->accessToken = new AccessToken($objAccessToken);
     }
 
     /**
@@ -85,9 +102,7 @@ final class HTTPClientTest extends TestCase
             $obj
         );
 
-        $obj->expects($this->once())
-            ->method('execute')
-            ->with($request);
+        $obj->expects($this->once())->method('execute')->with($request);
 
         $obj->getWithArrayParams("/foo", $this->params);
     }
@@ -146,27 +161,26 @@ final class HTTPClientTest extends TestCase
             $obj
         );
 
-        $info = array(
-            "url" => '/v1/security/oauth2/token',
-            "http_code" => 200,
-            "header_size" => 8
-        );
-        $result =
-            "foo: bar"
-            ." "
-            ."{"
-            ."\"data\" : [ {"
-            ." \"access_token\" : \"my_token\""
-            ." } ]"
-            ."}"
-        ;
-
         $obj->expects($this->once())
             ->method('execute')
             ->with($request)
-            ->willReturn(new Response($request, $info, $result));
+            ->willReturn(new Response($request, $this->info, $this->result));
 
         PHPUnitUtil::callMethod($obj, 'fetchAccessToken', array());
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testDetectResponseException(): void
+    {
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())->method("getUrl")->willReturn("/foo/bar");
+        $response->expects($this->any())->method("getStatusCode")->willReturn(0);
+        $response->expects($this->any())->method("getResult")->willReturn($this->result);
+
+        $this->expectException(ResponseException::class);
+        PHPUnitUtil::callMethod($this->client, 'detectError', array($response));
     }
 
     /**
@@ -175,9 +189,8 @@ final class HTTPClientTest extends TestCase
     public function testDetectServerException(): void
     {
         $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getStatusCode")
-            ->willReturn(500);
+        $response->expects($this->any())->method("getStatusCode")->willReturn(500);
+
         $this->expectException(ServerException::class);
         PHPUnitUtil::callMethod($this->client, 'detectError', array($response));
     }
@@ -188,9 +201,7 @@ final class HTTPClientTest extends TestCase
     public function testDetectNotFoundException(): void
     {
         $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getStatusCode")
-            ->willReturn(404);
+        $response->expects($this->any())->method("getStatusCode")->willReturn(404);
         $this->expectException(NotFoundException::class);
         PHPUnitUtil::callMethod($this->client, 'detectError', array($response));
     }
@@ -201,9 +212,8 @@ final class HTTPClientTest extends TestCase
     public function testDetectAuthenticationException(): void
     {
         $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getStatusCode")
-            ->willReturn(401);
+        $response->expects($this->any())->method("getStatusCode")->willReturn(401);
+
         $this->expectException(AuthenticationException::class);
         PHPUnitUtil::callMethod($this->client, 'detectError', array($response));
     }
@@ -214,9 +224,8 @@ final class HTTPClientTest extends TestCase
     public function testDetectClientException(): void
     {
         $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getStatusCode")
-            ->willReturn(400);
+        $response->expects($this->any())->method("getStatusCode")->willReturn(400);
+
         $this->expectException(ClientException::class);
         PHPUnitUtil::callMethod($this->client, 'detectError', array($response));
     }
@@ -227,9 +236,8 @@ final class HTTPClientTest extends TestCase
     public function testDetectNoException(): void
     {
         $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getStatusCode")
-            ->willReturn(204);
+        $response->expects($this->any())->method("getStatusCode")->willReturn(204);
+
         $this->assertNull(PHPUnitUtil::callMethod($this->client, 'detectError', array($response)));
     }
 
@@ -240,7 +248,6 @@ final class HTTPClientTest extends TestCase
     {
         $obj = $this->getMockBuilder(HTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
-            ->onlyMethods(array('setCurlOptions'))
             ->getMock();
 
         $request = $this->getMockBuilder(Request::class)
@@ -260,16 +267,13 @@ final class HTTPClientTest extends TestCase
     {
         $obj = $this->getMockBuilder(HTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
-            ->onlyMethods(array('setCurlOptions'))
             ->getMock();
 
         $request = $this->getMockBuilder(Request::class)
             ->setConstructorArgs(array("GET", $this->path, null, null, 'my_token', $obj))
             ->getMock();
 
-        $request->expects($this->any())
-            ->method('getSslCertificate')
-            ->willReturn('/foo');
+        $request->expects($this->any())->method('getSslCertificate')->willReturn('/foo');
 
         $request->expects($this->exactly(2))->method('getSslCertificate');
 
@@ -283,7 +287,6 @@ final class HTTPClientTest extends TestCase
     {
         $obj = $this->getMockBuilder(HTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
-            ->onlyMethods(array('setCurlOptions'))
             ->getMock();
 
         $request = $this->getMockBuilder(Request::class)
