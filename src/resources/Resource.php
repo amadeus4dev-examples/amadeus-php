@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Amadeus\Resources;
 
 use Amadeus\Response;
@@ -83,5 +85,13 @@ class Resource
     public function getResponse(): ?Response
     {
         return $this->response;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return json_encode(get_object_vars($this));
     }
 }

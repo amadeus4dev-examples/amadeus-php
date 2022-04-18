@@ -6,19 +6,22 @@ namespace Amadeus\Tests\Resources;
 
 use Amadeus\Resources\Destination;
 use Amadeus\Resources\Resource;
-use Amadeus\Response;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\Destination
+ *
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
  */
 final class DestinationTest extends TestCase
 {
+    private iterable $destinations;
+
     /**
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
+     * @Before
      */
-    public function test4ExampleValue(): void
+    public function setUp(): void
     {
         $body =
             '{
@@ -45,18 +48,24 @@ final class DestinationTest extends TestCase
               }
             }';
 
-        $obj = $this->getMockBuilder(Response::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
         $arrayData = json_decode($body)->{'data'};
-        $destinations = array(new Destination());
-        $destinations = Resource::toResourceArray($arrayData, Destination::class);
+        $this->destinations = Resource::toResourceArray($arrayData, Destination::class);
+    }
 
-        $this->assertTrue($destinations[0] instanceof Destination);
-        $this->assertEquals("location", $destinations[0]->getType());
-        $this->assertEquals("city", $destinations[0]->getSubtype());
-        $this->assertEquals("Bangalore", $destinations[0]->getName());
-        $this->assertEquals("BLR", $destinations[0]->getIataCode());
+    public function testInitialize(): void
+    {
+        $this->assertTrue($this->destinations[0] instanceof Destination);
+    }
+
+    public function testGetValue(): void
+    {
+        $this->assertEquals("location", $this->destinations[0]->getType());
+        $this->assertEquals("city", $this->destinations[0]->getSubtype());
+        $this->assertEquals("Bangalore", $this->destinations[0]->getName());
+        $this->assertEquals("BLR", $this->destinations[0]->getIataCode());
+        $this->assertEquals(
+            '{"type":"location","subtype":"city","name":"Bangalore","iataCode":"BLR"}',
+            $this->destinations[0]->__toString()
+        );
     }
 }
