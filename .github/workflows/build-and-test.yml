@@ -39,10 +39,7 @@ jobs:
     - name: Run PHPStan
       run: vendor/bin/phpstan analyse src tests --level 5
 
-    - name: Run PHPUnit
-      run: vendor/bin/phpunit tests
-
-    - name: Generate Code Coverage Report
+    - name: Run PHPUnit Test and Generate Code Coverage Report
       run: vendor/bin/phpunit --coverage-text tests
 
     - name: Run PHP-CS-Fixer for src

@@ -55,7 +55,7 @@ final class DestinationTest extends TestCase
 
     public function testGetValue(): void
     {
-        $this->assertEquals("location", $this->destination->getType());
+        $this->assertEquals("locatio", $this->destination->getType());
         $this->assertEquals("city", $this->destination->getSubtype());
         $this->assertEquals("Bangalore", $this->destination->getName());
         $this->assertEquals("BLR", $this->destination->getIataCode());
