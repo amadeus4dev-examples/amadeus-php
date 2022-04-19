@@ -16,7 +16,8 @@ use PHPUnit\Framework\TestCase;
  */
 final class DestinationTest extends TestCase
 {
-    private iterable $destinations;
+    private array $data;
+    private Destination $destination;
 
     /**
      * @Before
@@ -48,24 +49,19 @@ final class DestinationTest extends TestCase
               }
             }';
 
-        $arrayData = json_decode($body)->{'data'};
-        $this->destinations = Resource::toResourceArray($arrayData, Destination::class);
-    }
-
-    public function testInitialize(): void
-    {
-        $this->assertTrue($this->destinations[0] instanceof Destination);
+        $this->data = json_decode($body)->{'data'};
+        $this->destination = Resource::toResourceArray($this->data, Destination::class)[0];
     }
 
     public function testGetValue(): void
     {
-        $this->assertEquals("location", $this->destinations[0]->getType());
-        $this->assertEquals("city", $this->destinations[0]->getSubtype());
-        $this->assertEquals("Bangalore", $this->destinations[0]->getName());
-        $this->assertEquals("BLR", $this->destinations[0]->getIataCode());
+        $this->assertEquals("location", $this->destination->getType());
+        $this->assertEquals("city", $this->destination->getSubtype());
+        $this->assertEquals("Bangalore", $this->destination->getName());
+        $this->assertEquals("BLR", $this->destination->getIataCode());
         $this->assertEquals(
-            '{"type":"location","subtype":"city","name":"Bangalore","iataCode":"BLR"}',
-            $this->destinations[0]->__toString()
+            json_encode($this->data[0]),
+            $this->destination->__toString()
         );
     }
 }

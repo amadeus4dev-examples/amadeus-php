@@ -26,7 +26,7 @@ class DirectDestinations
      * @return Destination[]
      * @throws ResponseException
      */
-    public function get(array $query): iterable
+    public function get(array $query): array
     {
         $response = $this->client->getWithArrayParams(
             '/v1/airport/direct-destinations',

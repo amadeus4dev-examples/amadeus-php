@@ -10,7 +10,7 @@ class FlightAvailability extends Resource
     private ?string $id = null;
     private ?string $originDestinationId = null;
     private ?string $source = null;
-    private ?bool $instantTicketRequired = null;
+    private ?bool $instantTicketingRequired = null;
     private ?bool $paymentCardRequired = null;
     private ?string $duration = null;
     private ?array $segments = null;
@@ -50,9 +50,9 @@ class FlightAvailability extends Resource
     /**
      * @return bool|null
      */
-    public function getInstantTicketRequired(): ?bool
+    public function getInstantTicketingRequired(): ?bool
     {
-        return $this->instantTicketRequired;
+        return $this->instantTicketingRequired;
     }
 
     /**
@@ -74,7 +74,7 @@ class FlightAvailability extends Resource
     /**
      * @return ExtendedSegment[]|null
      */
-    public function getSegments(): ?iterable
+    public function getSegments(): ?array
     {
         return Resource::toResourceArray(
             $this->segments,

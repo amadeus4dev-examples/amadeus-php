@@ -64,9 +64,9 @@ class Resource
     /**
      * @param array $array
      * @param string $class
-     * @return iterable
+     * @return array
      */
-    public static function toResourceArray(array $array, string $class): iterable
+    public static function toResourceArray(array $array, string $class): array
     {
         $resourceArray = array();
         foreach ($array as $element) {

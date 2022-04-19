@@ -32,7 +32,7 @@ class ExtendedSegment
     /**
      * @return AvailabilityClass[]|null
      */
-    public function getAvailabilityClasses(): ?iterable
+    public function getAvailabilityClasses(): ?array
     {
         return Resource::toResourceArray(
             $this->availabilityClasses,
@@ -67,7 +67,7 @@ class ExtendedSegment
     /**
      * @return Co2Emission[]|null
      */
-    public function getCo2Emissions(): ?iterable
+    public function getCo2Emissions(): ?array
     {
         return Resource::toResourceArray(
             $this->co2Emissions,
@@ -146,7 +146,7 @@ class ExtendedSegment
     /**
      * @return FlightStop[]|null
      */
-    public function getStops(): ?iterable
+    public function getStops(): ?array
     {
         return Resource::toResourceArray(
             $this->stops,

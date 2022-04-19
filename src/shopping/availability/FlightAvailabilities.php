@@ -22,10 +22,11 @@ class FlightAvailabilities
     }
 
     /**
-     * @return FlightAvailability[]
+     * @param string $body
+     * @return array
      * @throws ResponseException
      */
-    public function post(string $body): iterable
+    public function post(string $body): array
     {
         $response = $this->client->postWithStringBody(
             '/v1/shopping/availability/flight-availabilities',
