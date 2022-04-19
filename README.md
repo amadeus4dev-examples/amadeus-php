@@ -131,22 +131,3 @@ Once you have downloaded the ```cacert.pem``` file, you should move it to whatev
 // Set your certificate path for opening SSL verification
 $amadeus->setSslCertificate($REPLACE_BY_YOUR_SSL_CERT_PATH);
 ```
-
-## Error Log
-The SDK includes [error_log](https://www.php.net/manual/en/function.error-log.php) function, which makes it easier locate the error produced in this SDK.
-
-Error Message can be sent to PHP's system logger, using the Operating System's system logging mechanism or a file, depending on what the [error_log](https://www.php.net/manual/en/errorfunc.configuration.php#ini.error-log) configuration directive is set to. This is the default option.
-```PHP
-$amadeus = Amadeus
-    ::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
-    ->setLogger()
-    ->build();
-```
-
-Alternatively, Error Message can be appended to the file destination.
-```PHP
-$amadeus = Amadeus
-    ::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
-    ->setLogger("REPLACE_BY_YOUR_CUSTOM_LOG_FILE_PATH")
-    ->build();
-```
