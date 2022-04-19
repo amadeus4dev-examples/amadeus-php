@@ -42,6 +42,9 @@ jobs:
     - name: Run PHPUnit
       run: vendor/bin/phpunit tests
 
+    - name: Generate Code Coverage Report
+      run: vendor/bin/phpunit --coverage-text tests
+
     - name: Run PHP-CS-Fixer for src
       if: ${{ matrix.php == '8.1' }}
       run: vendor/bin/php-cs-fixer fix src --dry-run --stop-on-violation
