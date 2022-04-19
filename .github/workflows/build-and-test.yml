@@ -36,16 +36,16 @@ jobs:
     - name: Update dependencies
       run: composer update --ignore-platform-reqs
 
-    - name: Run PHPStan
+    - name: Run PHPStan for Grammar check
       run: vendor/bin/phpstan analyse src tests --level 5
 
-    - name: Run PHPUnit Test and Generate Code Coverage Report
+    - name: Run PHPUnit for Unit tests check & Code coverage report generation
       run: vendor/bin/phpunit --coverage-text tests
 
-    - name: Run PHP-CS-Fixer for src
+    - name: Run PHP-CS-Fixer on src for Code style check
       if: ${{ matrix.php == '8.1' }}
       run: vendor/bin/php-cs-fixer fix src --dry-run --stop-on-violation
 
-    - name: Run PHP-CS-Fixer for tests
+    - name: Run PHP-CS-Fixer on tests for Code style check
       if: ${{ matrix.php == '8.1' }}
       run: vendor/bin/php-cs-fixer fix tests --dry-run --stop-on-violation
