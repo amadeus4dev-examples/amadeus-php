@@ -201,5 +201,4 @@ final class FlightOfferTest extends TestCase
         $this->assertEquals("KG", $includedCheckedBags->getWeightUnit());
         $this->assertEquals(null, $includedCheckedBags->getQuantity());
     }
-
 }
