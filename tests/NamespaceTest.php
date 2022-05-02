@@ -9,6 +9,7 @@ use Amadeus\Amadeus;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Response;
 use Amadeus\Shopping\Availability\FlightAvailabilities;
+use Amadeus\Shopping\FlightOffers;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -21,6 +22,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Shopping
  * @covers \Amadeus\Shopping\Availability
  * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
+ * @covers \Amadeus\Shopping\FlightOffers
  */
 final class NamespaceTest extends TestCase
 {
@@ -36,6 +38,7 @@ final class NamespaceTest extends TestCase
         $this->assertNotNull($client->shopping);
         $this->assertNotNull($client->shopping->availability);
         $this->assertNotNull($client->shopping->availability->flightAvailabilities);
+        $this->assertNotNull($client->shopping->flightOffers);
     }
 
     private Amadeus $client;
@@ -46,9 +49,6 @@ final class NamespaceTest extends TestCase
 
     /**
      * @Before
-     * @return void
-     * @covers \Amadeus\Amadeus
-     * @covers \Amadeus\Response
      */
     public function setUp(): void
     {
@@ -74,14 +74,12 @@ final class NamespaceTest extends TestCase
             ->willReturn($jsonObject);
     }
 
+    // ------ GET ------
     /**
-     * @return void
      * @throws ResponseException
-     * @covers \Amadeus\Airport\DirectDestinations
      */
-    public function testGetMethods(): void
+    public function testAirportRoutesGetMethod(): void
     {
-        // Testing Airport Routes GET API
         /* @phpstan-ignore-next-line */
         $this->client->expects($this->any())
             ->method("getWithArrayParams")
@@ -93,13 +91,26 @@ final class NamespaceTest extends TestCase
     }
 
     /**
-     * @return void
      * @throws ResponseException
-     * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
      */
-    public function testPostMethods(): void
+    public function testFlightOffersSearchGetMethod(): void
     {
-        // Testing Flight Availabilities POST API
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("getWithArrayParams")
+            ->with("/v2/shopping/flight-offers", $this->params)
+            ->willReturn($this->multiResponse);
+        $flightOffers = new FlightOffers($this->client);
+        $this->assertNotNull($flightOffers->get($this->params));
+        $this->assertEquals(2, sizeof($flightOffers->get($this->params)));
+    }
+
+    // ------ POST ------
+    /**
+     * @throws ResponseException
+     */
+    public function testFlightAvailabilitiesPostMethod(): void
+    {
         /* @phpstan-ignore-next-line */
         $this->client->expects($this->any())
             ->method("postWithStringBody")
@@ -108,5 +119,20 @@ final class NamespaceTest extends TestCase
         $flightAvailabilities = new FlightAvailabilities($this->client);
         $this->assertNotNull($flightAvailabilities->post($this->body));
         $this->assertEquals(2, sizeof($flightAvailabilities->post($this->body)));
+    }
+
+    /**
+     * @throws ResponseException
+     */
+    public function testFlightOffersSearchPostMethod(): void
+    {
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("postWithStringBody")
+            ->with("/v2/shopping/flight-offers", $this->body)
+            ->willReturn($this->multiResponse);
+        $flightOffers = new FlightOffers($this->client);
+        $this->assertNotNull($flightOffers->post($this->body));
+        $this->assertEquals(2, sizeof($flightOffers->post($this->body)));
     }
 }

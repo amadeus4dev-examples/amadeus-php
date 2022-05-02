@@ -19,6 +19,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Shopping
  * @covers \Amadeus\Shopping\Availability
  * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
+ * @covers \Amadeus\Shopping\FlightOffers
  */
 final class RequestTest extends TestCase
 {
