@@ -80,6 +80,18 @@ class Resource
     }
 
     /**
+     * For fitting into the Laravel framework
+     * Transform the resource into an array.
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        /* @phpstan-ignore-next-line */
+        return json_decode($this->__toString(), true);
+    }
+
+    /**
      * @return Response|null
      */
     public function getResponse(): ?Response
