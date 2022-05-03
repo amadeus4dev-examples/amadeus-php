@@ -11,7 +11,7 @@ class FlightOffer extends Resource
     private ?string $source = null;
     private ?bool $instantTicketingRequired = null;
     private ?bool $disablePricing = null;
-    private ?bool $nonHomogenous = null;
+    private ?bool $nonHomogeneous = null;
     private ?bool $oneWay = null;
     private ?bool $paymentCardRequired = null;
     private ?string $lastTicketingDate = null;
@@ -65,9 +65,9 @@ class FlightOffer extends Resource
     /**
      * @return bool|null
      */
-    public function getNonHomogenous(): ?bool
+    public function getNonHomogeneous(): ?bool
     {
-        return $this->nonHomogenous;
+        return $this->nonHomogeneous;
     }
 
     /**

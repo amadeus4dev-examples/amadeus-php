@@ -140,7 +140,7 @@ final class FlightOfferTest extends TestCase
         $this->assertEquals("1", $this->flightOffer->getId());
         $this->assertEquals("GDS", $this->flightOffer->getSource());
         $this->assertEquals(false, $this->flightOffer->getInstantTicketingRequired());
-        $this->assertEquals(false, $this->flightOffer->getNonHomogenous());
+        $this->assertEquals(false, $this->flightOffer->getNonHomogeneous());
         $this->assertEquals(false, $this->flightOffer->getOneWay());
         $this->assertEquals("2022-11-01", $this->flightOffer->getLastTicketingDate());
         $this->assertEquals(9, $this->flightOffer->getNumberOfBookableSeats());
