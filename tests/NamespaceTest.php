@@ -16,6 +16,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Configuration
  * @covers \Amadeus\Amadeus
  * @covers \Amadeus\HTTPClient
+ * @covers \Amadeus\Client\AccessToken
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Airport
  * @covers \Amadeus\Airport\DirectDestinations

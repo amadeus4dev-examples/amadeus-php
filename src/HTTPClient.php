@@ -25,6 +25,7 @@ class HTTPClient
     public function __construct(Configuration $configuration)
     {
         $this->configuration = $configuration;
+        $this->accessToken = new AccessToken($this);
     }
 
     /**
@@ -68,56 +69,11 @@ class HTTPClient
     }
 
     /**
-     * @throws ResponseException
+     * @return AccessToken
      */
     public function getAuthorizedToken(): AccessToken
     {
-        $this->updateAccessToken();
         return $this->accessToken;
-    }
-
-    /**
-     * @throws ResponseException
-     */
-    protected function updateAccessToken(): void
-    {
-        // Checks if the current access token expires.
-        if ($this->accessToken!=null) {
-            if ($this->accessToken->getExpiresAt() < time()) {
-                //print_r('AccessToken expired!'."\n");
-                // If expired then refresh the token
-                $this->accessToken = $this->fetchAccessToken();
-            }
-        } else {
-            // Else still return the current token
-            //print_r("First time to fetch AccessToken!"."\n");
-            $this->accessToken = $this->fetchAccessToken();
-        }
-    }
-
-    /**
-     * @throws ResponseException
-     */
-    protected function fetchAccessToken(): AccessToken
-    {
-        $params = array(
-            'client_id' => $this->configuration->getClientId(),
-            'client_secret' => $this->configuration->getClientSecret(),
-            'grant_type' => 'client_credentials'
-        );
-
-        $request = new Request(
-            Constants::POST,
-            '/v1/security/oauth2/token',
-            $params,
-            null,
-            null,
-            $this
-        );
-
-        $response = $this->execute($request);
-
-        return new AccessToken($response->getBodyAsJsonObject());
     }
 
     /**
@@ -125,7 +81,7 @@ class HTTPClient
      * @return Response
      * @throws ResponseException
      */
-    protected function execute(Request $request): Response
+    public function execute(Request $request): Response
     {
         $curlHandle = curl_init();
         $this->setCurlOptions($curlHandle, $request);

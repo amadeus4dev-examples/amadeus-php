@@ -42,6 +42,7 @@ final class HTTPClientTest extends TestCase
 
     /**
      * @Before
+     * @throws ReflectionException
      */
     protected function setUp(): void
     {
@@ -73,11 +74,13 @@ final class HTTPClientTest extends TestCase
         $objAccessToken = (object) [
             "access_token" => "my_token",
         ];
+
+        $this->accessToken = new AccessToken($this->client);
+        PHPUnitUtil::callMethod($this->accessToken, "constructToken", array($objAccessToken));
+
         $this->client->expects($this->any())
             ->method("getAuthorizedToken")
-            ->willReturn(new AccessToken($objAccessToken));
-
-        $this->accessToken = new AccessToken($objAccessToken);
+            ->willReturn($this->accessToken);
     }
 
     /**
@@ -138,6 +141,7 @@ final class HTTPClientTest extends TestCase
 
     /**
      * @throws ReflectionException
+     * @throws ResponseException
      */
     public function testPost4FetchAccessToken(): void
     {
@@ -166,7 +170,8 @@ final class HTTPClientTest extends TestCase
             ->with($request)
             ->willReturn(new Response($request, $this->info, $this->result));
 
-        PHPUnitUtil::callMethod($obj, 'fetchAccessToken', array());
+        //PHPUnitUtil::callMethod($obj->getAuthorizedToken(), 'fetchAccessToken', array());
+        $obj->getAuthorizedToken()->fetchAccessToken();
     }
 
     /**

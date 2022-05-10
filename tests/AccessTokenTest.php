@@ -8,7 +8,6 @@ use Amadeus\Client\AccessToken;
 use Amadeus\Configuration;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\HTTPClient;
-use Amadeus\Request;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
 
@@ -21,38 +20,42 @@ use ReflectionException;
 final class AccessTokenTest extends TestCase
 {
     private HTTPClient $client;
-    private Configuration $configuration;
     private object $result;
 
     /**
      * @Before
+     * @throws ReflectionException
      */
     protected function setUp(): void
     {
-        $this->configuration = new Configuration("client_id", "client_secret");
+        $configuration = new Configuration("client_id", "client_secret");
 
         $this->client = $this->getMockBuilder(HTTPClient::class)
-            ->setConstructorArgs(array($this->configuration))
+            ->setConstructorArgs(array($configuration))
             ->getMock();
 
         $this->client->expects($this->any())
             ->method("getConfiguration")
-            ->willReturn($this->configuration);
+            ->willReturn($configuration);
 
         $this->result = (object) [
             "type" => "amadeusOAuth2Token",
             "username" => "foo@bar.com",
             "application_name" => "foobar",
-            "client_id" => $this->configuration->getClientId(),
+            "client_id" => $configuration->getClientId(),
             "token_type" => "Bearer",
             "access_token" => "my_token",
             "expires_in" => 1799,
             "state" => "approved",
             "scope" => " "
         ];
+
+        $accessToken = new AccessToken($this->client);
+        PHPUnitUtil::callMethod($accessToken, "constructToken", array($this->result));
+
         $this->client->expects($this->any())
             ->method("getAuthorizedToken")
-            ->willReturn(new AccessToken($this->result));
+            ->willReturn($accessToken);
     }
 
     /**
@@ -71,8 +74,6 @@ final class AccessTokenTest extends TestCase
         $this->assertEquals(1799, $accessToken->getExpiresIn());
         $this->assertEquals("approved", $accessToken->getState());
         $this->assertEquals(" ", $accessToken->getScope());
-        $this->result->expires_at = $accessToken->getExpiresAt();
-        $this->assertEquals(json_encode($this->result), $accessToken->__toString());
     }
 
     /**
@@ -80,15 +81,17 @@ final class AccessTokenTest extends TestCase
      */
     public function testFetchAccessTokenWhenNotExpired(): void
     {
-        $obj = $this->getMockBuilder(HTTPClient::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(array('fetchAccessToken'))
+        $obj = $this->getMockBuilder(AccessToken::class)
+            ->setConstructorArgs(array($this->client))
+            ->onlyMethods(array("fetchAccessToken"))
             ->getMock();
-        $obj->expects($this->once())
+
+        $obj->expects($this->exactly(1))
             ->method('fetchAccessToken')
-            ->willReturn(new AccessToken($this->result));
-        $obj->getAuthorizedToken();
-        $obj->getAuthorizedToken();
+            ->willReturn($this->result);
+
+        $obj->getAccessToken();
+        $obj->getAccessToken();
     }
 
     /**
@@ -96,15 +99,18 @@ final class AccessTokenTest extends TestCase
      */
     public function testUpdateAccessTokenWhenExpired(): void
     {
-        $obj = $this->getMockBuilder(HTTPClient::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(array('fetchAccessToken'))
+        $obj = $this->getMockBuilder(AccessToken::class)
+            ->setConstructorArgs(array($this->client))
+            ->onlyMethods(array("fetchAccessToken"))
             ->getMock();
+
         $this->result->expires_at = 0;
+
         $obj->expects($this->exactly(2))
             ->method('fetchAccessToken')
-            ->willReturn(new AccessToken($this->result));
-        $obj->getAuthorizedToken();
-        $obj->getAuthorizedToken();
+            ->willReturn($this->result);
+
+        $obj->getAccessToken();
+        $obj->getAccessToken();
     }
 }
