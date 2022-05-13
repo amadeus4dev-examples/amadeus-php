@@ -23,7 +23,7 @@ class FlightAvailabilities
 
     /**
      * @param string $body
-     * @return array
+     * @return FlightAvailability[]
      * @throws ResponseException
      */
     public function post(string $body): array
