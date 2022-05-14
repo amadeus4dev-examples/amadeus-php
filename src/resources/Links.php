@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Links
+class Links implements ResourceInterface
 {
     private ?string $href = null;
     private ?array $methods = null;
@@ -34,9 +34,13 @@ class Links
         return $this->count;
     }
 
-    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
+    }
+
+    public function __toString()
+    {
+        return json_encode(get_object_vars($this));
     }
 }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Price
+class Price implements ResourceInterface
 {
     private ?string $margin = null;
     private ?string $grandTotal = null;
@@ -106,16 +106,12 @@ class Price
         return $this->refundableTaxes;
     }
 
-    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString(): string
+    public function __toString()
     {
         return json_encode(get_object_vars($this));
     }

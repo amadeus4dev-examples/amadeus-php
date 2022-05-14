@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Co2Emission
+class Co2Emission implements ResourceInterface
 {
     private ?int $weight = null;
     private ?string $weightUnit = null;
@@ -34,16 +34,12 @@ class Co2Emission
         return $this->cabin;
     }
 
-    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString(): string
+    public function __toString()
     {
         return json_encode(get_object_vars($this));
     }

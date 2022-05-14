@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class FlightStop
+class FlightStop implements ResourceInterface
 {
     private ?string $iataCode = null;
     private ?string $duration = null;
@@ -43,16 +43,12 @@ class FlightStop
         return $this->departureAt;
     }
 
-    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString(): string
+    public function __toString()
     {
         return json_encode(get_object_vars($this));
     }

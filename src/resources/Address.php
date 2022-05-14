@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Address
+class Address implements ResourceInterface
 {
     private ?string $cityName = null;
     private ?string $cityCode = null;
@@ -61,9 +61,13 @@ class Address
         return $this->regionCode;
     }
 
-    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
+    }
+
+    public function __toString()
+    {
+        return json_encode(get_object_vars($this));
     }
 }

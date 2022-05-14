@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class TravelerPricing
+class TravelerPricing implements ResourceInterface
 {
     private ?string $travelerId = null;
     private ?string $fareOption = null;
@@ -67,16 +67,12 @@ class TravelerPricing
         );
     }
 
-    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString(): string
+    public function __toString()
     {
         return json_encode(get_object_vars($this));
     }

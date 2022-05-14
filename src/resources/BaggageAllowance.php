@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class BaggageAllowance
+class BaggageAllowance implements ResourceInterface
 {
     private ?int $quantity = null;
     private ?int $weight = null;
@@ -34,16 +34,12 @@ class BaggageAllowance
         return $this->weightUnit;
     }
 
-    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString(): string
+    public function __toString()
     {
         return json_encode(get_object_vars($this));
     }

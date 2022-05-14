@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class AvailabilityClass
+class AvailabilityClass implements ResourceInterface
 {
     private ?int $numberOfBookableSeats = null;
     private ?string $class = null;
@@ -46,16 +46,12 @@ class AvailabilityClass
         );
     }
 
-    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString(): string
+    public function __toString()
     {
         return json_encode(get_object_vars($this));
     }

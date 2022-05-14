@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Destination extends Resource
+class Destination extends Resource implements ResourceInterface
 {
     private ?string $type = null;
     private ?string $subtype = null;
@@ -43,16 +43,12 @@ class Destination extends Resource
         return $this->iataCode;
     }
 
-    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString(): string
+    public function __toString()
     {
         return json_encode(get_object_vars($this));
     }

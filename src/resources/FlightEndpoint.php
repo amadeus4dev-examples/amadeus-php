@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class FlightEndpoint
+class FlightEndpoint implements ResourceInterface
 {
     private ?string $iataCode = null;
     private ?string $terminal = null;
@@ -34,16 +34,12 @@ class FlightEndpoint
         return $this->at;
     }
 
-    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString(): string
+    public function __toString()
     {
         return json_encode(get_object_vars($this));
     }

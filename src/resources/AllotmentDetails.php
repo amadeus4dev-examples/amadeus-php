@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class AllotmentDetails
+class AllotmentDetails implements ResourceInterface
 {
     private ?string $tourName = null;
     private ?string $tourReference = null;
@@ -25,16 +25,12 @@ class AllotmentDetails
         return $this->tourReference;
     }
 
-    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
     }
 
-    /**
-     * @return string
-     */
-    public function __toString(): string
+    public function __toString()
     {
         return json_encode(get_object_vars($this));
     }

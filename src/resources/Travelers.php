@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Travelers
+class Travelers implements ResourceInterface
 {
     private ?string $score = null;
 
@@ -16,9 +16,13 @@ class Travelers
         return $this->score;
     }
 
-    // Setter
     public function __set($name, $value)
     {
         $this->$name = $value;
+    }
+
+    public function __toString()
+    {
+        return json_encode(get_object_vars($this));
     }
 }

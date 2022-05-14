@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class OperatingFlight
+class OperatingFlight implements ResourceInterface
 {
     private ?string $carrierCode = null;
 
