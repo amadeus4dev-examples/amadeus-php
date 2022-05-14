@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Amadeus;
 
-use Amadeus\Airport\DirectDestinations;
+use Amadeus\ReferenceData\Locations;
 
-class Airport
+class ReferenceData
 {
     /** @phpstan-ignore-next-line */
     private Amadeus $client;
 
-    public ?DirectDestinations $directDestinations;
+    public ?Locations $locations = null;
 
     /**
      * @param Amadeus $client
@@ -19,6 +19,6 @@ class Airport
     public function __construct(Amadeus $client)
     {
         $this->client = $client;
-        $this->directDestinations = new DirectDestinations($client);
+        $this->locations = new Locations($client);
     }
 }

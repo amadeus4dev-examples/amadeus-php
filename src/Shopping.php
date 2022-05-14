@@ -9,6 +9,9 @@ use Amadeus\Shopping\FlightOffers;
 
 class Shopping
 {
+    /** @phpstan-ignore-next-line */
+    private Amadeus $client;
+
     public ?Availability $availability;
     public ?FlightOffers $flightOffers;
 
@@ -17,6 +20,7 @@ class Shopping
      */
     public function __construct(Amadeus $client)
     {
+        $this->client = $client;
         $this->availability = new Availability($client);
         $this->flightOffers = new FlightOffers($client);
     }

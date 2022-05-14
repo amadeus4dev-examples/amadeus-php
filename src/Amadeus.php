@@ -10,6 +10,8 @@ class Amadeus extends HTTPClient
 
     public Shopping $shopping;
 
+    public ReferenceData $referenceData;
+
     /**
      * @param Configuration $configuration
      */
@@ -20,6 +22,7 @@ class Amadeus extends HTTPClient
 
         $this->airport = new Airport($this);
         $this->shopping = new Shopping($this);
+        $this->referenceData = new ReferenceData($this);
     }
 
     /**
