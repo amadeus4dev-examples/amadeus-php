@@ -32,6 +32,6 @@ class AdditionalService implements ResourceInterface
 
     public function __toString()
     {
-        return json_encode(get_object_vars($this));
+        return json_encode(get_object_vars($this), JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
     }
 }

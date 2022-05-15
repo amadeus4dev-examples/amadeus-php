@@ -7,7 +7,7 @@ namespace Amadeus\Resources;
 class Location extends Resource implements ResourceInterface
 {
     private ?string $id = null;
-    private ?object $links = null;
+    private ?object $self = null;
     private ?string $type = null;
     private ?string $subType = null;
     private ?string $name = null;
@@ -34,9 +34,12 @@ class Location extends Resource implements ResourceInterface
     /**
      * @return object|null
      */
-    public function getLinks(): ?object
+    public function getSelf(): ?object
     {
-        return $this->links;
+        return Resource::toResourceObject(
+            $this->self,
+            Links::class
+        );
     }
 
     /**
@@ -170,6 +173,6 @@ class Location extends Resource implements ResourceInterface
 
     public function __toString()
     {
-        return json_encode(get_object_vars($this));
+        return json_encode(get_object_vars($this), JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
     }
 }
