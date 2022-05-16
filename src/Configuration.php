@@ -16,7 +16,7 @@ class Configuration
 
     private int $port = 443;
 
-    private ?bool $logger = false;
+    //private ?bool $logger = false;
     private ?int $msgType = null;
     private ?string $msgDestination = null;
 
