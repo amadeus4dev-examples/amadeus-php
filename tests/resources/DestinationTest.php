@@ -60,7 +60,7 @@ final class DestinationTest extends TestCase
         $this->assertEquals("Bangalore", $this->destination->getName());
         $this->assertEquals("BLR", $this->destination->getIataCode());
         $this->assertEquals(
-            json_encode($this->data[0]),
+            json_encode($this->data[0], JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES),
             $this->destination->__toString()
         );
     }

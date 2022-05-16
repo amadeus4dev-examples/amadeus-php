@@ -208,43 +208,43 @@ final class FlightAvailabilityTest extends TestCase
     public function testToString(): void
     {
         $this->assertEquals(
-            json_encode($this->data[0]),
+            json_encode($this->data[0], JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES),
             $this->flightAvailability->__toString()
         );
         $this->assertEquals(
-            json_encode($this->data[0]->{'segments'}[0]),
+            json_encode($this->data[0]->{'segments'}[0], JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES),
             $this->flightAvailability->getSegments()[0]->__toString()
         );
         $this->assertEquals(
-            json_encode($this->data[0]->{'segments'}[0]->{'availabilityClasses'}[0]),
+            json_encode($this->data[0]->{'segments'}[0]->{'availabilityClasses'}[0], JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES),
             $this->flightAvailability->getSegments()[0]->getAvailabilityClasses()[0]->__toString()
         );
         $this->assertEquals(
-            json_encode($this->data[0]->{'segments'}[0]->{'availabilityClasses'}[0]->{'tourAllotment'}),
+            json_encode($this->data[0]->{'segments'}[0]->{'availabilityClasses'}[0]->{'tourAllotment'}, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES),
             $this->flightAvailability->getSegments()[0]->getAvailabilityClasses()[0]->getTourAllotment()->__toString()
         );
         $this->assertEquals(
-            json_encode($this->data[0]->{'segments'}[0]->{'co2Emissions'}[0]),
+            json_encode($this->data[0]->{'segments'}[0]->{'co2Emissions'}[0], JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES),
             $this->flightAvailability->getSegments()[0]->getCo2Emissions()[0]->__toString()
         );
         $this->assertEquals(
-            json_encode($this->data[0]->{'segments'}[0]->{'departure'}),
+            json_encode($this->data[0]->{'segments'}[0]->{'departure'}, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES),
             $this->flightAvailability->getSegments()[0]->getDeparture()->__toString()
         );
         $this->assertEquals(
-            json_encode($this->data[0]->{'segments'}[0]->{'arrival'}),
+            json_encode($this->data[0]->{'segments'}[0]->{'arrival'}, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES),
             $this->flightAvailability->getSegments()[0]->getArrival()->__toString()
         );
         $this->assertEquals(
-            json_encode($this->data[0]->{'segments'}[0]->{'aircraft'}),
+            json_encode($this->data[0]->{'segments'}[0]->{'aircraft'}, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES),
             $this->flightAvailability->getSegments()[0]->getAircraft()->__toString()
         );
         $this->assertEquals(
-            json_encode($this->data[0]->{'segments'}[0]->{'operating'}),
+            json_encode($this->data[0]->{'segments'}[0]->{'operating'}, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES),
             $this->flightAvailability->getSegments()[0]->getOperating()->__toString()
         );
         $this->assertEquals(
-            json_encode($this->data[0]->{'segments'}[0]->{'stops'}[0]),
+            json_encode($this->data[0]->{'segments'}[0]->{'stops'}[0], JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES),
             $this->flightAvailability->getSegments()[0]->getStops()[0]->__toString()
         );
     }

@@ -10,6 +10,7 @@ use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Exceptions\ServerException;
+use Amadeus\Resources\Resource;
 
 class HTTPClient
 {
@@ -69,11 +70,73 @@ class HTTPClient
     }
 
     /**
-     * @return AccessToken
+     * @param Response $response
+     * @return Response|null
+     * @throws ResponseException
      */
-    public function getAuthorizedToken(): AccessToken
+    public function getPreviousPage(Response $response): ?Response
     {
-        return $this->accessToken;
+        return $this->page(Constants::PREVIOUS, $response);
+    }
+
+    /**
+     * @param Response $response
+     * @return Response|null
+     * @throws ResponseException
+     */
+    public function getNextPage(Response $response): ?Response
+    {
+        return $this->page(Constants::NEXT, $response);
+    }
+
+    /**
+     * @param Response $response
+     * @return Response|null
+     * @throws ResponseException
+     */
+    public function getFirstPage(Response $response): ?Response
+    {
+        return $this->page(Constants::FIRST, $response);
+    }
+
+    /**
+     * @param Response $response
+     * @return Response|null
+     * @throws ResponseException
+     */
+    public function getLastPage(Response $response): ?Response
+    {
+        return $this->page(Constants::LAST, $response);
+    }
+
+    /**
+     * @param string $pageName
+     * @param Response $response
+     * @return Response|null
+     * @throws ResponseException
+     */
+    protected function page(string $pageName, Response $response): ?Response
+    {
+        $link = $response->getBodyAsJsonObject()->{'meta'}->{'links'}->{$pageName};
+        if ($link != null) {
+            $parts = explode("=", $link);
+            $pageNumber = $parts[count($parts)-1];
+
+            $request = $response->getRequest();
+            $params = $request->getParams();
+            $params["page[offset]"] = $pageNumber;
+
+            return $this->execute(new Request(
+                $request->getVerb(),
+                $request->getPath(),
+                $params,
+                null,
+                $this->accessToken->getAccessToken(),
+                $this
+            ));
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -180,6 +243,14 @@ class HTTPClient
     public function setSslCertificate(string $filePath)
     {
         $this->sslCertificate = $filePath;
+    }
+
+    /**
+     * @return AccessToken
+     */
+    public function getAuthorizedToken(): AccessToken
+    {
+        return $this->accessToken;
     }
 
     /**

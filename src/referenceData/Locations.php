@@ -8,10 +8,12 @@ use Amadeus\Amadeus;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\Location;
 use Amadeus\Resources\Resource;
+use Amadeus\Utils\PaginationAbstract;
 
-class Locations
+class Locations extends PaginationAbstract
 {
-    private Amadeus $client;
+    protected Amadeus $client;
+    protected string $className = Location::class;
 
     /**
      * @param Amadeus $client
@@ -34,5 +36,49 @@ class Locations
         );
 
         return Resource::fromArray($response, Location::class);
+    }
+
+    /**
+     * @param Location $resource
+     * @return Location[]|null
+     * @throws ResponseException
+     */
+    public function next($resource): ?array
+    {
+        $response = $this->client->getNextPage($resource->getResponse());
+        return $this->pageResult($response);
+    }
+
+    /**
+     * @param Location $resource
+     * @return Location[]|null
+     * @throws ResponseException
+     */
+    public function previous($resource): ?array
+    {
+        $response = $this->client->getPreviousPage($resource->getResponse());
+        return $this->pageResult($response);
+    }
+
+    /**
+     * @param Location $resource
+     * @return Location[]|null
+     * @throws ResponseException
+     */
+    public function first($resource): ?array
+    {
+        $response = $this->client->getFirstPage($resource->getResponse());
+        return $this->pageResult($response);
+    }
+
+    /**
+     * @param Location $resource
+     * @return Location[]|null
+     * @throws ResponseException
+     */
+    public function last($resource): ?array
+    {
+        $response = $this->client->getLastPage($resource->getResponse());
+        return $this->pageResult($response);
     }
 }
