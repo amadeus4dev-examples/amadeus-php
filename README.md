@@ -158,7 +158,9 @@ $locations[0]->getResponse()->getData();
 ```
 
 ## Pagination
-If an API endpoint supports pagination, the other pages are available under the ```->next```, ```->previous```, ```->last``` and ```->first``` methods.
+If an API endpoint supports pagination, the other pages are available under the 
+
+```->next```, ```->previous```, ```->last``` and ```->first``` methods.
 
 ```PHP
 $locations = $amadeus->referenceData->locations->get(
@@ -172,7 +174,9 @@ $locations = $amadeus->referenceData->locations->get(
 $locations2 = $amadeus->referenceData->locations->next($locations[0]);
 ```
 
-If you are making an arbitrary API call supports pagination, the other pages are available under the ```->getNextPage```, ```->getPreviousPage```, ```->getLastPage``` and ````->getFirstPage``` methods.
+If you are making an arbitrary API call supports pagination, the other pages are available under the
+
+```->getNextPage```, ```->getPreviousPage```, ```->getLastPage``` and ```->getFirstPage``` methods.
 
 ```PHP
 $locations = $amadeus->getWithArrayParams(
