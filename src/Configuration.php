@@ -111,29 +111,30 @@ class Configuration
         return $this->port;
     }
 
-    /**
-     * @param string|null $msgDestination
-     * @return Configuration
-     */
-    public function setLogger(?string $msgDestination=null): Configuration
-    {
-        $this->logger = true;
-        if ($msgDestination != null) {
-            $this->msgType = 3;
-        } else {
-            $this->msgType = 0;
-        }
-        $this->msgDestination = $msgDestination;
-        return $this;
-    }
-
-    /**
-     * @return bool|null
-     */
-    public function getLogger(): ?bool
-    {
-        return $this->logger;
-    }
+    // TODO LOGGER FUNCTION NEEDS TO BE REVIEWED
+//    /**
+//     * @param string|null $msgDestination
+//     * @return Configuration
+//     */
+//    public function setLogger(?string $msgDestination=null): Configuration
+//    {
+//        $this->logger = true;
+//        if ($msgDestination != null) {
+//            $this->msgType = 3;
+//        } else {
+//            $this->msgType = 0;
+//        }
+//        $this->msgDestination = $msgDestination;
+//        return $this;
+//    }
+//
+//    /**
+//     * @return bool|null
+//     */
+//    public function getLogger(): ?bool
+//    {
+//        return $this->logger;
+//    }
 
     /**
      * @return int|null

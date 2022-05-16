@@ -192,6 +192,7 @@ class HTTPClient
 //                    error_log($exception->__toString(), $this->configuration->getMsgType());
 //                }
 //            }
+            error_log($exception->__toString());
             throw $exception;
         }
     }
