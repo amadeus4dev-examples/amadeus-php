@@ -22,7 +22,8 @@
       "Amadeus\\Resources\\": "src/resources",
       "Amadeus\\Shopping\\": "src/shopping",
       "Amadeus\\Shopping\\Availability\\": "src/shopping/availability",
-      "Amadeus\\ReferenceData\\": "src/referenceData"
+      "Amadeus\\ReferenceData\\": "src/referenceData",
+      "Amadeus\\Utils\\": "src/utils"
     }
   },
   "require-dev": {
