@@ -131,3 +131,60 @@ Once you have downloaded the ```cacert.pem``` file, you should move it to whatev
 // Set your certificate path for opening SSL verification
 $amadeus->setSslCertificate($REPLACE_BY_YOUR_SSL_CERT_PATH);
 ```
+
+## Response
+Every successful API call returns a ```Resource``` object. The ```Resource``` object has the raw response body (in string format) available:
+
+```PHP
+$locations = $amadeus->referenceData->locations->get(
+    array(
+        "subType" => "CITY",
+        "keyword" => "PAR"
+    )
+);
+
+// The raw response, as a string
+$locations[0]->getResponse()->getResult(); // Include response headers
+$locations[0]->getResponse()->getBody(); //Without response headers
+
+// Directly get response headers as an array
+$locations[0]->getResponse()->getHeadersAsArray();
+
+// Directly get response body as a Json Object
+$locations[0]->getResponse()->getBodyAsJsonObject();
+
+// Directly get the data part of response body
+$locations[0]->getResponse()->getData();
+```
+
+## Pagination
+If an API endpoint supports pagination, the other pages are available under the ```->next```, ```->previous```, ```->last``` and ```->first``` methods.
+
+```PHP
+$locations = $amadeus->referenceData->locations->get(
+    array(
+        "subType" => "CITY",
+        "keyword" => "PAR"
+    )
+);
+
+// Fetches the next page
+$locations2 = $amadeus->referenceData->locations->next($locations[0]);
+```
+
+If you are making an arbitrary API call supports pagination, the other pages are available under the ```->getNextPage```, ```->getPreviousPage```, ```->getLastPage``` and ````->getFirstPage``` methods.
+
+```PHP
+$locations = $amadeus->getWithArrayParams(
+    '/v1/reference-data/locations',
+    array(
+        "subType" => "CITY",
+        "keyword" => "PAR"
+    )
+);
+
+// Fetches the next page
+$locations2 = $amadeus->getNextPage($locations);
+```
+
+If a page is not available, the method will return ```null```.
