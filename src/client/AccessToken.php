@@ -34,7 +34,7 @@ class AccessToken
 
         // Renew the token 10 seconds earlier than required
         // Cuz the token will expire in 1799 seconds
-        $this->expires_at = time()+1789;
+        $this->expires_at = time()+20;
     }
 
     /**
@@ -47,22 +47,24 @@ class AccessToken
             // Checks if the current access token expires.
             if ($this->expires_at < time()) {
                 // If expired then refresh the token
+                $this->constructToken($this->fetchAccessToken());
+
                 file_put_contents(
                     'php://stdout',
                     "Access Token Expired!"."\n"
-                    ."Automatically Update Access Token!"."\n"
+                    ."Automatically Update Access Token!".$this->access_token."\n"
                 );
-                $this->constructToken($this->fetchAccessToken());
 
                 // Else still return the current token
             }
         } else {
             // First time to fetch access token
+            $this->constructToken($this->fetchAccessToken());
+
             file_put_contents(
                 'php://stdout',
-                "First time to fetch AccessToken!"."\n"
+                "First time to fetch AccessToken!".$this->access_token."\n"
             );
-            $this->constructToken($this->fetchAccessToken());
         }
     }
 
