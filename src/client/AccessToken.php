@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Amadeus\Client;
 
-use Amadeus\Amadeus;
 use Amadeus\Constants;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\HTTPClient;
@@ -54,8 +53,14 @@ class AccessToken
                     "Access Token Expired!"."\n"
                     ."Automatically Update Access Token!".$this->access_token."\n"
                 );
-
+            } else {
                 // Else still return the current token
+
+                file_put_contents(
+                    'php://stdout',
+                    "Current Access Token is still available!"."\n"
+                    .$this->access_token."\n"
+                );
             }
         } else {
             // First time to fetch access token
@@ -63,7 +68,8 @@ class AccessToken
 
             file_put_contents(
                 'php://stdout',
-                "First time to fetch AccessToken!".$this->access_token."\n"
+                "First time to fetch AccessToken!"."\n"
+                .$this->access_token."\n"
             );
         }
     }

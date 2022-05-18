@@ -247,9 +247,9 @@ class HTTPClient
     }
 
     /**
-     * @return AccessToken
+     * @return AccessToken|null
      */
-    public function getAuthorizedToken(): AccessToken
+    public function getAuthorizedToken(): ?AccessToken
     {
         return $this->accessToken;
     }
