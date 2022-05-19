@@ -107,6 +107,22 @@ class AccessToken
     }
 
     /**
+     * @param string|null $access_token
+     */
+    public function setAccessToken(?string $access_token): void
+    {
+        $this->access_token = $access_token;
+    }
+
+    /**
+     * @param int $expires_at
+     */
+    public function setExpiresAt(int $expires_at): void
+    {
+        $this->expires_at = $expires_at;
+    }
+
+    /**
      * @return string|null
      */
     public function getType(): ?string
