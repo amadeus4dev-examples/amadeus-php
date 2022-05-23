@@ -192,6 +192,13 @@ class HTTPClient
 //                }
 //            }
             error_log($exception->__toString());
+
+            // Log the error to console
+            file_put_contents(
+                'php://stdout',
+                $exception->__toString()
+            );
+
             throw $exception;
         }
     }
