@@ -10,7 +10,6 @@ use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Exceptions\ServerException;
-use Amadeus\Resources\Resource;
 
 class HTTPClient
 {
@@ -42,7 +41,7 @@ class HTTPClient
             $path,
             $query,
             null,
-            $this->getAuthorizedToken()->getAccessToken(),
+            $this->getAccessToken()->getBearerToken(),
             $this
         );
 
@@ -62,7 +61,7 @@ class HTTPClient
             $path,
             null,
             $body,
-            $this->getAuthorizedToken()->getAccessToken(),
+            $this->getAccessToken()->getBearerToken(),
             $this
         );
 
@@ -131,7 +130,7 @@ class HTTPClient
                 $request->getPath(),
                 $params,
                 null,
-                $this->accessToken->getAccessToken(),
+                $this->getAccessToken()->getBearerToken(),
                 $this
             ));
         } else {
@@ -249,7 +248,7 @@ class HTTPClient
     /**
      * @return AccessToken|null
      */
-    public function getAuthorizedToken(): ?AccessToken
+    public function getAccessToken(): ?AccessToken
     {
         return $this->accessToken;
     }

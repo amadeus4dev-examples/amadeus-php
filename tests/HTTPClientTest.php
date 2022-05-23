@@ -73,13 +73,14 @@ final class HTTPClientTest extends TestCase
 
         $objAccessToken = (object) [
             "access_token" => "my_token",
+            "expires_in" => 1799
         ];
 
         $this->accessToken = new AccessToken($this->client);
-        PHPUnitUtil::callMethod($this->accessToken, "constructToken", array($objAccessToken));
+        PHPUnitUtil::callMethod($this->accessToken, "storeAccessToken", array($objAccessToken));
 
         $this->client->expects($this->any())
-            ->method("getAuthorizedToken")
+            ->method("getAccessToken")
             ->willReturn($this->accessToken);
     }
 
@@ -90,10 +91,10 @@ final class HTTPClientTest extends TestCase
     {
         $obj = $this->getMockBuilder(HTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
-            ->onlyMethods(array('execute', 'getAuthorizedToken'))
+            ->onlyMethods(array('execute', 'getAccessToken'))
             ->getMock();
         $obj->expects($this->any())
-            ->method("getAuthorizedToken")
+            ->method("getAccessToken")
             ->willReturn($this->accessToken);
 
         $request = new Request(
@@ -101,7 +102,7 @@ final class HTTPClientTest extends TestCase
             $this->path,
             $this->params,
             null,
-            $obj->getAuthorizedToken()->getAccessToken(),
+            $obj->getAccessToken()->getBearerToken(),
             $obj
         );
 
@@ -117,10 +118,10 @@ final class HTTPClientTest extends TestCase
     {
         $obj = $this->getMockBuilder(HTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
-            ->onlyMethods(array('execute', 'getAuthorizedToken'))
+            ->onlyMethods(array('execute', 'getAccessToken'))
             ->getMock();
         $obj->expects($this->any())
-            ->method("getAuthorizedToken")
+            ->method("getAccessToken")
             ->willReturn($this->accessToken);
 
         $request = new Request(
@@ -128,7 +129,7 @@ final class HTTPClientTest extends TestCase
             $this->path,
             null,
             $this->body,
-            $obj->getAuthorizedToken()->getAccessToken(),
+            $obj->getAccessToken()->getBearerToken(),
             $obj
         );
 
@@ -140,7 +141,6 @@ final class HTTPClientTest extends TestCase
     }
 
     /**
-     * @throws ReflectionException
      * @throws ResponseException
      */
     public function testPost4FetchAccessToken(): void
@@ -170,8 +170,7 @@ final class HTTPClientTest extends TestCase
             ->with($request)
             ->willReturn(new Response($request, $this->info, $this->result));
 
-        //PHPUnitUtil::callMethod($obj->getAuthorizedToken(), 'fetchAccessToken', array());
-        $obj->getAuthorizedToken()->fetchAccessToken();
+        $obj->getAccessToken()->fetchAccessToken();
     }
 
     /**

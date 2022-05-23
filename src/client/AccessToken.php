@@ -11,16 +11,8 @@ use Amadeus\Request;
 
 class AccessToken
 {
-    private ?string $type = null;
-    private ?string $username = null;
-    private ?string $application_name = null;
-    private ?string $client_id = null;
-    private ?string $token_type = null;
     private ?string $access_token = null;
-    private ?int $expires_in = null;
-    private ?string $state = null;
-    private ?string $scope = null;
-    private int $expires_at;
+    private ?int $expires_at = null;
 
     private HTTPClient $client;
 
@@ -30,10 +22,16 @@ class AccessToken
     public function __construct(HTTPClient $client)
     {
         $this->client = $client;
+    }
 
-        // Renew the token 10 seconds earlier than required
-        // Cuz the token will expire in 1799 seconds
-        $this->expires_at = time()+20;
+    /**
+     * @return string|null
+     * @throws ResponseException
+     */
+    public function getBearerToken(): ?string
+    {
+        $this->updateAccessToken();
+        return $this->access_token;
     }
 
     /**
@@ -46,32 +44,38 @@ class AccessToken
             // Checks if the current access token expires.
             if ($this->expires_at < time()) {
                 // If expired then refresh the token
-                $this->constructToken($this->fetchAccessToken());
+                $this->storeAccessToken($this->fetchAccessToken());
 
                 file_put_contents(
                     'php://stdout',
-                    "Access Token Expired!"."\n"
-                    ."Automatically Update Access Token!".$this->access_token."\n"
+                    "Access token expired ! Automatically update access token -> [". $this->access_token ."] !"."\n"
                 );
             } else {
                 // Else still return the current token
 
                 file_put_contents(
                     'php://stdout',
-                    "Current Access Token is still available!"."\n"
-                    .$this->access_token."\n"
+                    "Current access token -> [". $this->access_token ."] is still available !"."\n"
                 );
             }
         } else {
             // First time to fetch access token
-            $this->constructToken($this->fetchAccessToken());
+            $this->storeAccessToken($this->fetchAccessToken());
 
             file_put_contents(
                 'php://stdout',
-                "First time to fetch AccessToken!"."\n"
-                .$this->access_token."\n"
+                "First time to fetch access token -> [". $this->access_token ."] !"."\n"
             );
         }
+    }
+
+    protected function storeAccessToken(object $object)
+    {
+        $this->access_token = $object->access_token;
+
+        // Renew the token 10 seconds earlier than required
+        // Cuz the token will expire in 1799 seconds
+        $this->expires_at = time() + $object->expires_in - 1790;
     }
 
     /**
@@ -99,13 +103,6 @@ class AccessToken
         return $response->getBodyAsJsonObject();
     }
 
-    protected function constructToken(object $object)
-    {
-        foreach ($object as $key =>  $value) {
-            $this->$key = $value;
-        }
-    }
-
     /**
      * @param string|null $access_token
      */
@@ -115,85 +112,11 @@ class AccessToken
     }
 
     /**
-     * @param int $expires_at
+     * @param int|null $expires_at
      */
-    public function setExpiresAt(int $expires_at): void
+    public function setExpiresAt(?int $expires_at): void
     {
         $this->expires_at = $expires_at;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getType(): ?string
-    {
-        return $this->type;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getUsername(): ?string
-    {
-        return $this->username;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getApplicationName(): ?string
-    {
-        return $this->application_name;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getClientId(): ?string
-    {
-        return $this->client_id;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getTokenType(): ?string
-    {
-        return $this->token_type;
-    }
-
-    /**
-     * @return string|null
-     * @throws ResponseException
-     */
-    public function getAccessToken(): ?string
-    {
-        $this->updateAccessToken();
-        return $this->access_token;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getExpiresIn(): ?int
-    {
-        return $this->expires_in;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getState(): ?string
-    {
-        return $this->state;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getScope(): ?string
-    {
-        return $this->scope;
     }
 
     /**
