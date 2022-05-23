@@ -75,7 +75,7 @@ class AccessToken
 
         // Renew the token 10 seconds earlier than required
         // Cuz the token will expire in 1799 seconds
-        $this->expires_at = time() + $object->expires_in - 1790;
+        $this->expires_at = time() + $object->expires_in - 1780;
     }
 
     /**
