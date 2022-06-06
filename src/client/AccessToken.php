@@ -25,16 +25,6 @@ class AccessToken
     }
 
     /**
-     * @return string|null
-     * @throws ResponseException
-     */
-    public function getBearerToken(): ?string
-    {
-        $this->updateAccessToken();
-        return $this->access_token;
-    }
-
-    /**
      * @throws ResponseException
      */
     public function updateAccessToken(): void
@@ -104,9 +94,19 @@ class AccessToken
     }
 
     /**
+     * @return string|null
+     * @throws ResponseException
+     */
+    public function getBearerToken(): ?string
+    {
+        $this->updateAccessToken();
+        return $this->access_token;
+    }
+
+    /**
      * @param string|null $access_token
      */
-    public function setAccessToken(?string $access_token): void
+    public function setBearerToken(?string $access_token): void
     {
         $this->access_token = $access_token;
     }
