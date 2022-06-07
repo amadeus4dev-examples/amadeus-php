@@ -11,7 +11,7 @@ class ReferenceData
     /** @phpstan-ignore-next-line */
     private Amadeus $amadeus;
 
-    public ?Locations $locations = null;
+    private ?Locations $locations = null;
 
     /**
      * @param Amadeus $amadeus
@@ -21,4 +21,13 @@ class ReferenceData
         $this->amadeus = $amadeus;
         $this->locations = new Locations($amadeus);
     }
+
+    /**
+     * @return Locations|null
+     */
+    public function getLocations(): ?Locations
+    {
+        return $this->locations;
+    }
+
 }

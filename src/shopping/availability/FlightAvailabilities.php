@@ -28,7 +28,7 @@ class FlightAvailabilities
      */
     public function post(string $body): array
     {
-        $response = $this->amadeus->client->postWithStringBody(
+        $response = $this->amadeus->getClient()->postWithStringBody(
             '/v1/shopping/availability/flight-availabilities',
             $body
         );

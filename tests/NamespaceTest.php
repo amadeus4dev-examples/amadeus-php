@@ -37,18 +37,18 @@ final class NamespaceTest extends TestCase
         $amadeus = Amadeus::builder("id", "secret")->build();
 
         // Airport
-        $this->assertNotNull($amadeus->airport);
-        $this->assertNotNull($amadeus->airport->directDestinations);
+        $this->assertNotNull($amadeus->getAirport());
+        $this->assertNotNull($amadeus->getAirport()->getDirectDestinations());
 
         // Shopping
-        $this->assertNotNull($amadeus->shopping);
-        $this->assertNotNull($amadeus->shopping->availability);
-        $this->assertNotNull($amadeus->shopping->availability->flightAvailabilities);
-        $this->assertNotNull($amadeus->shopping->flightOffers);
+        $this->assertNotNull($amadeus->getShopping());
+        $this->assertNotNull($amadeus->getShopping()->getAvailability());
+        $this->assertNotNull($amadeus->getShopping()->getAvailability()->getFlightAvailabilities());
+        $this->assertNotNull($amadeus->getShopping()->getFlightOffers());
 
         // ReferenceData
-        $this->assertNotNull($amadeus->referenceData);
-        $this->assertNotNull($amadeus->referenceData->locations);
+        $this->assertNotNull($amadeus->getReferenceData());
+        $this->assertNotNull($amadeus->getReferenceData()->getLocations());
     }
 
     private Amadeus $amadeus;
@@ -65,7 +65,10 @@ final class NamespaceTest extends TestCase
     {
         $this->amadeus = $this->createMock(Amadeus::class);
         $this->client = $this->createMock(HTTPClient::class);
-        $this->amadeus->client = $this->client;
+
+        $this->amadeus->expects($this->any())
+            ->method("getClient")
+            ->willReturn($this->client);
 
         $this->params = array("airline"=>"1X");
         $this->body = "{ \"data\": [{}]}";

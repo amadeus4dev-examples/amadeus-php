@@ -12,8 +12,8 @@ class Shopping
     /** @phpstan-ignore-next-line */
     private Amadeus $amadeus;
 
-    public ?Availability $availability;
-    public ?FlightOffers $flightOffers;
+    private ?Availability $availability;
+    private ?FlightOffers $flightOffers;
 
     /**
      * @param Amadeus $amadeus
@@ -24,4 +24,21 @@ class Shopping
         $this->availability = new Availability($amadeus);
         $this->flightOffers = new FlightOffers($amadeus);
     }
+
+    /**
+     * @return Availability|null
+     */
+    public function getAvailability(): ?Availability
+    {
+        return $this->availability;
+    }
+
+    /**
+     * @return FlightOffers|null
+     */
+    public function getFlightOffers(): ?FlightOffers
+    {
+        return $this->flightOffers;
+    }
+
 }

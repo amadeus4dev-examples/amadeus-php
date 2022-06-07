@@ -9,7 +9,7 @@ use Amadeus\Shopping\Availability\FlightAvailabilities;
 
 class Availability
 {
-    public ?FlightAvailabilities $flightAvailabilities;
+    private ?FlightAvailabilities $flightAvailabilities;
 
     /**
      * @param Amadeus $amadeus
@@ -18,4 +18,13 @@ class Availability
     {
         $this->flightAvailabilities = new FlightAvailabilities($amadeus);
     }
+
+    /**
+     * @return FlightAvailabilities|null
+     */
+    public function getFlightAvailabilities(): ?FlightAvailabilities
+    {
+        return $this->flightAvailabilities;
+    }
+
 }

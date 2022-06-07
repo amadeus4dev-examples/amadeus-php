@@ -28,7 +28,7 @@ class FlightOffers
      */
     public function get(array $params): array
     {
-        $response = $this->amadeus->client->getWithArrayParams(
+        $response = $this->amadeus->getClient()->getWithArrayParams(
             '/v2/shopping/flight-offers',
             $params
         );
@@ -43,7 +43,7 @@ class FlightOffers
      */
     public function post(string $body): array
     {
-        $response = $this->amadeus->client->postWithStringBody(
+        $response = $this->amadeus->getClient()->postWithStringBody(
             '/v2/shopping/flight-offers',
             $body
         );

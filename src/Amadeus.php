@@ -6,15 +6,15 @@ namespace Amadeus;
 
 class Amadeus
 {
-    public Configuration $configuration;
+    private Configuration $configuration;
 
-    public HTTPClient $client;
+    private HTTPClient $client;
 
-    public Airport $airport;
+    private Airport $airport;
 
-    public Shopping $shopping;
+    private Shopping $shopping;
 
-    public ReferenceData $referenceData;
+    private ReferenceData $referenceData;
 
     /**
      * @param Configuration $configuration
@@ -39,5 +39,45 @@ class Amadeus
     public static function builder(string $clientId, string $clientSecret): Configuration
     {
         return new Configuration($clientId, $clientSecret);
+    }
+
+    /**
+     * @return Configuration
+     */
+    public function getConfiguration(): Configuration
+    {
+        return $this->configuration;
+    }
+
+    /**
+     * @return BasicHTTPClient|HTTPClient
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * @return Airport
+     */
+    public function getAirport(): Airport
+    {
+        return $this->airport;
+    }
+
+    /**
+     * @return Shopping
+     */
+    public function getShopping(): Shopping
+    {
+        return $this->shopping;
+    }
+
+    /**
+     * @return ReferenceData
+     */
+    public function getReferenceData(): ReferenceData
+    {
+        return $this->referenceData;
     }
 }

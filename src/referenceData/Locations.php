@@ -28,7 +28,7 @@ class Locations
      */
     public function get(array $query): array
     {
-        $response = $this->amadeus->client->getWithArrayParams(
+        $response = $this->amadeus->getClient()->getWithArrayParams(
             '/v1/reference-data/locations',
             $query
         );

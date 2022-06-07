@@ -28,7 +28,7 @@ class DirectDestinations
      */
     public function get(array $query): array
     {
-        $response = $this->amadeus->client->getWithArrayParams(
+        $response = $this->amadeus->getClient()->getWithArrayParams(
             '/v1/airport/direct-destinations',
             $query
         );

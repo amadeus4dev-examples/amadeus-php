@@ -11,7 +11,7 @@ class Airport
     /** @phpstan-ignore-next-line */
     private Amadeus $amadeus;
 
-    public ?DirectDestinations $directDestinations;
+    private ?DirectDestinations $directDestinations;
 
     /**
      * @param Amadeus $amadeus
@@ -21,4 +21,13 @@ class Airport
         $this->amadeus = $amadeus;
         $this->directDestinations = new DirectDestinations($amadeus);
     }
+
+    /**
+     * @return DirectDestinations|null
+     */
+    public function getDirectDestinations(): ?DirectDestinations
+    {
+        return $this->directDestinations;
+    }
+
 }
