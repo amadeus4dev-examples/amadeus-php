@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace Amadeus;
 
-class Amadeus extends HTTPClient
+class Amadeus
 {
+    public Configuration $configuration;
+
+    public HTTPClient $client;
+
     public Airport $airport;
 
     public Shopping $shopping;
@@ -18,7 +22,9 @@ class Amadeus extends HTTPClient
     public function __construct(
         Configuration $configuration
     ) {
-        parent::__construct($configuration);
+        $this->configuration = $configuration;
+        //TODO Add Factory pattern
+        $this->client = new BasicHTTPClient($configuration);
 
         $this->airport = new Airport($this);
         $this->shopping = new Shopping($this);
@@ -30,8 +36,10 @@ class Amadeus extends HTTPClient
      * @param string $clientSecret
      * @return Configuration
      */
+    //TODO Improve builder pattern in PHP
     public static function builder(string $clientId, string $clientSecret): Configuration
     {
         return new Configuration($clientId, $clientSecret);
     }
+
 }

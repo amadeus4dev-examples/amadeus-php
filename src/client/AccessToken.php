@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Amadeus\Client;
 
 use Amadeus\Constants;
-use Amadeus\Exceptions\ResponseException;
 use Amadeus\HTTPClient;
 use Amadeus\Request;
 
@@ -24,9 +23,6 @@ class AccessToken
         $this->client = $client;
     }
 
-    /**
-     * @throws ResponseException
-     */
     public function updateAccessToken(): void
     {
         // Checks if it is the first time to fetch access token
@@ -68,9 +64,6 @@ class AccessToken
         $this->expires_at = time() + $object->expires_in - 10;
     }
 
-    /**
-     * @throws ResponseException
-     */
     public function fetchAccessToken(): ?object
     {
         $params = array(
@@ -95,7 +88,6 @@ class AccessToken
 
     /**
      * @return string|null
-     * @throws ResponseException
      */
     public function getBearerToken(): ?string
     {

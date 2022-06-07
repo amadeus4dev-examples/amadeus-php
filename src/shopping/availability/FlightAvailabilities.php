@@ -11,14 +11,14 @@ use Amadeus\Resources\Resource;
 
 class FlightAvailabilities
 {
-    private Amadeus $client;
+    private Amadeus $amadeus;
 
     /**
-     * @param Amadeus $client
+     * @param Amadeus $amadeus
      */
-    public function __construct(Amadeus $client)
+    public function __construct(Amadeus $amadeus)
     {
-        $this->client = $client;
+        $this->amadeus = $amadeus;
     }
 
     /**
@@ -28,7 +28,7 @@ class FlightAvailabilities
      */
     public function post(string $body): array
     {
-        $response = $this->client->postWithStringBody(
+        $response = $this->amadeus->client->postWithStringBody(
             '/v1/shopping/availability/flight-availabilities',
             $body
         );

@@ -17,8 +17,8 @@ class Configuration
     private int $port = 443;
 
     //private ?bool $logger = false;
-    private ?int $msgType = null;
-    private ?string $msgDestination = null;
+    //private ?int $msgType = null;
+    //private ?string $msgDestination = null;
 
     /**
      * @param string $clientId
@@ -135,20 +135,20 @@ class Configuration
 //    {
 //        return $this->logger;
 //    }
-
-    /**
-     * @return int|null
-     */
-    public function getMsgType(): ?int
-    {
-        return $this->msgType;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getMsgDestination(): ?string
-    {
-        return $this->msgDestination;
-    }
+//
+//    /**
+//     * @return int|null
+//     */
+//    public function getMsgType(): ?int
+//    {
+//        return $this->msgType;
+//    }
+//
+//    /**
+//     * @return string|null
+//     */
+//    public function getMsgDestination(): ?string
+//    {
+//        return $this->msgDestination;
+//    }
 }

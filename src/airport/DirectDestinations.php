@@ -11,14 +11,14 @@ use Amadeus\Resources\Resource;
 
 class DirectDestinations
 {
-    private Amadeus $client;
+    private Amadeus $amadeus;
 
     /**
-     * @param Amadeus $client
+     * @param Amadeus $amadeus
      */
-    public function __construct(Amadeus $client)
+    public function __construct(Amadeus $amadeus)
     {
-        $this->client = $client;
+        $this->amadeus = $amadeus;
     }
 
     /**
@@ -28,7 +28,7 @@ class DirectDestinations
      */
     public function get(array $query): array
     {
-        $response = $this->client->getWithArrayParams(
+        $response = $this->amadeus->client->getWithArrayParams(
             '/v1/airport/direct-destinations',
             $query
         );

@@ -12,10 +12,10 @@ class Availability
     public ?FlightAvailabilities $flightAvailabilities;
 
     /**
-     * @param Amadeus $client
+     * @param Amadeus $amadeus
      */
-    public function __construct(Amadeus $client)
+    public function __construct(Amadeus $amadeus)
     {
-        $this->flightAvailabilities = new FlightAvailabilities($client);
+        $this->flightAvailabilities = new FlightAvailabilities($amadeus);
     }
 }

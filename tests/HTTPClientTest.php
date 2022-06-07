@@ -11,14 +11,14 @@ use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Exceptions\ServerException;
-use Amadeus\HTTPClient;
+use Amadeus\BasicHTTPClient;
 use Amadeus\Request;
 use Amadeus\Response;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
 
 /**
- * @covers \Amadeus\HTTPClient
+ * @covers \Amadeus\BasicHTTPClient
  * @covers \Amadeus\Client\AccessToken
  * @covers \Amadeus\Configuration
  * @covers \Amadeus\Request
@@ -31,7 +31,7 @@ use ReflectionException;
  */
 final class HTTPClientTest extends TestCase
 {
-    private HTTPClient $client;
+    private BasicHTTPClient $client;
     private Configuration $configuration;
     private string $path;
     private array $params;
@@ -67,7 +67,7 @@ final class HTTPClientTest extends TestCase
 
         $this->configuration = new Configuration("client_id", "client_secret");
 
-        $this->client = $this->getMockBuilder(HTTPClient::class)
+        $this->client = $this->getMockBuilder(BasicHTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
             ->getMock();
 
@@ -89,7 +89,7 @@ final class HTTPClientTest extends TestCase
      */
     public function testGetWithParams(): void
     {
-        $obj = $this->getMockBuilder(HTTPClient::class)
+        $obj = $this->getMockBuilder(BasicHTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
             ->onlyMethods(array('execute', 'getAccessToken'))
             ->getMock();
@@ -116,7 +116,7 @@ final class HTTPClientTest extends TestCase
      */
     public function testPostWithBody(): void
     {
-        $obj = $this->getMockBuilder(HTTPClient::class)
+        $obj = $this->getMockBuilder(BasicHTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
             ->onlyMethods(array('execute', 'getAccessToken'))
             ->getMock();
@@ -145,7 +145,7 @@ final class HTTPClientTest extends TestCase
      */
     public function testPost4FetchAccessToken(): void
     {
-        $obj = $this->getMockBuilder(HTTPClient::class)
+        $obj = $this->getMockBuilder(BasicHTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
             ->onlyMethods(array('execute'))
             ->getMock();
@@ -250,7 +250,7 @@ final class HTTPClientTest extends TestCase
      */
     public function testSetCurlOptionsWithDefault(): void
     {
-        $obj = $this->getMockBuilder(HTTPClient::class)
+        $obj = $this->getMockBuilder(BasicHTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
             ->getMock();
 
@@ -269,7 +269,7 @@ final class HTTPClientTest extends TestCase
      */
     public function testSetCurlOptionsWithSsl(): void
     {
-        $obj = $this->getMockBuilder(HTTPClient::class)
+        $obj = $this->getMockBuilder(BasicHTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
             ->getMock();
 
@@ -289,7 +289,7 @@ final class HTTPClientTest extends TestCase
      */
     public function testSetCurlOptionsWithPost(): void
     {
-        $obj = $this->getMockBuilder(HTTPClient::class)
+        $obj = $this->getMockBuilder(BasicHTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
             ->getMock();
 

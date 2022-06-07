@@ -6,20 +6,19 @@ namespace Amadeus\Tests;
 
 use Amadeus\Client\AccessToken;
 use Amadeus\Configuration;
-use Amadeus\Exceptions\ResponseException;
-use Amadeus\HTTPClient;
+use Amadeus\BasicHTTPClient;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
 
 /**
  * @covers \Amadeus\Amadeus
- * @covers \Amadeus\HTTPClient
+ * @covers \Amadeus\BasicHTTPClient
  * @covers \Amadeus\Configuration
  * @covers \Amadeus\Client\AccessToken
  */
 final class AccessTokenTest extends TestCase
 {
-    private HTTPClient $client;
+    private BasicHTTPClient $client;
     private object $result;
 
     /**
@@ -30,7 +29,7 @@ final class AccessTokenTest extends TestCase
     {
         $configuration = new Configuration("client_id", "client_secret");
 
-        $this->client = $this->getMockBuilder(HTTPClient::class)
+        $this->client = $this->getMockBuilder(BasicHTTPClient::class)
             ->setConstructorArgs(array($configuration))
             ->getMock();
 
@@ -51,9 +50,6 @@ final class AccessTokenTest extends TestCase
             ->willReturn($accessToken);
     }
 
-    /**
-     * @throws ResponseException
-     */
     public function testParseAccessToken(): void
     {
         $accessToken = $this->client->getAccessToken();
@@ -61,9 +57,6 @@ final class AccessTokenTest extends TestCase
         $this->assertEquals('my_token', $accessToken->getBearerToken());
     }
 
-    /**
-     * @throws ResponseException
-     */
     public function testFetchAccessTokenWhenNotExpired(): void
     {
         $obj = $this->getMockBuilder(AccessToken::class)
@@ -79,9 +72,6 @@ final class AccessTokenTest extends TestCase
         $obj->getBearerToken();
     }
 
-    /**
-     * @throws ResponseException
-     */
     public function testUpdateAccessTokenWhenExpired(): void
     {
         $obj = $this->getMockBuilder(AccessToken::class)

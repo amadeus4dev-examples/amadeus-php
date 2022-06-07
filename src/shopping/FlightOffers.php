@@ -11,14 +11,14 @@ use Amadeus\Resources\Resource;
 
 class FlightOffers
 {
-    private Amadeus $client;
+    private Amadeus $amadeus;
 
     /**
-     * @param Amadeus $client
+     * @param Amadeus $amadeus
      */
-    public function __construct(Amadeus $client)
+    public function __construct(Amadeus $amadeus)
     {
-        $this->client = $client;
+        $this->amadeus = $amadeus;
     }
 
     /**
@@ -28,7 +28,7 @@ class FlightOffers
      */
     public function get(array $params): array
     {
-        $response = $this->client->getWithArrayParams(
+        $response = $this->amadeus->client->getWithArrayParams(
             '/v2/shopping/flight-offers',
             $params
         );
@@ -43,7 +43,7 @@ class FlightOffers
      */
     public function post(string $body): array
     {
-        $response = $this->client->postWithStringBody(
+        $response = $this->amadeus->client->postWithStringBody(
             '/v2/shopping/flight-offers',
             $body
         );

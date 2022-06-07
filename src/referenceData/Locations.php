@@ -8,19 +8,17 @@ use Amadeus\Amadeus;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\Location;
 use Amadeus\Resources\Resource;
-use Amadeus\Utils\PaginationAbstract;
 
-class Locations extends PaginationAbstract
+class Locations
 {
-    protected Amadeus $client;
-    protected string $className = Location::class;
+    protected Amadeus $amadeus;
 
     /**
-     * @param Amadeus $client
+     * @param Amadeus $amadeus
      */
-    public function __construct(Amadeus $client)
+    public function __construct(Amadeus $amadeus)
     {
-        $this->client = $client;
+        $this->amadeus = $amadeus;
     }
 
     /**
@@ -30,7 +28,7 @@ class Locations extends PaginationAbstract
      */
     public function get(array $query): array
     {
-        $response = $this->client->getWithArrayParams(
+        $response = $this->amadeus->client->getWithArrayParams(
             '/v1/reference-data/locations',
             $query
         );
@@ -38,47 +36,4 @@ class Locations extends PaginationAbstract
         return Resource::fromArray($response, Location::class);
     }
 
-    /**
-     * @param Location $resource
-     * @return Location[]|null
-     * @throws ResponseException
-     */
-    public function next($resource): ?array
-    {
-        $response = $this->client->getNextPage($resource->getResponse());
-        return $this->pageResult($response);
-    }
-
-    /**
-     * @param Location $resource
-     * @return Location[]|null
-     * @throws ResponseException
-     */
-    public function previous($resource): ?array
-    {
-        $response = $this->client->getPreviousPage($resource->getResponse());
-        return $this->pageResult($response);
-    }
-
-    /**
-     * @param Location $resource
-     * @return Location[]|null
-     * @throws ResponseException
-     */
-    public function first($resource): ?array
-    {
-        $response = $this->client->getFirstPage($resource->getResponse());
-        return $this->pageResult($response);
-    }
-
-    /**
-     * @param Location $resource
-     * @return Location[]|null
-     * @throws ResponseException
-     */
-    public function last($resource): ?array
-    {
-        $response = $this->client->getLastPage($resource->getResponse());
-        return $this->pageResult($response);
-    }
 }

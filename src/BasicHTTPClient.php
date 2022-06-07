@@ -11,7 +11,7 @@ use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Exceptions\ServerException;
 
-class HTTPClient
+class BasicHTTPClient implements HTTPClient
 {
     protected ?AccessToken $accessToken = null;
 
@@ -208,7 +208,7 @@ class HTTPClient
      * @param Request $request
      * @return void
      */
-    protected function setCurlOptions($curlHandle, Request $request): void
+    private function setCurlOptions($curlHandle, Request $request): void
     {
         // Url
         curl_setopt($curlHandle, CURLOPT_URL, $request->getUri());
@@ -244,15 +244,6 @@ class HTTPClient
     }
 
     /**
-     * @param string $filePath
-     * @return void
-     */
-    public function setSslCertificate(string $filePath)
-    {
-        $this->sslCertificate = $filePath;
-    }
-
-    /**
      * @return AccessToken|null
      */
     public function getAccessToken(): ?AccessToken
@@ -271,8 +262,17 @@ class HTTPClient
     /**
      * @return string|null
      */
-    public function getSslCertificate(): ?string
+    public function getSSLCertificate(): ?string
     {
         return $this->sslCertificate;
+    }
+
+    /**
+     * @param string $filePath
+     * @return void
+     */
+    public function setSSLCertificate(string $filePath): void
+    {
+        $this->sslCertificate = $filePath;
     }
 }

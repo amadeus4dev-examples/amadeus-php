@@ -6,7 +6,9 @@ namespace Amadeus\Tests;
 
 use Amadeus\Airport\DirectDestinations;
 use Amadeus\Amadeus;
+use Amadeus\BasicHTTPClient;
 use Amadeus\Exceptions\ResponseException;
+use Amadeus\HTTPClient;
 use Amadeus\Response;
 use Amadeus\Shopping\Availability\FlightAvailabilities;
 use Amadeus\Shopping\FlightOffers;
@@ -15,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @covers \Amadeus\Configuration
  * @covers \Amadeus\Amadeus
- * @covers \Amadeus\HTTPClient
+ * @covers \Amadeus\BasicHTTPClient
  * @covers \Amadeus\Client\AccessToken
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Airport
@@ -29,20 +31,21 @@ final class NamespaceTest extends TestCase
 {
     public function testAllNamespacesExist(): void
     {
-        $client = Amadeus::builder("id", "secret")->build();
+        $amadeus = Amadeus::builder("id", "secret")->build();
 
         // Airport
-        $this->assertNotNull($client->airport);
-        $this->assertNotNull($client->airport->directDestinations);
+        $this->assertNotNull($amadeus->airport);
+        $this->assertNotNull($amadeus->airport->directDestinations);
 
         // Shopping
-        $this->assertNotNull($client->shopping);
-        $this->assertNotNull($client->shopping->availability);
-        $this->assertNotNull($client->shopping->availability->flightAvailabilities);
-        $this->assertNotNull($client->shopping->flightOffers);
+        $this->assertNotNull($amadeus->shopping);
+        $this->assertNotNull($amadeus->shopping->availability);
+        $this->assertNotNull($amadeus->shopping->availability->flightAvailabilities);
+        $this->assertNotNull($amadeus->shopping->flightOffers);
     }
 
-    private Amadeus $client;
+    private Amadeus $amadeus;
+    private HTTPClient $client;
     private array $params;
     private string $body;
     private Response $multiResponse;
@@ -53,7 +56,10 @@ final class NamespaceTest extends TestCase
      */
     public function setUp(): void
     {
-        $this->client = $this->createMock(Amadeus::class);
+        $this->amadeus = $this->createMock(Amadeus::class);
+        $this->client = $this->createMock(HTTPClient::class);
+        $this->amadeus->client = $this->client;
+
         $this->params = array("airline"=>"1X");
         $this->body = "{ \"data\": [{}]}";
 
@@ -86,7 +92,7 @@ final class NamespaceTest extends TestCase
             ->method("getWithArrayParams")
             ->with("/v1/airport/direct-destinations", $this->params)
             ->willReturn($this->multiResponse);
-        $directDestinations = new DirectDestinations($this->client);
+        $directDestinations = new DirectDestinations($this->amadeus);
         $this->assertNotNull($directDestinations->get($this->params));
         $this->assertEquals(2, sizeof($directDestinations->get($this->params)));
     }
@@ -101,7 +107,7 @@ final class NamespaceTest extends TestCase
             ->method("getWithArrayParams")
             ->with("/v2/shopping/flight-offers", $this->params)
             ->willReturn($this->multiResponse);
-        $flightOffers = new FlightOffers($this->client);
+        $flightOffers = new FlightOffers($this->amadeus);
         $this->assertNotNull($flightOffers->get($this->params));
         $this->assertEquals(2, sizeof($flightOffers->get($this->params)));
     }
@@ -117,7 +123,7 @@ final class NamespaceTest extends TestCase
             ->method("postWithStringBody")
             ->with("/v1/shopping/availability/flight-availabilities", $this->body)
             ->willReturn($this->multiResponse);
-        $flightAvailabilities = new FlightAvailabilities($this->client);
+        $flightAvailabilities = new FlightAvailabilities($this->amadeus);
         $this->assertNotNull($flightAvailabilities->post($this->body));
         $this->assertEquals(2, sizeof($flightAvailabilities->post($this->body)));
     }
@@ -132,7 +138,7 @@ final class NamespaceTest extends TestCase
             ->method("postWithStringBody")
             ->with("/v2/shopping/flight-offers", $this->body)
             ->willReturn($this->multiResponse);
-        $flightOffers = new FlightOffers($this->client);
+        $flightOffers = new FlightOffers($this->amadeus);
         $this->assertNotNull($flightOffers->post($this->body));
         $this->assertEquals(2, sizeof($flightOffers->post($this->body)));
     }
