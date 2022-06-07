@@ -29,5 +29,4 @@ class ReferenceData
     {
         return $this->locations;
     }
-
 }

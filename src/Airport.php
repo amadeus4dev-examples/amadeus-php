@@ -29,5 +29,4 @@ class Airport
     {
         return $this->directDestinations;
     }
-
 }

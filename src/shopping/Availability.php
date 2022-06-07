@@ -26,5 +26,4 @@ class Availability
     {
         return $this->flightAvailabilities;
     }
-
 }

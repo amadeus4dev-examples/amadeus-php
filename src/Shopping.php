@@ -40,5 +40,4 @@ class Shopping
     {
         return $this->flightOffers;
     }
-
 }
