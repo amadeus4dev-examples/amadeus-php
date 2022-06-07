@@ -26,14 +26,12 @@ final class AmadeusTest extends TestCase
     public function testBuilderWithNullClientId(): void
     {
         $this->expectException(TypeError::class);
-        /* @phpstan-ignore-next-line */
         Amadeus::builder(null, "secret")->build();
     }
 
     public function testBuilderWithNullClientSecret(): void
     {
         $this->expectException(TypeError::class);
-        /* @phpstan-ignore-next-line */
         Amadeus::builder("id", null)->build();
     }
 }
