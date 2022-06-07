@@ -129,7 +129,7 @@ Once you have downloaded the ```cacert.pem``` file, you should move it to whatev
 
 ```PHP
 // Set your certificate path for opening SSL verification
-$amadeus->setSslCertificate($REPLACE_BY_YOUR_SSL_CERT_PATH);
+$amadeus->client->setSslCertificate($REPLACE_BY_YOUR_SSL_CERT_PATH);
 ```
 
 ## Response
