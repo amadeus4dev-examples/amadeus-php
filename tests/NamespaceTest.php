@@ -9,6 +9,7 @@ use Amadeus\Amadeus;
 use Amadeus\BasicHTTPClient;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\HTTPClient;
+use Amadeus\ReferenceData\Locations;
 use Amadeus\Response;
 use Amadeus\Shopping\Availability\FlightAvailabilities;
 use Amadeus\Shopping\FlightOffers;
@@ -26,6 +27,8 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Shopping\Availability
  * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
  * @covers \Amadeus\Shopping\FlightOffers
+ * @covers \Amadeus\ReferenceData
+ * @covers \Amadeus\ReferenceData\Locations
  */
 final class NamespaceTest extends TestCase
 {
@@ -42,6 +45,10 @@ final class NamespaceTest extends TestCase
         $this->assertNotNull($amadeus->shopping->availability);
         $this->assertNotNull($amadeus->shopping->availability->flightAvailabilities);
         $this->assertNotNull($amadeus->shopping->flightOffers);
+
+        // ReferenceData
+        $this->assertNotNull($amadeus->referenceData);
+        $this->assertNotNull($amadeus->referenceData->locations);
     }
 
     private Amadeus $amadeus;
@@ -110,6 +117,21 @@ final class NamespaceTest extends TestCase
         $flightOffers = new FlightOffers($this->amadeus);
         $this->assertNotNull($flightOffers->get($this->params));
         $this->assertEquals(2, sizeof($flightOffers->get($this->params)));
+    }
+
+    /**
+     * @throws ResponseException
+     */
+    public function testCityAndAirportSearchGetMethod(): void
+    {
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("getWithArrayParams")
+            ->with("/v1/reference-data/locations", $this->params)
+            ->willReturn($this->multiResponse);
+        $locations = new Locations($this->amadeus);
+        $this->assertNotNull($locations->get($this->params));
+        $this->assertEquals(2, sizeof($locations->get($this->params)));
     }
 
     // ------ POST ------

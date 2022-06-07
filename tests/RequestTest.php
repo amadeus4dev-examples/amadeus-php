@@ -21,6 +21,8 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Shopping\Availability
  * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
  * @covers \Amadeus\Shopping\FlightOffers
+ * @covers \Amadeus\ReferenceData
+ * @covers \Amadeus\ReferenceData\Locations
  */
 final class RequestTest extends TestCase
 {

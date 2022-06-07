@@ -53,8 +53,17 @@ final class AccessTokenTest extends TestCase
     public function testParseAccessToken(): void
     {
         $accessToken = $this->client->getAccessToken();
-        //$this->assertEquals(time()+1789, $accessToken->getExpiresAt());
+        $this->assertEquals(time()+1789, $accessToken->getExpiresAt());
         $this->assertEquals('my_token', $accessToken->getBearerToken());
+    }
+
+    public function testSetter(): void
+    {
+        $accessToken = $this->client->getAccessToken();
+        $accessToken->setExpiresAt(time()+1789);
+        $accessToken->setBearerToken("new_token");
+        $this->assertEquals(time()+1789, $accessToken->getExpiresAt());
+        $this->assertEquals('new_token', $accessToken->getBearerToken());
     }
 
     public function testFetchAccessTokenWhenNotExpired(): void
