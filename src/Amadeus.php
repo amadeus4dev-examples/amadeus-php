@@ -23,7 +23,7 @@ class Amadeus
         Configuration $configuration
     ) {
         $this->configuration = $configuration;
-        //TODO Add Factory pattern
+
         $this->client = new BasicHTTPClient($configuration);
 
         $this->airport = new Airport($this);
@@ -36,10 +36,8 @@ class Amadeus
      * @param string $clientSecret
      * @return Configuration
      */
-    //TODO Improve builder pattern in PHP
     public static function builder(string $clientId, string $clientSecret): Configuration
     {
         return new Configuration($clientId, $clientSecret);
     }
-
 }
