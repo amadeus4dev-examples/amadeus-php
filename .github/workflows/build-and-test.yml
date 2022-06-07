@@ -43,9 +43,9 @@ jobs:
       run: vendor/bin/phpunit --coverage-text tests
 
     - name: Run PHP-CS-Fixer on src for Code style check
-      if: ${{ matrix.php == '7.4' }}
+      if: ${{ matrix.php == '8.1' }}
       run: vendor/bin/php-cs-fixer fix src --dry-run --stop-on-violation
 
     - name: Run PHP-CS-Fixer on tests for Code style check
-      if: ${{ matrix.php == '7.4' }}
+      if: ${{ matrix.php == '8.1' }}
       run: vendor/bin/php-cs-fixer fix tests --dry-run --stop-on-violation

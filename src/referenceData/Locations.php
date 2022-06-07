@@ -35,5 +35,4 @@ class Locations
 
         return Resource::fromArray($response, Location::class);
     }
-
 }
