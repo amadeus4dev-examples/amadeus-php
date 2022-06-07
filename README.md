@@ -38,7 +38,7 @@ try
         ->build();
 
     // Airport Route API GET
-    $destinations = $amadeus->airport->directDestinations->get(
+    $destinations = $amadeus->getAirport()->getDirectDestinations()->get(
         array(
             "departureAirportCode" => "MAD",
             "max" => 2
@@ -77,12 +77,12 @@ try
     }';
 
     $flightAvailabilities =
-        $amadeus->shopping->availability->flightAvailabilities->post($body);
+        $amadeus->getShopping()->getAvailability()->getFlightAvailabilities()->post($body);
 
     print($flightAvailabilities[0]);
 
     // Make arbitrary call
-    $destinations = $amadeus->client->getWithArrayParams(
+    $destinations = $amadeus->getClient()->getWithArrayParams(
         '/v1/airport/direct-destinations',
         array(
             "departureAirportCode" => "MAD",
@@ -129,14 +129,14 @@ Once you have downloaded the ```cacert.pem``` file, you should move it to whatev
 
 ```PHP
 // Set your certificate path for opening SSL verification
-$amadeus->client->setSslCertificate($REPLACE_BY_YOUR_SSL_CERT_PATH);
+$amadeus->getClient()->setSslCertificate($REPLACE_BY_YOUR_SSL_CERT_PATH);
 ```
 
 ## Response
 Every successful API call returns a ```Resource``` object. The ```Resource``` object has the raw response body (in string format) available:
 
 ```PHP
-$locations = $amadeus->referenceData->locations->get(
+$locations = $amadeus->getReferenceData()->getLocations()->get(
     array(
         "subType" => "CITY",
         "keyword" => "PAR"
