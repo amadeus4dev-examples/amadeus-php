@@ -27,7 +27,7 @@ class Amadeus
     ) {
         $this->configuration = $configuration;
 
-        $this->client = new BasicHTTPClient($configuration);
+        $this->client = $configuration->getHttpClient(); //Call Factory method
 
         $this->airport = new Airport($this);
         $this->shopping = new Shopping($this);
@@ -37,12 +37,11 @@ class Amadeus
     /**
      * @param string $clientId
      * @param string $clientSecret
-     * @return Configuration
+     * @return AmadeusBuilder
      */
-    // TODO  AmadeuBuilder class
-    public static function builder(string $clientId, string $clientSecret): Configuration
+    public static function builder(string $clientId, string $clientSecret): AmadeusBuilder
     {
-        return new Configuration($clientId, $clientSecret);
+        return new AmadeusBuilder(new Configuration($clientId, $clientSecret));
     }
 
     /**

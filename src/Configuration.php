@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Amadeus;
 
+use Amadeus\Client\BasicHTTPClient;
+use Amadeus\Client\HTTPClient;
+
 class Configuration
 {
     private string $clientId;
@@ -15,6 +18,8 @@ class Configuration
     private bool $ssl = true;
 
     private int $port = 443;
+
+    private ?HTTPClient $httpClient = null;
 
     //private ?bool $logger = false;
     //private ?int $msgType = null;
@@ -30,37 +35,6 @@ class Configuration
     ) {
         $this->clientId = $clientId;
         $this->clientSecret = $clientSecret;
-    }
-
-    // TODO move to AmadeusBuilder
-    /**
-     * @return Amadeus
-     */
-    public function build(): Amadeus
-    {
-        return new Amadeus($this);
-    }
-
-    /**
-     * @param bool $ssl
-     * @return Configuration
-     */
-    public function setSsl(bool $ssl): Configuration
-    {
-        $this->ssl = $ssl;
-        if (!$ssl && $this->port == 443) {
-            $this->setPort(80);
-        }
-        return $this;
-    }
-
-    /**
-     * @param int $port
-     * @return void
-     */
-    public function setPort(int $port): void
-    {
-        $this->port = $port;
     }
 
     /**
@@ -88,11 +62,15 @@ class Configuration
     }
 
     /**
-     * Build for production environment
+     * @param bool $ssl
+     * @return Configuration
      */
-    public function setProductionEnvironment(): Configuration
+    public function setSsl(bool $ssl): Configuration
     {
-        $this->host = 'api.amadeus.com';
+        $this->ssl = $ssl;
+        if (!$ssl && $this->port == 443) {
+            $this->setPort(80);
+        }
         return $this;
     }
 
@@ -105,6 +83,15 @@ class Configuration
     }
 
     /**
+     * @param int $port
+     * @return void
+     */
+    public function setPort(int $port): void
+    {
+        $this->port = $port;
+    }
+
+    /**
      * @return int
      */
     public function getPort(): int
@@ -112,7 +99,30 @@ class Configuration
         return $this->port;
     }
 
-    // TODO HTTPClient Setter getter
+    /**
+     * @param HTTPClient $httpClient
+     */
+    public function setHttpClient(HTTPClient $httpClient): void
+    {
+        $this->httpClient = $httpClient;
+    }
+
+    /**
+     * @return HTTPClient
+     */
+    public function getHttpClient(): HTTPClient
+    {
+        return (is_null($this->httpClient)) ? new BasicHTTPClient($this) : $this->httpClient;
+    }
+
+    /**
+     * Build for production environment
+     */
+    public function setProductionEnvironment(): Configuration
+    {
+        $this->host = 'api.amadeus.com';
+        return $this;
+    }
 
     // TODO LOGGER FUNCTION NEEDS TO BE REVIEWED
 //    /**
