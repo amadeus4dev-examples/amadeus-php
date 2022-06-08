@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Tests;
 
+use ReflectionClass;
 use ReflectionException;
 
 class PHPUnitUtil
@@ -13,7 +14,7 @@ class PHPUnitUtil
      */
     public static function callMethod($obj, string $methodName, array $args)
     {
-        $class = new \ReflectionClass($obj);
+        $class = new ReflectionClass($obj);
         $method = $class->getMethod($methodName);
         $method->setAccessible(true);
         return $method->invokeArgs($obj, $args);

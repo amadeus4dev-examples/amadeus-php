@@ -11,7 +11,7 @@ use Amadeus\Resources\Resource;
 
 class Locations
 {
-    protected Amadeus $amadeus;
+    private Amadeus $amadeus;
 
     /**
      * @param Amadeus $amadeus

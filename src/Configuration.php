@@ -32,6 +32,7 @@ class Configuration
         $this->clientSecret = $clientSecret;
     }
 
+    // TODO move to AmadeusBuilder
     /**
      * @return Amadeus
      */
@@ -110,6 +111,8 @@ class Configuration
     {
         return $this->port;
     }
+
+    // TODO HTTPClient Setter getter
 
     // TODO LOGGER FUNCTION NEEDS TO BE REVIEWED
 //    /**

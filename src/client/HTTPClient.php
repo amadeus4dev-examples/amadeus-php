@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Amadeus;
+namespace Amadeus\Client;
 
-use Amadeus\Client\AccessToken;
+use Amadeus\Configuration;
 
 interface HTTPClient
 {

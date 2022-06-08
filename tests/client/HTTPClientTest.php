@@ -2,27 +2,28 @@
 
 declare(strict_types=1);
 
-namespace Amadeus\Tests;
+namespace Amadeus\Tests\Client;
 
 use Amadeus\Client\AccessToken;
+use Amadeus\Client\BasicHTTPClient;
+use Amadeus\Client\Request;
+use Amadeus\Client\Response;
 use Amadeus\Configuration;
 use Amadeus\Exceptions\AuthenticationException;
 use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Exceptions\ServerException;
-use Amadeus\BasicHTTPClient;
-use Amadeus\Request;
-use Amadeus\Response;
+use Amadeus\Tests\PHPUnitUtil;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
 
 /**
- * @covers \Amadeus\BasicHTTPClient
+ * @covers \Amadeus\Client\BasicHTTPClient
  * @covers \Amadeus\Client\AccessToken
  * @covers \Amadeus\Configuration
- * @covers \Amadeus\Request
- * @covers \Amadeus\Response
+ * @covers \Amadeus\Client\Request
+ * @covers \Amadeus\Client\Response
  * @covers \Amadeus\Exceptions\ResponseException
  * @covers \Amadeus\Exceptions\ServerException
  * @covers \Amadeus\Exceptions\NotFoundException
@@ -140,9 +141,6 @@ final class HTTPClientTest extends TestCase
         $obj->postWithStringBody("/foo", $this->body);
     }
 
-    /**
-     * @throws ResponseException
-     */
     public function testPost4FetchAccessToken(): void
     {
         $obj = $this->getMockBuilder(BasicHTTPClient::class)

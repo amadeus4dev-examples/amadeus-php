@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-use Amadeus\Response;
+use Amadeus\Client\Response;
 
 class Resource
 {

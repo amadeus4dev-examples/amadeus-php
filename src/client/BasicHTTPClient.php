@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Amadeus;
+namespace Amadeus\Client;
 
-use Amadeus\Client\AccessToken;
+use Amadeus\Configuration;
+use Amadeus\Constants;
 use Amadeus\Exceptions\AuthenticationException;
 use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\NotFoundException;
@@ -92,7 +93,7 @@ class BasicHTTPClient implements HTTPClient
      * @return void
      * @throws ResponseException
      */
-    protected function detectError(Response  $response): void
+    protected function detectError(Response $response): void
     {
         $exception = null;
         $statusCode = $response->getStatusCode();

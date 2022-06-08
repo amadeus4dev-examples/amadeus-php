@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Amadeus;
 
+use Amadeus\Client\BasicHTTPClient;
+use Amadeus\Client\HTTPClient;
+
 class Amadeus
 {
     private Configuration $configuration;
@@ -36,6 +39,7 @@ class Amadeus
      * @param string $clientSecret
      * @return Configuration
      */
+    // TODO  AmadeuBuilder class
     public static function builder(string $clientId, string $clientSecret): Configuration
     {
         return new Configuration($clientId, $clientSecret);

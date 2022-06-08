@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Exceptions;
 
-use Amadeus\Response;
+use Amadeus\Client\Response;
 use Exception;
 
 class ResponseException extends Exception
@@ -24,7 +24,7 @@ class ResponseException extends Exception
             if (($response->getResult() != null) && ($response->getStatusCode() != null)) {
                 parent::__construct($response->getResult(), $response->getStatusCode());
             } elseif ($response->getResult() != null) {
-                parent::__construct($response->getResult(), 0);
+                parent::__construct($response->getResult());
             } elseif ($response->getStatusCode() != null) {
                 parent::__construct("", $response->getStatusCode());
             } else {

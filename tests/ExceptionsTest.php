@@ -9,11 +9,11 @@ use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Exceptions\ServerException;
-use Amadeus\Response;
+use Amadeus\Client\Response;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Amadeus\Response
+ * @covers \Amadeus\Client\Response
  * @covers \Amadeus\Exceptions\ResponseException
  * @covers \Amadeus\Exceptions\AuthenticationException
  * @covers \Amadeus\Exceptions\ClientException

@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Amadeus;
+namespace Amadeus\Client;
+
+use Amadeus\Constants;
 
 class Request
 {

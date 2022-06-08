@@ -8,17 +8,13 @@ use Amadeus\ReferenceData\Locations;
 
 class ReferenceData
 {
-    /** @phpstan-ignore-next-line */
-    private Amadeus $amadeus;
-
-    private ?Locations $locations = null;
+    private ?Locations $locations;
 
     /**
      * @param Amadeus $amadeus
      */
     public function __construct(Amadeus $amadeus)
     {
-        $this->amadeus = $amadeus;
         $this->locations = new Locations($amadeus);
     }
 

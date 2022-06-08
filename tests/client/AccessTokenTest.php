@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Amadeus\Tests;
+namespace Amadeus\Tests\Client;
 
 use Amadeus\Client\AccessToken;
 use Amadeus\Configuration;
-use Amadeus\BasicHTTPClient;
+use Amadeus\Client\BasicHTTPClient;
+use Amadeus\Tests\PHPUnitUtil;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
 

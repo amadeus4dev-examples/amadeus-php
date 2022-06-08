@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Amadeus\Client;
 
 use Amadeus\Constants;
-use Amadeus\HTTPClient;
-use Amadeus\Request;
 
 class AccessToken
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Amadeus;
+namespace Amadeus\Client;
 
 class Response
 {
@@ -46,7 +46,7 @@ class Response
                     $this->body = substr($this->result, $this->headerSize);
                 }
             } else {
-                $result = " ";
+                $this->result = "";
             }
         }
     }

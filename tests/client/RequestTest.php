@@ -2,19 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Amadeus\Tests;
+namespace Amadeus\Tests\Client;
 
 use Amadeus\Amadeus;
+use Amadeus\Client\Request;
+use Amadeus\Client\BasicHTTPClient;
 use Amadeus\Constants;
-use Amadeus\Request;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \Amadeus\Configuration
  * @covers \Amadeus\Amadeus
- * @covers \Amadeus\BasicHTTPClient
+ * @covers \Amadeus\Client\BasicHTTPClient
  * @covers \Amadeus\Client\AccessToken
- * @covers \Amadeus\Request
+ * @covers \Amadeus\Client\Request
  * @covers \Amadeus\Airport
  * @covers \Amadeus\Airport\DirectDestinations
  * @covers \Amadeus\Shopping

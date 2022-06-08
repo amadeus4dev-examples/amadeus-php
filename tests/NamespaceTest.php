@@ -6,11 +6,10 @@ namespace Amadeus\Tests;
 
 use Amadeus\Airport\DirectDestinations;
 use Amadeus\Amadeus;
-use Amadeus\BasicHTTPClient;
+use Amadeus\Client\HTTPClient;
+use Amadeus\Client\Response;
 use Amadeus\Exceptions\ResponseException;
-use Amadeus\HTTPClient;
 use Amadeus\ReferenceData\Locations;
-use Amadeus\Response;
 use Amadeus\Shopping\Availability\FlightAvailabilities;
 use Amadeus\Shopping\FlightOffers;
 use PHPUnit\Framework\TestCase;
