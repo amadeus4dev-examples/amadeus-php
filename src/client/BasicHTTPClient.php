@@ -8,6 +8,7 @@ use Amadeus\Configuration;
 use Amadeus\Constants;
 use Amadeus\Exceptions\AuthenticationException;
 use Amadeus\Exceptions\ClientException;
+use Amadeus\Exceptions\NetworkException;
 use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Exceptions\ServerException;
@@ -79,6 +80,9 @@ class BasicHTTPClient implements HTTPClient
         $curlHandle = curl_init();
         $this->setCurlOptions($curlHandle, $request);
         $result = curl_exec($curlHandle);
+        if (!$result) {
+            $result = null;
+        }
         $info = curl_getinfo($curlHandle);
         curl_close($curlHandle);
 
@@ -106,6 +110,8 @@ class BasicHTTPClient implements HTTPClient
             $exception = new AuthenticationException($response);
         } elseif ($statusCode == 400) {
             $exception = new ClientException($response);
+        } elseif ($statusCode == 0) {
+            $exception = new NetworkException($response);
         } elseif ($statusCode == 204) {
             return;
         } elseif ($statusCode != 200) {

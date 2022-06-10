@@ -19,6 +19,16 @@ class AmadeusBuilder
     }
 
     /**
+     * @param string $host
+     * @return $this
+     */
+    public function setHost(string $host): AmadeusBuilder
+    {
+        $this->configuration->setHost($host);
+        return $this;
+    }
+
+    /**
      * @param bool $ssl
      * @return AmadeusBuilder
      */

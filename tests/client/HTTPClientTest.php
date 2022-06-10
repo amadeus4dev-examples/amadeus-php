@@ -29,6 +29,7 @@ use ReflectionException;
  * @covers \Amadeus\Exceptions\NotFoundException
  * @covers \Amadeus\Exceptions\AuthenticationException
  * @covers \Amadeus\Exceptions\ClientException
+ * @covers \Amadeus\Exceptions\NetworkException
  */
 final class HTTPClientTest extends TestCase
 {

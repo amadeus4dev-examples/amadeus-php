@@ -13,9 +13,9 @@ use ReflectionException;
 
 /**
  * @covers \Amadeus\Amadeus
- * @covers \Amadeus\BasicHTTPClient
  * @covers \Amadeus\Configuration
  * @covers \Amadeus\Client\AccessToken
+ * @covers \Amadeus\Client\BasicHTTPClient
  */
 final class AccessTokenTest extends TestCase
 {

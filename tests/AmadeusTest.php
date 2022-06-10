@@ -12,6 +12,7 @@ use TypeError;
 
 /**
  * @covers \Amadeus\Amadeus
+ * @covers \Amadeus\AmadeusBuilder
  * @covers \Amadeus\Configuration
  */
 final class AmadeusTest extends TestCase

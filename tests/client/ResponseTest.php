@@ -9,8 +9,7 @@ use Amadeus\Client\Response;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Amadeus\Response
- * @covers \Amadeus\Request
+ * @covers \Amadeus\Client\Response
  */
 final class ResponseTest extends TestCase
 {

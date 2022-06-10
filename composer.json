@@ -28,12 +28,15 @@
   "require-dev": {
     "phpunit/phpunit": "^9.5.19",
     "phpstan/phpstan": "^1.5.2",
-    "friendsofphp/php-cs-fixer": "^3.8"
+    "friendsofphp/php-cs-fixer": "^3.8",
+    "wiremock-php/wiremock-php": "2.33.0"
   },
   "autoload-dev": {
     "psr-4": {
       "Amadeus\\Tests\\": "tests/",
-      "Amadeus\\Tests\\Resources\\": "tests/resources"
+      "Amadeus\\Tests\\Resources\\": "tests/resources",
+      "Amadeus\\Tests\\Client\\": "tests/client",
+      "Amadeus\\Tests\\Airpot\\": "tests/airport"
     }
   }
 }

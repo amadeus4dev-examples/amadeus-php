@@ -54,6 +54,14 @@ class Configuration
     }
 
     /**
+     * @param string $host
+     */
+    public function setHost(string $host): void
+    {
+        $this->host = $host;
+    }
+
+    /**
      * @return string
      */
     public function getHost(): string

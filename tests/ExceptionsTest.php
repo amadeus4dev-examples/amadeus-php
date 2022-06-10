@@ -6,6 +6,7 @@ namespace Amadeus\Tests;
 
 use Amadeus\Exceptions\AuthenticationException;
 use Amadeus\Exceptions\ClientException;
+use Amadeus\Exceptions\NetworkException;
 use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Exceptions\ServerException;
@@ -19,6 +20,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Exceptions\ClientException
  * @covers \Amadeus\Exceptions\NotFoundException
  * @covers \Amadeus\Exceptions\ServerException
+ * @covers \Amadeus\Exceptions\NetworkException
  */
 final class ExceptionsTest extends TestCase
 {
@@ -102,5 +104,6 @@ final class ExceptionsTest extends TestCase
         $this->assertTrue(new ClientException(null) instanceof ResponseException);
         $this->assertTrue(new NotFoundException(null) instanceof ResponseException);
         $this->assertTrue(new ServerException(null) instanceof ResponseException);
+        $this->assertTrue(new NetworkException(null) instanceof ResponseException);
     }
 }
