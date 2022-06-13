@@ -9,7 +9,7 @@ class TourAllotment implements ResourceInterface
     private ?string $tourName = null;
     private ?string $tourReference = null;
     private ?string $mode = null;
-    private ?string $remainingSeats = null;
+    private ?int $remainingSeats = null;
 
     /**
      * @return string|null
@@ -36,9 +36,9 @@ class TourAllotment implements ResourceInterface
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getRemainingSeats(): ?string
+    public function getRemainingSeats(): ?int
     {
         return $this->remainingSeats;
     }
