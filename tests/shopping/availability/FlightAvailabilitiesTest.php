@@ -8,16 +8,6 @@ use Amadeus\Amadeus;
 use Amadeus\Client\HTTPClient;
 use Amadeus\Client\Response;
 use Amadeus\Exceptions\ResponseException;
-use Amadeus\Resources\AircraftEquipment;
-use Amadeus\Resources\AvailabilityClass;
-use Amadeus\Resources\Co2Emission;
-use Amadeus\Resources\ExtendedSegment;
-use Amadeus\Resources\FlightAvailability;
-use Amadeus\Resources\FlightEndpoint;
-use Amadeus\Resources\FlightStop;
-use Amadeus\Resources\OperatingFlight;
-use Amadeus\Resources\Resource;
-use Amadeus\Resources\TourAllotment;
 use Amadeus\Shopping\Availability\FlightAvailabilities;
 use Amadeus\Tests\PHPUnitUtil;
 use PHPUnit\Framework\TestCase;
@@ -25,14 +15,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\FlightAvailability
- * @covers \Amadeus\Resources\ExtendedSegment
- * @covers \Amadeus\Resources\AvailabilityClass
- * @covers \Amadeus\Resources\TourAllotment
- * @covers \Amadeus\Resources\Co2Emission
- * @covers \Amadeus\Resources\FlightEndpoint
- * @covers \Amadeus\Resources\AircraftEquipment
- * @covers \Amadeus\Resources\OperatingFlight
- * @covers \Amadeus\Resources\FlightStop
+ * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
  *
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-availabilities-search/api-reference
  */
@@ -54,9 +37,13 @@ final class FlightAvailabilitiesTest extends TestCase
             ->method("getClient")
             ->willReturn($client);
 
-        $this->body = PHPUnitUtil::readFile("../.././resources/__files/flight_availabilities_request_ok.json");
+        $this->body = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_availabilities_request_ok.json"
+        );
 
-        $fileContent = PHPUnitUtil::readFile("../.././resources/__files/flight_availabilities_response_ok.json");
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_availabilities_response_ok.json"
+        );
         $this->data = json_decode($fileContent)->{'data'};
 
         $response = $this->createMock(Response::class);

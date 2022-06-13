@@ -15,6 +15,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\Destination
+ * @covers \Amadeus\Airport\DirectDestinations
  *
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
  */
@@ -41,7 +42,9 @@ final class DirectDestinationsTest extends TestCase
             "max" => 2
         );
 
-        $fileContent = PHPUnitUtil::readFile(".././resources/__files/direct_destinations_response_ok.json");
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "direct_destinations_response_ok.json"
+        );
         $this->data = json_decode($fileContent)->{'data'};
 
         $response = $this->createMock(Response::class);
