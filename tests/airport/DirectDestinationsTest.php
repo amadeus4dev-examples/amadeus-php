@@ -77,5 +77,4 @@ final class DirectDestinationsTest extends TestCase
             $destinations[0]->__toString()
         );
     }
-
 }
