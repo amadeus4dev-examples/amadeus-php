@@ -37,5 +37,5 @@ class PHPUnitUtil
         return $fileContent;
     }
 
-    public const RESOURCE_PATH_ROOT = __DIR__ . "\\resources\\__files\\";
+    public const RESOURCE_PATH_ROOT = __DIR__ . "/resources/__files/";
 }
