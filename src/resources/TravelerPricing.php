@@ -72,10 +72,7 @@ class TravelerPricing implements ResourceInterface
         $this->$name = $value;
     }
 
-    /**
-     * @return string|null
-     */
-    public function __toString(): ?string
+    public function __toString(): string
     {
         return Resource::toString(get_object_vars($this));
     }

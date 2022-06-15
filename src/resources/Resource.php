@@ -99,7 +99,11 @@ class Resource
         return $this->response;
     }
 
-    public static function toString($array): ?string
+    /**
+     * @param $array
+     * @return string
+     */
+    public static function toString($array): string
     {
         return json_encode(
             array_filter($array, function ($v) {

@@ -39,9 +39,9 @@ class PHPUnitUtil
 
     /**
      * @param $object
-     * @return string|null
+     * @return string
      */
-    public static function toString($object): ?string
+    public static function toString($object): string
     {
         return json_encode(
             $object,

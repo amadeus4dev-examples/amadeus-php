@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "count": 2,
+    "links": {
+      "self": "https://test.api.amadeus.com/v1/reference-data/locations?subType=CITY,AIRPORT&keyword=MUC&countryCode=DE"
+    }
+  },
+  "data": [
+    {
+      "id": "CMUC",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/CMUC",
+        "methods": [
+          "GET"
+        ]
+      },
+      "type": "location",
+      "subType": "CITY",
+      "name": "MUNICH INTERNATIONAL",
+      "detailedName": "MUNICH/DE:MUNICH INTERNATIONAL",
+      "timeZoneOffset": "+02:00",
+      "iataCode": "MUC",
+      "geoCode": {
+        "latitude": 48.35378,
+        "longitude": 11.78609
+      },
+      "address": {
+        "cityName": "MUNICH",
+        "cityCode": "MUC",
+        "countryName": "GERMANY",
+        "countryCode": "DE",
+        "regionCode": "EUROP"
+      },
+      "analytics": {
+        "travelers": {
+          "score": 27
+        }
+      }
+    },
+    {
+      "type": "location",
+      "subType": "AIRPORT",
+      "name": "MUNICH INTERNATIONAL",
+      "detailedName": "MUNICH/DE:MUNICH INTERNATIONAL",
+      "id": "AMUC",
+      "self": {
+        "href": "https://test.api.amadeus.com/v1/reference-data/locations/AMUC",
+        "methods": [
+          "GET"
+        ]
+      },
+      "timeZoneOffset": "+02:00",
+      "iataCode": "MUC",
+      "geoCode": {
+        "latitude": 48.35378,
+        "longitude": 11.78609
+      },
+      "address": {
+        "cityName": "MUNICH",
+        "cityCode": "MUC",
+        "countryName": "GERMANY",
+        "countryCode": "DE",
+        "regionCode": "EUROP"
+      },
+      "analytics": {
+        "travelers": {
+          "score": 27
+        }
+      }
+    }
+  ]
+}

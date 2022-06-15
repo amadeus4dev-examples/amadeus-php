@@ -7,5 +7,5 @@ namespace Amadeus\Resources;
 interface ResourceInterface
 {
     public function __set($name, $value): void;
-    public function __toString(): ?string;
+    public function __toString(): string;
 }
