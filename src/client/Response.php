@@ -31,9 +31,11 @@ class Response
 
         if ($info != null) {
             $this->info = $info;
+
             if (array_key_exists('url', $info)) {
                 $this->url = $info['url'];
             }
+
             if (array_key_exists('http_code', $info)) {
                 $this->statusCode = $info['http_code'];
             }
@@ -45,8 +47,6 @@ class Response
                     $this->headers = substr($this->result, 0, $this->headerSize);
                     $this->body = substr($this->result, $this->headerSize);
                 }
-            } else {
-                $this->result = "";
             }
         }
     }

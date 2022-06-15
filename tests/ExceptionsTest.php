@@ -43,14 +43,14 @@ final class ExceptionsTest extends TestCase
         $info = array(
             "http_code" => null
         );
-        $result = null;
+        $result = "message";
         $response = new Response($request, $info, $result);
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
             '['.date("F j, Y, g:i a").']'."\n"
             ."Amadeus\Exceptions\ResponseException: [0]"."\n"
-            ."Message: "."\n"
+            ."Message: message"."\n"
             ."Url: "."\n",
             join("\n", array_slice($error, 0, 4))."\n"
         );

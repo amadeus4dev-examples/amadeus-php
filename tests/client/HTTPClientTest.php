@@ -11,6 +11,7 @@ use Amadeus\Client\Response;
 use Amadeus\Configuration;
 use Amadeus\Exceptions\AuthenticationException;
 use Amadeus\Exceptions\ClientException;
+use Amadeus\Exceptions\NetworkException;
 use Amadeus\Exceptions\NotFoundException;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Exceptions\ServerException;
@@ -179,7 +180,7 @@ final class HTTPClientTest extends TestCase
     {
         $response = $this->createMock(Response::class);
         $response->expects($this->any())->method("getUrl")->willReturn("/foo/bar");
-        $response->expects($this->any())->method("getStatusCode")->willReturn(0);
+        $response->expects($this->any())->method("getStatusCode")->willReturn(-1);
         $response->expects($this->any())->method("getResult")->willReturn($this->result);
 
         $this->expectException(ResponseException::class);
@@ -230,6 +231,18 @@ final class HTTPClientTest extends TestCase
         $response->expects($this->any())->method("getStatusCode")->willReturn(400);
 
         $this->expectException(ClientException::class);
+        PHPUnitUtil::callMethod($this->client, 'detectError', array($response));
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testDetectNetworkException(): void
+    {
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())->method("getStatusCode")->willReturn(0);
+
+        $this->expectException(NetworkException::class);
         PHPUnitUtil::callMethod($this->client, 'detectError', array($response));
     }
 
