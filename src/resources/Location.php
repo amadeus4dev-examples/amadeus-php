@@ -32,7 +32,7 @@ class Location extends Resource implements ResourceInterface
     }
 
     /**
-     * @return object|null
+     * @return Links|null
      */
     public function getSelf(): ?object
     {
@@ -91,7 +91,7 @@ class Location extends Resource implements ResourceInterface
     }
 
     /**
-     * @return object|null
+     * @return GeoCode|null
      */
     public function getGeoCode(): ?object
     {
@@ -102,7 +102,7 @@ class Location extends Resource implements ResourceInterface
     }
 
     /**
-     * @return object|null
+     * @return Address|null
      */
     public function getAddress(): ?object
     {
@@ -113,7 +113,7 @@ class Location extends Resource implements ResourceInterface
     }
 
     /**
-     * @return object|null
+     * @return Distance|null
      */
     public function getDistance(): ?object
     {
@@ -124,7 +124,7 @@ class Location extends Resource implements ResourceInterface
     }
 
     /**
-     * @return object|null
+     * @return Analytics|null
      */
     public function getAnalytics(): ?object
     {

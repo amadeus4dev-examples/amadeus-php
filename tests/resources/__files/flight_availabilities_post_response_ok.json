@@ -1,0 +1,275 @@
+{
+  "meta": {
+    "count": 4
+  },
+  "data": [
+    {
+      "type": "flight-availability",
+      "id": "1",
+      "source": "LTC",
+      "duration": "PT1H20M",
+      "segments": [
+        {
+          "availabilityClasses": [
+            {
+              "numberOfBookableSeats": 9,
+              "class": "A",
+              "closedStatus": "WAITLIST_OPEN"
+            },
+            {
+              "numberOfBookableSeats": 7,
+              "class": "B"
+            },
+            {
+              "numberOfBookableSeats": 9,
+              "class": "C",
+              "tourAllotment": {
+                "tourReference": "HOLIDAY_TOUR",
+                "mode": "FREE",
+                "remainingSeats": 4
+              }
+            },
+            {
+              "numberOfBookableSeats": 4,
+              "class": "D",
+              "closedStatus": "ON_REQUEST"
+            }
+          ],
+          "id": "1",
+          "numberOfStops": 0,
+          "blacklistedInEU": false,
+          "co2Emissions": [
+            {
+              "weight": 90,
+              "weightUnit": "KG",
+              "cabin": "PREMIUM_ECONOMY"
+            }
+          ],
+          "departure": {
+            "iataCode": "CDG",
+            "terminal": "2D",
+            "at": "2020-10-15T09:50:00"
+          },
+          "arrival": {
+            "iataCode": "STN",
+            "at": "2020-10-15T10:10:00"
+          },
+          "carrierCode": "U2",
+          "number": "3152",
+          "aircraft": {
+            "code": "319"
+          },
+          "operating": {
+            "carrierCode": "U2"
+          },
+          "duration": "PT1H20M",
+          "stops":[
+            {
+              "iataCode": "JFK",
+              "duration": "PT2H10M",
+              "arrivalAt": "2017-10-23T20:00:00",
+              "departureAt": "2017-10-23T20:00:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-availability",
+      "id": "2",
+      "source": "GDS",
+      "duration": "PT3H10M",
+      "segments": [
+        {
+          "departure": {
+            "iataCode": "CDG",
+            "terminal": "2F",
+            "at": "2020-10-15T14:30:00"
+          },
+          "arrival": {
+            "iataCode": "AMS",
+            "at": "2020-10-15T15:45:00"
+          },
+          "carrierCode": "KL",
+          "number": "1234",
+          "aircraft": {
+            "code": "73H"
+          },
+          "operating": {
+            "carrierCode": "KL"
+          },
+          "duration": "PT1H15M",
+          "id": "3",
+          "numberOfStops": 0,
+          "blacklistedInEU": false,
+          "availabilityClasses": [
+            {
+              "numberOfBookableSeats": 2,
+              "class": "A"
+            },
+            {
+              "numberOfBookableSeats": 7,
+              "class": "B"
+            },
+            {
+              "numberOfBookableSeats": 3,
+              "class": "C"
+            },
+            {
+              "numberOfBookableSeats": 4,
+              "class": "D"
+            }
+          ]
+        },
+        {
+          "departure": {
+            "iataCode": "AMS",
+            "at": "2020-10-15T16:35:00"
+          },
+          "arrival": {
+            "iataCode": "LCY",
+            "at": "2020-10-15T16:40:00"
+          },
+          "carrierCode": "KL",
+          "number": "989",
+          "aircraft": {
+            "code": "E90"
+          },
+          "operating": {
+            "carrierCode": "KL"
+          },
+          "duration": "PT1H5M",
+          "id": "2",
+          "numberOfStops": 0,
+          "blacklistedInEU": false,
+          "availabilityClasses": [
+            {
+              "numberOfBookableSeats": 9,
+              "class": "A"
+            },
+            {
+              "numberOfBookableSeats": 7,
+              "class": "B"
+            },
+            {
+              "numberOfBookableSeats": 9,
+              "class": "C"
+            },
+            {
+              "numberOfBookableSeats": 4,
+              "class": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-availability",
+      "id": "3",
+      "source": "GDS",
+      "duration": "PT1H10M",
+      "segments": [
+        {
+          "departure": {
+            "iataCode": "LHR",
+            "terminal": "5",
+            "at": "2020-10-16T19:40:00"
+          },
+          "arrival": {
+            "iataCode": "CDG",
+            "terminal": "2A",
+            "at": "2020-10-16T21:50:00"
+          },
+          "carrierCode": "BA",
+          "number": "329",
+          "aircraft": {
+            "code": "319"
+          },
+          "operating": {
+            "carrierCode": "BA"
+          },
+          "duration": "PT1H10M",
+          "id": "2",
+          "numberOfStops": 0,
+          "blacklistedInEU": false,
+          "closedStatus": "CANCELLED"
+        }
+      ]
+    },
+    {
+      "type": "flight-availability",
+      "id": "4",
+      "source": "LTC",
+      "duration": "PT1H20M",
+      "segments": [
+        {
+          "departure": {
+            "iataCode": "STN",
+            "at": "2020-10-16T19:40:00"
+          },
+          "arrival": {
+            "iataCode": "CDG",
+            "terminal": "2D",
+            "at": "2020-10-16T22:00:00"
+          },
+          "carrierCode": "U2",
+          "number": "330",
+          "aircraft": {
+            "code": "319"
+          },
+          "operating": {
+            "carrierCode": "U2"
+          },
+          "duration": "PT1H20M",
+          "id": "5",
+          "numberOfStops": 0,
+          "blacklistedInEU": false,
+          "availabilityClasses": [
+            {
+              "numberOfBookableSeats": 4,
+              "class": "C"
+            },
+            {
+              "numberOfBookableSeats": 9,
+              "class": "Y"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "dictionaries": {
+    "locations": {
+      "LCY": {
+        "cityCode": "LON",
+        "countryCode": "GB"
+      },
+      "CDG": {
+        "cityCode": "PAR",
+        "countryCode": "FR"
+      },
+      "LHR": {
+        "cityCode": "LON",
+        "countryCode": "GB"
+      },
+      "AMS": {
+        "cityCode": "AMS",
+        "countryCode": "NL"
+      },
+      "STN": {
+        "cityCode": "LON",
+        "countryCode": "GB"
+      }
+    },
+    "aircraft": {
+      "319": "AIRBUS INDUSTRIE A319",
+      "73H": "BOEING 737-800 (WINGLETS)",
+      "E90": "EMBRAER 190"
+    },
+    "carriers": {
+      "KL": "KLM ROYAL DUTCH AIRLINES",
+      "U2": "EASYJET",
+      "BA": "BRITISH AIRWAYS"
+    }
+  }
+}

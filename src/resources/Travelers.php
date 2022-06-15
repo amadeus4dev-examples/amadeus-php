@@ -6,12 +6,12 @@ namespace Amadeus\Resources;
 
 class Travelers implements ResourceInterface
 {
-    private ?string $score = null;
+    private ?int $score = null;
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getScore(): ?string
+    public function getScore(): ?int
     {
         return $this->score;
     }

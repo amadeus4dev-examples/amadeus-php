@@ -2,9 +2,9 @@
   "type": "amadeusOAuth2Token",
   "username": "archivojab@gmail.com",
   "application_name": "Demo App",
-  "client_id": "Hs0sNkpTXeu0t2Hw2rLITofK8QELG8e9",
+  "client_id": "myclientid",
   "token_type": "Bearer",
-  "access_token": "z626ZO2ezDzu4Isr5SN9T2LB1rXa",
+  "access_token": "mytoken",
   "expires_in": 1799,
   "state": "approved",
   "scope": ""

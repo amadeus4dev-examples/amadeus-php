@@ -2,10 +2,11 @@
   "originDestinations": [
     {
       "id": "1",
-      "originLocationCode": "MIA",
-      "destinationLocationCode": "ATL",
+      "originLocationCode": "BOS",
+      "destinationLocationCode": "MAD",
       "departureDateTime": {
-        "date": "2021-11-01"
+        "date": "2021-11-14",
+        "time": "21:15:00"
       }
     }
   ],

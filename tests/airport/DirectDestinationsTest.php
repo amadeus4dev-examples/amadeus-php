@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Amadeus\Tests\Resources;
+namespace Amadeus\Tests\Airport;
 
 use Amadeus\Airport\DirectDestinations;
 use Amadeus\Amadeus;
@@ -13,9 +13,12 @@ use Amadeus\Tests\PHPUnitUtil;
 use PHPUnit\Framework\TestCase;
 
 /**
+ * Endpoint
+ * @covers \Amadeus\Airport\DirectDestinations
+ *
+ * Resources
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\Destination
- * @covers \Amadeus\Airport\DirectDestinations
  *
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
  */
@@ -32,26 +35,25 @@ final class DirectDestinationsTest extends TestCase
     {
         $this->amadeus = $this->createMock(Amadeus::class);
         $client = $this->createMock(HTTPClient::class);
-
         $this->amadeus->expects($this->any())
             ->method("getClient")
             ->willReturn($client);
 
-        $this->params = array(
-            "departureAirportCode" => "MAD",
-            "max" => 2
-        );
-
+        // Prepare Response
         $fileContent = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "direct_destinations_response_ok.json"
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "direct_destinations_get_response_ok.json"
         );
         $this->data = json_decode($fileContent)->{'data'};
-
         $response = $this->createMock(Response::class);
         $response->expects($this->any())
             ->method("getData")
             ->willReturn($this->data);
 
+        // Given
+        $this->params = array(
+            "departureAirportCode" => "NCE",
+            "max" => 2
+        );
         $client->expects($this->any())
             ->method("getWithArrayParams")
             ->with("/v1/airport/direct-destinations", $this->params)
@@ -63,17 +65,24 @@ final class DirectDestinationsTest extends TestCase
      */
     public function testEndpoint(): void
     {
+        // When
         $directDestinations = new DirectDestinations($this->amadeus);
         $destinations = $directDestinations->get($this->params);
+
+        // Then
         $this->assertNotNull($destinations);
         $this->assertEquals(2, sizeof($destinations));
 
+        // Resources
+        // Destination
         $this->assertEquals("location", $destinations[0]->getType());
         $this->assertEquals("city", $destinations[0]->getSubtype());
-        $this->assertEquals("ALBACETE", $destinations[0]->getName());
-        $this->assertEquals("ABC", $destinations[0]->getIataCode());
+        $this->assertEquals("Bangalore", $destinations[0]->getName());
+        $this->assertEquals("BLR", $destinations[0]->getIataCode());
+
+        // __toString()
         $this->assertEquals(
-            json_encode($this->data[0], JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES),
+            PHPUnitUtil::toString($this->data[0]),
             $destinations[0]->__toString()
         );
     }

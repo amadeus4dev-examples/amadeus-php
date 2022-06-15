@@ -9,11 +9,14 @@ class Analytics implements ResourceInterface
     private ?object $travelers = null;
 
     /**
-     * @return object|null
+     * @return Travelers|null
      */
     public function getTravelers(): ?object
     {
-        return $this->travelers;
+        return Resource::toResourceObject(
+            $this->travelers,
+            Travelers::class
+        );
     }
 
     public function __set($name, $value): void
