@@ -37,5 +37,17 @@ class PHPUnitUtil
         return $fileContent;
     }
 
+    /**
+     * @param $object
+     * @return string|null
+     */
+    public static function toString($object): ?string
+    {
+        return json_encode(
+            $object,
+            JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES
+        );
+    }
+
     public const RESOURCE_PATH_ROOT = __DIR__ . "/resources/__files/";
 }

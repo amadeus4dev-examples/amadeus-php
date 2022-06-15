@@ -98,4 +98,14 @@ class Resource
     {
         return $this->response;
     }
+
+    public static function toString($array): ?string
+    {
+        return json_encode(
+            array_filter($array, function ($v) {
+                return !is_null($v);
+            }),
+            JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES
+        );
+    }
 }

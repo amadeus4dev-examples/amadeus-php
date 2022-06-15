@@ -166,13 +166,16 @@ class Location extends Resource implements ResourceInterface
         return $this->rank;
     }
 
-    public function __set($name, $value)
+    public function __set($name, $value): void
     {
         $this->$name = $value;
     }
 
-    public function __toString()
+    /**
+     * @return string|null
+     */
+    public function __toString(): ?string
     {
-        return json_encode(get_object_vars($this), JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+        return Resource::toString(get_object_vars($this));
     }
 }
