@@ -42,16 +42,33 @@ class Pricing
      * @return FlightOfferPricingOutput
      * @throws ResponseException
      */
-    public function postWithFlightOfferPricingInput(array $flightOffers, ?array $params = null): object
-    {
+    public function postWithFlightOfferPricingInput(
+        array $flightOffers,
+        array $payments = array(),
+        array $travelers = array(),
+        ?array $params = null
+    ): object {
         $flightOffersArray = array();
         foreach ($flightOffers as $flightOffer) {
             $flightOffersArray[] = json_decode((string)$flightOffer);
         }
+
+        $paymentsArray = array();
+        foreach ($payments as $payment) {
+            $paymentsArray[] = json_decode((string)$payment);
+        }
+
+        $travelersArray = array();
+        foreach ($travelers as $traveler) {
+            $travelersArray[] = json_decode((string)$traveler);
+        }
+
         $flightOfferPricingInput = (object)[
             "data" => (object)[
                 "type" => "flight-offers-pricing",
-                "flightOffers" => $flightOffersArray
+                "flightOffers" => $flightOffersArray,
+                "payments" => $paymentsArray,
+                "travelers" => $travelersArray
             ]
         ];
         $body = json_encode($flightOfferPricingInput);
