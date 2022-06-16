@@ -22,7 +22,8 @@
       "Amadeus\\ReferenceData\\": "src/referenceData",
       "Amadeus\\Resources\\": "src/resources",
       "Amadeus\\Shopping\\": "src/shopping",
-      "Amadeus\\Shopping\\Availability\\": "src/shopping/availability"
+      "Amadeus\\Shopping\\Availability\\": "src/shopping/availability",
+      "Amadeus\\Shopping\\FlightOffers\\": "src/shopping/flightOffers"
     }
   },
   "require-dev": {

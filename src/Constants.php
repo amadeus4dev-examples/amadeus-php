@@ -12,7 +12,9 @@ class Constants
 
     // APIs which need an X-HTTP-Method-Override GET HEADER
     public const API_NEED_EXTRA_HEADER = array(
-        "/v1/shopping/availability/flight-availabilities"
+        "/v1/shopping/availability/flight-availabilities",
+        "/v1/shopping/flight-offers",
+        "/v1/shopping/flight-offers/pricing"
     );
 
     public const HTTPS = "https";

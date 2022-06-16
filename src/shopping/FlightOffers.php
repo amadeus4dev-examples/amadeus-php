@@ -8,10 +8,13 @@ use Amadeus\Amadeus;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\FlightOffer;
 use Amadeus\Resources\Resource;
+use Amadeus\Shopping\FlightOffers\Pricing;
 
 class FlightOffers
 {
     private Amadeus $amadeus;
+
+    private Pricing $pricing;
 
     /**
      * @param Amadeus $amadeus
@@ -19,6 +22,15 @@ class FlightOffers
     public function __construct(Amadeus $amadeus)
     {
         $this->amadeus = $amadeus;
+        $this->pricing = new Pricing($amadeus);
+    }
+
+    /**
+     * @return Pricing
+     */
+    public function getPricing(): Pricing
+    {
+        return $this->pricing;
     }
 
     /**

@@ -32,16 +32,16 @@ class BasicHTTPClient implements HTTPClient
 
     /**
      * @param string $path
-     * @param array $query
+     * @param array $params
      * @return Response
      * @throws ResponseException
      */
-    public function getWithArrayParams(string $path, array $query): Response
+    public function getWithArrayParams(string $path, array $params): Response
     {
         $request = new Request(
             Constants::GET,
             $path,
-            $query,
+            $params,
             null,
             $this->getAccessToken()->getBearerToken(),
             $this
@@ -62,6 +62,27 @@ class BasicHTTPClient implements HTTPClient
             Constants::POST,
             $path,
             null,
+            $body,
+            $this->getAccessToken()->getBearerToken(),
+            $this
+        );
+
+        return $this->execute($request);
+    }
+
+    /**
+     * @param string $path
+     * @param string $body
+     * @param array|null $params
+     * @return Response
+     * @throws ResponseException
+     */
+    public function postWithStringBodyAndArrayParams(string $path, string $body, ?array $params): Response
+    {
+        $request = new Request(
+            Constants::POST,
+            $path,
+            $params,
             $body,
             $this->getAccessToken()->getBearerToken(),
             $this
