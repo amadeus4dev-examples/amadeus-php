@@ -38,11 +38,16 @@ class Pricing
         return Resource::fromObject($response, FlightOfferPricingOutput::class);
     }
 
+
     /**
+     * @param array $flightOffers
+     * @param array $payments
+     * @param array $travelers
+     * @param array|null $params
      * @return FlightOfferPricingOutput
      * @throws ResponseException
      */
-    public function postWithFlightOfferPricingInput(
+    public function postWithFlightOffers(
         array $flightOffers,
         array $payments = array(),
         array $travelers = array(),
@@ -63,7 +68,7 @@ class Pricing
             $travelersArray[] = json_decode((string)$traveler);
         }
 
-        $flightOfferPricingInput = (object)[
+        $flightPricingQuery = (object)[
             "data" => (object)[
                 "type" => "flight-offers-pricing",
                 "flightOffers" => $flightOffersArray,
@@ -71,7 +76,7 @@ class Pricing
                 "travelers" => $travelersArray
             ]
         ];
-        $body = json_encode($flightOfferPricingInput);
+        $body = json_encode($flightPricingQuery);
 
         return $this->post($body, $params);
     }
