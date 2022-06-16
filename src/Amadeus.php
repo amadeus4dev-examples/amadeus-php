@@ -19,6 +19,8 @@ class Amadeus
 
     private ReferenceData $referenceData;
 
+    private Booking $booking;
+
     /**
      * @param Configuration $configuration
      */
@@ -32,6 +34,7 @@ class Amadeus
         $this->airport = new Airport($this);
         $this->shopping = new Shopping($this);
         $this->referenceData = new ReferenceData($this);
+        $this->booking = new Booking($this);
     }
 
     /**
@@ -82,5 +85,13 @@ class Amadeus
     public function getReferenceData(): ReferenceData
     {
         return $this->referenceData;
+    }
+
+    /**
+     * @return Booking
+     */
+    public function getBooking(): Booking
+    {
+        return $this->booking;
     }
 }
