@@ -17,7 +17,7 @@ class Locations
 
     private Hotels $hotels;
 
-    private Hotel $hotel; /**@phpstan-ignore-line*/
+    private Hotel $hotel;
 
     /**
      * @param Amadeus $amadeus
@@ -26,7 +26,7 @@ class Locations
     {
         $this->amadeus = $amadeus;
         $this->hotels = new Hotels($amadeus);
-        $this->hotel = new Hotel($amadeus); /**@phpstan-ignore-line*/
+        $this->hotel = new Hotel($amadeus);
     }
 
     /**
@@ -40,7 +40,7 @@ class Locations
     /**
      * @return Hotel
      */
-    public function getHotel(): Hotel /**@phpstan-ignore-line*/
+    public function getHotel(): Hotel
     {
         return $this->hotel;
     }
