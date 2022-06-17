@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class HotelBookingLight implements ResourceInterface
+class HotelBookingLight extends Resource implements ResourceInterface
 {
     private ?string $type = null;
     private ?string $id = null;
