@@ -29,8 +29,8 @@ class Pricing
      */
     public function post(string $body, ?array $params = null): object
     {
-        $response = $this->amadeus->getClient()->postWithStringBodyAndArrayParams(
-            '/v1/shopping/flight-offers/pricing',
+        $response = $this->amadeus->getClient()->postWithStringBody(
+            '/v1/shopping/flight-offers/pricing?',
             $body,
             $params
         );

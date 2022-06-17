@@ -27,9 +27,8 @@ class HotelOffer
      */
     public function get(string $offerId): object
     {
-        $response = $this->amadeus->getClient()->get(
-            "/v3/shopping/hotel-offers",
-            $offerId
+        $response = $this->amadeus->getClient()->getWithOnlyPath(
+            "/v3/shopping/hotel-offers"."/".$offerId
         );
 
         return Resource::fromObject($response, \Amadeus\Resources\HotelOffers::class);

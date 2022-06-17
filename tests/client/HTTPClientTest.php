@@ -298,6 +298,7 @@ final class HTTPClientTest extends TestCase
 
     /**
      * @throws ReflectionException
+     * TODO Review
      */
     public function testSetCurlOptionsWithPost(): void
     {
@@ -315,7 +316,7 @@ final class HTTPClientTest extends TestCase
 
         $request->expects($this->once())->method('getVerb');
         $request->expects($this->exactly(2))->method('getBody');
-        $request->expects($this->exactly(2))->method('getParams');
+        $request->expects($this->exactly(0))->method('getParams');
 
         PHPUnitUtil::callMethod($obj, "setCurlOptions", array(curl_init(), $request));
     }

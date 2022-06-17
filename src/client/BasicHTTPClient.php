@@ -32,15 +32,14 @@ class BasicHTTPClient implements HTTPClient
 
     /**
      * @param string $path
-     * @param string $params
      * @return Response
      * @throws ResponseException
      */
-    public function get(string $path, string $params): Response
+    public function getWithOnlyPath(string $path): Response
     {
         $request = new Request(
             Constants::GET,
-            $path."/".$params,
+            $path,
             null,
             null,
             $this->getAccessToken()->getBearerToken(),
@@ -76,28 +75,7 @@ class BasicHTTPClient implements HTTPClient
      * @return Response
      * @throws ResponseException
      */
-    public function postWithStringBody(string $path, string $body): Response
-    {
-        $request = new Request(
-            Constants::POST,
-            $path,
-            null,
-            $body,
-            $this->getAccessToken()->getBearerToken(),
-            $this
-        );
-
-        return $this->execute($request);
-    }
-
-    /**
-     * @param string $path
-     * @param string $body
-     * @param array|null $params
-     * @return Response
-     * @throws ResponseException
-     */
-    public function postWithStringBodyAndArrayParams(string $path, string $body, ?array $params): Response
+    public function postWithStringBody(string $path, string $body, ?array $params = null): Response
     {
         $request = new Request(
             Constants::POST,
@@ -216,8 +194,7 @@ class BasicHTTPClient implements HTTPClient
             curl_setopt($curlHandle, CURLOPT_POST, true);
             if ($request->getBody() != null) {
                 curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $request->getBody());
-            }
-            if ($request->getParams() != null) {
+            } elseif ($request->getParams() != null) {
                 curl_setopt($curlHandle, CURLOPT_POSTFIELDS, http_build_query($request->getParams()));
             }
         }
