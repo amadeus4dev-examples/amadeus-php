@@ -6,6 +6,7 @@ namespace Amadeus\ReferenceData;
 
 use Amadeus\Amadeus;
 use Amadeus\Exceptions\ResponseException;
+use Amadeus\ReferenceData\Locations\Hotel;
 use Amadeus\ReferenceData\Locations\Hotels;
 use Amadeus\Resources\Location;
 use Amadeus\Resources\Resource;
@@ -16,6 +17,8 @@ class Locations
 
     private Hotels $hotels;
 
+    private Hotel $hotel;
+
     /**
      * @param Amadeus $amadeus
      */
@@ -23,6 +26,7 @@ class Locations
     {
         $this->amadeus = $amadeus;
         $this->hotels = new Hotels($amadeus);
+        $this->hotel = new Hotel($amadeus);
     }
 
     /**
@@ -31,6 +35,14 @@ class Locations
     public function getHotels(): Hotels
     {
         return $this->hotels;
+    }
+
+    /**
+     * @return Hotel
+     */
+    public function getHotel(): Hotel
+    {
+        return $this->hotel;
     }
 
     /**
