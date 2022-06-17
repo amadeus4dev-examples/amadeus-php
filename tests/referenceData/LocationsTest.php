@@ -21,6 +21,10 @@ use PHPUnit\Framework\TestCase;
 /**
  * Endpoint
  * @covers \Amadeus\ReferenceData\Locations
+ * @covers \Amadeus\ReferenceData\Locations\Hotels
+ * @covers \Amadeus\ReferenceData\Locations\Hotels\ByCity
+ * @covers \Amadeus\ReferenceData\Locations\Hotels\ByGeocode
+ * @covers \Amadeus\ReferenceData\Locations\Hotels\ByHotels
  *
  * Resources
  * @covers \Amadeus\Resources\Address

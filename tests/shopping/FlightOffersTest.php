@@ -23,6 +23,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Endpoint
  * @covers \Amadeus\Shopping\FlightOffers
+ * @covers \Amadeus\Shopping\FlightOffers\Pricing
  *
  * Resources
  * @covers \Amadeus\Resources\Resource
