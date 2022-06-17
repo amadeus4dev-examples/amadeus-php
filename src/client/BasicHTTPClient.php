@@ -32,6 +32,26 @@ class BasicHTTPClient implements HTTPClient
 
     /**
      * @param string $path
+     * @param string $params
+     * @return Response
+     * @throws ResponseException
+     */
+    public function get(string $path, string $params): Response
+    {
+        $request = new Request(
+            Constants::GET,
+            $path."/".$params,
+            null,
+            null,
+            $this->getAccessToken()->getBearerToken(),
+            $this
+        );
+
+        return $this->execute($request);
+    }
+
+    /**
+     * @param string $path
      * @param array $params
      * @return Response
      * @throws ResponseException
