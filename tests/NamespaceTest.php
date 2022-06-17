@@ -18,6 +18,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Airport\DirectDestinations
  * @covers \Amadeus\Booking
  * @covers \Amadeus\Booking\FlightOrders
+ * @covers \Amadeus\Booking\HotelBookings
  * @covers \Amadeus\ReferenceData
  * @covers \Amadeus\ReferenceData\Locations
  * @covers \Amadeus\ReferenceData\Locations\Hotels
@@ -45,6 +46,7 @@ final class NamespaceTest extends TestCase
         // Booking
         $this->assertNotNull($amadeus->getBooking());
         $this->assertNotNull($amadeus->getBooking()->getFlightOrders());
+        $this->assertNotNull($amadeus->getBooking()->getHotelBookings());
 
         // Shopping
         $this->assertNotNull($amadeus->getShopping());
