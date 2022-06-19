@@ -23,7 +23,6 @@ final class AccessTokenTest extends TestCase
 
     /**
      * @Before
-     * @throws ReflectionException
      */
     protected function setUp(): void
     {
@@ -37,13 +36,7 @@ final class AccessTokenTest extends TestCase
             ->method("getConfiguration")
             ->willReturn($configuration);
 
-        $result = (object) [
-            "access_token" => "my_token",
-            "expires_in" => 1799
-        ];
-
-        $accessToken = new AccessToken($this->client);
-        PHPUnitUtil::callMethod($accessToken, "storeAccessToken", array($result));
+        $accessToken = new AccessToken($this->client, __DIR__."/cached_token_test.json");
 
         $this->client->expects($this->any())
             ->method("getAccessToken")
@@ -53,49 +46,51 @@ final class AccessTokenTest extends TestCase
     public function testParseAccessToken(): void
     {
         $accessToken = $this->client->getAccessToken();
-        $this->assertEquals(1799, $accessToken->getExpiresIn());
-        //$this->assertEquals(time()+1799, $accessToken->getExpiresAt());
         $this->assertEquals('my_token', $accessToken->getBearerToken());
+        $this->assertEquals(999999999999, $accessToken->getExpiresAt());
     }
 
-    public function testSetter(): void
+    public function testFetchAccessTokenWhenNotExpired(): void
     {
-        $accessToken = $this->client->getAccessToken();
-        //$accessToken->setExpiresAt(time()+1789);
-        $accessToken->setBearerToken("new_token");
-        //$this->assertEquals(time()+1789, $accessToken->getExpiresAt());
-        $this->assertEquals('new_token', $accessToken->getBearerToken());
+        $result = (object) [
+            "access_token" => "my_token",
+            "expires_in" => 1799
+        ];
+
+        $obj = $this->getMockBuilder(AccessToken::class)
+            ->setConstructorArgs(array($this->client, __DIR__."/cached_token_null_test.json"))
+            ->onlyMethods(array("fetchAccessToken"))
+            ->getMock();
+
+        $obj->expects($this->exactly(1))
+            ->method('fetchAccessToken')
+            ->willReturn($result);
+
+        $obj->getBearerToken();
+        $obj->getBearerToken();
+
+        file_put_contents(__DIR__."/cached_token_null_test.json", '{"access_token":null,"expires_at":null}');
     }
 
-//    public function testFetchAccessTokenWhenNotExpired(): void
-//    {
-//        $obj = $this->getMockBuilder(AccessToken::class)
-//            ->setConstructorArgs(array($this->client))
-//            ->onlyMethods(array("fetchAccessToken"))
-//            ->getMock();
-//
-//        $obj->expects($this->exactly(1))
-//            ->method('fetchAccessToken')
-//            ->willReturn($this->result);
-//
-//        $obj->getBearerToken();
-//        $obj->getBearerToken();
-//    }
-//
-//    public function testUpdateAccessTokenWhenExpired(): void
-//    {
-//        $obj = $this->getMockBuilder(AccessToken::class)
-//            ->setConstructorArgs(array($this->client))
-//            ->onlyMethods(array("fetchAccessToken"))
-//            ->getMock();
-//
-//        $this->result->expires_in = -1;
-//
-//        $obj->expects($this->exactly(2))
-//            ->method('fetchAccessToken')
-//            ->willReturn($this->result);
-//
-//        $obj->getBearerToken();
-//        $obj->getBearerToken();
-//    }
+    public function testUpdateAccessTokenWhenExpired(): void
+    {
+        $result = (object) [
+            "access_token" => "my_token",
+            "expires_in" => -1
+        ];
+
+        $obj = $this->getMockBuilder(AccessToken::class)
+            ->setConstructorArgs(array($this->client, __DIR__."/cached_token_null_test.json"))
+            ->onlyMethods(array("fetchAccessToken"))
+            ->getMock();
+
+        $obj->expects($this->exactly(2))
+            ->method('fetchAccessToken')
+            ->willReturn($result);
+
+        $obj->getBearerToken();
+        $obj->getBearerToken();
+
+        file_put_contents(__DIR__."/cached_token_null_test.json", '{"access_token":null,"expires_at":null}');
+    }
 }
