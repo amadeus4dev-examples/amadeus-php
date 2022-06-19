@@ -74,13 +74,7 @@ final class HTTPClientTest extends TestCase
             ->setConstructorArgs(array($this->configuration))
             ->getMock();
 
-        $objAccessToken = (object) [
-            "access_token" => "my_token",
-            "expires_in" => 1799
-        ];
-
-        $this->accessToken = new AccessToken($this->client);
-        PHPUnitUtil::callMethod($this->accessToken, "storeAccessToken", array($objAccessToken));
+        $this->accessToken = new AccessToken($this->client, __DIR__."/cached_token_test.json");
 
         $this->client->expects($this->any())
             ->method("getAccessToken")

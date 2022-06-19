@@ -72,6 +72,7 @@ class BasicHTTPClient implements HTTPClient
     /**
      * @param string $path
      * @param string $body
+     * @param array|null $params
      * @return Response
      * @throws ResponseException
      */
