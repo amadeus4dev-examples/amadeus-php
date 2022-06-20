@@ -9,6 +9,10 @@ use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\Destination;
 use Amadeus\Resources\Resource;
 
+/**
+ * Airport Routes API
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
+ */
 class DirectDestinations
 {
     private Amadeus $amadeus;

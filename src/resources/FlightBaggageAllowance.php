@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class BaggageAllowance implements ResourceInterface
+class FlightBaggageAllowance implements ResourceInterface
 {
     private ?int $quantity = null;
     private ?int $weight = null;

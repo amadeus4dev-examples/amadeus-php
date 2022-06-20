@@ -6,8 +6,8 @@ namespace Amadeus\Resources;
 
 class HotelDistance implements ResourceInterface
 {
-    private ?string $unit = null;
     private ?float $value = null;
+    private ?string $unit = null;
     private ?string $displayValue = null;
     private ?string $inUnlimited = null;
 

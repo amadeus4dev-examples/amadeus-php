@@ -10,6 +10,10 @@ use Amadeus\Resources\FlightOrder;
 use Amadeus\Resources\HotelBookingLight;
 use Amadeus\Resources\Resource;
 
+/**
+ * Hotel Booking API
+ * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-booking/api-reference
+ */
 class HotelBookings
 {
     private Amadeus $amadeus;

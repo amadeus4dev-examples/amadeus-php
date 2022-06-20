@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in FlightExtendedSegment
+ * @see FlightExtendedSegment
+ */
 class FlightStop implements ResourceInterface
 {
     private ?string $iataCode = null;

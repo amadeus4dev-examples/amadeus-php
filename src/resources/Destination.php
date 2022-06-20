@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * A Destination object as returned by the Airport Routes API.
+ * @see DirectDestinations
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
+ */
 class Destination extends Resource implements ResourceInterface
 {
     private ?string $type = null;

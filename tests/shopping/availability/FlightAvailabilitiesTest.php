@@ -9,28 +9,27 @@ use Amadeus\Client\HTTPClient;
 use Amadeus\Client\Response;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\AircraftEquipment;
-use Amadeus\Resources\AvailabilityClass;
+use Amadeus\Resources\FlightAvailabilityClass;
 use Amadeus\Resources\Co2Emission;
-use Amadeus\Resources\ExtendedSegment;
+use Amadeus\Resources\FlightExtendedSegment;
 use Amadeus\Resources\FlightAvailability;
 use Amadeus\Resources\FlightEndpoint;
 use Amadeus\Resources\FlightStop;
 use Amadeus\Resources\OperatingFlight;
-use Amadeus\Resources\TourAllotment;
+use Amadeus\Resources\FlightTourAllotment;
 use Amadeus\Shopping\Availability\FlightAvailabilities;
 use Amadeus\Tests\PHPUnitUtil;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Endpoint
+ * This test covers the endpoint and its related returned resources.
  * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
  *
- * Resources
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\FlightAvailability
- * @covers \Amadeus\Resources\ExtendedSegment
- * @covers \Amadeus\Resources\AvailabilityClass
- * @covers \Amadeus\Resources\TourAllotment
+ * @covers \Amadeus\Resources\FlightExtendedSegment
+ * @covers \Amadeus\Resources\FlightAvailabilityClass
+ * @covers \Amadeus\Resources\FlightTourAllotment
  * @covers \Amadeus\Resources\Co2Emission
  * @covers \Amadeus\Resources\FlightEndpoint
  * @covers \Amadeus\Resources\AircraftEquipment
@@ -102,7 +101,7 @@ final class FlightAvailabilitiesTest extends TestCase
 
         // ExtendedSegment
         $segments = $flightAvailabilities[0]->getSegments();
-        $this->assertTrue($segments[0] instanceof ExtendedSegment);
+        $this->assertTrue($segments[0] instanceof FlightExtendedSegment);
         $this->assertEquals(null, $segments[0]->getClosedStatus());
         $this->assertEquals("1", $segments[0]->getId());
         $this->assertEquals(0, $segments[0]->getNumberOfStops());
@@ -113,14 +112,14 @@ final class FlightAvailabilitiesTest extends TestCase
 
         // AvailabilityClass
         $availabilityClasses = $segments[0]->getAvailabilityClasses();
-        $this->assertTrue($availabilityClasses[0] instanceof AvailabilityClass);
+        $this->assertTrue($availabilityClasses[0] instanceof FlightAvailabilityClass);
         $this->assertEquals(9, $availabilityClasses[0]->getNumberOfBookableSeats());
         $this->assertEquals("A", $availabilityClasses[0]->getClass());
         $this->assertEquals("WAITLIST_OPEN", $availabilityClasses[0]->getClosedStatus());
 
         // TourAllotment
         $tourAllotment = $availabilityClasses[2]->getTourAllotment();
-        $this->assertTrue($tourAllotment instanceof TourAllotment);
+        $this->assertTrue($tourAllotment instanceof FlightTourAllotment);
         $this->assertEquals(null, $tourAllotment->getTourName());
         $this->assertEquals("HOLIDAY_TOUR", $tourAllotment->getTourReference());
         $this->assertEquals("FREE", $tourAllotment->getMode());

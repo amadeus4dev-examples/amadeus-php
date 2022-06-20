@@ -6,8 +6,8 @@ namespace Amadeus\Resources;
 
 class QualifiedFreeText implements ResourceInterface
 {
-    private ?string $lang = null;
     private ?string $text = null;
+    private ?string $lang = null;
 
     /**
      * @return string|null

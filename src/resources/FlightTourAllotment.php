@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class TourAllotment implements ResourceInterface
+/**
+ * Sub-resource in FlightAvailabilityClass
+ * @see FlightAvailabilityClass
+ */
+class FlightTourAllotment implements ResourceInterface
 {
     private ?string $tourName = null;
     private ?string $tourReference = null;

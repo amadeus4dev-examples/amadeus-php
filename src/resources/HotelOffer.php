@@ -10,7 +10,7 @@ class HotelOffer implements ResourceInterface
     private ?string $id = null;
     private ?string $checkInDate = null;
     private ?string $checkOutDate = null;
-    private ?int $roomQuantity = null;
+    private ?string $roomQuantity = null;
     private ?string $rateCode = null;
     private ?object $rateFamilyEstimated = null;
     private ?string $category = null;
@@ -56,9 +56,9 @@ class HotelOffer implements ResourceInterface
     }
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getRoomQuantity(): ?int
+    public function getRoomQuantity(): ?string
     {
         return $this->roomQuantity;
     }
@@ -160,7 +160,7 @@ class HotelOffer implements ResourceInterface
     {
         return Resource::toResourceObject(
             $this->policies,
-            HotelProductHotelPrice::class
+            HotelProductPolicyDetails::class
         );
     }
 

@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Price implements ResourceInterface
+/**
+ * Sub-resource in FlightOffer, etc.
+ * @see FlightOffer
+ */
+class FlightPrice implements ResourceInterface
 {
     private ?string $margin = null;
     private ?string $grandTotal = null;
@@ -42,13 +46,13 @@ class Price implements ResourceInterface
     }
 
     /**
-     * @return AdditionalService[]|null
+     * @return FlightAdditionalService[]|null
      */
     public function getAdditionalServices(): ?array
     {
         return Resource::toResourceArray(
             $this->additionalServices,
-            AdditionalService::class
+            FlightAdditionalService::class
         );
     }
 
@@ -77,24 +81,24 @@ class Price implements ResourceInterface
     }
 
     /**
-     * @return Fee[]|null
+     * @return FlightFee[]|null
      */
     public function getFees(): ?array
     {
         return Resource::toResourceArray(
             $this->fees,
-            Fee::class
+            FlightFee::class
         );
     }
 
     /**
-     * @return Tax[]|null
+     * @return FlightOfferTax[]|null
      */
     public function getTaxes(): ?array
     {
         return Resource::toResourceArray(
             $this->taxes,
-            Tax::class
+            FlightOfferTax::class
         );
     }
 

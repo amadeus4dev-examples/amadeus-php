@@ -11,6 +11,10 @@ use Amadeus\ReferenceData\Locations\Hotels;
 use Amadeus\Resources\Location;
 use Amadeus\Resources\Resource;
 
+/**
+ * Airport and City Search API
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-and-city-search/api-reference
+ */
 class Locations
 {
     private Amadeus $amadeus;

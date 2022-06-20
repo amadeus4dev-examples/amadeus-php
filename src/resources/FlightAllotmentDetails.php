@@ -4,25 +4,25 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Fee implements ResourceInterface
+class FlightAllotmentDetails implements ResourceInterface
 {
-    private ?string $amount = null;
-    private ?string $type = null;
+    private ?string $tourName = null;
+    private ?string $tourReference = null;
 
     /**
      * @return string|null
      */
-    public function getAmount(): ?string
+    public function getTourName(): ?string
     {
-        return $this->amount;
+        return $this->tourName;
     }
 
     /**
      * @return string|null
      */
-    public function getType(): ?string
+    public function getTourReference(): ?string
     {
-        return $this->type;
+        return $this->tourReference;
     }
 
     public function __set($name, $value): void

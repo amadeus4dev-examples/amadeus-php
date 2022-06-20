@@ -9,6 +9,10 @@ use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\FlightOrder;
 use Amadeus\Resources\Resource;
 
+/**
+ * Flight Create Orders API
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
+ */
 class FlightOrders
 {
     private Amadeus $amadeus;
@@ -63,7 +67,8 @@ class FlightOrders
                 "travelers" => $travelersArray
             ]
         ];
-        $body = json_encode($flightOrderQuery);
+
+        $body = Resource::toString(get_object_vars($flightOrderQuery));
 
         return $this->post($body);
     }

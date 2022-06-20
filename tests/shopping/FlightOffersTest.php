@@ -8,34 +8,33 @@ use Amadeus\Amadeus;
 use Amadeus\Client\HTTPClient;
 use Amadeus\Client\Response;
 use Amadeus\Exceptions\ResponseException;
-use Amadeus\Resources\BaggageAllowance;
-use Amadeus\Resources\FareDetailsBySegment;
-use Amadeus\Resources\Fee;
+use Amadeus\Resources\FlightBaggageAllowance;
+use Amadeus\Resources\FlightFareDetailsBySegment;
+use Amadeus\Resources\FlightFee;
 use Amadeus\Resources\FlightOffer;
-use Amadeus\Resources\Itineraries;
-use Amadeus\Resources\Price;
-use Amadeus\Resources\PricingOptions;
+use Amadeus\Resources\FlightItineraries;
+use Amadeus\Resources\FlightPrice;
+use Amadeus\Resources\FlightPricingOptions;
 use Amadeus\Resources\TravelerPricing;
 use Amadeus\Shopping\FlightOffers;
 use Amadeus\Tests\PHPUnitUtil;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Endpoint
+ * This test covers the endpoint and its related returned resources.
  * @covers \Amadeus\Shopping\FlightOffers
  * @covers \Amadeus\Shopping\FlightOffers\Pricing
  *
- * Resources
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\FlightOffer
- * @covers \Amadeus\Resources\Itineraries
- * @covers \Amadeus\Resources\ExtendedSegment
- * @covers \Amadeus\Resources\Price
- * @covers \Amadeus\Resources\Fee
- * @covers \Amadeus\Resources\PricingOptions
+ * @covers \Amadeus\Resources\FlightItineraries
+ * @covers \Amadeus\Resources\FlightExtendedSegment
+ * @covers \Amadeus\Resources\FlightPrice
+ * @covers \Amadeus\Resources\FlightFee
+ * @covers \Amadeus\Resources\FlightPricingOptions
  * @covers \Amadeus\Resources\TravelerPricing
- * @covers \Amadeus\Resources\FareDetailsBySegment
- * @covers \Amadeus\Resources\BaggageAllowance
+ * @covers \Amadeus\Resources\FlightFareDetailsBySegment
+ * @covers \Amadeus\Resources\FlightBaggageAllowance
  *
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
  */
@@ -132,7 +131,7 @@ final class FlightOffersTest extends TestCase
 
         // Itineraries
         $itineraries = $flightOffersGet[0]->getItineraries();
-        $this->assertTrue($itineraries[0] instanceof Itineraries);
+        $this->assertTrue($itineraries[0] instanceof FlightItineraries);
         $this->assertEquals("PT14H15M", $itineraries[0]->getDuration());
 
         // ExtendedSegment
@@ -140,7 +139,7 @@ final class FlightOffersTest extends TestCase
 
         // Price
         $price = $flightOffersGet[0]->getPrice();
-        $this->assertTrue($price instanceof Price);
+        $this->assertTrue($price instanceof FlightPrice);
         $this->assertEquals("355.34", $price->getGrandTotal());
         $this->assertEquals("EUR", $price->getCurrency());
         $this->assertEquals("355.34", $price->getTotal());
@@ -148,13 +147,13 @@ final class FlightOffersTest extends TestCase
 
         // Fee
         $fees = $price->getFees();
-        $this->assertTrue($fees[0] instanceof Fee);
+        $this->assertTrue($fees[0] instanceof FlightFee);
         $this->assertEquals("0.00", $fees[0]->getAmount());
         $this->assertEquals("SUPPLIER", $fees[0]->getType());
 
         // PricingOptions
         $pricingOptions = $flightOffersGet[0]->getPricingOptions();
-        $this->assertTrue($pricingOptions instanceof PricingOptions);
+        $this->assertTrue($pricingOptions instanceof FlightPricingOptions);
         $this->assertEquals(array("PUBLISHED"), $pricingOptions->getFareType());
         $this->assertEquals(true, $pricingOptions->getIncludedCheckedBagsOnly());
 
@@ -168,7 +167,7 @@ final class FlightOffersTest extends TestCase
 
         // FareDetailsBySegment
         $fareDetailsBySegment = $travelerPricings[0]->getFareDetailsBySegment();
-        $this->assertTrue($fareDetailsBySegment[0] instanceof FareDetailsBySegment);
+        $this->assertTrue($fareDetailsBySegment[0] instanceof FlightFareDetailsBySegment);
         $this->assertEquals("1", $fareDetailsBySegment[0]->getSegmentId());
         $this->assertEquals("ECONOMY", $fareDetailsBySegment[0]->getCabin());
         $this->assertEquals("EOBAU", $fareDetailsBySegment[0]->getFareBasis());
@@ -176,7 +175,7 @@ final class FlightOffersTest extends TestCase
 
         // BaggageAllowance
         $includedCheckedBags = $fareDetailsBySegment[0]->getIncludedCheckedBags();
-        $this->assertTrue($includedCheckedBags instanceof BaggageAllowance);
+        $this->assertTrue($includedCheckedBags instanceof FlightBaggageAllowance);
         $this->assertEquals(25, $includedCheckedBags->getWeight());
         $this->assertEquals("KG", $includedCheckedBags->getWeightUnit());
 

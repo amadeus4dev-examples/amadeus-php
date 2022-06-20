@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class FareDetailsBySegment implements ResourceInterface
+/**
+ * Sub-resource in TravelerPricing, etc.
+ * @see TravelerPricing
+ */
+class FlightFareDetailsBySegment implements ResourceInterface
 {
     private ?string $segmentId = null;
     private ?string $cabin = null;
@@ -66,13 +70,13 @@ class FareDetailsBySegment implements ResourceInterface
     }
 
     /**
-     * @return AllotmentDetails|null
+     * @return FlightAllotmentDetails|null
      */
     public function getAllotmentDetails(): ?object
     {
         return Resource::toResourceObject(
             $this->allotmentDetails,
-            AllotmentDetails::class
+            FlightAllotmentDetails::class
         );
     }
 
@@ -85,13 +89,13 @@ class FareDetailsBySegment implements ResourceInterface
     }
 
     /**
-     * @return BaggageAllowance|null
+     * @return FlightBaggageAllowance|null
      */
     public function getIncludedCheckedBags(): ?object
     {
         return Resource::toResourceObject(
             $this->includedCheckedBags,
-            BaggageAllowance::class
+            FlightBaggageAllowance::class
         );
     }
 
@@ -102,7 +106,7 @@ class FareDetailsBySegment implements ResourceInterface
     {
         return Resource::toResourceObject(
             $this->additionalServices,
-            AdditionalServicesRequest::class
+            FlightAdditionalServicesRequest::class
         );
     }
 

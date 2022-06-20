@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class AvailabilityClass implements ResourceInterface
+/**
+ * Sub-resource in FlightExtendedSegment
+ * @see FlightExtendedSegment
+ */
+class FlightAvailabilityClass implements ResourceInterface
 {
     private ?int $numberOfBookableSeats = null;
     private ?string $class = null;
@@ -36,13 +40,13 @@ class AvailabilityClass implements ResourceInterface
     }
 
     /**
-     * @return TourAllotment|null
+     * @return FlightTourAllotment|null
      */
     public function getTourAllotment(): ?object
     {
         return Resource::toResourceObject(
             $this->tourAllotment,
-            TourAllotment::class
+            FlightTourAllotment::class
         );
     }
 

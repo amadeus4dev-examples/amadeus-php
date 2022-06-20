@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * A FlightOffer object as returned by the Flight Offers Search API.
+ * @see FlightOffers
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
+ */
 class FlightOffer extends Resource implements ResourceInterface
 {
     private ?string $type = null;
@@ -13,7 +18,6 @@ class FlightOffer extends Resource implements ResourceInterface
     private ?bool $disablePricing = null;
     private ?bool $nonHomogeneous = null;
     private ?bool $oneWay = null;
-    private ?bool $paymentCardRequired = null;
     private ?string $lastTicketingDate = null;
     private ?int $numberOfBookableSeats = null;
     private ?array $itineraries = null;
@@ -21,6 +25,7 @@ class FlightOffer extends Resource implements ResourceInterface
     private ?object $pricingOptions = null;
     private ?array $validatingAirlineCodes = null;
     private ?array $travelerPricings = null;
+    private ?bool $paymentCardRequired = null;
 
     /**
      * @return string|null
@@ -103,35 +108,35 @@ class FlightOffer extends Resource implements ResourceInterface
     }
 
     /**
-     * @return Itineraries[]|null
+     * @return FlightItineraries[]|null
      */
     public function getItineraries(): ?array
     {
         return Resource::toResourceArray(
             $this->itineraries,
-            Itineraries::class
+            FlightItineraries::class
         );
     }
 
     /**
-     * @return Price|null
+     * @return FlightPrice|null
      */
     public function getPrice(): ?object
     {
         return Resource::toResourceObject(
             $this->price,
-            Price::class
+            FlightPrice::class
         );
     }
 
     /**
-     * @return PricingOptions|null
+     * @return FlightPricingOptions|null
      */
     public function getPricingOptions(): ?object
     {
         return Resource::toResourceObject(
             $this->pricingOptions,
-            PricingOptions::class
+            FlightPricingOptions::class
         );
     }
 

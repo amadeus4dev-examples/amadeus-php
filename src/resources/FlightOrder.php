@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * A FlightOrder object as returned by the Flight Create Orders API.
+ * @see FlightOrders
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-create-orders/api-reference
+ */
 class FlightOrder extends Resource implements ResourceInterface
 {
     private ?string $type = null;
@@ -38,13 +43,13 @@ class FlightOrder extends Resource implements ResourceInterface
     }
 
     /**
-     * @return AssociatedRecord[]|null
+     * @return FlightOrderAssociatedRecord[]|null
      */
     public function getAssociatedRecords(): ?array
     {
         return Resource::toResourceArray(
             $this->associatedRecords,
-            AssociatedRecord::class
+            FlightOrderAssociatedRecord::class
         );
     }
 

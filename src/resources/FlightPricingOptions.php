@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class PricingOptions implements ResourceInterface
+/**
+ * Sub-resource in FlightOffer, etc.
+ * @see FlightOffer
+ */
+class FlightPricingOptions implements ResourceInterface
 {
     private ?array $fareType = null;
     private ?bool $includedCheckedBagsOnly = null;

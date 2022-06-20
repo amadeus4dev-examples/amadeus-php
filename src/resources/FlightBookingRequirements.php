@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class BookingRequirements implements ResourceInterface
+class FlightBookingRequirements implements ResourceInterface
 {
     private ?bool $invoiceAddressRequired = null;
     private ?bool $mailingAddressRequired = null;

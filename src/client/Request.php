@@ -85,13 +85,8 @@ class Request
      */
     private function prepareUrl(): void
     {
-        if (($this->verb == Constants::POST) && ($this->params != null)) {
-            $this->uri = $this->scheme."://".$this->host.":".$this->port
-                .$this->path;
-        } else {
-            $this->uri = $this->scheme."://".$this->host.":".$this->port
-                .$this->path."?".$this->getQueryParams();
-        }
+        $this->uri = $this->scheme."://".$this->host.":".$this->port
+            .$this->path."?".$this->getQueryParams();
     }
 
     /**

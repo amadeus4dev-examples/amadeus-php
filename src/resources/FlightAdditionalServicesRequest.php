@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class AdditionalServicesRequest implements ResourceInterface
+class FlightAdditionalServicesRequest implements ResourceInterface
 {
     private ?object $chargeableCheckedBags = null;
     private ?string $chargeableSeatNumber = null;

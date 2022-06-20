@@ -6,12 +6,23 @@ namespace Amadeus\Resources;
 
 class HotelContent implements ResourceInterface
 {
+    private ?string $type = null;
     private ?string $hotelId = null;
     private ?string $chainCode = null;
     private ?string $brandCode = null;
     private ?string $dupeId = null;
     private ?string $name = null;
     private ?string $cityCode = null;
+    private ?float $latitude = null;
+    private ?float $longitude = null;
+
+    /**
+     * @return string|null
+     */
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
 
     /**
      * @return string|null
@@ -59,6 +70,22 @@ class HotelContent implements ResourceInterface
     public function getCityCode(): ?string
     {
         return $this->cityCode;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getLatitude(): ?float
+    {
+        return $this->latitude;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getLongitude(): ?float
+    {
+        return $this->longitude;
     }
 
     public function __set($name, $value): void

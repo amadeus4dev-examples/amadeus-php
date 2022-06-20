@@ -62,7 +62,7 @@ class HotelProductPolicyDetails implements ResourceInterface
     {
         return Resource::toResourceObject(
             $this->holdTime,
-            HotelProductDepositPolicy::class
+            HotelProductHoldPolicy::class
         );
     }
 

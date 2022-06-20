@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Analytics implements ResourceInterface
+class LocationAnalytics implements ResourceInterface
 {
     private ?object $travelers = null;
 
     /**
-     * @return Travelers|null
+     * @return LocationAnalyticsTravelers|null
      */
     public function getTravelers(): ?object
     {
         return Resource::toResourceObject(
             $this->travelers,
-            Travelers::class
+            LocationAnalyticsTravelers::class
         );
     }
 
