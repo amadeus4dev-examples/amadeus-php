@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * A HotelBookingLight object as returned by the Hotel Booking API.
+ * @see HotelBookings
+ * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-booking/api-reference
+ */
 class HotelBookingLight extends Resource implements ResourceInterface
 {
     private ?string $type = null;

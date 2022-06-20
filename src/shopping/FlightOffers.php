@@ -10,6 +10,10 @@ use Amadeus\Resources\FlightOffer;
 use Amadeus\Resources\Resource;
 use Amadeus\Shopping\FlightOffers\Pricing;
 
+/**
+ * Flight Offers Search API
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
+ */
 class FlightOffers
 {
     private Amadeus $amadeus;

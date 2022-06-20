@@ -4,7 +4,12 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class ExtendedSegment implements ResourceInterface
+/**
+ * Sub-resource in Itineraries, FlightAvailability, etc.
+ * @see FlightItineraries
+ * @see FlightAvailability
+ */
+class FlightExtendedSegment implements ResourceInterface
 {
     private ?string $closedStatus = null;
     private ?array $availabilityClasses = null;
@@ -30,13 +35,13 @@ class ExtendedSegment implements ResourceInterface
     }
 
     /**
-     * @return AvailabilityClass[]|null
+     * @return FlightAvailabilityClass[]|null
      */
     public function getAvailabilityClasses(): ?array
     {
         return Resource::toResourceArray(
             $this->availabilityClasses,
-            AvailabilityClass::class
+            FlightAvailabilityClass::class
         );
     }
 

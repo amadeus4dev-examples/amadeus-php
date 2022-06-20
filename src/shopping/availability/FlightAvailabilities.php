@@ -9,6 +9,10 @@ use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\FlightAvailability;
 use Amadeus\Resources\Resource;
 
+/**
+ * Flight Availabilities Search API
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-availabilities-search/api-reference
+ */
 class FlightAvailabilities
 {
     private Amadeus $amadeus;

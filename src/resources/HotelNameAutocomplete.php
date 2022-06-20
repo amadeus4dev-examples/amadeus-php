@@ -4,17 +4,22 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * A HotelNameAutocomplete object as returned by the Hotel Name Autocomplete API.
+ * @see \Amadeus\ReferenceData\Locations\Hotel
+ * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-name-autocomplete/api-reference
+ */
 class HotelNameAutocomplete extends Resource implements ResourceInterface
 {
     private ?int $id = null;
-    private ?string $type = null;
     private ?string $name = null;
     private ?string $iataCode = null;
-    private ?array $hotelIds = null;
     private ?string $subType = null;
+    private ?int $relevance = null;
+    private ?string $type = null;
+    private ?array $hotelIds = null;
     private ?object $address = null;
     private ?object $geoCode = null;
-    private ?int $relevance = null;
 
     /**
      * @return int|null
@@ -22,14 +27,6 @@ class HotelNameAutocomplete extends Resource implements ResourceInterface
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getType(): ?string
-    {
-        return $this->type;
     }
 
     /**
@@ -49,19 +46,35 @@ class HotelNameAutocomplete extends Resource implements ResourceInterface
     }
 
     /**
-     * @return array|null
-     */
-    public function getHotelIds(): ?array
-    {
-        return $this->hotelIds;
-    }
-
-    /**
      * @return string|null
      */
     public function getSubType(): ?string
     {
         return $this->subType;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getRelevance(): ?int
+    {
+        return $this->relevance;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    /**
+     * @return array|null
+     */
+    public function getHotelIds(): ?array
+    {
+        return $this->hotelIds;
     }
 
     /**
@@ -84,14 +97,6 @@ class HotelNameAutocomplete extends Resource implements ResourceInterface
             $this->geoCode,
             GeoCode::class
         );
-    }
-
-    /**
-     * @return int|null
-     */
-    public function getRelevance(): ?int
-    {
-        return $this->relevance;
     }
 
     public function __set($name, $value): void

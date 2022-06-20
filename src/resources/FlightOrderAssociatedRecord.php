@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class AssociatedRecord implements ResourceInterface
+class FlightOrderAssociatedRecord implements ResourceInterface
 {
     private ?string $reference = null;
-    private ?string $creationDate = null;
+    private ?string $creationDateTime = null;
     private ?string $originSystemCode = null;
     private ?string $flightOfferId = null;
 
@@ -22,9 +22,9 @@ class AssociatedRecord implements ResourceInterface
     /**
      * @return string|null
      */
-    public function getCreationDate(): ?string
+    public function getCreationDateTime(): ?string
     {
-        return $this->creationDate;
+        return $this->creationDateTime;
     }
 
     /**

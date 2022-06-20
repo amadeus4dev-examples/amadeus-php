@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Tax implements ResourceInterface
+/**
+ * Sub-resource in FlightPrice, etc.
+ * @see FlightPrice
+ */
+class FlightOfferTax implements ResourceInterface
 {
     private ?string $amount = null;
     private ?string $code = null;

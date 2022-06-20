@@ -9,6 +9,10 @@ use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\HotelNameAutocomplete;
 use Amadeus\Resources\Resource;
 
+/**
+ * Hotel Name Autocomplete API
+ * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-name-autocomplete/api-reference
+ */
 class Hotel
 {
     private Amadeus $amadeus;

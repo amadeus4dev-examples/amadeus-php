@@ -9,6 +9,10 @@ use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\FlightOfferPricingOutput;
 use Amadeus\Resources\Resource;
 
+/**
+ * Flight Offers Price API
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-price/api-reference
+ */
 class Pricing
 {
     private Amadeus $amadeus;
@@ -30,7 +34,7 @@ class Pricing
     public function post(string $body, ?array $params = null): object
     {
         $response = $this->amadeus->getClient()->postWithStringBody(
-            '/v1/shopping/flight-offers/pricing?',
+            '/v1/shopping/flight-offers/pricing',
             $body,
             $params
         );
@@ -41,16 +45,16 @@ class Pricing
 
     /**
      * @param array $flightOffers
-     * @param array $payments
-     * @param array $travelers
+     * @param array|null $payments
+     * @param array|null $travelers
      * @param array|null $params
      * @return FlightOfferPricingOutput
      * @throws ResponseException
      */
     public function postWithFlightOffers(
         array $flightOffers,
-        array $payments = array(),
-        array $travelers = array(),
+        ?array $payments = null,
+        ?array $travelers = null,
         ?array $params = null
     ): object {
         $flightOffersArray = array();
@@ -58,14 +62,23 @@ class Pricing
             $flightOffersArray[] = json_decode((string)$flightOffer);
         }
 
-        $paymentsArray = array();
-        foreach ($payments as $payment) {
-            $paymentsArray[] = json_decode((string)$payment);
+        if ($payments != null) {
+            $paymentsArray = array();
+            foreach ($payments as $payment) {
+                $paymentsArray[] = json_decode((string)$payment);
+            }
+        } else {
+            $paymentsArray = null;
         }
 
-        $travelersArray = array();
-        foreach ($travelers as $traveler) {
-            $travelersArray[] = json_decode((string)$traveler);
+
+        if ($travelers != null) {
+            $travelersArray = array();
+            foreach ($travelers as $traveler) {
+                $travelersArray[] = json_decode((string)$traveler);
+            }
+        } else {
+            $travelersArray = null;
         }
 
         $flightPricingQuery = (object)[
@@ -76,7 +89,8 @@ class Pricing
                 "travelers" => $travelersArray
             ]
         ];
-        $body = json_encode($flightPricingQuery);
+
+        $body = Resource::toString(get_object_vars($flightPricingQuery));
 
         return $this->post($body, $params);
     }

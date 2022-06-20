@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * A Location object as returned by the Airport and City Search API.
+ * @see Locations
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-and-city-search/api-reference
+ */
 class Location extends Resource implements ResourceInterface
 {
     private ?string $id = null;
@@ -102,35 +107,35 @@ class Location extends Resource implements ResourceInterface
     }
 
     /**
-     * @return Address|null
+     * @return LocationAddress|null
      */
     public function getAddress(): ?object
     {
         return Resource::toResourceObject(
             $this->address,
-            Address::class
+            LocationAddress::class
         );
     }
 
     /**
-     * @return Distance|null
+     * @return LocationDistance|null
      */
     public function getDistance(): ?object
     {
         return Resource::toResourceObject(
             $this->distance,
-            Distance::class
+            LocationDistance::class
         );
     }
 
     /**
-     * @return Analytics|null
+     * @return LocationAnalytics|null
      */
     public function getAnalytics(): ?object
     {
         return Resource::toResourceObject(
             $this->analytics,
-            Analytics::class
+            LocationAnalytics::class
         );
     }
 

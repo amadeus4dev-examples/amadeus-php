@@ -9,14 +9,14 @@ use Amadeus\Amadeus;
 use Amadeus\Client\HTTPClient;
 use Amadeus\Client\Response;
 use Amadeus\Exceptions\ResponseException;
+use Amadeus\Resources\Destination;
 use Amadeus\Tests\PHPUnitUtil;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Endpoint
+ * This test covers the endpoint and its related returned resources.
  * @covers \Amadeus\Airport\DirectDestinations
  *
- * Resources
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\Destination
  *
@@ -75,6 +75,7 @@ final class DirectDestinationsTest extends TestCase
 
         // Resources
         // Destination
+        $this->assertTrue($destinations[0] instanceof Destination);
         $this->assertEquals("location", $destinations[0]->getType());
         $this->assertEquals("city", $destinations[0]->getSubtype());
         $this->assertEquals("Bangalore", $destinations[0]->getName());

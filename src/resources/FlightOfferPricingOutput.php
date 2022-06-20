@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * A FlightOfferPricingOutput object as returned by the Flight Offers Price API.
+ * @see Pricing
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-price/api-reference
+ */
 class FlightOfferPricingOutput extends Resource implements ResourceInterface
 {
     private ?string $type = null;
@@ -30,13 +35,13 @@ class FlightOfferPricingOutput extends Resource implements ResourceInterface
     }
 
     /**
-     * @return BookingRequirements|null
+     * @return FlightBookingRequirements|null
      */
     public function getBookingRequirements(): ?object
     {
         return Resource::toResourceObject(
             $this->bookingRequirements,
-            BookingRequirements::class
+            FlightBookingRequirements::class
         );
     }
 

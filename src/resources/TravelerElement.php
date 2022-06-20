@@ -7,11 +7,11 @@ namespace Amadeus\Resources;
 class TravelerElement implements ResourceInterface
 {
     private ?string $id = null;
-    private ?string $date = null;
     private ?string $gender = null;
     private ?object $name = null;
     private ?array $documents = null;
     private ?object $contact = null;
+    private ?string $dateOfBirth = null;
 
     /**
      * @return string|null
@@ -24,9 +24,9 @@ class TravelerElement implements ResourceInterface
     /**
      * @return string|null
      */
-    public function getDate(): ?string
+    public function getDateOfBirth(): ?string
     {
-        return $this->date;
+        return $this->dateOfBirth;
     }
 
     /**

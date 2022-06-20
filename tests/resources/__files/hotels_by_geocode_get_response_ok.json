@@ -1,0 +1,94 @@
+{
+  "data": [
+    {
+      "chainCode": "OI",
+      "iataCode": "SXD",
+      "dupeId": 700118746,
+      "name": "HOTEL OMEGA - VALBONNE",
+      "hotelId": "OISXD968",
+      "geoCode": {
+        "latitude": 43.61428,
+        "longitude": 7.05464
+      },
+      "address": {
+        "countryCode": "FR"
+      },
+      "distance": {
+        "value": 0.73,
+        "unit": "KM"
+      }
+    },
+    {
+      "chainCode": "DH",
+      "iataCode": "SCR",
+      "dupeId": 505001770,
+      "name": "CHECK SINGLE CIF DHSCRMS8",
+      "hotelId": "DHSCRMS8",
+      "geoCode": {
+        "latitude": 43.62215,
+        "longitude": 7.04024
+      },
+      "distance": {
+        "value": 0.82,
+        "unit": "KM"
+      }
+    },
+    {
+      "chainCode": "DH",
+      "iataCode": "VLI",
+      "dupeId": 504621595,
+      "name": "CHECK SINGLE CIF DHVLIMS8",
+      "hotelId": "DHVLIMS8",
+      "geoCode": {
+        "latitude": 43.62215,
+        "longitude": 7.04024
+      },
+      "distance": {
+        "value": 0.82,
+        "unit": "KM"
+      }
+    },
+    {
+      "chainCode": "DH",
+      "iataCode": "AET",
+      "dupeId": 504621441,
+      "name": "CHECK SINGLE CIF DHAETMS8",
+      "hotelId": "DHAETMS8",
+      "geoCode": {
+        "latitude": 43.62215,
+        "longitude": 7.04024
+      },
+      "address": {
+        "countryCode": "US"
+      },
+      "distance": {
+        "value": 0.82,
+        "unit": "KM"
+      }
+    },
+    {
+      "chainCode": "DH",
+      "iataCode": "NYC",
+      "dupeId": 504621445,
+      "name": "CHECK SINGLE CIF DHNYCMS8",
+      "hotelId": "DHNYCMS8",
+      "geoCode": {
+        "latitude": 43.62215,
+        "longitude": 7.04024
+      },
+      "address": {
+        "countryCode": "US"
+      },
+      "distance": {
+        "value": 0.82,
+        "unit": "KM"
+      }
+    }
+  ],
+  "meta": {
+    "count": 5,
+    "links": {
+      "self": "http://test.api.amadeus.com/reference-data/locations/hotels/by-geocode?latitude=43.61999752&longitude=7.0499998&radius=1"
+    }
+  }
+}

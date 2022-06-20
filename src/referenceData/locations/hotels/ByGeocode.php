@@ -9,6 +9,10 @@ use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\Hotel;
 use Amadeus\Resources\Resource;
 
+/**
+ * Hotel List API
+ * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-list/api-reference
+ */
 class ByGeocode
 {
     private Amadeus $amadeus;

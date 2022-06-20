@@ -6,6 +6,7 @@ namespace Amadeus\Resources;
 
 class TravelerDocuments implements ResourceInterface
 {
+    private ?string $documentType = null;
     private ?string $number = null;
     private ?string $issuanceDate = null;
     private ?string $expiryDate = null;
@@ -13,7 +14,6 @@ class TravelerDocuments implements ResourceInterface
     private ?string $issuanceLocation = null;
     private ?string $nationality = null;
     private ?string $birthPlace = null;
-    private ?string $documentType = null;
     private ?string $validityCountry = null;
     private ?string $birthCountry = null;
     private ?bool $holder = null;

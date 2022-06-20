@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * A FlightAvailability object as returned by the Flight Availabilities Search API.
+ * @see FlightAvailabilities
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-availabilities-search/api-reference
+ */
 class FlightAvailability extends Resource implements ResourceInterface
 {
     private ?string $type = null;
@@ -72,13 +77,13 @@ class FlightAvailability extends Resource implements ResourceInterface
     }
 
     /**
-     * @return ExtendedSegment[]|null
+     * @return FlightExtendedSegment[]|null
      */
     public function getSegments(): ?array
     {
         return Resource::toResourceArray(
             $this->segments,
-            ExtendedSegment::class
+            FlightExtendedSegment::class
         );
     }
 

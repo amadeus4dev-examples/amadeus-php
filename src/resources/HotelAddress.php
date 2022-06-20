@@ -9,8 +9,8 @@ class HotelAddress implements ResourceInterface
     private ?string $category = null;
     private ?array $lines = null;
     private ?string $postalCode = null;
-    private ?string $countryCode = null;
     private ?string $cityName = null;
+    private ?string $countryCode = null;
     private ?string $stateCode = null;
     private ?string $postalBox = null;
     private ?string $text = null;

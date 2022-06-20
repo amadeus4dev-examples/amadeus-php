@@ -6,8 +6,8 @@ namespace Amadeus\Resources;
 
 class HotelOfferTax implements ResourceInterface
 {
-    private ?string $currency = null;
     private ?string $amount = null;
+    private ?string $currency = null;
     private ?string $code = null;
     private ?string $percentage = null;
     private ?bool $included = null;

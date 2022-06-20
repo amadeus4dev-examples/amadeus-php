@@ -9,17 +9,17 @@ use Amadeus\Client\HTTPClient;
 use Amadeus\Client\Response;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\ReferenceData\Locations;
-use Amadeus\Resources\Address;
-use Amadeus\Resources\Analytics;
+use Amadeus\Resources\LocationAddress;
+use Amadeus\Resources\LocationAnalytics;
 use Amadeus\Resources\GeoCode;
 use Amadeus\Resources\Links;
 use Amadeus\Resources\Location;
-use Amadeus\Resources\Travelers;
+use Amadeus\Resources\LocationAnalyticsTravelers;
 use Amadeus\Tests\PHPUnitUtil;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Endpoint
+ * This test covers the endpoint and its related returned resources.
  * @covers \Amadeus\ReferenceData\Locations
  * @covers \Amadeus\ReferenceData\Locations\Hotel
  * @covers \Amadeus\ReferenceData\Locations\Hotels
@@ -27,14 +27,13 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\ReferenceData\Locations\Hotels\ByGeocode
  * @covers \Amadeus\ReferenceData\Locations\Hotels\ByHotels
  *
- * Resources
- * @covers \Amadeus\Resources\Address
- * @covers \Amadeus\Resources\Analytics
+ * @covers \Amadeus\Resources\LocationAddress
+ * @covers \Amadeus\Resources\LocationAnalytics
  * @covers \Amadeus\Resources\GeoCode
  * @covers \Amadeus\Resources\Links
  * @covers \Amadeus\Resources\Location
  * @covers \Amadeus\Resources\Resource
- * @covers \Amadeus\Resources\Travelers
+ * @covers \Amadeus\Resources\LocationAnalyticsTravelers
  */
 final class LocationsTest extends TestCase
 {
@@ -116,7 +115,7 @@ final class LocationsTest extends TestCase
 
         // Address
         $address = $locations[0]->getAddress();
-        $this->assertTrue($address instanceof Address);
+        $this->assertTrue($address instanceof LocationAddress);
         $this->assertEquals("MUNICH", $address->getCityName());
         $this->assertEquals("MUC", $address->getCityCode());
         $this->assertEquals("GERMANY", $address->getCountryName());
@@ -125,11 +124,11 @@ final class LocationsTest extends TestCase
 
         // Analytics
         $analytics = $locations[0]->getAnalytics();
-        $this->assertTrue($analytics instanceof Analytics);
+        $this->assertTrue($analytics instanceof LocationAnalytics);
 
         // Travelers
         $travelers = $analytics->getTravelers();
-        $this->assertTrue($travelers instanceof Travelers);
+        $this->assertTrue($travelers instanceof LocationAnalyticsTravelers);
         $this->assertEquals(27, $travelers->getScore());
 
         // __toString()

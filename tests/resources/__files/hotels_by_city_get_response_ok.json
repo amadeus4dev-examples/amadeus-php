@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "chainCode": "ZZ",
+      "iataCode": "NCE",
+      "dupeId": 504813011,
+      "name": "HOTEL 3",
+      "hotelId": "ZZNCENVX",
+      "geoCode": {
+        "latitude": 43.66665,
+        "longitude": 7.21465
+      },
+      "address": {
+        "countryCode": "FR"
+      },
+      "distance": {
+        "value": 0.92,
+        "unit": "KM"
+      }
+    },
+    {
+      "chainCode": "NN",
+      "iataCode": "NCE",
+      "dupeId": 700091936,
+      "name": "CAMPANILE NICE - A?ROPORT",
+      "hotelId": "NNNCE357",
+      "geoCode": {
+        "latitude": 43.66686,
+        "longitude": 7.21397
+      },
+      "address": {
+        "countryCode": "FR"
+      },
+      "distance": {
+        "value": 0.96,
+        "unit": "KM"
+      }
+    }
+  ],
+  "meta": {
+    "count": 2,
+    "links": {
+      "self": "http://test.api.amadeus.com/reference-data/locations/hotels/by-city?cityCode=NCE&radius=1"
+    }
+  }
+}

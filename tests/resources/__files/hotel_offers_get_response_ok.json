@@ -1,0 +1,85 @@
+{
+  "data": [
+    {
+      "type": "hotel-offers",
+      "hotel": {
+        "type": "hotel",
+        "hotelId": "HLLON101",
+        "chainCode": "HL",
+        "dupeId": "700027723",
+        "name": "THE TRAFALGAR",
+        "cityCode": "LON",
+        "latitude": 51.50729,
+        "longitude": -0.12889
+      },
+      "available": true,
+      "offers": [
+        {
+          "id": "1BCMABM7A8",
+          "checkInDate": "2021-11-20",
+          "checkOutDate": "2021-11-21",
+          "rateCode": "RAC",
+          "rateFamilyEstimated": {
+            "code": "PRO",
+            "type": "P"
+          },
+          "commission": {
+            "percentage": "8.00"
+          },
+          "room": {
+            "type": "M1K",
+            "typeEstimated": {
+              "category": "STANDARD_ROOM",
+              "beds": 1,
+              "bedType": "KING"
+            },
+            "description": {
+              "text": "ADVANCE PURCHASE\nTRAFALGAR KING ROOM\nCOMP WIFI/COFFEE-TEA FACILITIES/USB PORT",
+              "lang": "EN"
+            }
+          },
+          "guests": {
+            "adults": 1
+          },
+          "price": {
+            "currency": "GBP",
+            "base": "300.00",
+            "total": "300.00",
+            "taxes": [
+              {
+                "code": "TOTAL_TAX",
+                "amount": "0.00",
+                "currency": "GBP",
+                "included": true
+              }
+            ],
+            "variations": {
+              "average": {
+                "base": "305.50"
+              },
+              "changes": [
+                {
+                  "startDate": "2021-11-20",
+                  "endDate": "2021-11-21",
+                  "total": "300.00"
+                }
+              ]
+            }
+          },
+          "policies": {
+            "paymentType": "deposit",
+            "cancellation": {
+              "type": "FULL_STAY",
+              "description": {
+                "text": "Non refundable rate",
+                "lang": "EN"
+              }
+            }
+          },
+          "self": "https://test.api.amadeus.com/v3/shopping/hotel-offers/1BCMABM7A8"
+        }
+      ],
+      "self": "https://test.api.amadeus.com/v3/shopping/hotel-offers?hotelIds=HLLON101&adults=1&checkInDate=2021-11-20&paymentPolicy=NONE&roomQuantity=1"
+    }
+  ]
+}

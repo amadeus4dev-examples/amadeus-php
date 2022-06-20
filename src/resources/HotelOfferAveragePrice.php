@@ -8,8 +8,8 @@ class HotelOfferAveragePrice implements ResourceInterface
 {
     private ?string $currency = null;
     private ?string $sellingTotal = null;
-    private ?string $base = null;
     private ?string $total = null;
+    private ?string $base = null;
     private ?array $markups = null;
 
     /**

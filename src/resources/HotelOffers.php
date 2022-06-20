@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * A HotelOffers object as returned by the Hotel Search API.
+ * @see \Amadeus\Shopping\HotelOffer
+ * @see \Amadeus\Shopping\HotelOffers
+ * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference
+ */
 class HotelOffers extends Resource implements ResourceInterface
 {
     private ?string $type = null;

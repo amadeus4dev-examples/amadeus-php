@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Travelers implements ResourceInterface
+class LocationAnalyticsTravelers implements ResourceInterface
 {
     private ?int $score = null;
 

@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "chainCode": "AC",
+      "iataCode": "PAR",
+      "dupeId": 700140792,
+      "name": "LE NOTRE DAME",
+      "hotelId": "ACPAR419",
+      "geoCode": {
+        "latitude": 48.85306,
+        "longitude": 2.34654
+      },
+      "address": {
+        "countryCode": "FR"
+      }
+    }
+  ],
+  "meta": {
+    "count": 1,
+    "links": {
+      "self": "http://test.api.amadeus.com/reference-data/locations/hotels/by-hotels?hotelIds=ACPAR419"
+    }
+  }
+}

@@ -8,6 +8,10 @@ use Amadeus\Amadeus;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\Resource;
 
+/**
+ * Hotel Search API
+ * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference
+ */
 class HotelOffer
 {
     private Amadeus $amadeus;

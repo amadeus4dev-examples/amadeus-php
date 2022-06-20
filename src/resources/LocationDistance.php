@@ -4,25 +4,25 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class AdditionalService implements ResourceInterface
+class LocationDistance implements ResourceInterface
 {
-    private ?string $amount = null;
-    private ?string $type = null;
+    private ?int $value = null;
+    private ?string $unit = null;
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getAmount(): ?string
+    public function getValue(): ?int
     {
-        return $this->amount;
+        return $this->value;
     }
 
     /**
      * @return string|null
      */
-    public function getType(): ?string
+    public function getUnit(): ?string
     {
-        return $this->type;
+        return $this->unit;
     }
 
     public function __set($name, $value): void

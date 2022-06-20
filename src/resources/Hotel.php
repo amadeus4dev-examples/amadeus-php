@@ -4,20 +4,28 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * A Hotel object as returned by the Hotel List API.
+ * @see ByCity
+ * @see ByGeocode
+ * @see ByHotels
+ * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-list/api-reference
+ */
 class Hotel extends Resource implements ResourceInterface
 {
+    private ?string $chainCode = null;
+    private ?string $iataCode = null;
+    private ?float $dupeId = null;
     private ?string $subtype = null;
     private ?string $name = null;
+    private ?string $hotelId = null;
     private ?string $timeZoneName = null;
-    private ?string $iataCode = null;
-    private ?object $address = null;
     private ?object $geoCode = null;
+    private ?object $address = null;
+    private ?object $distance = null;
     private ?string $googlePlaceId = null;
     private ?string $openjetAirportId = null;
     private ?string $uicCode = null;
-    private ?string $hotelId = null;
-    private ?string $chainCode = null;
-    private ?object $distance = null;
     private ?string $last_update = null;
 
     /**
@@ -131,6 +139,14 @@ class Hotel extends Resource implements ResourceInterface
     public function getLastUpdate(): ?string
     {
         return $this->last_update;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getDupeId(): ?float
+    {
+        return $this->dupeId;
     }
 
     public function __set($name, $value): void

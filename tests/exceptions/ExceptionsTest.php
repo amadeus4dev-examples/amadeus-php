@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Amadeus\Tests;
+namespace Amadeus\Tests\Exceptions;
 
 use Amadeus\Exceptions\AuthenticationException;
 use Amadeus\Exceptions\ClientException;

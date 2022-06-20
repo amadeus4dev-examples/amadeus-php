@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
-class Address implements ResourceInterface
+class LocationAddress implements ResourceInterface
 {
     private ?string $cityName = null;
     private ?string $cityCode = null;

@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in FlightExtendedSegment
+ * @see FlightExtendedSegment
+ */
 class Co2Emission implements ResourceInterface
 {
     private ?int $weight = null;
