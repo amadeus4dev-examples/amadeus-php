@@ -1,17 +1,12 @@
 # Amadeus PHP SDK
 
-## Intro
-This SDK is still in developing, which has not been published to Composer. 
-But you can clone this repo just for fun :)
+[![Discord](https://img.shields.io/discord/696822960023011329?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/cVrFBqx)
 
-And remember before coding you should install all the dependencies,
-which just need to run the following command in terminal
+Amadeus provides a rich set of APIs for the travel industry. For more details, check out the [Amadeus for Developers Portal](https://developers.amadeus.com) or the [SDK class reference](https://amadeus4dev.github.io/amadeus-java/).
 
-- if you directly clone this repo
-```
-composer install
-```
-- if you want to use it as your libraries
+## Installation
+
+This library requires PHP 7.4+. You can install the SDK via Composer
 
 ``` 
 composer require xianqiliu/amadeus-php:dev-master
@@ -24,78 +19,55 @@ Developer Account](https://developers.amadeus.com/create-account) and set up
 your first application.
 
 ```PHP 
-<?php
+<?php declare(strict_types=1);
 
 use Amadeus\Amadeus;
+use Amadeus\Exceptions\ResponseException;
 
-// include composer autoloader
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php'; // include composer autoloader
 
-try
-{
-    $amadeus = Amadeus
-        ::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
+try {
+    $amadeus = Amadeus::builder("PXYniTSM838omEi7KFFbRuYME7AApDlS", "2MPNXpudnthSty4M")
+        ->setSsl(true)
         ->build();
 
-    // Airport Route API GET
-    $destinations = $amadeus->getAirport()->getDirectDestinations()->get(
-        array(
-            "departureAirportCode" => "MAD",
-            "max" => 2
-        )
-    );
+    // Flight Offers Search GET
+    $flightOffers = $amadeus->getShopping()->getFlightOffers()->get(
+                        array(
+                            "originLocationCode" => "PAR",
+                            "destinationLocationCode" => "MAD",
+                            "departureDate" => "2022-12-29",
+                            "adults" => 1
+                        )
+                    );
+    print $flightOffers[0];
 
-    print($destinations[0]);
-
-    // Flight Availabilities Search API POST
-    $body =
-        '{
-        "originDestinations": [
-            {
-                "id": "1",
-                "originLocationCode": "BOS",
-                "destinationLocationCode": "MAD",
-                "departureDateTime": {
-                "date": "2022-04-01",
-                    "time": "21:15:00"
+    // Flight Offers Search POST
+    $body ='{
+              "originDestinations": [
+                {
+                  "id": "1",
+                  "originLocationCode": "PAR",
+                  "destinationLocationCode": "MAD",
+                  "departureDateTimeRange": {
+                    "date": "2022-12-29"
+                  }
                 }
-            }
-        ],
-        "travelers": [
-            {
-                "id": "1",
-                "travelerType": "ADULT"
-            },
-            {
-                "id": "2",
-                "travelerType": "CHILD"
-            }
-        ],
-        "sources": [
-            "GDS"
-        ]
-    }';
-
-    $flightAvailabilities =
-        $amadeus->getShopping()->getAvailability()->getFlightAvailabilities()->post($body);
-
-    print($flightAvailabilities[0]);
-
-    // Make arbitrary call
-    $destinations = $amadeus->getClient()->getWithArrayParams(
-        '/v1/airport/direct-destinations',
-        array(
-            "departureAirportCode" => "MAD",
-            "max" => 2
-        )
-    );
-
-    print($destinations);
-
-} 
-catch (Exception $e) 
-{
-    print_r($e);
+              ],
+              "travelers": [
+                {
+                  "id": "1",
+                  "travelerType": "ADULT"
+                }
+              ],
+              "sources": [
+                "GDS"
+              ]
+            }';
+    $flightOffers = $amadeus->getShopping()->getFlightOffers()->post($body);
+    print $flightOffers[0];
+} catch (ResponseException $e) {
+    print $e;
 }
 ```
 
@@ -132,16 +104,50 @@ Once you have downloaded the ```cacert.pem``` file, you should move it to whatev
 $amadeus->getClient()->setSslCertificate($REPLACE_BY_YOUR_SSL_CERT_PATH);
 ```
 
+## Making API calls
+
+This library conveniently maps every API path to a similar path. 
+
+For example, `GET /v1/airport/direct-destinations?departureAirportCode=MAD` would be:
+
+```PHP
+$amadeus->getAirport()->getDirectDestinations()->get(["departureAirportCode" => "MAD"]);
+```
+
+Similarly, to select a resource by ID, you can pass in the ID to the **singular** path. 
+
+For example,  `GET /v2/shopping/hotel-offers/XXX` would be:
+
+```PHP
+$amadeus->getShopping()->getHotelOffer()->get("XXX");
+```
+
+Additionally, You can make any arbitrary API call as well directly with the methods provided below:
+
+```PHP
+// Make a GET request only using path
+$amadeus->getClient()->getWithOnlyPath("/v1/airport/direct-destinations?departureAirportCode=MAD");
+
+// Make a GET request using path and passed parameters
+$amadeus->getClient()->getWithArrayParams("/v1/airport/direct-destinations", ["departureAirportCode" => "MAD"]);
+
+// Make a POST request using path and passed body
+$amadeus->getClient()->postWithStringBody("/v1/shopping/availability/flight-availabilities", $body);
+```
+
+Keep in mind, this returns a raw `Resource`.
+
+
 ## Response
 Every successful API call returns a ```Resource``` object. The ```Resource``` object has the raw response body (in string format) available:
 
 ```PHP
 $locations = $amadeus->getReferenceData()->getLocations()->get(
-    array(
-        "subType" => "CITY",
-        "keyword" => "PAR"
-    )
-);
+                array(
+                    "subType" => "CITY",
+                    "keyword" => "PAR"
+                )
+            );
 
 // The raw response, as a string
 $locations[0]->getResponse()->getResult(); // Include response headers
@@ -155,4 +161,74 @@ $locations[0]->getResponse()->getBodyAsJsonObject();
 
 // Directly get the data part of response body
 $locations[0]->getResponse()->getData();
+```
+
+## List of supported endpoints
+```PHP
+/* Flight Offers Search GET */
+// function get(array $params) :
+$amadeus->getShopping()->getFlightOffers()->get(
+    array(
+        "originLocationCode" => "PAR",
+        "destinationLocationCode" => "MAD",
+        "departureDate" => "2022-12-29",
+        "adults" => 1
+));
+
+/* Flight Offers Search POST */
+// function get(string $body) :
+$amadeus->getShopping()->getFlightOffers()->post($body);
+
+/* Flight Offers Price */
+// function post(string $body) :
+$amadeus->getShopping()->getFlightOffers()->getPricing()->post($body);
+// function postWithFlightOffers(array $flightOffers, ?array $payments = null, ?array $travelers = null, ?array $params = null) : 
+$flightOffers = $this->getShopping()->getFlightOffers()->get(["originLocationCode"=>"SYD", "destinationLocationCode"=>"BKK", "departureDate"=>"2022-11-01", "adults"=>1, "max"=>6]);
+$amadeus->getShopping()->getFlightOffers()->getPricing()->postWithFlightOffers($flightOffers);
+            
+/* Flight Create Orders */
+// function post(string $body) :
+$amadeus->getBooking()->getFlightOrders()->post($body);
+// function postWithFlightOffersAndTravelers(array $flightOffers, array $travelers);
+$amadeus->getBooking()->getFlightOrders()->postWithFlightOffersAndTravelers($flightOffers, $travelers);
+
+/* Airport and City Search (autocomplete) */
+// function get(array $params) :
+$amadeus->getReferenceData()->getLocations(["subType"=>"CITY,AIRPORT", "keyword"=>"MUC"]);
+
+/* Hotel Name Autocomplete */
+// function get(array $params) :
+$amadeus->getReferenceData()->getLocations()->getHotel()->get(["keyword"=>"PARI", "subType"=>"HOTEL_GDS"]);
+
+/* Hotel List */
+// Get list of hotels by hotel id
+// function get(array $params) :
+$amadeus->getReferenceData()->getLocations()->getHotels()->getByHotels()->get(["hotelIds"=>"XXX"]);
+// Get list of hotels by city code
+// function get(array $params) :
+$amadeus->getReferenceData()->getLocations()->getHotels()->getByCity()->get(["cityCode"=>"PAR"]);
+// Get list of hotels by a GeoCode
+// function get(array $params) :
+$amadeus->getReferenceData()->getLocations()->getHotels()->getByGeocode()->get(["longitude"=2.160873, "latitude"=>41.397158]);
+
+/* Hotel Search */
+// Get list of available offers by hotel ids
+// function get(array $params) :
+$amadeus->getShopping()->getHotelOffers()->get(["hotelId" => "MCLONGHM","adults" => 1]);
+// Check conditions of a specific offer
+// function get(string $offerId) :
+$amadeus->getShopping()->getHotelOffer()->get("xxx");
+
+/* Hotel Booking */
+// The offerId comes from the hotel offer above
+// function post(string $body) :
+$amadeus->getBooking()->getHotelBookings()->post($body);
+
+/* Flight Availabilities Search */
+// function post(string $body) :
+$amadeus->getShopping()->getAvailability()->getFlightAvailabilities()->post($body);
+
+/* Airport Routes */
+// function get(array $params) :
+$amadeus->getAirport()->getDirectDestinations()->get([["departureAirportCode" => "MAD", "max" => 2]]);
 ```

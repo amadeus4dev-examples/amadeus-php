@@ -132,8 +132,13 @@ class Request
      */
     private function prepareUrl(): void
     {
-        $this->uri = $this->scheme."://".$this->host.":".$this->port
-            .$this->path."?".$this->getQueryParams();
+        if ($this->params != null) {
+            $this->uri = $this->scheme."://".$this->host.":".$this->port
+                .$this->path."?".$this->getQueryParams();
+        } else {
+            $this->uri = $this->scheme."://".$this->host.":".$this->port
+                .$this->path;
+        }
     }
 
     /**

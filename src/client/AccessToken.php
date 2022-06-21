@@ -140,4 +140,15 @@ class AccessToken
             $this->expires_at = $cachedToken['expires_at'];
         }
     }
+
+    /**
+     * @return void
+     */
+    public function clearCachedToken(): void
+    {
+        file_put_contents(
+            $this->cachedTokenFile,
+            '{"access_token":null,"expires_at":null}'
+        );
+    }
 }
