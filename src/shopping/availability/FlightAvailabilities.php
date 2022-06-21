@@ -10,14 +10,26 @@ use Amadeus\Resources\FlightAvailability;
 use Amadeus\Resources\Resource;
 
 /**
- * Flight Availabilities Search API
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-availabilities-search/api-reference
+ * <p>
+ *   A namespaced client for the
+ *   <code>/v1/shopping/availability/flight-availabilities</code> endpoints.
+ * </p>
+ *
+ * <p>
+ *   Access via the Amadeus client object.
+ * </p>
+ *
+ * <code>
+ *  $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *  $amadeus->getShopping()->getAvailability()->getFlightAvailabilities();
+ * </code>
  */
 class FlightAvailabilities
 {
     private Amadeus $amadeus;
 
     /**
+     * Constructor
      * @param Amadeus $amadeus
      */
     public function __construct(Amadeus $amadeus)
@@ -26,9 +38,23 @@ class FlightAvailabilities
     }
 
     /**
-     * @param string $body
-     * @return FlightAvailability[]
-     * @throws ResponseException
+     * ###Flight Availabilities Search API
+     * <p>
+     *   The Amadeus Flight Availability API provides a list of flights with seats for sale,
+     *   and the quantity of seats available in different fare classes on a given itinerary.
+     *   Additional information such as carrier and aircraft information,
+     *   the departure and arrival terminals, schedule, and route are also provided.
+     * </p>
+     *
+     * <code>
+     *  $amadeus->getShopping()->getAvailability()->getFlightAvailabilities()->post(body);
+     * </code>
+     *
+     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-availabilities-search/api-reference
+     *
+     * @param string $body              the parameters to send to the API as a JsonObject
+     * @return FlightAvailability[]     an API resource
+     * @throws ResponseException        when an exception occurs
      */
     public function post(string $body): array
     {

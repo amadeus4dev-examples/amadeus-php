@@ -68,6 +68,7 @@ class AmadeusBuilder
     }
 
     /**
+     * Return a Amadeus object.
      * @return Amadeus
      */
     public function build(): Amadeus

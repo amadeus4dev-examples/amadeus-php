@@ -10,8 +10,19 @@ use Amadeus\Resources\HotelNameAutocomplete;
 use Amadeus\Resources\Resource;
 
 /**
- * Hotel Name Autocomplete API
- * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-name-autocomplete/api-reference
+ * <p>
+ *   A namespaced client for the
+ *   <code>/v1/reference-data/locations/hotel</code> endpoints.
+ * </p>
+ *
+ * <p>
+ *   Access via the Amadeus client object.
+ * </p>
+ *
+ * <code>
+ *  $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *  $amadeus->getReferenceData()->getLocations()->getHotel();
+ * </code>
  */
 class Hotel
 {
@@ -26,6 +37,10 @@ class Hotel
     }
 
     /**
+     * ###Hotel Name Autocomplete API
+     *
+     * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-name-autocomplete/api-reference
+     *
      * @param array $params
      * @return HotelNameAutocomplete[]
      * @throws ResponseException

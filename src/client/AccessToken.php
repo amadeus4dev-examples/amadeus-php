@@ -6,6 +6,10 @@ namespace Amadeus\Client;
 
 use Amadeus\Constants;
 
+/**
+ * A memoized Access Token, with the ability to auto-refresh when needed.
+ * @hide as only used internally
+ */
 class AccessToken
 {
     private ?string $access_token = null;

@@ -10,14 +10,26 @@ use Amadeus\Resources\FlightOfferPricingOutput;
 use Amadeus\Resources\Resource;
 
 /**
- * Flight Offers Price API
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-price/api-reference
+ * <p>
+ *   A namespaced client for the
+ *   <code>/v1/shopping/flight-offers/pricing</code> endpoints.
+ * </p>
+ *
+ * <p>
+ *   Access via the Amadeus client object.
+ * </p>
+ *
+ * <code>
+ *  $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *  $amadeus->getShopping()->getFlightOffers()->getPricing();
+ * </code>
  */
 class Pricing
 {
     private Amadeus $amadeus;
 
     /**
+     * Constructor
      * @param Amadeus $amadeus
      */
     public function __construct(Amadeus $amadeus)
@@ -26,10 +38,24 @@ class Pricing
     }
 
     /**
-     * @param string $body
-     * @param array|null $params
-     * @return FlightOfferPricingOutput
-     * @throws ResponseException
+     * ###Flight Offers Price API
+     * <p>
+     *  The Flight Offers Price API allows the user to get or confirm the price of a flight
+     *  and obtain information about taxes and fees to be applied to the entire journey.
+     *  It is usually used after the Flight Offers Search API.
+     *  It also retrieves ancillary information and the payment information details.
+     * </p>
+     *
+     * <code>
+     *  $amadeus->getShopping()->getFlightOffers()->getPricing()->post($body, $params); //$params is optional
+     * </code>
+     *
+     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-price/api-reference
+     *
+     * @param string $body                  JSON body of flight offers as String to price
+     * @param array|null $params            (optional)URL parameters such as include or forceClass
+     * @return FlightOfferPricingOutput     an API resource
+     * @throws ResponseException            when an exception occurs
      */
     public function post(string $body, ?array $params = null): object
     {
@@ -44,12 +70,28 @@ class Pricing
 
 
     /**
-     * @param array $flightOffers
-     * @param array|null $payments
-     * @param array|null $travelers
-     * @param array|null $params
-     * @return FlightOfferPricingOutput
-     * @throws ResponseException
+     * ###Flight Offers Price API
+
+     * <p>
+     *  The Flight Offers Price API allows the user to get or confirm the price of a flight
+     *  and obtain information about taxes and fees to be applied to the entire journey.
+     *  It is usually used after the Flight Offers Search API.
+     *  It also retrieves ancillary information and the payment information details.
+     * </p>
+     *
+     * <code>
+     *  // $payments, $travelers, $params are optional
+     *  $amadeus->getShopping()->getFlightOffers()->getPricing()->post($flightOffers, $payments, $travelers $params);
+     * </code>
+     *
+     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-price/api-reference
+     *
+     * @param array $flightOffers           Lists of flight offers as FlightOffer[]
+     * @param array|null $payments          (optional) Lists of payments as FlightPayment[]
+     * @param array|null $travelers         (optional) Lists of travelers as TravelerElement[]
+     * @param array|null $params            (optional) URL parameters such as include or forceClass
+     * @return FlightOfferPricingOutput     an API resource
+     * @throws ResponseException            when an exception occurs
      */
     public function postWithFlightOffers(
         array $flightOffers,
@@ -81,6 +123,7 @@ class Pricing
             $travelersArray = null;
         }
 
+        // Prepare JSON object
         $flightPricingQuery = (object)[
             "data" => (object)[
                 "type" => "flight-offers-pricing",

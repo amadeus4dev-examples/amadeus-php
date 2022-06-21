@@ -4,21 +4,51 @@ declare(strict_types=1);
 
 namespace Amadeus\Client;
 
+/**
+ * A generic response as received from an API call. Contains the status code, body,
+ * and parsed JSON (if any).
+ */
 class Response
 {
+    /**
+     * The information for the response, if any.
+     */
     private ?array $info = null;
+
+    /**
+     * The raw result for the response, if any.
+     */
     private ?string $result = null;
 
+    /**
+     * The url of calling this API.
+     */
     private ?string $url = null;
+
+    /**
+     * The HTTP status code for the response, if any.
+     */
     private ?int $statusCode = null;
+
+    /**
+     * The header size for the response, if any.
+     */
     private ?int $headerSize = null;
 
+    /**
+     * The headers for the response, if any.
+     */
     private ?string $headers = null;
+
+    /**
+     * The raw body received from the API.
+     */
     private ?string $body = null;
 
     private ?Request $request = null;
 
     /**
+     * Constructing a Response
      * @param Request|null $request
      * @param array|null $info
      * @param string|null $result

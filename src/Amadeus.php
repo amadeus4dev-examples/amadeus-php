@@ -7,18 +7,48 @@ namespace Amadeus;
 use Amadeus\Client\BasicHTTPClient;
 use Amadeus\Client\HTTPClient;
 
+/**
+ * <p>
+ * The Amadeus API client. To initialize, use the builder as follows:
+ * </p>
+ *
+ * <code>
+ * $amadeus =
+ *     Amadeus::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")->build();
+ * </code>
+ */
 class Amadeus
 {
     private Configuration $configuration;
 
     private HTTPClient $client;
 
+    /**
+     * <p>
+     * A namespaced client for the <code>/airport</code> endpoints.
+     * </p>
+     */
     private Airport $airport;
 
+    /**
+     * <p>
+     * A namespaced client for the <code>/shopping</code> endpoints.
+     * </p>
+     */
     private Shopping $shopping;
 
+    /**
+     * <p>
+     * A namespaced client for the <code>/reference-data</code> endpoints.
+     * </p>
+     */
     private ReferenceData $referenceData;
 
+    /**
+     * <p>
+     * A namespaced client for the <code>/booking</code> endpoints.
+     * </p>
+     */
     private Booking $booking;
 
     /**
@@ -38,8 +68,14 @@ class Amadeus
     }
 
     /**
-     * @param string $clientId
-     * @param string $clientSecret
+     * Creates an AmadeusBuilder object that can be used to build an Amadeus.
+     *
+     * <code>
+     *  $amadeus = Amadeus::builder("CLIENT_ID", "CLIENT_SECRET")->build();
+     * </code>
+     *
+     * @param string $clientId      Your API Client ID
+     * @param string $clientSecret  Your API Client Secret
      * @return AmadeusBuilder
      */
     public static function builder(string $clientId, string $clientSecret): AmadeusBuilder
@@ -56,6 +92,7 @@ class Amadeus
     }
 
     /**
+     * Get the HTTP Client
      * @return BasicHTTPClient|HTTPClient
      */
     public function getClient()
@@ -64,6 +101,9 @@ class Amadeus
     }
 
     /**
+     * <p>
+     * Get a namespaced client for the <code>/airport</code> endpoints.
+     * </p>
      * @return Airport
      */
     public function getAirport(): Airport
@@ -72,6 +112,10 @@ class Amadeus
     }
 
     /**
+     * <p>
+     * Get a namespaced client for the <code>/shopping</code> endpoints.
+     * </p>
+     *
      * @return Shopping
      */
     public function getShopping(): Shopping
@@ -80,6 +124,9 @@ class Amadeus
     }
 
     /**
+     * <p>
+     * Get a namespaced client for the <code>/referenceData</code> endpoints.
+     * </p>
      * @return ReferenceData
      */
     public function getReferenceData(): ReferenceData
@@ -88,6 +135,9 @@ class Amadeus
     }
 
     /**
+     * <p>
+     * Get a namespaced client for the <code>/booking</code> endpoints.
+     * </p>
      * @return Booking
      */
     public function getBooking(): Booking

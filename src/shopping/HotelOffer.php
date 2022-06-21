@@ -9,8 +9,19 @@ use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\Resource;
 
 /**
- * Hotel Search API
- * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference
+ * <p>
+ *   A namespaced client for the
+ *   <code>/v3/shopping/hotelOffers/:offer_id</code> endpoints.
+ * </p>
+ *
+ * <p>
+ *   Access via the Amadeus client object.
+ * </p>
+ *
+ * <code>
+ *  $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *  $amadeus->getShopping()->getHotelOffer();
+ * </code>
  */
 class HotelOffer
 {
@@ -25,9 +36,20 @@ class HotelOffer
     }
 
     /**
-     * @param string $offerId
-     * @return \Amadeus\Resources\HotelOffers
-     * @throws ResponseException
+     * ###Hotel Search API
+     * <p>
+     *   Returns details for a specific offer.
+     * </p>
+     *
+     * <code>
+     *  $amadeus->getShopping()->getHotelOffer()->get("XXX");
+     * </code>
+     *
+     * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference
+     *
+     * @param string $offerId                   the parameters to send to the API
+     * @return \Amadeus\Resources\HotelOffers   an API resource
+     * @throws ResponseException                when an exception occurs
      */
     public function get(string $offerId): object
     {

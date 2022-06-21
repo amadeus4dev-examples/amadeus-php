@@ -6,6 +6,21 @@ namespace Amadeus;
 
 use Amadeus\ReferenceData\Locations;
 
+/**
+ * <p>
+ *   A namespaced client for the
+ *   <code>/referenceData</code> endpoints.
+ * </p>
+ *
+ * <p>
+ *   Access via the Amadeus client object.
+ * </p>
+ *
+ * <code>
+ *  $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *  $amadeus->getShopping();
+ * </code>
+ */
 class ReferenceData
 {
     private ?Locations $locations;
