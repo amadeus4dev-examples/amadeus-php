@@ -61,6 +61,7 @@ final class DirectDestinationsTest extends TestCase
             "departureAirportCode" => "NCE",
             "max" => 2
         );
+        /*@phpstan-ignore-next-line*/
         $this->client->expects($this->any())
             ->method("getWithArrayParams")
             ->with("/v1/airport/direct-destinations", $params)
@@ -108,6 +109,7 @@ final class DirectDestinationsTest extends TestCase
             "departureAirportCode" => "NC",
             "max" => 2
         );
+        /*@phpstan-ignore-next-line*/
         $this->client->expects($this->any())
             ->method("getWithArrayParams")
             ->with("/v1/airport/direct-destinations", $params)
