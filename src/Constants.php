@@ -25,10 +25,4 @@ class Constants
     public const CONTENT_TYPE = "Content-Type: ";
     public const X_HTTP_METHOD_OVERRIDE = "X-HTTP-Method-Override: ";
     public const BEARER = "Bearer ";
-
-    // PaginationAbstract
-    public const FIRST = "first";
-    public const LAST = "last";
-    public const NEXT = "next";
-    public const PREVIOUS = "previous";
 }

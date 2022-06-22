@@ -6,32 +6,77 @@ namespace Amadeus\Client;
 
 use Amadeus\Constants;
 
+/**
+ * An object containing all the details of the request made, including the host,
+ * path, port, params, and headers. Generally this object can be accessed as part of
+ * an API response, and can be used to debug the API call made.
+ */
 class Request
 {
+    /**
+     * The HTTPClient verb to use for API calls.
+     */
     private string $verb;
 
+    /**
+     * The scheme to use for API calls.
+     */
     private string $scheme;
 
+    /**
+     * The host domain to use for API calls.
+     */
     private string $host;
 
+    /**
+     * The path use for API calls.
+     */
     private string $path;
 
+    /**
+     * The params to send to the API endpoint.
+     */
     private ?array $params;
 
+    /**
+     * The body to send to the API endpoint.
+     */
     private ?string $body;
 
+    /**
+     * The bearer token used to authenticate the API call.
+     */
     private ?string $bearerToken;
 
+    /**
+     * The version of PHP used.
+     */
     private ?string $languageVersion;
 
+    /**
+     * Whether this connection uses SSL.
+     */
     private bool $ssl;
 
+    /**
+     * The port to use for this request.
+     */
     private int $port;
 
+    /**
+     * The SSL certificate to use for this request.
+     */
     private ?string $sslCertificate;
 
+    /**
+     * The full URI for this request, based on the
+     * verb, port, path, host, etc.
+     */
     private string $uri;
 
+    /**
+     * The headers for this request.
+     */
     private array $headers;
 
     /**
@@ -69,6 +114,7 @@ class Request
     }
 
     /**
+     * Determines the scheme based on the SSL value
      * @return void
      */
     private function determineScheme()
@@ -81,15 +127,22 @@ class Request
     }
 
     /**
+     * Prepares the full URL based on the scheme, host, port and path.
      * @return void
      */
     private function prepareUrl(): void
     {
-        $this->uri = $this->scheme."://".$this->host.":".$this->port
-            .$this->path."?".$this->getQueryParams();
+        if ($this->params != null) {
+            $this->uri = $this->scheme."://".$this->host.":".$this->port
+                .$this->path."?".$this->getQueryParams();
+        } else {
+            $this->uri = $this->scheme."://".$this->host.":".$this->port
+                .$this->path;
+        }
     }
 
     /**
+     * Prepares the headers to be sent in the request
      * @return void
      */
     private function prepareHeaders(): void

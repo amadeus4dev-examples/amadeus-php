@@ -9,14 +9,31 @@ use Amadeus\Client\HTTPClient;
 
 class Configuration
 {
+    /**
+     * The client ID used to authenticate the API calls.
+     */
     private string $clientId;
 
+    /**
+     * The client secret used to authenticate the API calls.
+     */
     private string $clientSecret;
 
+    /**
+     * The optional custom host domain to use for API calls.
+     * Defaults to "test.api.amadeus.com" for a test environment,
+     * and "api.amadeus.com" for a production environment.
+     */
     private string $host = "test.api.amadeus.com";
 
+    /**
+     * Whether to use SSL. Defaults to True
+     */
     private bool $ssl = true;
 
+    /**
+     * The port to use. Defaults to 443 for an SSL connection, and 80 for a non SSL connection.
+     */
     private int $port = 443;
 
     private ?HTTPClient $httpClient = null;

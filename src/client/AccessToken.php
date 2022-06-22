@@ -6,6 +6,10 @@ namespace Amadeus\Client;
 
 use Amadeus\Constants;
 
+/**
+ * A memoized Access Token, with the ability to auto-refresh when needed.
+ * @hide as only used internally
+ */
 class AccessToken
 {
     private ?string $access_token = null;
@@ -22,6 +26,11 @@ class AccessToken
     {
         $this->client = $client;
         $this->cachedTokenFile = $cachedTokenFile;
+
+        if (!file_exists($cachedTokenFile)) {
+            $this->resetCachedToken();
+        }
+
         $this->readCachedToken($cachedTokenFile);
     }
 
@@ -135,5 +144,16 @@ class AccessToken
         if ($cachedToken["expires_at"] != null) {
             $this->expires_at = $cachedToken['expires_at'];
         }
+    }
+
+    /**
+     * @return void
+     */
+    public function resetCachedToken(): void
+    {
+        file_put_contents(
+            $this->cachedTokenFile,
+            '{"access_token":null,"expires_at":null}'
+        );
     }
 }

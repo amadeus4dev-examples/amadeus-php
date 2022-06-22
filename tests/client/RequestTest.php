@@ -141,7 +141,7 @@ final class RequestTest extends TestCase
             $amadeus->getClient()
         );
 
-        $this->assertEquals("https://test.api.amadeus.com:443/foo/bar?", $request->getUri());
+        $this->assertEquals("https://test.api.amadeus.com:443/foo/bar", $request->getUri());
     }
 
     public function testBuildUriForPostRequest(): void
