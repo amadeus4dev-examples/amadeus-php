@@ -19,6 +19,9 @@ class AmadeusBuilder
     }
 
     /**
+     * Set the optional custom host domain to use for API calls.
+     * Defaults to "test.api.amadeus.com" for a test environment,
+     * and "api.amadeus.com" for a production environment.
      * @param string $host
      * @return $this
      */
@@ -29,6 +32,7 @@ class AmadeusBuilder
     }
 
     /**
+     * Whether to use SSL. Defaults to true
      * @param bool $ssl
      * @return AmadeusBuilder
      */
@@ -39,6 +43,7 @@ class AmadeusBuilder
     }
 
     /**
+     * Set the port to use. Defaults to 443 for an SSL connection, and 80 for a non SSL connection.
      * @param int $port
      * @return AmadeusBuilder
      */
@@ -49,6 +54,7 @@ class AmadeusBuilder
     }
 
     /**
+     * Set the http client to use. Defaults to BasicHTTPClient.
      * @param HTTPClient $httpClient
      * @return AmadeusBuilder
      */
@@ -59,11 +65,23 @@ class AmadeusBuilder
     }
 
     /**
+     * Set to production environment.
      * @return AmadeusBuilder
      */
     public function setProductionEnvironment(): AmadeusBuilder
     {
         $this->configuration->setProductionEnvironment();
+        return $this;
+    }
+
+    /**
+     * Set the maximum number of seconds to allow cURL functions to execute.
+     * @param int $timeout
+     * @return $this
+     */
+    public function setTimeout(int $timeout): AmadeusBuilder
+    {
+        $this->configuration->setTimeout($timeout);
         return $this;
     }
 

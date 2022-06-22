@@ -259,6 +259,9 @@ class BasicHTTPClient implements HTTPClient
         // Include the header in the output
         curl_setopt($curlHandle, CURLOPT_HEADER, true);
 
+        // Set Timeout
+        curl_setopt($curlHandle, CURLOPT_TIMEOUT, $this->getConfiguration()->getTimeout());
+
         if ($request->getSslCertificate() != null) {
             curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, 2);
             curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, 1);
