@@ -75,6 +75,7 @@ final class ByGeocodeTest extends TestCase
         $this->assertEquals(5, sizeof($hotels));
 
         // Resources
+        // This endpoint share the same resource model with ByCity
         // See ByCityTest.php
     }
 }

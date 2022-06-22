@@ -7,7 +7,9 @@ namespace Amadeus\Tests\Airport;
 use Amadeus\Airport\DirectDestinations;
 use Amadeus\Amadeus;
 use Amadeus\Client\HTTPClient;
+use Amadeus\Client\Request;
 use Amadeus\Client\Response;
+use Amadeus\Exceptions\ClientException;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\Destination;
 use Amadeus\Tests\PHPUnitUtil;
@@ -25,8 +27,7 @@ use PHPUnit\Framework\TestCase;
 final class DirectDestinationsTest extends TestCase
 {
     private Amadeus $amadeus;
-    private array $params;
-    private array $data;
+    private HTTPClient $client;
 
     /**
      * @Before
@@ -34,30 +35,10 @@ final class DirectDestinationsTest extends TestCase
     public function setUp(): void
     {
         $this->amadeus = $this->createMock(Amadeus::class);
-        $client = $this->createMock(HTTPClient::class);
+        $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
             ->method("getClient")
-            ->willReturn($client);
-
-        // Prepare Response
-        $fileContent = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "direct_destinations_get_response_ok.json"
-        );
-        $this->data = json_decode($fileContent)->{'data'};
-        $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getData")
-            ->willReturn($this->data);
-
-        // Given
-        $this->params = array(
-            "departureAirportCode" => "NCE",
-            "max" => 2
-        );
-        $client->expects($this->any())
-            ->method("getWithArrayParams")
-            ->with("/v1/airport/direct-destinations", $this->params)
-            ->willReturn($response);
+            ->willReturn($this->client);
     }
 
     /**
@@ -65,9 +46,29 @@ final class DirectDestinationsTest extends TestCase
      */
     public function testEndpoint(): void
     {
+        // Prepare Response
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "direct_destinations_get_response_ok.json"
+        );
+        $data = json_decode($fileContent)->{'data'};
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())
+            ->method("getData")
+            ->willReturn($data);
+
+        // Given OK
+        $params = array(
+            "departureAirportCode" => "NCE",
+            "max" => 2
+        );
+        $this->client->expects($this->any())
+            ->method("getWithArrayParams")
+            ->with("/v1/airport/direct-destinations", $params)
+            ->willReturn($response);
+
         // When
         $directDestinations = new DirectDestinations($this->amadeus);
-        $destinations = $directDestinations->get($this->params);
+        $destinations = $directDestinations->get($params);
 
         // Then
         $this->assertNotNull($destinations);
@@ -83,8 +84,38 @@ final class DirectDestinationsTest extends TestCase
 
         // __toString()
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]),
+            PHPUnitUtil::toString($data[0]),
             $destinations[0]->__toString()
         );
+    }
+
+    /**
+     * @throws ResponseException
+     */
+    public function testBadRequestOnEndpoint(): void
+    {
+        // Prepare exception
+        $result = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "direct_destinations_get_response_ko.txt"
+        );
+        $request = $this->createMock(Request::class);
+        $info = ["http_code"=>400, "header_size"=>497];
+        $response = new Response($request, $info, $result);
+        $exception = new ClientException($response);
+
+        // Given
+        $params = array(
+            "departureAirportCode" => "NC",
+            "max" => 2
+        );
+        $this->client->expects($this->any())
+            ->method("getWithArrayParams")
+            ->with("/v1/airport/direct-destinations", $params)
+            ->willThrowException($exception);
+
+        $directDestinations = new DirectDestinations($this->amadeus);
+
+        $this->expectException(ClientException::class); // Then
+        $destinations = $directDestinations->get($params); // When
     }
 }

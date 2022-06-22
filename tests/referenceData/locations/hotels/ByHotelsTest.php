@@ -74,6 +74,7 @@ final class ByHotelsTest extends TestCase
         $this->assertEquals(1, sizeof($hotels));
 
         // Resources
+        // This endpoint share the same resource model with ByCity
         // See ByCityTest.php
     }
 }
