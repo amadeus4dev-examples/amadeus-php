@@ -26,6 +26,11 @@ class AccessToken
     {
         $this->client = $client;
         $this->cachedTokenFile = $cachedTokenFile;
+
+        if (!file_exists($cachedTokenFile)) {
+            $this->resetCachedToken();
+        }
+
         $this->readCachedToken($cachedTokenFile);
     }
 
@@ -144,7 +149,7 @@ class AccessToken
     /**
      * @return void
      */
-    public function clearCachedToken(): void
+    public function resetCachedToken(): void
     {
         file_put_contents(
             $this->cachedTokenFile,
