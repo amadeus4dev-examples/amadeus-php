@@ -27,7 +27,7 @@ class Configuration
     private string $host = "test.api.amadeus.com";
 
     /**
-     * Whether to use SSL. Defaults to True
+     * Whether to use SSL. Defaults to true
      */
     private bool $ssl = true;
 
@@ -36,7 +36,15 @@ class Configuration
      */
     private int $port = 443;
 
+    /**
+     * The http client to use. Defaults to BasicHTTPClient within the SDK.
+     */
     private ?HTTPClient $httpClient = null;
+
+    /**
+     * The maximum number of seconds to allow cURL functions to execute. Defaults to 20.
+     */
+    private int $timeout = 20;
 
     //private ?bool $logger = false;
     //private ?int $msgType = null;
@@ -147,6 +155,22 @@ class Configuration
     {
         $this->host = 'api.amadeus.com';
         return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTimeout(): int
+    {
+        return $this->timeout;
+    }
+
+    /**
+     * @param int $timeout
+     */
+    public function setTimeout(int $timeout): void
+    {
+        $this->timeout = $timeout;
     }
 
     // TODO LOGGER FUNCTION NEEDS TO BE REVIEWED
