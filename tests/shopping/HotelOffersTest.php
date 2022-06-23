@@ -28,49 +28,50 @@ use PHPUnit\Framework\TestCase;
 final class HotelOffersTest extends TestCase
 {
     private Amadeus $amadeus;
-    private array $params;
-    private array $data;
+    private HTTPClient $client;
 
     /**
      * @Before
      */
     public function setUp(): void
     {
+        // Mock an Amadeus with HTTPClient
         $this->amadeus = $this->createMock(Amadeus::class);
-        $client = $this->createMock(HTTPClient::class);
+        $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
             ->method("getClient")
-            ->willReturn($client);
-
-        // Prepare Response
-        $fileContent = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "hotel_offers_get_response_ok.json"
-        );
-        $this->data = json_decode($fileContent)->{'data'};
-        $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getData")
-            ->willReturn($this->data);
-
-        // Given
-        $this->params = array(
-            "hotelIds" => "MCLONGHM",
-            "adults" => 1,
-            "checkInDate" => "2021-11-20"
-        );
-        $client->expects($this->any())
-            ->method("getWithArrayParams")
-            ->with("/v3/shopping/hotel-offers", $this->params)
-            ->willReturn($response);
+            ->willReturn($this->client);
     }
 
     /**
      * @throws ResponseException
      */
-    public function testEndpoint(): void
+    public function testGivenClientWhenCallHotelOffersThenOk(): void
     {
+        // Prepare Response
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "hotel_offers_get_response_ok.json"
+        );
+        $data = json_decode($fileContent)->{'data'};
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())
+            ->method("getData")
+            ->willReturn($data);
+
+        // Given
+        $params = array(
+            "hotelIds" => "MCLONGHM",
+            "adults" => 1,
+            "checkInDate" => "2021-11-20"
+        );
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("getWithArrayParams")
+            ->with("/v3/shopping/hotel-offers", $params)
+            ->willReturn($response);
+
         // When
-        $hotelOffers = (new HotelOffers($this->amadeus))->get($this->params);
+        $hotelOffers = (new HotelOffers($this->amadeus))->get($params);
 
         // Then
         $this->assertNotNull($hotelOffers);
@@ -107,15 +108,15 @@ final class HotelOffersTest extends TestCase
 
         // __toString()
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]),
+            PHPUnitUtil::toString($data[0]),
             $hotelOffers[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'hotel'}),
+            PHPUnitUtil::toString($data[0]->{'hotel'}),
             $hotel->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'offers'}[0]),
+            PHPUnitUtil::toString($data[0]->{'offers'}[0]),
             $offers[0]->__toString()
         );
     }

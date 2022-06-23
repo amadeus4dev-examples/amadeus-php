@@ -32,38 +32,19 @@ use PHPUnit\Framework\TestCase;
 final class ByCityTest extends TestCase
 {
     private Amadeus $amadeus;
-    private array $params;
-    private array $data;
+    private HTTPClient $client;
 
     /**
      * @Before
      */
     public function setUp(): void
     {
+        // Mock an Amadeus with HTTPClient
         $this->amadeus = $this->createMock(Amadeus::class);
-        $client = $this->createMock(HTTPClient::class);
+        $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
             ->method("getClient")
-            ->willReturn($client);
-
-        // Prepare Response
-        $fileContent = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "hotels_by_city_get_response_ok.json"
-        );
-        $this->data = json_decode($fileContent)->{'data'};
-        $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getData")
-            ->willReturn($this->data);
-
-        // Given
-        $this->params = array(
-            "cityCode" => "PAR"
-        );
-        $client->expects($this->any())
-            ->method("getWithArrayParams")
-            ->with("/v1/reference-data/locations/hotels/by-city", $this->params)
-            ->willReturn($response);
+            ->willReturn($this->client);
     }
 
     /**
@@ -71,8 +52,28 @@ final class ByCityTest extends TestCase
      */
     public function testEndpoint(): void
     {
+        // Prepare Response
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "hotels_by_city_get_response_ok.json"
+        );
+        $data = json_decode($fileContent)->{'data'};
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())
+            ->method("getData")
+            ->willReturn($data);
+
+        // Given
+        $params = array(
+            "cityCode" => "PAR"
+        );
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("getWithArrayParams")
+            ->with("/v1/reference-data/locations/hotels/by-city", $params)
+            ->willReturn($response);
+
         // When
-        $hotels = (new ByCity($this->amadeus))->get($this->params);
+        $hotels = (new ByCity($this->amadeus))->get($params);
 
         // Then
         $this->assertNotNull($hotels);
@@ -105,19 +106,19 @@ final class ByCityTest extends TestCase
 
         // __toString()
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]),
+            PHPUnitUtil::toString($data[0]),
             $hotels[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'geoCode'}),
+            PHPUnitUtil::toString($data[0]->{'geoCode'}),
             $geoCode->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'address'}),
+            PHPUnitUtil::toString($data[0]->{'address'}),
             $address->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'distance'}),
+            PHPUnitUtil::toString($data[0]->{'distance'}),
             $distance->__toString()
         );
     }

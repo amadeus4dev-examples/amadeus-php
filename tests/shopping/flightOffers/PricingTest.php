@@ -28,54 +28,54 @@ use PHPUnit\Framework\TestCase;
 final class PricingTest extends TestCase
 {
     private Amadeus $amadeus;
-    private string $body;
-    private array $flightOffers;
-    private object $data;
+    private HTTPClient $client;
 
     /**
      * @Before
      */
     public function setUp(): void
     {
+        // Mock an Amadeus with HTTPClient
         $this->amadeus = $this->createMock(Amadeus::class);
-        $client = $this->createMock(HTTPClient::class);
+        $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
             ->method("getClient")
-            ->willReturn($client);
-
-        // Prepare Response
-        $fileContent = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_offers_price_post_response_ok.json"
-        );
-        $this->data = json_decode($fileContent)->{'data'};
-        $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getData")
-            ->willReturn($this->data);
-
-        // Given
-        $this->body = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_offers_price_post_request_ok.json"
-        );
-        $this->flightOffers = Resource::toResourceArray(
-            json_decode($this->body)->{'data'}->{'flightOffers'},
-            FlightOffer::class
-        );
-        $client->expects($this->any())
-            ->method("postWithStringBody")
-            ->with("/v1/shopping/flight-offers/pricing", $this->body)
-            ->willReturn($response);
+            ->willReturn($this->client);
     }
 
     /**
      * @throws ResponseException
      */
-    public function testEndpoint(): void
+    public function testGivenClientWhenCallPricingThenOk(): void
     {
+        // Prepare Response
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_offers_price_post_response_ok.json"
+        );
+        $data = json_decode($fileContent)->{'data'};
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())
+            ->method("getData")
+            ->willReturn($data);
+
+        // Given
+        $body = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_offers_price_post_request_ok.json"
+        );
+        $flightOffers1 = Resource::toResourceArray(
+            json_decode($body)->{'data'}->{'flightOffers'},
+            FlightOffer::class
+        );
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("postWithStringBody")
+            ->with("/v1/shopping/flight-offers/pricing", $body)
+            ->willReturn($response);
+
         // When
         $pricing = new Pricing($this->amadeus);
-        $pricingOutput = $pricing->post($this->body);
-        $pricingOutput2 = $pricing->postWithFlightOffers($this->flightOffers);
+        $pricingOutput = $pricing->post($body);
+        $pricingOutput2 = $pricing->postWithFlightOffers($flightOffers1);
 
         // Then
         $this->assertNotNull($pricingOutput);
@@ -94,11 +94,11 @@ final class PricingTest extends TestCase
 
         // __toString()
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data),
+            PHPUnitUtil::toString($data),
             $pricingOutput->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'flightOffers'}[0]),
+            PHPUnitUtil::toString($data->{'flightOffers'}[0]),
             $flightOffers[0]->__toString()
         );
     }

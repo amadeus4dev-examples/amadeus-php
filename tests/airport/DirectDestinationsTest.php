@@ -22,6 +22,10 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\Destination
  *
+ * @covers \Amadeus\Client\Response
+ * @covers \Amadeus\Exceptions\ResponseException
+ * @covers \Amadeus\Exceptions\ClientException
+ *
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
  */
 final class DirectDestinationsTest extends TestCase
@@ -34,6 +38,7 @@ final class DirectDestinationsTest extends TestCase
      */
     public function setUp(): void
     {
+        // Mock an Amadeus with HTTPClient
         $this->amadeus = $this->createMock(Amadeus::class);
         $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
@@ -44,7 +49,7 @@ final class DirectDestinationsTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function testEndpoint(): void
+    public function testGivenClientWhenCallDirectDestinationsThenOk(): void
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(
@@ -56,12 +61,9 @@ final class DirectDestinationsTest extends TestCase
             ->method("getData")
             ->willReturn($data);
 
-        // Given OK
-        $params = array(
-            "departureAirportCode" => "NCE",
-            "max" => 2
-        );
-        /*@phpstan-ignore-next-line*/
+        // Given
+        $params = ["departureAirportCode" => "NCE", "max" => 2];
+        /* @phpstan-ignore-next-line */
         $this->client->expects($this->any())
             ->method("getWithArrayParams")
             ->with("/v1/airport/direct-destinations", $params)
@@ -93,7 +95,7 @@ final class DirectDestinationsTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function testBadRequestOnEndpoint(): void
+    public function testGivenClientWhenCallDirectDestinationsThenKO(): void
     {
         // Prepare exception
         $result = PHPUnitUtil::readFile(
@@ -105,19 +107,14 @@ final class DirectDestinationsTest extends TestCase
         $exception = new ClientException($response);
 
         // Given
-        $params = array(
-            "departureAirportCode" => "NC",
-            "max" => 2
-        );
-        /*@phpstan-ignore-next-line*/
+        $params = ["departureAirportCode" => "NC", "max" => 2];
+        /* @phpstan-ignore-next-line */
         $this->client->expects($this->any())
             ->method("getWithArrayParams")
             ->with("/v1/airport/direct-destinations", $params)
             ->willThrowException($exception);
 
-        $directDestinations = new DirectDestinations($this->amadeus);
-
         $this->expectException(ClientException::class); // Then
-        $destinations = $directDestinations->get($params); // When
+        (new DirectDestinations($this->amadeus))->get($params); // When
     }
 }

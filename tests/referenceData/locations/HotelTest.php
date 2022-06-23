@@ -28,51 +28,52 @@ use PHPUnit\Framework\TestCase;
 final class HotelTest extends TestCase
 {
     private Amadeus $amadeus;
-    private array $params;
-    private array $data;
+    private HTTPClient $client;
 
     /**
      * @Before
      */
     public function setUp(): void
     {
+        // Mock an Amadeus with HTTPClient
         $this->amadeus = $this->createMock(Amadeus::class);
-        $client = $this->createMock(HTTPClient::class);
+        $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
             ->method("getClient")
-            ->willReturn($client);
+            ->willReturn($this->client);
+    }
 
+    /**
+     * @throws ResponseException
+     */
+    public function testGivenClientWhenCallHotelThenOk(): void
+    {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(
             PHPUnitUtil::RESOURCE_PATH_ROOT . "hotel_get_response_ok.json"
         );
-        $this->data = json_decode($fileContent)->{'data'};
+        $data = json_decode($fileContent)->{'data'};
         $response = $this->createMock(Response::class);
         $response->expects($this->any())
             ->method("getData")
-            ->willReturn($this->data);
+            ->willReturn($data);
 
         // Given
-        $this->params = array(
+        $params = array(
             "keyword" => "PARI",
             "subType" => "HOTEL_GDS",
             "countryCode" => "FR",
             "lang" => "EN",
             "max" => 5
         );
-        $client->expects($this->any())
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
             ->method("getWithArrayParams")
-            ->with("/v1/reference-data/locations/hotel", $this->params)
+            ->with("/v1/reference-data/locations/hotel", $params)
             ->willReturn($response);
-    }
 
-    /**
-     * @throws ResponseException
-     */
-    public function testEndpoint(): void
-    {
         // When
-        $hotels = (new Hotel($this->amadeus))->get($this->params);
+        $hotels = (new Hotel($this->amadeus))->get($params);
 
         // Then
         $this->assertNotNull($hotels);
@@ -102,15 +103,15 @@ final class HotelTest extends TestCase
 
         // __toString()
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]),
+            PHPUnitUtil::toString($data[0]),
             $hotels[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'address'}),
+            PHPUnitUtil::toString($data[0]->{'address'}),
             $address->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'geoCode'}),
+            PHPUnitUtil::toString($data[0]->{'geoCode'}),
             $geoCode->__toString()
         );
     }
