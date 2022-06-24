@@ -40,63 +40,65 @@ use PHPUnit\Framework\TestCase;
 final class FlightOrdersTest extends TestCase
 {
     private Amadeus $amadeus;
-    private string $body;
-    private array $flightOffers;
-    private array $travelers;
-    private object $data;
+    private HTTPClient $client;
 
     /**
      * @Before
      */
     public function setUp(): void
     {
+        // Mock an Amadeus with HTTPClient
         $this->amadeus = $this->createMock(Amadeus::class);
-        $client = $this->createMock(HTTPClient::class);
+        $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
             ->method("getClient")
-            ->willReturn($client);
-
-        // Prepare Response
-        $fileContent = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_orders_post_response_ok.json"
-        );
-        $this->data = json_decode($fileContent)->{'data'};
-        $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getData")
-            ->willReturn($this->data);
-
-        // Given
-        $this->body = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_orders_post_request_ok.json"
-        );
-        $this->flightOffers = Resource::toResourceArray(
-            json_decode($this->body)->{'data'}->{'flightOffers'},
-            FlightOffer::class
-        );
-        $this->travelers = Resource::toResourceArray(
-            json_decode($this->body)->{'data'}->{'travelers'},
-            TravelerElement::class
-        );
-        $client->expects($this->any())
-            ->method("postWithStringBody")
-            ->with("/v1/booking/flight-orders", $this->body)
-            ->willReturn($response);
+            ->willReturn($this->client);
     }
 
     /**
      * @throws ResponseException
      */
-    public function testEndpoint(): void
+    public function test_given_client_when_call_flight_orders_then_ok(): void
     {
+        // Prepare Response
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_orders_post_response_ok.json"
+        );
+        $data = json_decode($fileContent)->{'data'};
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())
+            ->method("getData")
+            ->willReturn($data);
+
+        // Given
+        // Post with body
+        $body = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_orders_post_request_ok.json"
+        );
+        // Post with FlightOffers and Travelers
+        $flightOffersArray = Resource::toResourceArray(
+            json_decode($body)->{'data'}->{'flightOffers'},
+            FlightOffer::class
+        );
+        $travelersArray = Resource::toResourceArray(
+            json_decode($body)->{'data'}->{'travelers'},
+            TravelerElement::class
+        );
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("postWithStringBody")
+            ->with("/v1/booking/flight-orders", $body)
+            ->willReturn($response);
+
         // When
         $flightOrders = new FlightOrders($this->amadeus);
-        $flightOrderOutput = $flightOrders->post($this->body);
-        $flightOrderOutput2 = $flightOrders->postWithFlightOffersAndTravelers($this->flightOffers, $this->travelers);
+        $flightOrderOutput = $flightOrders->post($body);
+        $flightOrderOutput2 = $flightOrders->postWithFlightOffersAndTravelers($flightOffersArray, $travelersArray);
 
         // Then
         $this->assertNotNull($flightOrderOutput);
         $this->assertNotNull($flightOrderOutput2);
+        $this->assertEquals($flightOrderOutput, $flightOrderOutput2);
 
         // Resource
         // FlightOrder
@@ -151,31 +153,31 @@ final class FlightOrdersTest extends TestCase
 
         // __toString()
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data),
+            PHPUnitUtil::toString($data),
             $flightOrderOutput->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'associatedRecords'}[0]),
+            PHPUnitUtil::toString($data->{'associatedRecords'}[0]),
             $associatedRecords[0]->__toString()
         );
         $this->assertEquals(
-            strlen(PHPUnitUtil::toString($this->data->{'travelers'}[0])),
+            strlen(PHPUnitUtil::toString($data->{'travelers'}[0])),
             strlen($travelers[0]->__toString())
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'travelers'}[0]->{'name'}),
+            PHPUnitUtil::toString($data->{'travelers'}[0]->{'name'}),
             $name->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'travelers'}[0]->{'contact'}),
+            PHPUnitUtil::toString($data->{'travelers'}[0]->{'contact'}),
             $contact->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'travelers'}[0]->{'contact'}->{'phones'}[0]),
+            PHPUnitUtil::toString($data->{'travelers'}[0]->{'contact'}->{'phones'}[0]),
             $phones[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'travelers'}[0]->{'documents'}[0]),
+            PHPUnitUtil::toString($data->{'travelers'}[0]->{'documents'}[0]),
             $documents[0]->__toString()
         );
     }

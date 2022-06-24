@@ -104,8 +104,8 @@ class Pricing
             $flightOffersArray[] = json_decode((string)$flightOffer);
         }
 
+        $paymentsArray = array();
         if ($payments != null) {
-            $paymentsArray = array();
             foreach ($payments as $payment) {
                 $paymentsArray[] = json_decode((string)$payment);
             }
@@ -113,9 +113,8 @@ class Pricing
             $paymentsArray = null;
         }
 
-
+        $travelersArray = array();
         if ($travelers != null) {
-            $travelersArray = array();
             foreach ($travelers as $traveler) {
                 $travelersArray[] = json_decode((string)$traveler);
             }

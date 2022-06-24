@@ -41,48 +41,49 @@ use PHPUnit\Framework\TestCase;
 final class FlightAvailabilitiesTest extends TestCase
 {
     private Amadeus $amadeus;
-    private string $body;
-    private array $data;
+    private HTTPClient $client;
 
     /**
      * @Before
      */
     public function setUp(): void
     {
+        // Mock an Amadeus with HTTPClient
         $this->amadeus = $this->createMock(Amadeus::class);
-        $client = $this->createMock(HTTPClient::class);
+        $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
             ->method("getClient")
-            ->willReturn($client);
-
-        // Prepare Response
-        $fileContent = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_availabilities_post_response_ok.json"
-        );
-        $this->data = json_decode($fileContent)->{'data'};
-        $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getData")
-            ->willReturn($this->data);
-
-        // Given
-        $this->body = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_availabilities_post_request_ok.json"
-        );
-        $client->expects($this->any())
-            ->method("postWithStringBody")
-            ->with("/v1/shopping/availability/flight-availabilities", $this->body)
-            ->willReturn($response);
+            ->willReturn($this->client);
     }
 
     /**
      * @throws ResponseException
      */
-    public function testEndpoint(): void
+    public function test_given_client_when_call_flight_availabilities_then_ok(): void
     {
+        // Prepare Response
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_availabilities_post_response_ok.json"
+        );
+        $data = json_decode($fileContent)->{'data'};
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())
+            ->method("getData")
+            ->willReturn($data);
+
+        // Given
+        $body = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_availabilities_post_request_ok.json"
+        );
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("postWithStringBody")
+            ->with("/v1/shopping/availability/flight-availabilities", $body)
+            ->willReturn($response);
+
         // When
         $flightAvailabilitiesSearch = new FlightAvailabilities($this->amadeus);
-        $flightAvailabilities = $flightAvailabilitiesSearch->post($this->body);
+        $flightAvailabilities = $flightAvailabilitiesSearch->post($body);
 
         // Then
         $this->assertNotNull($flightAvailabilities);
@@ -166,43 +167,43 @@ final class FlightAvailabilitiesTest extends TestCase
 
         // __toString()
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]),
+            PHPUnitUtil::toString($data[0]),
             $flightAvailabilities[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'segments'}[0]),
+            PHPUnitUtil::toString($data[0]->{'segments'}[0]),
             $segments[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'segments'}[0]->{'availabilityClasses'}[0]),
+            PHPUnitUtil::toString($data[0]->{'segments'}[0]->{'availabilityClasses'}[0]),
             $availabilityClasses[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'segments'}[0]->{'availabilityClasses'}[2]->{'tourAllotment'}),
+            PHPUnitUtil::toString($data[0]->{'segments'}[0]->{'availabilityClasses'}[2]->{'tourAllotment'}),
             $tourAllotment->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'segments'}[0]->{'co2Emissions'}[0]),
+            PHPUnitUtil::toString($data[0]->{'segments'}[0]->{'co2Emissions'}[0]),
             $co2Emissions[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'segments'}[0]->{'departure'}),
+            PHPUnitUtil::toString($data[0]->{'segments'}[0]->{'departure'}),
             $departure->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'segments'}[0]->{'arrival'}),
+            PHPUnitUtil::toString($data[0]->{'segments'}[0]->{'arrival'}),
             $arrival->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'segments'}[0]->{'aircraft'}),
+            PHPUnitUtil::toString($data[0]->{'segments'}[0]->{'aircraft'}),
             $aircraft->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'segments'}[0]->{'operating'}),
+            PHPUnitUtil::toString($data[0]->{'segments'}[0]->{'operating'}),
             $operating->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'segments'}[0]->{'stops'}[0]),
+            PHPUnitUtil::toString($data[0]->{'segments'}[0]->{'stops'}[0]),
             $stops[0]->__toString()
         );
     }

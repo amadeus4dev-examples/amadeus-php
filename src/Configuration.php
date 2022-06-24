@@ -80,10 +80,12 @@ class Configuration
 
     /**
      * @param string $host
+     * @return Configuration
      */
-    public function setHost(string $host): void
+    public function setHost(string $host): Configuration
     {
         $this->host = $host;
+        return $this;
     }
 
     /**
@@ -117,11 +119,12 @@ class Configuration
 
     /**
      * @param int $port
-     * @return void
+     * @return Configuration
      */
-    public function setPort(int $port): void
+    public function setPort(int $port): Configuration
     {
         $this->port = $port;
+        return $this;
     }
 
     /**
@@ -134,10 +137,12 @@ class Configuration
 
     /**
      * @param HTTPClient $httpClient
+     * @return Configuration
      */
-    public function setHttpClient(HTTPClient $httpClient): void
+    public function setHttpClient(HTTPClient $httpClient): Configuration
     {
         $this->httpClient = $httpClient;
+        return $this;
     }
 
     /**
@@ -150,6 +155,7 @@ class Configuration
 
     /**
      * Build for production environment
+     * @return Configuration
      */
     public function setProductionEnvironment(): Configuration
     {
@@ -166,11 +172,14 @@ class Configuration
     }
 
     /**
+     * Set the maximum number of seconds to allow cURL functions to execute. Defaults to 20.
      * @param int $timeout
+     * @return Configuration
      */
-    public function setTimeout(int $timeout): void
+    public function setTimeout(int $timeout): Configuration
     {
         $this->timeout = $timeout;
+        return $this;
     }
 
     // TODO LOGGER FUNCTION NEEDS TO BE REVIEWED

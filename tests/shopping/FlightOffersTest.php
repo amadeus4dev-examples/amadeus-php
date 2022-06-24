@@ -41,73 +41,73 @@ use PHPUnit\Framework\TestCase;
 final class FlightOffersTest extends TestCase
 {
     private Amadeus $amadeus;
-    private array $params;
-    private string $body;
-    private array $data4Get;
-    private array $data4Post;
+    private HTTPClient $client;
 
     /**
      * @Before
      */
     public function setUp(): void
     {
+        // Mock an Amadeus with HTTPClient
         $this->amadeus = $this->createMock(Amadeus::class);
-        $client = $this->createMock(HTTPClient::class);
+        $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
             ->method("getClient")
-            ->willReturn($client);
-
-        // Prepare Response
-        $fileContent = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_offers_get_response_ok.json"
-        );
-        $this->data4Get = json_decode($fileContent)->{'data'};
-        $response4Get = $this->createMock(Response::class);
-        $response4Get->expects($this->any())
-            ->method("getData")
-            ->willReturn($this->data4Get);
-
-        $fileContent2 = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_offers_post_response_ok.json"
-        );
-        $this->data4Post = json_decode($fileContent2)->{'data'};
-        $response4Post = $this->createMock(Response::class);
-        $response4Post->expects($this->any())
-            ->method("getData")
-            ->willReturn($this->data4Post);
-
-
-        // Given
-        $this->params = array(
-            "originLocationCode" => "SYD",
-            "destinationCode" => "BKK",
-            "departureDate" => "2021-11-01",
-            "max" => 2
-        );
-        $client->expects($this->any())
-            ->method("getWithArrayParams")
-            ->with("/v2/shopping/flight-offers", $this->params)
-            ->willReturn($response4Get);
-
-        // Given
-        $this->body = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_availabilities_post_request_ok.json"
-        );
-        $client->expects($this->any())
-            ->method("postWithStringBody")
-            ->with("/v2/shopping/flight-offers", $this->body)
-            ->willReturn($response4Post);
+            ->willReturn($this->client);
     }
 
     /**
      * @throws ResponseException
      */
-    public function testEndpoint(): void
+    public function test_given_client_when_call_flight_offers_then_ok(): void
     {
+        // Prepare Response
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_offers_get_response_ok.json"
+        );
+        $data4Get = json_decode($fileContent)->{'data'};
+        $response4Get = $this->createMock(Response::class);
+        $response4Get->expects($this->any())
+            ->method("getData")
+            ->willReturn($data4Get);
+
+        $fileContent2 = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_offers_post_response_ok.json"
+        );
+        $data4Post = json_decode($fileContent2)->{'data'};
+        $response4Post = $this->createMock(Response::class);
+        $response4Post->expects($this->any())
+            ->method("getData")
+            ->willReturn($data4Post);
+
+
+        // Given Get
+        $params = array(
+            "originLocationCode" => "SYD",
+            "destinationCode" => "BKK",
+            "departureDate" => "2021-11-01",
+            "max" => 2
+        );
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("getWithArrayParams")
+            ->with("/v2/shopping/flight-offers", $params)
+            ->willReturn($response4Get);
+
+        // Given Post
+        $body = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_availabilities_post_request_ok.json"
+        );
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("postWithStringBody")
+            ->with("/v2/shopping/flight-offers", $body)
+            ->willReturn($response4Post);
+
         // When
         $flightOffersSearch = new FlightOffers($this->amadeus);
-        $flightOffersGet = $flightOffersSearch->get($this->params);
-        $flightOffersPost = $flightOffersSearch->post($this->body);
+        $flightOffersGet = $flightOffersSearch->get($params);
+        $flightOffersPost = $flightOffersSearch->post($body);
 
         // Then
         $this->assertNotNull($flightOffersGet);
@@ -181,35 +181,35 @@ final class FlightOffersTest extends TestCase
 
         // __toString()
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data4Get[0]),
+            PHPUnitUtil::toString($data4Get[0]),
             $flightOffersGet[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data4Get[0]->{'itineraries'}[0]),
+            PHPUnitUtil::toString($data4Get[0]->{'itineraries'}[0]),
             $itineraries[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data4Get[0]->{'price'}),
+            PHPUnitUtil::toString($data4Get[0]->{'price'}),
             $price->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data4Get[0]->{'price'}->{'fees'}[0]),
+            PHPUnitUtil::toString($data4Get[0]->{'price'}->{'fees'}[0]),
             $fees[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data4Get[0]->{'pricingOptions'}),
+            PHPUnitUtil::toString($data4Get[0]->{'pricingOptions'}),
             $pricingOptions->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data4Get[0]->{'travelerPricings'}[0]),
+            PHPUnitUtil::toString($data4Get[0]->{'travelerPricings'}[0]),
             $travelerPricings[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data4Get[0]->{'travelerPricings'}[0]->{'fareDetailsBySegment'}[0]),
+            PHPUnitUtil::toString($data4Get[0]->{'travelerPricings'}[0]->{'fareDetailsBySegment'}[0]),
             $fareDetailsBySegment[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data4Get[0]->{'travelerPricings'}[0]->{'fareDetailsBySegment'}[0]->{'includedCheckedBags'}),
+            PHPUnitUtil::toString($data4Get[0]->{'travelerPricings'}[0]->{'fareDetailsBySegment'}[0]->{'includedCheckedBags'}),
             $includedCheckedBags->__toString()
         );
     }

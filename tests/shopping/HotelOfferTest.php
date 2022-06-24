@@ -66,45 +66,46 @@ use PHPUnit\Framework\TestCase;
 final class HotelOfferTest extends TestCase
 {
     private Amadeus $amadeus;
-    private string $params;
-    private object $data;
+    private HTTPClient $client;
 
     /**
      * @Before
      */
     public function setUp(): void
     {
+        // Mock an Amadeus with HTTPClient
         $this->amadeus = $this->createMock(Amadeus::class);
-        $client = $this->createMock(HTTPClient::class);
+        $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
             ->method("getClient")
-            ->willReturn($client);
-
-        // Prepare Response
-        $fileContent = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "hotel_offer_get_response_ok.json"
-        );
-        $this->data = json_decode($fileContent)->{'data'};
-        $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getData")
-            ->willReturn($this->data);
-
-        // Given
-        $this->params = "63A93695B58821ABB0EC2B33FE9FAB24D72BF34B1BD7D707293763D8D9378FC3";
-        $client->expects($this->any())
-            ->method("getWithOnlyPath")
-            ->with("/v3/shopping/hotel-offers"."/".$this->params)
-            ->willReturn($response);
+            ->willReturn($this->client);
     }
 
     /**
      * @throws ResponseException
      */
-    public function testEndpoint(): void
+    public function test_given_client_when_call_hotel_offer_then_ok(): void
     {
+        // Prepare Response
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "hotel_offer_get_response_ok.json"
+        );
+        $data = json_decode($fileContent)->{'data'};
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())
+            ->method("getData")
+            ->willReturn($data);
+
+        // Given
+        $params = "63A93695B58821ABB0EC2B33FE9FAB24D72BF34B1BD7D707293763D8D9378FC3";
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("getWithOnlyPath")
+            ->with("/v3/shopping/hotel-offers"."/". $params)
+            ->willReturn($response);
+
         // When
-        $hotelOffers = (new HotelOffer($this->amadeus))->get($this->params);
+        $hotelOffers = (new HotelOffer($this->amadeus))->get($params);
 
         // Then
         $this->assertNotNull($hotelOffers);
@@ -280,91 +281,91 @@ final class HotelOfferTest extends TestCase
 
         // __toString()
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data),
+            PHPUnitUtil::toString($data),
             $hotelOffers->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'hotel'}),
+            PHPUnitUtil::toString($data->{'hotel'}),
             $hotel->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]),
+            PHPUnitUtil::toString($data->{'offers'}[0]),
             $hotelOffer->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'rateFamilyEstimated'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'rateFamilyEstimated'}),
             $rateFamilyEstimated->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'description'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'description'}),
             $description->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'commission'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'commission'}),
             $commission->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'room'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'room'}),
             $room->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'room'}->{'typeEstimated'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'room'}->{'typeEstimated'}),
             $typeEstimated->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'guests'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'guests'}),
             $guests->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'price'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'price'}),
             $price->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'price'}->{'taxes'}[0]),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'price'}->{'taxes'}[0]),
             $taxes[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'price'}->{'markups'}[0]),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'price'}->{'markups'}[0]),
             $markups[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'price'}->{'variations'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'price'}->{'variations'}),
             $variations->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'price'}->{'variations'}->{'average'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'price'}->{'variations'}->{'average'}),
             $average->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'price'}->{'variations'}->{'changes'}[0]),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'price'}->{'variations'}->{'changes'}[0]),
             $changes[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'policies'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'policies'}),
             $policies->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'policies'}->{'guarantee'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'policies'}->{'guarantee'}),
             $guarantee->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'policies'}->{'guarantee'}->{'acceptedPayments'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'policies'}->{'guarantee'}->{'acceptedPayments'}),
             $acceptedPayments->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'policies'}->{'deposit'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'policies'}->{'deposit'}),
             $deposit->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'policies'}->{'holdTime'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'policies'}->{'holdTime'}),
             $holdTime->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'policies'}->{'cancellation'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'policies'}->{'cancellation'}),
             $cancellation->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data->{'offers'}[0]->{'policies'}->{'checkInOut'}),
+            PHPUnitUtil::toString($data->{'offers'}[0]->{'policies'}->{'checkInOut'}),
             $checkInOut->__toString()
         );
     }

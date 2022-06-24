@@ -84,6 +84,33 @@ final class HTTPClientTest extends TestCase
     /**
      * @throws ResponseException
      */
+    public function testGetWithOnlyPath(): void
+    {
+        $obj = $this->getMockBuilder(BasicHTTPClient::class)
+            ->setConstructorArgs(array($this->configuration))
+            ->onlyMethods(array('execute', 'getAccessToken'))
+            ->getMock();
+        $obj->expects($this->any())
+            ->method("getAccessToken")
+            ->willReturn($this->accessToken);
+
+        $request = new Request(
+            "GET",
+            $this->path,
+            null,
+            null,
+            $obj->getAccessToken()->getBearerToken(),
+            $obj
+        );
+
+        $obj->expects($this->once())->method('execute')->with($request);
+
+        $obj->getWithOnlyPath("/foo");
+    }
+
+    /**
+     * @throws ResponseException
+     */
     public function testGetWithParams(): void
     {
         $obj = $this->getMockBuilder(BasicHTTPClient::class)
@@ -243,10 +270,21 @@ final class HTTPClientTest extends TestCase
     /**
      * @throws ReflectionException
      */
-    public function testDetectNoException(): void
+    public function testDetectCode204NoException(): void
     {
         $response = $this->createMock(Response::class);
         $response->expects($this->any())->method("getStatusCode")->willReturn(204);
+
+        $this->assertNull(PHPUnitUtil::callMethod($this->client, 'detectError', array($response)));
+    }
+
+    /**
+     * @throws ReflectionException
+     */
+    public function testDetectCode201NoException(): void
+    {
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())->method("getStatusCode")->willReturn(201);
 
         $this->assertNull(PHPUnitUtil::callMethod($this->client, 'detectError', array($response)));
     }
@@ -294,7 +332,7 @@ final class HTTPClientTest extends TestCase
      * @throws ReflectionException
      * TODO Review
      */
-    public function testSetCurlOptionsWithPost(): void
+    public function testSetCurlOptionsWithPostWithBody(): void
     {
         $obj = $this->getMockBuilder(BasicHTTPClient::class)
             ->setConstructorArgs(array($this->configuration))
@@ -311,6 +349,31 @@ final class HTTPClientTest extends TestCase
         $request->expects($this->once())->method('getVerb');
         $request->expects($this->exactly(2))->method('getBody');
         $request->expects($this->exactly(0))->method('getParams');
+
+        PHPUnitUtil::callMethod($obj, "setCurlOptions", array(curl_init(), $request));
+    }
+
+    /**
+     * @throws ReflectionException
+     * TODO Review
+     */
+    public function testSetCurlOptionsWithPostWithParams(): void
+    {
+        $obj = $this->getMockBuilder(BasicHTTPClient::class)
+            ->setConstructorArgs(array($this->configuration))
+            ->getMock();
+
+        $request = $this->getMockBuilder(Request::class)
+            ->setConstructorArgs(array("POST", $this->path, array("foo" => "bar"), null, 'my_token', $obj))
+            ->getMock();
+
+        $request->expects($this->any())->method('getVerb')->willReturn("POST");
+        $request->expects($this->any())->method('getParams')->willReturn(array("foo" => "bar"));
+        $request->expects($this->any())->method('getBody')->willReturn(null);
+
+        $request->expects($this->once())->method('getVerb');
+        $request->expects($this->exactly(1))->method('getBody');
+        $request->expects($this->exactly(2))->method('getParams');
 
         PHPUnitUtil::callMethod($obj, "setCurlOptions", array(curl_init(), $request));
     }

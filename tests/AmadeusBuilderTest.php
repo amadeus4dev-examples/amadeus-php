@@ -56,6 +56,7 @@ final class AmadeusBuilderTest extends TestCase
             ->setPort(8080)
             ->setHost('localhost')
             ->setHttpClient($this->httpClient)
+            ->setTimeout(20)
             ->build();
     }
 
@@ -66,6 +67,7 @@ final class AmadeusBuilderTest extends TestCase
         $this->assertEquals(8080, $configuration->getPort());
         $this->assertEquals('localhost', $configuration->getHost());
         $this->assertEquals($this->httpClient, $this->amadeus->getConfiguration()->getHttpClient());
+        $this->assertEquals(20, $this->amadeus->getConfiguration()->getTimeout());
     }
 
     public function testBuildWithProductionEnvironment(): void

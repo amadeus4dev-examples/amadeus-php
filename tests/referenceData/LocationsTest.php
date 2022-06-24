@@ -38,50 +38,51 @@ use PHPUnit\Framework\TestCase;
 final class LocationsTest extends TestCase
 {
     private Amadeus $amadeus;
-    private array $params;
-    private array $data;
+    private HTTPClient $client;
 
     /**
      * @Before
      */
     public function setUp(): void
     {
+        // Mock an Amadeus with HTTPClient
         $this->amadeus = $this->createMock(Amadeus::class);
-        $client = $this->createMock(HTTPClient::class);
+        $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
             ->method("getClient")
-            ->willReturn($client);
-
-        // Prepare Response
-        $fileContent = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "locations_get_response_ok.json"
-        );
-        $this->data = json_decode($fileContent)->{'data'};
-        $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getData")
-            ->willReturn($this->data);
-
-        // Given
-        $this->params = array(
-            "subType" => "CITY,AIRPORT",
-            "keyword" => "MUC",
-            "countryCode" => "DE"
-        );
-        $client->expects($this->any())
-            ->method("getWithArrayParams")
-            ->with("/v1/reference-data/locations", $this->params)
-            ->willReturn($response);
+            ->willReturn($this->client);
     }
 
     /**
      * @throws ResponseException
      */
-    public function testEndpoint(): void
+    public function test_given_client_when_call_locations_then_ok(): void
     {
+        // Prepare Response
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "locations_get_response_ok.json"
+        );
+        $data = json_decode($fileContent)->{'data'};
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())
+            ->method("getData")
+            ->willReturn($data);
+
+        // Given
+        $params = array(
+            "subType" => "CITY,AIRPORT",
+            "keyword" => "MUC",
+            "countryCode" => "DE"
+        );
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("getWithArrayParams")
+            ->with("/v1/reference-data/locations", $params)
+            ->willReturn($response);
+
         // When
         $locationsSearch = new Locations($this->amadeus);
-        $locations = $locationsSearch->get($this->params);
+        $locations = $locationsSearch->get($params);
 
         // Then
         $this->assertNotNull($locations);
@@ -133,27 +134,27 @@ final class LocationsTest extends TestCase
 
         // __toString()
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]),
+            PHPUnitUtil::toString($data[0]),
             $locations[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'self'}),
+            PHPUnitUtil::toString($data[0]->{'self'}),
             $self->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'geoCode'}),
+            PHPUnitUtil::toString($data[0]->{'geoCode'}),
             $geoCode->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'address'}),
+            PHPUnitUtil::toString($data[0]->{'address'}),
             $address->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'analytics'}),
+            PHPUnitUtil::toString($data[0]->{'analytics'}),
             $analytics->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'analytics'}->{'travelers'}),
+            PHPUnitUtil::toString($data[0]->{'analytics'}->{'travelers'}),
             $travelers->__toString()
         );
     }

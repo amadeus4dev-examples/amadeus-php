@@ -27,48 +27,49 @@ use PHPUnit\Framework\TestCase;
 final class ByGeocodeTest extends TestCase
 {
     private Amadeus $amadeus;
-    private array $params;
-    private array $data;
+    private HTTPClient $client;
 
     /**
      * @Before
      */
     public function setUp(): void
     {
+        // Mock an Amadeus with HTTPClient
         $this->amadeus = $this->createMock(Amadeus::class);
-        $client = $this->createMock(HTTPClient::class);
+        $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
             ->method("getClient")
-            ->willReturn($client);
-
-        // Prepare Response
-        $fileContent = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "hotels_by_geocode_get_response_ok.json"
-        );
-        $this->data = json_decode($fileContent)->{'data'};
-        $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getData")
-            ->willReturn($this->data);
-
-        // Given
-        $this->params = array(
-            "latitude" => "41.397158",
-            "longitude" => "2.160873"
-        );
-        $client->expects($this->any())
-            ->method("getWithArrayParams")
-            ->with("/v1/reference-data/locations/hotels/by-geocode", $this->params)
-            ->willReturn($response);
+            ->willReturn($this->client);
     }
 
     /**
      * @throws ResponseException
      */
-    public function testEndpoint(): void
+    public function test_given_client_when_call_hotels_by_geocode_then_ok(): void
     {
+        // Prepare Response
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "hotels_by_geocode_get_response_ok.json"
+        );
+        $data = json_decode($fileContent)->{'data'};
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())
+            ->method("getData")
+            ->willReturn($data);
+
+        // Given
+        $params = array(
+            "latitude" => "41.397158",
+            "longitude" => "2.160873"
+        );
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("getWithArrayParams")
+            ->with("/v1/reference-data/locations/hotels/by-geocode", $params)
+            ->willReturn($response);
+
         // When
-        $hotels = (new ByGeocode($this->amadeus))->get($this->params);
+        $hotels = (new ByGeocode($this->amadeus))->get($params);
 
         // Then
         $this->assertNotNull($hotels);

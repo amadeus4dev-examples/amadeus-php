@@ -27,47 +27,49 @@ use PHPUnit\Framework\TestCase;
 final class HotelBookingsTest extends TestCase
 {
     private Amadeus $amadeus;
-    private string $body;
-    private array $data;
+    private HTTPClient $client;
 
     /**
      * @Before
      */
     public function setUp(): void
     {
+        // Mock an Amadeus with HTTPClient
         $this->amadeus = $this->createMock(Amadeus::class);
-        $client = $this->createMock(HTTPClient::class);
+        $this->client = $this->createMock(HTTPClient::class);
         $this->amadeus->expects($this->any())
             ->method("getClient")
-            ->willReturn($client);
-
-        // Prepare Response
-        $fileContent = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "hotel_bookings_post_response_ok.json"
-        );
-        $this->data = json_decode($fileContent)->{'data'};
-        $response = $this->createMock(Response::class);
-        $response->expects($this->any())
-            ->method("getData")
-            ->willReturn($this->data);
-
-        // Given
-        $this->body = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "hotel_bookings_post_request_ok.json"
-        );
-        $client->expects($this->any())
-            ->method("postWithStringBody")
-            ->with("/v1/booking/hotel-bookings", $this->body)
-            ->willReturn($response);
+            ->willReturn($this->client);
     }
 
     /**
      * @throws ResponseException
      */
-    public function testEndpoint(): void
+    public function test_given_client_when_call_hotel_bookings_then_ok(): void
     {
+        // Prepare Response
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "hotel_bookings_post_response_ok.json"
+        );
+        $data = json_decode($fileContent)->{'data'};
+        $response = $this->createMock(Response::class);
+        $response->expects($this->any())
+            ->method("getData")
+            ->willReturn($data);
+
+        // Given
+        $body = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "hotel_bookings_post_request_ok.json"
+        );
+        /* @phpstan-ignore-next-line */
+        $this->client->expects($this->any())
+            ->method("postWithStringBody")
+            ->with("/v1/booking/hotel-bookings", $body)
+            ->willReturn($response);
+
+
         // When
-        $hotelBookings = (new HotelBookings($this->amadeus))->post($this->body);
+        $hotelBookings = (new HotelBookings($this->amadeus))->post($body);
 
         // Then
         $this->assertNotNull($hotelBookings);
@@ -88,11 +90,11 @@ final class HotelBookingsTest extends TestCase
 
         // __toString()
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]),
+            PHPUnitUtil::toString($data[0]),
             $hotelBookings[0]->__toString()
         );
         $this->assertEquals(
-            PHPUnitUtil::toString($this->data[0]->{'associatedRecords'}[0]),
+            PHPUnitUtil::toString($data[0]->{'associatedRecords'}[0]),
             $associatedRecords[0]->__toString()
         );
     }
