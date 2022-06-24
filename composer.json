@@ -1,11 +1,11 @@
 {
   "name": "xianqiliu/amadeus-php",
-  "description": "PHP library for the Amadeus Self-Service travel APIs",
+  "description": "PHP library for the Amadeus Self-Service APIs",
   "license": "proprietary",
   "authors": [
     {
-      "name": "XianqiLIU",
-      "email": "xianqi.liu@amadeus.com"
+      "name": "Amadeus for Developers",
+      "email": "developers@amadeus.com"
     }
   ],
   "require": {
