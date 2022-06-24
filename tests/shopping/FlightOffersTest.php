@@ -59,7 +59,7 @@ final class FlightOffersTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function testGivenClientWhenCallFlightOffersThenOk(): void
+    public function test_given_client_when_call_flight_offers_then_ok(): void
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(

@@ -49,7 +49,7 @@ final class DirectDestinationsTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function testGivenClientWhenCallDirectDestinationsThenOk(): void
+    public function test_given_client_when_call_direct_destinations_then_ok(): void
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(
@@ -95,7 +95,7 @@ final class DirectDestinationsTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function testGivenClientWhenCallDirectDestinationsThenKO(): void
+    public function test_given_client_when_call_direct_destinations_then_ko(): void
     {
         // Prepare exception
         $result = PHPUnitUtil::readFile(

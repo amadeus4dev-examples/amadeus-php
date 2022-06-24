@@ -45,7 +45,7 @@ final class ByGeocodeTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function testGivenClientWhenCallByGeocodeThenOk(): void
+    public function test_given_client_when_call_hotels_by_geocode_then_ok(): void
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(

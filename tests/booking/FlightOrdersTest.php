@@ -58,7 +58,7 @@ final class FlightOrdersTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function testGivenClientWhenCallFlightOrdersThenOk(): void
+    public function test_given_client_when_call_flight_orders_then_ok(): void
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(
@@ -98,6 +98,7 @@ final class FlightOrdersTest extends TestCase
         // Then
         $this->assertNotNull($flightOrderOutput);
         $this->assertNotNull($flightOrderOutput2);
+        $this->assertEquals($flightOrderOutput, $flightOrderOutput2);
 
         // Resource
         // FlightOrder

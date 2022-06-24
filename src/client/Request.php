@@ -132,9 +132,9 @@ class Request
      */
     private function prepareUrl(): void
     {
-        if ($this->params != null) {
+        if (($this->params != null) && ($this->bearerToken != null)) {
             $this->uri = $this->scheme."://".$this->host.":".$this->port
-                .$this->path."?".$this->getQueryParams();
+                .$this->path."?".http_build_query($this->params);
         } else {
             $this->uri = $this->scheme."://".$this->host.":".$this->port
                 .$this->path;
@@ -158,18 +158,6 @@ class Request
                 && ($this->verb == Constants::POST)) {
                 $this->headers[] = Constants::X_HTTP_METHOD_OVERRIDE.Constants::GET;
             }
-        }
-    }
-
-    /**
-     * @return string
-     */
-    private function getQueryParams(): string
-    {
-        if ($this->params != null) {
-            return http_build_query($this->params);
-        } else {
-            return "";
         }
     }
 

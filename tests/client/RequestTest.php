@@ -122,7 +122,7 @@ final class RequestTest extends TestCase
             "/foo/bar",
             $params,
             null,
-            null,
+            "token",
             $amadeus->getClient()
         );
 
@@ -153,7 +153,7 @@ final class RequestTest extends TestCase
             "/foo/bar",
             $params,
             null,
-            null,
+            "token",
             $amadeus->getClient()
         );
 

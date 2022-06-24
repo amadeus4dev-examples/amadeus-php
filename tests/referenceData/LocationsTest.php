@@ -56,7 +56,7 @@ final class LocationsTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function testGivenClientWhenCallLocationsThenOk(): void
+    public function test_given_client_when_call_locations_then_ok(): void
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(

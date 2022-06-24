@@ -84,7 +84,7 @@ final class HotelOfferTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function testEndpoint(): void
+    public function test_given_client_when_call_hotel_offer_then_ok(): void
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(

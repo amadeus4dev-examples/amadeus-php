@@ -45,7 +45,7 @@ final class HotelBookingsTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function testGivenClientWhenCallHotelBookingsThenOk(): void
+    public function test_given_client_when_call_hotel_bookings_then_ok(): void
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(

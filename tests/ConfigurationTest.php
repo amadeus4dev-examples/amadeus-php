@@ -56,6 +56,12 @@ final class ConfigurationTest extends TestCase
         $this->assertEquals("api.amadeus.com", $configuration->getHost());
     }
 
+    public function testSetTimeout(): void
+    {
+        $configuration = (new Configuration("id", "secret"))->setTimeout(20);
+        $this->assertEquals(20, $configuration->getTimeout());
+    }
+
     // TODO: LOGGER FUNCTION NEEDS TO BE REVIEWED
 //    public function testBuildWithLoggerSystemPath(): void
 //    {

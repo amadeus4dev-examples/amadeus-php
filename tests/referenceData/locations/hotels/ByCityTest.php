@@ -50,7 +50,7 @@ final class ByCityTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function testEndpoint(): void
+    public function test_given_client_when_call_hotels_by_city_then_ok(): void
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(

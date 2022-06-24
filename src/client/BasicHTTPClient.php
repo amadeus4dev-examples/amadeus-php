@@ -209,9 +209,9 @@ class BasicHTTPClient implements HTTPClient
         } elseif ($statusCode == 0) {
             $exception = new NetworkException($response);
         } elseif ($statusCode == 204) {
-            return;
+            return; // 204 No content
         } elseif ($statusCode == 201) {
-            return;
+            return; // 201 A resource created successfully
         } elseif ($statusCode != 200) {
             $exception = new ResponseException($response);
         }

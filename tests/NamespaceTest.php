@@ -54,6 +54,7 @@ final class NamespaceTest extends TestCase
         $this->assertNotNull($amadeus->getShopping()->getAvailability());
         $this->assertNotNull($amadeus->getShopping()->getAvailability()->getFlightAvailabilities());
         $this->assertNotNull($amadeus->getShopping()->getFlightOffers());
+        $this->assertNotNull($amadeus->getShopping()->getFlightOffers()->getPricing());
         $this->assertNotNull($amadeus->getShopping()->getHotelOffer());
         $this->assertNotNull($amadeus->getShopping()->getHotelOffers());
 
