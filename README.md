@@ -9,7 +9,7 @@ Amadeus provides a rich set of APIs for the travel industry. For more details, c
 This library requires PHP 7.4+. You can install the SDK via Composer
 
 ``` 
-composer require xianqiliu/amadeus-php:dev-master
+composer require amadeus4dev/amadeus-php:dev-master
 ```
 
 ## Getting Started
@@ -232,3 +232,18 @@ $amadeus->getShopping()->getAvailability()->getFlightAvailabilities()->post($bod
 // function get(array $params) :
 $amadeus->getAirport()->getDirectDestinations()->get([["departureAirportCode" => "MAD", "max" => 2]]);
 ```
+
+## Development & Contributing
+
+Want to contribute? Read our [Contributors Guide](.github/CONTRIBUTING.md) for
+guidance on installing and running this code in a development environment.
+
+
+## License
+
+This library is released under the [MIT License](LICENSE).
+
+## Help
+
+You can find us on [StackOverflow](https://stackoverflow.com/questions/tagged/amadeus) or join our developer community on
+[Discord](https://discord.gg/cVrFBqx).
