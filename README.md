@@ -27,7 +27,7 @@ use Amadeus\Exceptions\ResponseException;
 require __DIR__ . '/vendor/autoload.php'; // include composer autoloader
 
 try {
-    $amadeus = Amadeus::builder("PXYniTSM838omEi7KFFbRuYME7AApDlS", "2MPNXpudnthSty4M")
+    $amadeus = Amadeus::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
         ->setSsl(true)
         ->build();
 
