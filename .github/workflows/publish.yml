@@ -1,0 +1,41 @@
+name: publish
+
+on:
+  push:
+    tags: [ '*' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php: [ 7.4 ]
+
+    name: PHP ${{ matrix.php }}
+    steps:
+      - name: Checkout amadeus-php
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: ${{ matrix.php }}
+
+      - name: Report PHP version
+        run: php -v
+
+      - name: Validate composer.json and composer.lock
+        run: composer validate --strict
+
+      - name: Install dependencies
+        run: composer install --ignore-platform-reqs
+
+      - name: Update dependencies
+        run: composer update --ignore-platform-reqs
+
+      - name: Run PHPStan for Grammar check
+        run: vendor/bin/phpstan analyse src tests --level 4
+
+      - name: Run PHPUnit for tests
+        run: vendor/bin/phpunit --coverage-text tests

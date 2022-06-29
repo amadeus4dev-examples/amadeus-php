@@ -19,6 +19,11 @@ use Amadeus\Client\HTTPClient;
  */
 class Amadeus
 {
+    /**
+     * The SDK version.
+     */
+    public const VERSION = "0.1.0";
+
     private Configuration $configuration;
 
     private HTTPClient $client;

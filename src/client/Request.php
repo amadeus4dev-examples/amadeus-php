@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus\Client;
 
+use Amadeus\Amadeus;
 use Amadeus\Constants;
 
 /**
@@ -47,6 +48,11 @@ class Request
      * The bearer token used to authenticate the API call.
      */
     private ?string $bearerToken;
+
+    /**
+     * The version of the SDK used.
+     */
+    private ?string $clientVersion;
 
     /**
      * The version of PHP used.
@@ -103,6 +109,7 @@ class Request
         $this->params = $params;
         $this->body = $body;
         $this->bearerToken = $bearerToken;
+        $this->clientVersion = Amadeus::VERSION;
         $this->languageVersion = phpversion();
         $this->port = $config->getPort();
         $this->ssl = $config->isSsl();
@@ -215,6 +222,14 @@ class Request
     public function getBearerToken(): ?string
     {
         return $this->bearerToken;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getClientVersion(): ?string
+    {
+        return $this->clientVersion;
     }
 
     /**
