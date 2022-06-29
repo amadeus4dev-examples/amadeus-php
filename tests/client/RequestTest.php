@@ -61,6 +61,7 @@ final class RequestTest extends TestCase
         $this->assertEquals($params, $request->getParams());
         $this->assertNull($request->getBody());
         $this->assertEquals("token", $request->getBearerToken());
+        $this->assertEquals(Amadeus::VERSION, $request->getClientVersion());
         $this->assertEquals(phpversion(), $request->getLanguageVersion());
         $this->assertEquals(443, $request->getPort());
         $this->assertTrue($request->isSsl());
