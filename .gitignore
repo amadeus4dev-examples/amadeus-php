@@ -2,3 +2,4 @@ src/client/cached_token.json
 composer.lock
 .idea/
 vendor/
+.phpunit.cache
