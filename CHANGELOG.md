@@ -4,8 +4,8 @@
 
 No update, the purpose of releasing this version is to test the release process. 
 
+
 ## 0.1.0 - 2022-06-29
---------------------
 
 The 0.1.0 version of the Amadeus for Developers PHP SDK:
 
