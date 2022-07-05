@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "type": "flight-date",
+      "origin": "MAD",
+      "destination": "MUC",
+      "departureDate": "2020-07-29",
+      "returnDate": "2020-07-30",
+      "price": {
+        "total": "98.53"
+      },
+      "links": {
+        "flightDestinations": "https://test.api.amadeus.com/v1/shopping/flight-destinations?origin=MAD&departureDate=2020-07-24,2021-01-19&oneWay=false&duration=1,15&nonStop=false&viewBy=DURATION",
+        "flightOffers": "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=MAD&destinationLocationCode=MUC&departureDate=2020-07-29&returnDate=2020-07-30&adults=1&nonStop=false"
+      }
+    },
+    {
+      "type": "flight-date",
+      "origin": "MAD",
+      "destination": "MUC",
+      "departureDate": "2020-07-29",
+      "returnDate": "2020-07-31",
+      "price": {
+        "total": "98.53"
+      },
+      "links": {
+        "flightDestinations": "https://test.api.amadeus.com/v1/shopping/flight-destinations?origin=MAD&departureDate=2020-07-24,2021-01-19&oneWay=false&duration=1,15&nonStop=false&viewBy=DURATION",
+        "flightOffers": "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=MAD&destinationLocationCode=MUC&departureDate=2020-07-29&returnDate=2020-07-31&adults=1&nonStop=false"
+      }
+    }
+  ]
+}

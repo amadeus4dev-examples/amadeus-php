@@ -230,7 +230,11 @@ $amadeus->getShopping()->getAvailability()->getFlightAvailabilities()->post($bod
 
 /* Airport Routes */
 // function get(array $params) :
-$amadeus->getAirport()->getDirectDestinations()->get([["departureAirportCode" => "MAD", "max" => 2]]);
+$amadeus->getAirport()->getDirectDestinations()->get(["departureAirportCode" => "MAD", "max" => 2]);
+
+/* Flight Cheapest Date Search */
+// function get(array $params) :
+$amadeus->getShopping()->getFlightDates()->get(["origin"=>"MAD", "destination"=>"LON"]);
 ```
 
 ## Development & Contributing

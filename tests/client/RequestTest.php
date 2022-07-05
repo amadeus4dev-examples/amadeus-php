@@ -6,7 +6,6 @@ namespace Amadeus\Tests\Client;
 
 use Amadeus\Amadeus;
 use Amadeus\Client\Request;
-use Amadeus\Client\BasicHTTPClient;
 use Amadeus\Constants;
 use PHPUnit\Framework\TestCase;
 
@@ -35,6 +34,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Shopping
  * @covers \Amadeus\Shopping\Availability
  * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
+ * @covers \Amadeus\Shopping\FlightDates
  * @covers \Amadeus\Shopping\FlightOffers
  * @covers \Amadeus\Shopping\FlightOffers\Pricing
  * @covers \Amadeus\Shopping\HotelOffer
