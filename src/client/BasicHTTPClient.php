@@ -217,15 +217,8 @@ class BasicHTTPClient implements HTTPClient
         }
 
         if ($exception != null) {
-            // TODO: This function needs to be reviewed
-            // Log the error into file
-//            if ($this->configuration->getLogger() == true) {
-//                if ($this->configuration->getMsgDestination()) {
-//                    error_log($exception->__toString(), $this->configuration->getMsgType(), $this->configuration->getMsgDestination());
-//                } else {
-//                    error_log($exception->__toString(), $this->configuration->getMsgType());
-//                }
-//            }
+
+            // Log the error to file
             error_log($exception->__toString());
 
             // Log the error to console

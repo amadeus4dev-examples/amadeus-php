@@ -13,7 +13,7 @@ use Amadeus\Shopping\FlightOffers\Pricing;
 /**
  * <p>
  *   A namespaced client for the
- *   <code>/v2/shopping/flightOffers</code> endpoints.
+ *   <code>/v2/shopping/flight-offers</code> endpoints.
  * </p>
  *
  * <p>

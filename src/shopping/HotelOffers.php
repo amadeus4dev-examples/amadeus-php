@@ -11,7 +11,7 @@ use Amadeus\Resources\Resource;
 /**
  * <p>
  *   A namespaced client for the
- *   <code>/v3/shopping/hotelOffers</code> endpoints.
+ *   <code>/v3/shopping/hotel-offers</code> endpoints.
  * </p>
  *
  * <p>
