@@ -31,6 +31,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Shopping
  * @covers \Amadeus\Shopping\Availability
  * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
+ * @covers \Amadeus\Shopping\FlightDates
  * @covers \Amadeus\Shopping\FlightOffers
  * @covers \Amadeus\Shopping\FlightOffers\Pricing
  * @covers \Amadeus\Shopping\HotelOffer
