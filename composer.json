@@ -1,7 +1,7 @@
 {
   "name": "amadeus4dev/amadeus-php",
   "description": "PHP library for the Amadeus Self-Service APIs",
-  "license": "proprietary",
+  "license": "MIT",
   "authors": [
     {
       "name": "Amadeus for Developers",
@@ -37,7 +37,7 @@
   "autoload-dev": {
     "psr-4": {
       "Amadeus\\Tests\\": "tests/",
-      "Amadeus\\Tests\\Airpot\\": "tests/airport",
+      "Amadeus\\Tests\\Airport\\": "tests/airport",
       "Amadeus\\Tests\\Booking\\": "tests/booking",
       "Amadeus\\Tests\\Client\\": "tests/client",
       "Amadeus\\Tests\\Exceptions\\": "tests/exceptions",

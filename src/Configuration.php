@@ -46,10 +46,6 @@ class Configuration
      */
     private int $timeout = 20;
 
-    //private ?bool $logger = false;
-    //private ?int $msgType = null;
-    //private ?string $msgDestination = null;
-
     /**
      * @param string $clientId
      * @param string $clientSecret
@@ -181,45 +177,4 @@ class Configuration
         $this->timeout = $timeout;
         return $this;
     }
-
-    // TODO LOGGER FUNCTION NEEDS TO BE REVIEWED
-//    /**
-//     * @param string|null $msgDestination
-//     * @return Configuration
-//     */
-//    public function setLogger(?string $msgDestination=null): Configuration
-//    {
-//        $this->logger = true;
-//        if ($msgDestination != null) {
-//            $this->msgType = 3;
-//        } else {
-//            $this->msgType = 0;
-//        }
-//        $this->msgDestination = $msgDestination;
-//        return $this;
-//    }
-//
-//    /**
-//     * @return bool|null
-//     */
-//    public function getLogger(): ?bool
-//    {
-//        return $this->logger;
-//    }
-//
-//    /**
-//     * @return int|null
-//     */
-//    public function getMsgType(): ?int
-//    {
-//        return $this->msgType;
-//    }
-//
-//    /**
-//     * @return string|null
-//     */
-//    public function getMsgDestination(): ?string
-//    {
-//        return $this->msgDestination;
-//    }
 }
