@@ -36,4 +36,20 @@ final class AmadeusTest extends TestCase
         $this->expectException(TypeError::class);
         Amadeus::builder("id", null)->build();
     }
+
+    public function testBuilderWithEnvironment(): void
+    {
+        // Set the environment variable
+        putenv("AMADEUS_CLIENT_ID=MY_CLIENT_ID");
+        putenv("AMADEUS_CLIENT_SECRET=MY_CLIENT_SECRET");
+
+        $this->assertTrue(
+            Amadeus::builder() instanceof AmadeusBuilder,
+            "should return a AmadeusBuilder instance"
+        );
+
+        // Unset the environment variable
+        putenv("AMADEUS_CLIENT_ID");
+        putenv("AMADEUS_CLIENT_SECRET");
+    }
 }

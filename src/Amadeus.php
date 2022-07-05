@@ -79,13 +79,17 @@ class Amadeus
      *  $amadeus = Amadeus::builder("CLIENT_ID", "CLIENT_SECRET")->build();
      * </code>
      *
-     * @param string $clientId      Your API Client ID
-     * @param string $clientSecret  Your API Client Secret
+     * @param null|string $clientId      Your API Client ID
+     * @param null|string $clientSecret  Your API Client Secret
      * @return AmadeusBuilder
      */
-    public static function builder(string $clientId, string $clientSecret): AmadeusBuilder
+    public static function builder(?string $clientId = null, ?string $clientSecret = null): AmadeusBuilder
     {
-        return new AmadeusBuilder(new Configuration($clientId, $clientSecret));
+        (($clientId == null) && ($clientSecret == null))
+            ? $configuration = new Configuration(getenv('AMADEUS_CLIENT_ID'), getenv('AMADEUS_CLIENT_SECRET'))
+            : $configuration = new Configuration($clientId, $clientSecret);
+
+        return new AmadeusBuilder($configuration);
     }
 
     /**

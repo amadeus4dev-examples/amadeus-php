@@ -80,6 +80,13 @@ $amadeus = Amadeus
     ->build();
 ```
 
+Alternatively, it can be initialized without any parameters if the environment variables ``AMADEUS_CLIENT_ID`` and ``AMADEUS_CLIENT_SECRET`` are present.
+```PHP
+$amadeus = Amadeus
+    ::builder()
+    ->build();
+```
+
 Your credentials can be found on the [Amadeus dashboard](https://developers.amadeus.com/my-apps).
 
 By default, the SDK is set to `test` environment. To switch to a `production` (pay-as-you-go) environment, please switch the hostname as follows:
