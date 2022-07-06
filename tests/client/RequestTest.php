@@ -5,46 +5,33 @@ declare(strict_types=1);
 namespace Amadeus\Tests\Client;
 
 use Amadeus\Amadeus;
+use Amadeus\Client\BasicHTTPClient;
+use Amadeus\Client\HTTPClient;
 use Amadeus\Client\Request;
+use Amadeus\Configuration;
 use Amadeus\Constants;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \Amadeus\Configuration
- * @covers \Amadeus\Amadeus
- * @covers \Amadeus\AmadeusBuilder
  * @covers \Amadeus\Client\BasicHTTPClient
  * @covers \Amadeus\Client\AccessToken
  * @covers \Amadeus\Client\Request
- * @covers \Amadeus\Airport
- * @covers \Amadeus\Airport\DirectDestinations
- * @covers \Amadeus\Booking
- * @covers \Amadeus\Booking\FlightOrders
- * @covers \Amadeus\Booking\HotelBookings
- * @covers \Amadeus\Client\AccessToken
- * @covers \Amadeus\Client\BasicHTTPClient
- * @covers \Amadeus\Configuration
- * @covers \Amadeus\ReferenceData
- * @covers \Amadeus\ReferenceData\Locations
- * @covers \Amadeus\ReferenceData\Locations\Hotel
- * @covers \Amadeus\ReferenceData\Locations\Hotels
- * @covers \Amadeus\ReferenceData\Locations\Hotels\ByCity
- * @covers \Amadeus\ReferenceData\Locations\Hotels\ByGeocode
- * @covers \Amadeus\ReferenceData\Locations\Hotels\ByHotels
- * @covers \Amadeus\Shopping
- * @covers \Amadeus\Shopping\Availability
- * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
- * @covers \Amadeus\Shopping\FlightDates
- * @covers \Amadeus\Shopping\FlightOffers
- * @covers \Amadeus\Shopping\FlightOffers\Pricing
- * @covers \Amadeus\Shopping\HotelOffer
- * @covers \Amadeus\Shopping\HotelOffers
  */
 final class RequestTest extends TestCase
 {
+    private HTTPClient $client;
+
+    /**
+     * @Before
+     */
+    public function setUp(): void
+    {
+        $this->client = new BasicHTTPClient(new Configuration("id", "secret"));
+    }
+
     public function testInitializer(): void
     {
-        $amadeus = Amadeus::builder("123", " 234")->build();
         $params = array("foo" => "bar");
         $request = new Request(
             "GET",
@@ -52,7 +39,7 @@ final class RequestTest extends TestCase
             $params,
             null,
             "token",
-            $amadeus->getClient()
+            $this->client
         );
 
         $this->assertEquals("GET", $request->getVerb());
@@ -83,7 +70,6 @@ final class RequestTest extends TestCase
 
     public function testInitializerWithoutBearerToken(): void
     {
-        $amadeus = Amadeus::builder("123", " 234")->build();
         $params = array("foo" => "bar");
         $request = new Request(
             "GET",
@@ -91,7 +77,7 @@ final class RequestTest extends TestCase
             $params,
             null,
             null,
-            $amadeus->getClient()
+            $this->client
         );
 
         $this->assertEquals(1, sizeof($request->getHeaders()));
@@ -99,16 +85,14 @@ final class RequestTest extends TestCase
 
     public function testInitializerWithHTTP(): void
     {
-        $amadeus = Amadeus::builder("123", " 234")
-            ->setSsl(false)
-            ->build();
+        $client = new BasicHTTPClient((new Configuration("id", "secret"))->setSsl(false));
         $request = new Request(
             "GET",
             "/foo/bar",
             null,
             null,
             null,
-            $amadeus->getClient()
+            $client
         );
 
         $this->assertEquals("http", $request->getScheme());
@@ -116,7 +100,6 @@ final class RequestTest extends TestCase
 
     public function testBuildUriForGetRequest(): void
     {
-        $amadeus = Amadeus::builder("123", " 234")->build();
         $params = array("foo" => "bar");
         $request = new Request(
             "GET",
@@ -124,7 +107,7 @@ final class RequestTest extends TestCase
             $params,
             null,
             "token",
-            $amadeus->getClient()
+            $this->client
         );
 
         $this->assertEquals("https://test.api.amadeus.com:443/foo/bar?foo=bar", $request->getUri());
@@ -132,14 +115,13 @@ final class RequestTest extends TestCase
 
     public function testBuildUriForGetRequestWithoutParams(): void
     {
-        $amadeus = Amadeus::builder("123", " 234")->build();
         $request = new Request(
             "GET",
             "/foo/bar",
             null,
             null,
             null,
-            $amadeus->getClient()
+            $this->client
         );
 
         $this->assertEquals("https://test.api.amadeus.com:443/foo/bar", $request->getUri());
@@ -147,7 +129,6 @@ final class RequestTest extends TestCase
 
     public function testBuildUriForPostRequest(): void
     {
-        $amadeus = Amadeus::builder("123", " 234")->build();
         $params = array("foo" => "bar");
         $request = new Request(
             "GET",
@@ -155,7 +136,7 @@ final class RequestTest extends TestCase
             $params,
             null,
             "token",
-            $amadeus->getClient()
+            $this->client
         );
 
         $this->assertEquals("https://test.api.amadeus.com:443/foo/bar?foo=bar", $request->getUri());
@@ -163,14 +144,13 @@ final class RequestTest extends TestCase
 
     public function testRequestWithoutHttpOverrideHeader(): void
     {
-        $amadeus = Amadeus::builder("123", " 234")->build();
         $request = new Request(
             "GET",
             "/foo/bar",
             null,
             null,
             "token",
-            $amadeus->getClient()
+            $this->client
         );
 
         $this->assertFalse(in_array("X-HTTP-Method-Override: GET", $request->getHeaders()));
@@ -178,7 +158,6 @@ final class RequestTest extends TestCase
 
     public function testRequestWithHttpOverrideHeader(): void
     {
-        $amadeus = Amadeus::builder("123", " 234")->build();
         foreach (Constants::API_NEED_EXTRA_HEADER as $path) {
             $request = new Request(
                 "POST",
@@ -186,7 +165,7 @@ final class RequestTest extends TestCase
                 null,
                 null,
                 "token",
-                $amadeus->getClient()
+                $this->client
             );
 
             $this->assertTrue(in_array("X-HTTP-Method-Override: GET", $request->getHeaders()));
@@ -195,8 +174,7 @@ final class RequestTest extends TestCase
 
     public function testBuildRequestWithSslCert(): void
     {
-        $amadeus = Amadeus::builder("123", " 234")->build();
-        $amadeus->getClient()->setSslCertificate("./cert.pem");
+        $this->client->setSslCertificate("./cert.pem");
         $params = array("foo" => "bar");
         $request = new Request(
             "GET",
@@ -204,7 +182,7 @@ final class RequestTest extends TestCase
             $params,
             null,
             null,
-            $amadeus->getClient()
+            $this->client
         );
 
         $this->assertEquals("./cert.pem", $request->getSslCertificate());

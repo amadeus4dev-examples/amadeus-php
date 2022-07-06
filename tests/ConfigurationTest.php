@@ -61,20 +61,4 @@ final class ConfigurationTest extends TestCase
         $configuration = (new Configuration("id", "secret"))->setTimeout(20);
         $this->assertEquals(20, $configuration->getTimeout());
     }
-
-    // TODO: LOGGER FUNCTION NEEDS TO BE REVIEWED
-//    public function testBuildWithLoggerSystemPath(): void
-//    {
-//        $configuration = (new Configuration("id", "secret"))->setLogger();
-//        $this->assertEquals(true, $configuration->getLogger());
-//        $this->assertEquals(0, $configuration->getMsgType());
-//    }
-//
-//    public function testBuildWithLoggerCustomPath(): void
-//    {
-//        $configuration = (new Configuration("id", "secret"))
-//            ->setLogger("./custom_path/amadeus.log");
-//        $this->assertEquals(true, $configuration->getLogger());
-//        $this->assertEquals("./custom_path/amadeus.log", $configuration->getMsgDestination());
-//    }
 }

@@ -41,6 +41,12 @@ final class NamespaceTest extends TestCase
     {
         $amadeus = Amadeus::builder("id", "secret")->build();
 
+        // Configuration
+        $this->assertNotNull($amadeus->getConfiguration());
+
+        // Configuration
+        $this->assertNotNull($amadeus->getClient());
+
         // Airport
         $this->assertNotNull($amadeus->getAirport());
         $this->assertNotNull($amadeus->getAirport()->getDirectDestinations());

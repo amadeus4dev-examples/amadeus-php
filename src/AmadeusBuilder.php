@@ -93,4 +93,12 @@ class AmadeusBuilder
     {
         return new Amadeus($this->configuration);
     }
+
+    /**
+     * @return Configuration
+     */
+    public function getConfiguration(): Configuration
+    {
+        return $this->configuration;
+    }
 }
