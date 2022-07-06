@@ -71,7 +71,7 @@ final class AirlinesTest extends TestCase
         $this->assertEquals(1, sizeof($airlines));
 
         // Resources
-        // Destination
+        // Airline
         $this->assertTrue($airlines[0] instanceof Airline);
         $this->assertEquals("airline", $airlines[0]->getType());
         $this->assertEquals("BA", $airlines[0]->getIataCode());
