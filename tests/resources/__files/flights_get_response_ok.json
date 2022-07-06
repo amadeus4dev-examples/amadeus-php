@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "count": 1,
+    "links": {
+      "self": "https://test.api.amadeus.com/v2/schedule/flights?carrierCode=IB&flightNumber=532&scheduledDepartureDate=2022-09-23"
+    }
+  },
+  "data": [
+    {
+      "type": "DatedFlight",
+      "scheduledDepartureDate": "2022-09-23",
+      "flightDesignator": {
+        "carrierCode": "IB",
+        "flightNumber": 532
+      },
+      "flightPoints": [
+        {
+          "iataCode": "MAD",
+          "departure": {
+            "timings": [
+              {
+                "qualifier": "STD",
+                "value": "2022-09-23T11:45+02:00"
+              }
+            ]
+          }
+        },
+        {
+          "iataCode": "VGO",
+          "arrival": {
+            "timings": [
+              {
+                "qualifier": "STA",
+                "value": "2022-09-23T12:55+02:00"
+              }
+            ]
+          }
+        }
+      ],
+      "segments": [
+        {
+          "boardPointIataCode": "MAD",
+          "offPointIataCode": "VGO",
+          "scheduledSegmentDuration": "PT1H10M",
+          "partnership": {
+            "operatingFlight": {
+              "carrierCode": "AA",
+              "flightNumber": 8711
+            }
+          }
+        }
+      ],
+      "legs": [
+        {
+          "boardPointIataCode": "MAD",
+          "offPointIataCode": "VGO",
+          "aircraftEquipment": {
+            "aircraftType": "32A"
+          },
+          "scheduledLegDuration": "PT1H10M"
+        }
+      ]
+    }
+  ]
+}

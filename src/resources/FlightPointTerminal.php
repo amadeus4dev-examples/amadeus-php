@@ -5,13 +5,12 @@ declare(strict_types=1);
 namespace Amadeus\Resources;
 
 /**
- * Sub-resource in FlightExtendedSegment, Leg
- * @see FlightExtendedSegment, DatedFlightLeg
+ * Sub-resource in Arrival, Departure
+ * @see FlightPointArrival, FlightPointDepartue
  */
-class AircraftEquipment implements ResourceInterface
+class FlightPointTerminal implements ResourceInterface
 {
     private ?string $code = null;
-    private ?string $aircraftType = null;
 
     /**
      * @return string|null
@@ -19,14 +18,6 @@ class AircraftEquipment implements ResourceInterface
     public function getCode(): ?string
     {
         return $this->code;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getAircraftType(): ?string
-    {
-        return $this->aircraftType;
     }
 
     public function __set($name, $value): void
