@@ -38,7 +38,15 @@ class Airports
 
     /**
      * ###Airport Nearest Relevant API
+     * <p>
+     *    Returns a list of relevant airports near to a given point.
+     * </p>
      *
+     * <code>
+     *  $amadeus->getReferenceData()->getLocations()->getAirports()->get(
+     *      ["latitude"=>51.57285, "longitude"=>-0.44161, "radius"=>500]
+     *  );
+     * </code>
      * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-nearest-relevant/api-reference
      *
      * @param array $params
