@@ -24,6 +24,7 @@
       "Amadeus\\ReferenceData\\Locations\\": "src/referenceData/locations",
       "Amadeus\\ReferenceData\\Locations\\Hotels\\": "src/referenceData/locations/hotels",
       "Amadeus\\Resources\\": "src/resources",
+      "Amadeus\\Schedule\\": "src/schedule",
       "Amadeus\\Shopping\\": "src/shopping",
       "Amadeus\\Shopping\\Availability\\": "src/shopping/availability",
       "Amadeus\\Shopping\\FlightOffers\\": "src/shopping/flightOffers"
@@ -45,6 +46,7 @@
       "Amadeus\\Tests\\ReferenceData\\Locations\\": "tests/referenceData/locations",
       "Amadeus\\Tests\\ReferenceData\\Locations\\Hotels\\": "tests/referenceData/locations/hotels",
       "Amadeus\\Tests\\Resources\\": "tests/resources",
+      "Amadeus\\Tests\\Schedule\\": "tests/schedule",
       "Amadeus\\Tests\\Shopping\\": "tests/shopping",
       "Amadeus\\Tests\\Shopping\\Availability\\": "tests/shopping/availability",
       "Amadeus\\Tests\\Shopping\\FlightOffers\\": "tests/shopping/flightOffers"
