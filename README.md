@@ -242,6 +242,10 @@ $amadeus->getAirport()->getDirectDestinations()->get(["departureAirportCode" => 
 /* Flight Cheapest Date Search */
 // function get(array $params) :
 $amadeus->getShopping()->getFlightDates()->get(["origin"=>"MAD", "destination"=>"LON"]);
+
+/* Airport Nearest Relevant */
+// function get(array $params) :
+$amadeus->getReferenceData()->getLocations()->getAirports()->get(["latitude"=>51.57285, "longitude"=>-0.44161, "radius"=>500]);
 ```
 
 ## Development & Contributing
