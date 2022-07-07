@@ -6,6 +6,7 @@ namespace Amadeus\ReferenceData;
 
 use Amadeus\Amadeus;
 use Amadeus\Exceptions\ResponseException;
+use Amadeus\ReferenceData\Locations\Airports;
 use Amadeus\ReferenceData\Locations\Hotel;
 use Amadeus\ReferenceData\Locations\Hotels;
 use Amadeus\Resources\Location;
@@ -47,6 +48,14 @@ class Locations
     private Hotel $hotel;
 
     /**
+     * <p>
+     *   A namespaced client for the
+     *   <code>/v1/reference-data/locations/airports</code> endpoints.
+     * </p>
+     */
+    private Airports $airports;
+
+    /**
      * @param Amadeus $amadeus
      */
     public function __construct(Amadeus $amadeus)
@@ -54,6 +63,7 @@ class Locations
         $this->amadeus = $amadeus;
         $this->hotels = new Hotels($amadeus);
         $this->hotel = new Hotel($amadeus);
+        $this->airports = new Airports($amadeus);
     }
 
     /**
@@ -78,6 +88,18 @@ class Locations
     public function getHotel(): Hotel
     {
         return $this->hotel;
+    }
+
+    /**
+     * <p>
+     *   Get a namespaced client for the
+     *   <code>/v1/reference-data/locations/airports</code> endpoints.
+     * </p>
+     * @return Airports
+     */
+    public function getAirports(): Airports
+    {
+        return $this->airports;
     }
 
     /**

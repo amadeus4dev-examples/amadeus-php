@@ -250,6 +250,10 @@ $amadeus->getReferenceData()->getAirlines()->get(["airlineCodes"=>"BA"]);
 /* On-Demand Flight Status */
 // function get(array $params) :
 $amadeus->getSchedule()->getFlights()->get(["carrierCode"=>"IB", "flightNumber"=>532, "scheduledDepartureDate"=>"2022-09-23"]);
+
+/* Airport Nearest Relevant */
+// function get(array $params) :
+$amadeus->getReferenceData()->getLocations()->getAirports()->get(["latitude"=>51.57285, "longitude"=>-0.44161, "radius"=>500]);
 ```
 
 ## Development & Contributing

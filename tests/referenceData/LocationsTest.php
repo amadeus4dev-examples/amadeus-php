@@ -26,6 +26,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\ReferenceData\Locations\Hotels\ByCity
  * @covers \Amadeus\ReferenceData\Locations\Hotels\ByGeocode
  * @covers \Amadeus\ReferenceData\Locations\Hotels\ByHotels
+ * @covers \Amadeus\ReferenceData\Locations\Airports
  *
  * @covers \Amadeus\Resources\LocationAddress
  * @covers \Amadeus\Resources\LocationAnalytics
