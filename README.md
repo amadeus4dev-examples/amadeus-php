@@ -254,6 +254,16 @@ $amadeus->getSchedule()->getFlights()->get(["carrierCode"=>"IB", "flightNumber"=
 /* Airport Nearest Relevant */
 // function get(array $params) :
 $amadeus->getReferenceData()->getLocations()->getAirports()->get(["latitude"=>51.57285, "longitude"=>-0.44161, "radius"=>500]);
+
+/* Flight Delay Prediction */
+// function get(array $params) :
+$amadeus->getTravel()->getPredictions()->getFlightDelay()->get([
+    "originLocationCode"=>"NCE", "destinationLocationCode"=>"IST",
+    "departureDate"=>"2020-08-01", "departureTime"=>"18:20:00",
+    "arrivalDate"=>"2020-08-01", "arrivalTime"=>"22:15:00",
+    "aircraftCode"=>"321", "carrierCode"=>"TK",
+    "flightNumber"=>"1816", "duration"=>"PT31H10M"
+]);
 ```
 
 ## Development & Contributing
