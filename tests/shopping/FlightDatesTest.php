@@ -24,10 +24,6 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\FlightPrice
  * @covers \Amadeus\Resources\FlightDateLinks
  *
- * @covers \Amadeus\Client\Response
- * @covers \Amadeus\Exceptions\ResponseException
- * @covers \Amadeus\Exceptions\ClientException
- *
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-cheapest-date-search/api-reference
  */
 final class FlightDatesTest extends TestCase
