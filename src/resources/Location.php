@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+use Amadeus\ReferenceData\Locations\Airports;
+
 /**
- * A Location object as returned by the Airport and City Search API.
+ * A Location object as returned by the Airport and City Search API, Airport Nearest Relevant API.
  * @see Locations
+ * @see Airports
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-and-city-search/api-reference
  */
 class Location extends Resource implements ResourceInterface
