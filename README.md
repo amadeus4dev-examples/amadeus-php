@@ -246,6 +246,10 @@ $amadeus->getShopping()->getFlightDates()->get(["origin"=>"MAD", "destination"=>
 /* Airline Code Lookup */
 // function get(array $params) :
 $amadeus->getReferenceData()->getAirlines()->get(["airlineCodes"=>"BA"]);
+
+/* On-Demand Flight Status */
+// function get(array $params) :
+$amadeus->getSchedule()->getFlights()->get(["carrierCode"=>"IB", "flightNumber"=>532, "scheduledDepartureDate"=>"2022-09-23"]);
 ```
 
 ## Development & Contributing

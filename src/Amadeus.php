@@ -57,6 +57,13 @@ class Amadeus
     private Booking $booking;
 
     /**
+     * <p>
+     * A namespaced client for the <code>/schedule</code> endpoints.
+     * </p>
+     */
+    private Schedule $schedule;
+
+    /**
      * @param Configuration $configuration
      */
     public function __construct(
@@ -70,6 +77,7 @@ class Amadeus
         $this->shopping = new Shopping($this);
         $this->referenceData = new ReferenceData($this);
         $this->booking = new Booking($this);
+        $this->schedule = new Schedule($this);
     }
 
     /**
@@ -152,5 +160,16 @@ class Amadeus
     public function getBooking(): Booking
     {
         return $this->booking;
+    }
+
+    /**
+     * <p>
+     * Get a namespaced client for the <code>/schedule</code> endpoints.
+     * </p>
+     * @return Schedule
+     */
+    public function getSchedule(): Schedule
+    {
+        return $this->schedule;
     }
 }
