@@ -243,9 +243,15 @@ $amadeus->getAirport()->getDirectDestinations()->get(["departureAirportCode" => 
 // function get(array $params) :
 $amadeus->getShopping()->getFlightDates()->get(["origin"=>"MAD", "destination"=>"LON"]);
 
-/* Flight Cheapest Date Search */
+/* Flight Delay Prediction */
 // function get(array $params) :
-$amadeus->getShopping()->getFlightDates()->get(["origin"=>"MAD", "destination"=>"LON"]);
+$amadeus->getTravel()->getPredictions()->getFlightDelay()->get([
+    "originLocationCode"=>"NCE", "destinationLocationCode"=>"IST",
+    "departureDate"=>"2020-08-01", "departureTime"=>"18:20:00",
+    "arrivalDate"=>"2020-08-01", "arrivalTime"=>"22:15:00",
+    "aircraftCode"=>"321", "carrierCode"=>"TK",
+    "flightNumber"=>"1816", "duration"=>"PT31H10M"
+]);
 ```
 
 ## Development & Contributing
