@@ -254,6 +254,16 @@ $amadeus->getSchedule()->getFlights()->get(["carrierCode"=>"IB", "flightNumber"=
 /* Airport Nearest Relevant */
 // function get(array $params) :
 $amadeus->getReferenceData()->getLocations()->getAirports()->get(["latitude"=>51.57285, "longitude"=>-0.44161, "radius"=>500]);
+
+/* Flight Delay Prediction */
+// function get(array $params) :
+$amadeus->getTravel()->getPredictions()->getFlightDelay()->get([
+    "originLocationCode"=>"NCE", "destinationLocationCode"=>"ATH",
+    "departureDate"=>"2022-10-06", "departureTime"=>"18:40:00",
+    "arrivalDate"=>"2022-10-06", "arrivalTime"=>"22:05:00",
+    "aircraftCode"=>"32N", "carrierCode"=>"A3",
+    "flightNumber"=>"691", "duration"=>"PT2H25M"
+]);
 ```
 
 ## Development & Contributing

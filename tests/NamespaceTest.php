@@ -38,6 +38,9 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Shopping\FlightOffers\Pricing
  * @covers \Amadeus\Shopping\HotelOffer
  * @covers \Amadeus\Shopping\HotelOffers
+ * @covers \Amadeus\Travel
+ * @covers \Amadeus\Travel\Predictions
+ * @covers \Amadeus\Travel\Predictions\FlightDelay
  */
 final class NamespaceTest extends TestCase
 {

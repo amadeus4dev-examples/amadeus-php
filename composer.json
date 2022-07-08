@@ -27,7 +27,9 @@
       "Amadeus\\Schedule\\": "src/schedule",
       "Amadeus\\Shopping\\": "src/shopping",
       "Amadeus\\Shopping\\Availability\\": "src/shopping/availability",
-      "Amadeus\\Shopping\\FlightOffers\\": "src/shopping/flightOffers"
+      "Amadeus\\Shopping\\FlightOffers\\": "src/shopping/flightOffers",
+      "Amadeus\\Travel\\": "src/travel",
+      "Amadeus\\Travel\\Predictions\\": "src/travel/predictions"
     }
   },
   "require-dev": {
@@ -49,7 +51,9 @@
       "Amadeus\\Tests\\Schedule\\": "tests/schedule",
       "Amadeus\\Tests\\Shopping\\": "tests/shopping",
       "Amadeus\\Tests\\Shopping\\Availability\\": "tests/shopping/availability",
-      "Amadeus\\Tests\\Shopping\\FlightOffers\\": "tests/shopping/flightOffers"
+      "Amadeus\\Tests\\Shopping\\FlightOffers\\": "tests/shopping/flightOffers",
+      "Amadeus\\Tests\\Travel\\": "tests/travel",
+      "Amadeus\\Tests\\Travel\\Predictions\\": "tests/travel/predictions"
     }
   }
 }
