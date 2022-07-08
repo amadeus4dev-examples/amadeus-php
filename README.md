@@ -258,11 +258,11 @@ $amadeus->getReferenceData()->getLocations()->getAirports()->get(["latitude"=>51
 /* Flight Delay Prediction */
 // function get(array $params) :
 $amadeus->getTravel()->getPredictions()->getFlightDelay()->get([
-    "originLocationCode"=>"NCE", "destinationLocationCode"=>"IST",
-    "departureDate"=>"2020-08-01", "departureTime"=>"18:20:00",
-    "arrivalDate"=>"2020-08-01", "arrivalTime"=>"22:15:00",
-    "aircraftCode"=>"321", "carrierCode"=>"TK",
-    "flightNumber"=>"1816", "duration"=>"PT31H10M"
+    "originLocationCode"=>"NCE", "destinationLocationCode"=>"ATH",
+    "departureDate"=>"2022-10-06", "departureTime"=>"18:40:00",
+    "arrivalDate"=>"2022-10-06", "arrivalTime"=>"22:05:00",
+    "aircraftCode"=>"32N", "carrierCode"=>"A3",
+    "flightNumber"=>"691", "duration"=>"PT2H25M"
 ]);
 ```
 
