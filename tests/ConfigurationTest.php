@@ -23,16 +23,8 @@ final class ConfigurationTest extends TestCase
     public function testGetClientIdAndSecret(): void
     {
         $configuration = new Configuration("123", "234");
-        $this->assertEquals(
-            "123",
-            $configuration->getClientId(),
-            "should set the com.amadeus.client ID"
-        );
-        $this->assertEquals(
-            "234",
-            $configuration->getClientSecret(),
-            "should set the com.amadeus.client secret"
-        );
+        $this->assertEquals("123", $configuration->getClientId());
+        $this->assertEquals("234", $configuration->getClientSecret());
     }
 
     public function testBuildDefault(): void
