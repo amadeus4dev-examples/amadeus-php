@@ -81,5 +81,10 @@ final class NamespaceTest extends TestCase
         // Schedule
         $this->assertNotNull($amadeus->getSchedule());
         $this->assertNotNull($amadeus->getSchedule()->getFlights());
+
+        // Travel
+        $this->assertNotNull($amadeus->getTravel());
+        $this->assertNotNull($amadeus->getTravel()->getPredictions());
+        $this->assertNotNull($amadeus->getTravel()->getPredictions()->getFlightDelay());
     }
 }
