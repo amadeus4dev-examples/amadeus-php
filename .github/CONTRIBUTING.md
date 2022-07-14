@@ -12,15 +12,15 @@ Make sure you have [Composer](https://getcomposer.org/) installed as well.
 
 ### Static Analysis
 
-To find errors before running test, simply run `phpstan analyse src --level 4`.
+To find errors before running test, simply run `vendor/bin/phpstan analyse src --level 4`.
 
 ### Running tests
 
-To run tests, simply run the `phpunit tests`.
+To run tests, simply run the `vendor/bin/phpunit tests`.
 
 ### Code coverage
 
-To generate the code coverage report in HTML format, simply run `phpunit ----coverage-html=coverage tests`
+To generate the code coverage report in HTML format, simply run `vendor/bin/phpunit ----coverage-html=coverage tests`
 
 We are trying to keep 100% coverage, so keep an eye on the report to review the code coverage.
 
@@ -29,8 +29,8 @@ We are trying to keep 100% coverage, so keep an eye on the report to review the 
 To fix the code follow standard, simply run the following commands
 
 ```
-php-cs-fixed fix src 
-php-cs-fixed fix tests
+vendor/bin/php-cs-fixed fix src 
+vendor/bin/php-cs-fixed fix tests
 ```
 
 ### Using a library locally
