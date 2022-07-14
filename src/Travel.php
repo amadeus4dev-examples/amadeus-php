@@ -13,7 +13,8 @@ use Amadeus\Travel\Predictions;
  * </p>
  *
  * <p>
-@@ -18,36 +18,36 @@
+ *   Access via the Amadeus client object.
+ * </p>
  *
  * <code>
  *  $amadeus = Amadeus::builder("clientId", "secret")->build();
