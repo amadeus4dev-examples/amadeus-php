@@ -171,6 +171,8 @@ class BasicHTTPClient implements HTTPClient
      */
     public function execute(Request $request): Response
     {
+        $this->log("Request: "."\n".$request->__toString());
+
         $curlHandle = curl_init();
         $this->setCurlOptions($curlHandle, $request);
         $result = curl_exec($curlHandle);
@@ -181,6 +183,7 @@ class BasicHTTPClient implements HTTPClient
         curl_close($curlHandle);
 
         $response = new Response($request, $info, $result);
+        $this->log("Response: "."\n". $response->__toString());
         $this->detectError($response);
 
         return $response;
@@ -217,16 +220,7 @@ class BasicHTTPClient implements HTTPClient
         }
 
         if ($exception != null) {
-
-            // Log the error to file
-            error_log($exception->__toString());
-
-            // Log the error to console
-            file_put_contents(
-                'php://stdout',
-                $exception->__toString()
-            );
-
+            $this->log("Exception: "."\n".$exception->__toString());
             throw $exception;
         }
     }
@@ -272,6 +266,23 @@ class BasicHTTPClient implements HTTPClient
             } elseif ($request->getParams() != null) {
                 curl_setopt($curlHandle, CURLOPT_POSTFIELDS, http_build_query($request->getParams()));
             }
+        }
+    }
+
+    /**
+     * A simple log only triggered if in debug mode
+     * @param string $message
+     * @return void
+     */
+    private function log(string $message): void
+    {
+        $message = '[-- Amadeus PHP SDK log message: ' .date("F j, Y, g:i a"). ' --]'."\n"
+            .$message;
+        if ($this->configuration->getLogLevel() == "debug") {
+            file_put_contents(
+                'php://stdout',
+                $message."\n"
+            );
         }
     }
 

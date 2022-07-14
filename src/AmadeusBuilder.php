@@ -86,6 +86,17 @@ class AmadeusBuilder
     }
 
     /**
+     * Set the log level for debugging.
+     * @param string $logLevel
+     * @return $this
+     */
+    public function setLogLevel(string $logLevel): AmadeusBuilder
+    {
+        $this->configuration->setLogLevel($logLevel);
+        return $this;
+    }
+
+    /**
      * Return a Amadeus object.
      * @return Amadeus
      */

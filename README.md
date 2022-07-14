@@ -170,6 +170,15 @@ $locations[0]->getResponse()->getBodyAsJsonObject();
 $locations[0]->getResponse()->getData();
 ```
 
+## Logging & Debugging
+You can enable debugging in the default HTTP client via a parameter during initialization, or using the ```AMADEUS_LOG_LEVEL``` environment variable.
+
+```PHP
+$amadeus = Amadeus::builder()
+    ->setLogLevel("debug")
+    ->build();
+```
+
 ## List of supported endpoints
 ```PHP
 /* Flight Offers Search GET */
