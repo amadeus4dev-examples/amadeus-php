@@ -23,16 +23,8 @@ final class ConfigurationTest extends TestCase
     public function testGetClientIdAndSecret(): void
     {
         $configuration = new Configuration("123", "234");
-        $this->assertEquals(
-            "123",
-            $configuration->getClientId(),
-            "should set the com.amadeus.client ID"
-        );
-        $this->assertEquals(
-            "234",
-            $configuration->getClientSecret(),
-            "should set the com.amadeus.client secret"
-        );
+        $this->assertEquals("123", $configuration->getClientId());
+        $this->assertEquals("234", $configuration->getClientSecret());
     }
 
     public function testBuildDefault(): void
@@ -61,20 +53,4 @@ final class ConfigurationTest extends TestCase
         $configuration = (new Configuration("id", "secret"))->setTimeout(20);
         $this->assertEquals(20, $configuration->getTimeout());
     }
-
-    // TODO: LOGGER FUNCTION NEEDS TO BE REVIEWED
-//    public function testBuildWithLoggerSystemPath(): void
-//    {
-//        $configuration = (new Configuration("id", "secret"))->setLogger();
-//        $this->assertEquals(true, $configuration->getLogger());
-//        $this->assertEquals(0, $configuration->getMsgType());
-//    }
-//
-//    public function testBuildWithLoggerCustomPath(): void
-//    {
-//        $configuration = (new Configuration("id", "secret"))
-//            ->setLogger("./custom_path/amadeus.log");
-//        $this->assertEquals(true, $configuration->getLogger());
-//        $this->assertEquals("./custom_path/amadeus.log", $configuration->getMsgDestination());
-//    }
 }

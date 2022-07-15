@@ -58,7 +58,7 @@ final class AccessTokenTest extends TestCase
         ];
 
         $obj = $this->getMockBuilder(AccessToken::class)
-            ->setConstructorArgs(array($this->client, __DIR__."/cached_token_null_test.json"))
+            ->setConstructorArgs(array($this->client, __DIR__ . "/cached_token_null_test.json"))
             ->onlyMethods(array("fetchAccessToken"))
             ->getMock();
 
@@ -69,7 +69,7 @@ final class AccessTokenTest extends TestCase
         $obj->getBearerToken();
         $obj->getBearerToken();
 
-        file_put_contents(__DIR__."/cached_token_null_test.json", '{"access_token":null,"expires_at":null}');
+        $obj->resetCachedToken();
     }
 
     public function testUpdateAccessTokenWhenExpired(): void
@@ -80,7 +80,7 @@ final class AccessTokenTest extends TestCase
         ];
 
         $obj = $this->getMockBuilder(AccessToken::class)
-            ->setConstructorArgs(array($this->client, __DIR__."/cached_token_null_test.json"))
+            ->setConstructorArgs(array($this->client, __DIR__ . "/cached_token_null_test.json"))
             ->onlyMethods(array("fetchAccessToken"))
             ->getMock();
 
@@ -91,6 +91,6 @@ final class AccessTokenTest extends TestCase
         $obj->getBearerToken();
         $obj->getBearerToken();
 
-        file_put_contents(__DIR__."/cached_token_null_test.json", '{"access_token":null,"expires_at":null}');
+        $obj->resetCachedToken();
     }
 }
