@@ -6,6 +6,7 @@ namespace Amadeus\Client;
 
 use Amadeus\Amadeus;
 use Amadeus\Constants;
+use Amadeus\Resources\Resource;
 
 /**
  * An object containing all the details of the request made, including the host,
@@ -278,5 +279,10 @@ class Request
     public function getHeaders(): array
     {
         return $this->headers;
+    }
+
+    public function __toString(): string
+    {
+        return Resource::toString(get_object_vars($this));
     }
 }

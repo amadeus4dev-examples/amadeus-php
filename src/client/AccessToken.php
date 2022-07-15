@@ -46,25 +46,22 @@ class AccessToken
                 // If expired then refresh the token
                 $this->storeAccessToken($this->fetchAccessToken());
 
-                file_put_contents(
-                    'php://stdout',
-                    "Access token expired ! Automatically update access token -> [". $this->access_token ."] !"."\n"
+                $this->logTokenStatus(
+                    "Access token expired ! Automatically update access token -> [". $this->access_token ."] !"
                 );
             } else {
                 // Else still return the current token
 
-                file_put_contents(
-                    'php://stdout',
-                    "Current access token -> [". $this->access_token ."] is still available !"."\n"
+                $this->logTokenStatus(
+                    "Current access token -> [". $this->access_token ."] is still available !"
                 );
             }
         } else {
             // First time to fetch access token
             $this->storeAccessToken($this->fetchAccessToken());
 
-            file_put_contents(
-                'php://stdout',
-                "First time to fetch access token -> [". $this->access_token ."] !"."\n"
+            $this->logTokenStatus(
+                "First time to fetch access token -> [". $this->access_token ."] !"
             );
         }
     }
@@ -155,5 +152,20 @@ class AccessToken
             $this->cachedTokenFile,
             '{"access_token":null,"expires_at":null}'
         );
+    }
+
+    /**
+     * A simple log for access token only triggered if in debug mode
+     * @param string $message
+     * @return void
+     */
+    private function logTokenStatus(string $message): void
+    {
+        if ($this->client->getConfiguration()->getLogLevel() == "debug") {
+            file_put_contents(
+                'php://stdout',
+                $message."\n"
+            );
+        }
     }
 }
