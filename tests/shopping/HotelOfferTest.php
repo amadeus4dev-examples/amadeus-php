@@ -105,7 +105,7 @@ final class HotelOfferTest extends TestCase
             ->willReturn($response);
 
         // When
-        $hotelOffers = (new HotelOffer($this->amadeus))->get($params);
+        $hotelOffers = (new HotelOffer($this->amadeus, $params))->get();
 
         // Then
         $this->assertNotNull($hotelOffers);

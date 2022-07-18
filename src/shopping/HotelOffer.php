@@ -26,13 +26,16 @@ use Amadeus\Resources\Resource;
 class HotelOffer
 {
     private Amadeus $amadeus;
+    private string $offerId;
 
     /**
      * @param Amadeus $amadeus
+     * @param string $offerId
      */
-    public function __construct(Amadeus $amadeus)
+    public function __construct(Amadeus $amadeus, string $offerId)
     {
         $this->amadeus = $amadeus;
+        $this->offerId = $offerId;
     }
 
     /**
@@ -42,19 +45,18 @@ class HotelOffer
      * </p>
      *
      * <code>
-     *  $amadeus->getShopping()->getHotelOffer()->get("XXX");
+     *  $amadeus->getShopping()->getHotelOffer("XXX")->get();
      * </code>
      *
      * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference
      *
-     * @param string $offerId                   the parameters to send to the API
      * @return \Amadeus\Resources\HotelOffers   an API resource
-     * @throws ResponseException                when an exception occurs
+     * @throws ResponseException when an exception occurs
      */
-    public function get(string $offerId): object
+    public function get(): object
     {
         $response = $this->amadeus->getClient()->getWithOnlyPath(
-            "/v3/shopping/hotel-offers"."/".$offerId
+            "/v3/shopping/hotel-offers"."/".$this->offerId
         );
 
         return Resource::fromObject($response, \Amadeus\Resources\HotelOffers::class);

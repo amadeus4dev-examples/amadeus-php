@@ -232,8 +232,8 @@ $amadeus->getReferenceData()->getLocations()->getHotels()->getByGeocode()->get([
 // function get(array $params) :
 $amadeus->getShopping()->getHotelOffers()->get(["hotelId" => "MCLONGHM","adults" => 1]);
 // Check conditions of a specific offer
-// function get(string $offerId) :
-$amadeus->getShopping()->getHotelOffer()->get("xxx");
+// function get() :
+$amadeus->getShopping()->getHotelOffer("XXX")->get();
 
 /* Hotel Booking */
 // The offerId comes from the hotel offer above
