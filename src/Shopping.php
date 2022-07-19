@@ -27,6 +27,8 @@ use Amadeus\Shopping\HotelOffers;
  */
 class Shopping
 {
+    private Amadeus $amadeus;
+
     /**
      * <p>
      *   A namespaced client for the
@@ -42,14 +44,6 @@ class Shopping
      * </p>
      */
     private ?FlightOffers $flightOffers;
-
-    /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v3/shopping/hotel-offers/:offer_id</code> endpoints.
-     * </p>
-     */
-    private ?HotelOffer $hotelOffer;
 
     /**
      * <p>
@@ -72,9 +66,9 @@ class Shopping
      */
     public function __construct(Amadeus $amadeus)
     {
+        $this->amadeus = $amadeus;
         $this->availability = new Availability($amadeus);
         $this->flightOffers = new FlightOffers($amadeus);
-        $this->hotelOffer = new HotelOffer($amadeus);
         $this->hotelOffers = new HotelOffers($amadeus);
         $this->flightDates = new FlightDates($amadeus);
     }
@@ -108,11 +102,12 @@ class Shopping
      *   Get a namespaced client for the
      *   <code>/v3/shopping/hotel-offers/:offer_id</code> endpoints.
      * </p>
+     * @param string $offerId
      * @return HotelOffer|null
      */
-    public function getHotelOffer(): ?HotelOffer
+    public function getHotelOffer(string $offerId): ?HotelOffer
     {
-        return $this->hotelOffer;
+        return new HotelOffer($this->amadeus, $offerId);
     }
 
     /**
