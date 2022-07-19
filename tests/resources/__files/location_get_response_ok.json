@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "links": {
+      "self": "https://test.api.amadeus.com/v1/reference-data/locations/CMUC"
+    }
+  },
+  "data": {
+    "type": "location",
+    "subType": "CITY",
+    "name": "MUNICH",
+    "detailedName": "MUNICH/DE",
+    "id": "CMUC",
+    "self": {
+      "href": "https://test.api.amadeus.com/v1/reference-data/locations/CMUC",
+      "methods": [
+        "GET"
+      ]
+    },
+    "timeZoneOffset": "+02:00",
+    "iataCode": "MUC",
+    "geoCode": {
+      "latitude": 48.35378,
+      "longitude": 11.78609
+    },
+    "address": {
+      "cityName": "MUNICH",
+      "cityCode": "MUC",
+      "countryName": "GERMANY",
+      "countryCode": "DE",
+      "regionCode": "EUROP"
+    },
+    "analytics": {
+      "travelers": {
+        "score": 27
+      }
+    }
+  }
+}

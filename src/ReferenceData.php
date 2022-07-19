@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Amadeus;
 
 use Amadeus\ReferenceData\Airlines;
+use Amadeus\ReferenceData\Location;
 use Amadeus\ReferenceData\Locations;
 
 /**
@@ -24,6 +25,8 @@ use Amadeus\ReferenceData\Locations;
  */
 class ReferenceData
 {
+    private Amadeus $amadeus;
+
     /**
      * <p>
      *   A namespaced client for the
@@ -45,6 +48,7 @@ class ReferenceData
      */
     public function __construct(Amadeus $amadeus)
     {
+        $this->amadeus = $amadeus;
         $this->locations = new Locations($amadeus);
         $this->airlines = new Airlines($amadeus);
     }
@@ -59,6 +63,20 @@ class ReferenceData
     public function getLocations(): ?Locations
     {
         return $this->locations;
+    }
+
+
+    /**
+     * <p>
+     *   Get a namespaced client for the
+     *   <code>/v1/reference-data/locations/:location_id</code> endpoints.
+     * </p>
+     * @param string $locationId
+     * @return Location|null
+     */
+    public function getLocation(string $locationId): ?Location
+    {
+        return new Location($this->amadeus, $locationId);
     }
 
     /**
