@@ -78,6 +78,13 @@ class Amadeus
     private DutyOfCare $dutyOfCare;
 
     /**
+     * <p>
+     *   A namespaced client for the<code>/e-reputation</code> endpoints.
+     * </p>
+     */
+    private EReputation $eReputation;
+
+    /**
      * @param Configuration $configuration
      */
     public function __construct(
@@ -94,6 +101,7 @@ class Amadeus
         $this->schedule = new Schedule($this);
         $this->travel = new Travel($this);
         $this->dutyOfCare = new DutyOfCare($this);
+        $this->eReputation = new EReputation($this);
     }
 
     /**
@@ -209,5 +217,16 @@ class Amadeus
     public function getDutyOfCare(): DutyOfCare
     {
         return $this->dutyOfCare;
+    }
+
+    /**
+     * <p>
+     * Get a namespaced client for the <code>/e-reputation</code> endpoints.
+     * </p>
+     * @return EReputation
+     */
+    public function getEReputation(): EReputation
+    {
+        return $this->eReputation;
     }
 }

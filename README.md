@@ -244,6 +244,10 @@ $amadeus->getShopping()->getHotelOffer("XXX")->get();
 // function post(string $body) :
 $amadeus->getBooking()->getHotelBookings()->post($body);
 
+/* Hotel Ratings */
+// function get(array $params) :
+$amadeus->getEReputation()->getHotelSentiments()->get(["hotelIds" => "TELONMFS"]);
+
 /* Flight Availabilities Search */
 // function post(string $body) :
 $amadeus->getShopping()->getAvailability()->getFlightAvailabilities()->post($body);

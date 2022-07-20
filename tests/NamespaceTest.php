@@ -22,6 +22,8 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\DutyOfCare
  * @covers \Amadeus\DutyOfCare\Diseases
  * @covers \Amadeus\DutyOfCare\Diseases\Covid19AreaReport
+ * @covers \Amadeus\EReputation
+ * @covers \Amadeus\EReputation\HotelSentiments
  * @covers \Amadeus\ReferenceData
  * @covers \Amadeus\ReferenceData\Airlines
  * @covers \Amadeus\ReferenceData\Location
@@ -102,5 +104,9 @@ final class NamespaceTest extends TestCase
         $this->assertNotNull($amadeus->getDutyOfCare());
         $this->assertNotNull($amadeus->getDutyOfCare()->getDiseases());
         $this->assertNotNull($amadeus->getDutyOfCare()->getDiseases()->getCovid19AreaReport());
+
+        // EReputation
+        $this->assertNotNull($amadeus->getEReputation());
+        $this->assertNotNull($amadeus->getEReputation()->getHotelSentiments());
     }
 }
