@@ -277,6 +277,10 @@ $amadeus->getTravel()->getPredictions()->getFlightDelay()->get([
     "aircraftCode"=>"32N", "carrierCode"=>"A3",
     "flightNumber"=>"691", "duration"=>"PT2H25M"
 ]);
+
+/* Travel Restrictions */
+// function get(array $params) :
+$amadeus->getDutyOfCare()->getDiseases()->getCovid19AreaReport()->get(["countryCode"=>"US"]);
 ```
 
 ## Development & Contributing

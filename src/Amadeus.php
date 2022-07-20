@@ -71,6 +71,13 @@ class Amadeus
     private Travel $travel;
 
     /**
+     * <p>
+     *   A namespaced client for the<code>/v1/duty-of-care</code> endpoints.
+     * </p>
+     */
+    private DutyOfCare $dutyOfCare;
+
+    /**
      * @param Configuration $configuration
      */
     public function __construct(
@@ -86,6 +93,7 @@ class Amadeus
         $this->booking = new Booking($this);
         $this->schedule = new Schedule($this);
         $this->travel = new Travel($this);
+        $this->dutyOfCare = new DutyOfCare($this);
     }
 
     /**
@@ -190,5 +198,16 @@ class Amadeus
     public function getTravel(): Travel
     {
         return $this->travel;
+    }
+
+    /**
+     * <p>
+     * Get a namespaced client for the <code>/dutyOfCare</code> endpoints.
+     * </p>
+     * @return DutyOfCare
+     */
+    public function getDutyOfCare(): DutyOfCare
+    {
+        return $this->dutyOfCare;
     }
 }
