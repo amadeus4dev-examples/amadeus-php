@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Amadeus\Resources;
 
 /**
- * Sub-resource in FlightOffer, etc.
- * @see FlightOffer
+ * Sub-resource in FlightOffer, FlightDestination etc.
+ * @see FlightOffer, FlightDestination
  */
 class FlightPrice implements ResourceInterface
 {
