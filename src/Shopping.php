@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Amadeus;
 
-use Amadeus\Resources\FlightDestination;
 use Amadeus\Shopping\Availability;
 use Amadeus\Shopping\FlightDates;
 use Amadeus\Shopping\FlightDestinations;
