@@ -209,8 +209,12 @@ $amadeus->getBooking()->getFlightOrders()->post($body);
 $amadeus->getBooking()->getFlightOrders()->postWithFlightOffersAndTravelers($flightOffers, $travelers);
 
 /* Airport and City Search (autocomplete) */
+// Get a list of airports and cities matching a given keyword
 // function get(array $params) :
 $amadeus->getReferenceData()->getLocations(["subType"=>"CITY,AIRPORT", "keyword"=>"MUC"]);
+// Get a specific airport or city based on its id
+// function get() :
+$amadeus->getReferenceData()->getLocation("CMUC")->get();
 
 /* Hotel Name Autocomplete */
 // function get(array $params) :
