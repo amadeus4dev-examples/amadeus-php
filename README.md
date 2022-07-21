@@ -281,6 +281,10 @@ $amadeus->getTravel()->getPredictions()->getFlightDelay()->get([
 /* Travel Restrictions */
 // function get(array $params) :
 $amadeus->getDutyOfCare()->getDiseases()->getCovid19AreaReport()->get(["countryCode"=>"US"]);
+
+/* Flight Inspiration Search */
+// function get(array $params) :
+$amadeus->getShopping()->getFlightDestination()->get(["origin"=>"MUC"]);
 ```
 
 ## Development & Contributing
