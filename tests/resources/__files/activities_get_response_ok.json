@@ -1,0 +1,450 @@
+{
+  "data": [
+    {
+      "type": "activity",
+      "id": "3273097",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3273097",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "The grace of Vila de Gracia (Available in Spanish)",
+      "shortDescription": "<p>A <strong>tour of the charming Gracia neighborhood</strong> , a hidden gem of sleepy squares, which houses in its tree-lined streets, artist galleries, local artisan shops and restaurants for all palates.<br><br> The <strong>birthplace of Barcelona's musical style: La Rumba Catalana.</strong> You will also get to know the most historical side of the neighborhood, a lesser-known image of revolutions, insurrections and wars.<br><br> Finally, you will be able to see <strong>Casa Vicens</strong> , which was the <strong>first house</strong> <strong>made</strong> by Antoni <strong>Gaudí.</strong><br><br> <strong>WHAT WE WILL SEE ON THIS TOUR:</strong></p><ul><li> <strong>FUSTER HOUSE</strong></li><li> <strong>PLAZA VILA DE GRACIA</strong></li><li> <strong>RASPALL SQUARE</strong></li><li> <strong>SQUARE OF THE REVOLUTION</strong></li><li> <strong>VERDI STREET</strong></li><li> <strong>PLAZA DE LA VIRREINA</strong></li><li> <strong>DIAMANT SQUARE</strong></li><li> <strong>VICENS HOUSE</strong></li><li> <strong>PLAZA LESSEPS</strong></li></ul><p><br><br> Guide: Carlitos<br><br> Price: Free Offer You set the price!<br><br></p><p>Free tour: Book for free and pay what you want at the end</p>",
+      "description": "<p>A <strong>tour of the charming Gracia neighborhood</strong> , a hidden gem of sleepy squares, which houses in its tree-lined streets, artist galleries, local artisan shops and restaurants for all palates.<br><br> The <strong>birthplace of Barcelona's musical style: La Rumba Catalana.</strong> You will also get to know the most historical side of the neighborhood, a lesser-known image of revolutions, insurrections and wars.<br><br> Finally, you will be able to see <strong>Casa Vicens</strong> , which was the <strong>first house</strong> <strong>made</strong> by Antoni <strong>Gaudí.</strong><br><br> <strong>WHAT WE WILL SEE ON THIS TOUR:</strong></p><ul><li> <strong>FUSTER HOUSE</strong></li><li> <strong>PLAZA VILA DE GRACIA</strong></li><li> <strong>RASPALL SQUARE</strong></li><li> <strong>SQUARE OF THE REVOLUTION</strong></li><li> <strong>VERDI STREET</strong></li><li> <strong>PLAZA DE LA VIRREINA</strong></li><li> <strong>DIAMANT SQUARE</strong></li><li> <strong>VICENS HOUSE</strong></li><li> <strong>PLAZA LESSEPS</strong></li></ul><p><br><br> Guide: Carlitos<br><br> Price: Free Offer You set the price!<br><br></p><p>Free tour: Book for free and pay what you want at the end</p>",
+      "geoCode": {
+        "latitude": 41.397972,
+        "longitude": 2.158032
+      },
+      "rating": "4.5",
+      "price": {
+        "amount": "0.0"
+      },
+      "pictures": [
+        "https://media.guruwalk.com/jmn0ka6ukm9y2jsmbsyohc0pyn36",
+        "https://media.guruwalk.com/d3rhz22mkh28bwtmkqmtfn0cocag",
+        "https://media.guruwalk.com/7i73igzwpqa8ux8g53hwtoqeo15v",
+        "https://media.guruwalk.com/e4cyuvykrg06z84tlhqu71om6b4c",
+        "https://media.guruwalk.com/x1pl4cshr9e4f99xtx6uqbcipm0t"
+      ],
+      "bookingLink": "https://www.guruwalk.com/walks/38392-the-grace-of-vila-de-gracia?ref=ojlgpuf3oo1nuk2s74m5",
+      "minimumDuration": "2 hours"
+    },
+    {
+      "type": "activity",
+      "id": "3832325",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3832325",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "VIET KITCHEN",
+      "shortDescription": "Vietnamita",
+      "description": "Vietnamita",
+      "geoCode": {
+        "latitude": 41.39194,
+        "longitude": 2.154194
+      },
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://resizer.otstatic.com/v2/photos/wide-large/3/27775374.jpg"
+      ],
+      "bookingLink": "http://www.opentable.es/restaurant/profile/186879?lang=en-gb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3832065",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3832065",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "La dama",
+      "shortDescription": "Mediterránea",
+      "description": "Mediterránea",
+      "geoCode": {
+        "latitude": 41.394581,
+        "longitude": 2.15317
+      },
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://resizer.otstatic.com/v2/photos/wide-large/1/25136245.jpg"
+      ],
+      "bookingLink": "http://www.opentable.es/restaurant/profile/143616?lang=en-gb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3280192",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3280192",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Amazing Free Tour through Gothic Barcelona (Available in Spanish)",
+      "shortDescription": "<p>I want to guide you, show you <strong>Barcelona and its old town with more than 2000 years of history</strong> , visiting cathedrals, squares, markets, streets and hidden corners <strong>until you reach the Barcelona of today.</strong><br><br> I want to show you on my tour these and other places that we can visit:</p><ul><li> <strong>Barcelona's cathedral</strong></li><li> <strong>gothic quarter</strong></li><li> <strong>La Boqueria Market</strong></li><li> <strong>Joan's kiss</strong></li><li> <strong>bishop's bridge</strong></li><li> <strong>Casa Batllo Gaudi</strong></li><li> <strong>Catalonia Square</strong></li><li> <strong>the promenade</strong></li><li> <strong>colon statue</strong></li><li> <strong>Palau Guell</strong></li><li> <strong>Sacred Family</strong></li></ul><p><br> You can't miss this Free Tour! <strong>What I want is for you to spend an unforgettable moment in your lives with this tour.</strong></p><p>Free tour: Book for free and pay what you want at the end</p>",
+      "description": "<p>I want to guide you, show you <strong>Barcelona and its old town with more than 2000 years of history</strong> , visiting cathedrals, squares, markets, streets and hidden corners <strong>until you reach the Barcelona of today.</strong><br><br> I want to show you on my tour these and other places that we can visit:</p><ul><li> <strong>Barcelona's cathedral</strong></li><li> <strong>gothic quarter</strong></li><li> <strong>La Boqueria Market</strong></li><li> <strong>Joan's kiss</strong></li><li> <strong>bishop's bridge</strong></li><li> <strong>Casa Batllo Gaudi</strong></li><li> <strong>Catalonia Square</strong></li><li> <strong>the promenade</strong></li><li> <strong>colon statue</strong></li><li> <strong>Palau Guell</strong></li><li> <strong>Sacred Family</strong></li></ul><p><br> You can't miss this Free Tour! <strong>What I want is for you to spend an unforgettable moment in your lives with this tour.</strong></p><p>Free tour: Book for free and pay what you want at the end</p>",
+      "geoCode": {
+        "latitude": 41.390762,
+        "longitude": 2.166891
+      },
+      "rating": "4.2",
+      "price": {
+        "amount": "0.0"
+      },
+      "pictures": [
+        "https://media.guruwalk.com/oq4qwrmpf1riq7kdh5c3pm4kam7f",
+        "https://media.guruwalk.com/dcnyisljy871r6qzm6mn3hja8yr2",
+        "https://media.guruwalk.com/ba5na2bxrn7lgwbf09utydfrqg9v",
+        "https://media.guruwalk.com/ngw1qpoxqk8ub9lvztry97ilfj4z",
+        "https://media.guruwalk.com/dimxdcu7jbs0c7hxm67ly97d9620"
+      ],
+      "bookingLink": "https://www.guruwalk.com/walks/42010-amazing-free-tour-through-gothic-barcelona?ref=ojlgpuf3oo1nuk2s74m5",
+      "minimumDuration": "2 hours 30 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "3044853",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3044853",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Casa Batlló",
+      "description": "",
+      "geoCode": {
+        "latitude": 41.3917,
+        "longitude": 2.164918
+      },
+      "rating": "4.6",
+      "price": {},
+      "pictures": [],
+      "bookingLink": "",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3269244",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3269244",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Barcelona in one day! (Available in Spanish)",
+      "shortDescription": "<p>A Fantastic walking tour of the emblematic sites of Barcelona, their history and a brief review of each one, starting with Park Güell, Hospital Sant Pau and ending at Sagrada Familia. Walking the streets of the neighborhoods and feeling that typical Catalan atmosphere! A moment full of stories and the best memories to remember this beautiful Mediterranean city!</p><p>Free tour: Book for free and pay what you want at the end</p>",
+      "description": "<p>A Fantastic walking tour of the emblematic sites of Barcelona, their history and a brief review of each one, starting with Park Güell, Hospital Sant Pau and ending at Sagrada Familia. Walking the streets of the neighborhoods and feeling that typical Catalan atmosphere! A moment full of stories and the best memories to remember this beautiful Mediterranean city!</p><p>Free tour: Book for free and pay what you want at the end</p>",
+      "geoCode": {
+        "latitude": 41.40586,
+        "longitude": 2.162965
+      },
+      "rating": "4.1",
+      "price": {
+        "amount": "0.0"
+      },
+      "pictures": [
+        "https://media.guruwalk.com/upxzasc8xu61j898u5to9qzu57si",
+        "https://media.guruwalk.com/tvqtecq5ukb6raicr02l34fd1t1z",
+        "https://media.guruwalk.com/x7uyb3sta3bzkjazlegcqvz6259z"
+      ],
+      "bookingLink": "https://www.guruwalk.com/walks/35497-barcelona-in-one-day?ref=ojlgpuf3oo1nuk2s74m5",
+      "minimumDuration": "2 hours 30 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "3832726",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3832726",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Posidònia",
+      "shortDescription": "Pescados",
+      "description": "Pescados",
+      "geoCode": {
+        "latitude": 41.4056266,
+        "longitude": 2.161736
+      },
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://resizer.otstatic.com/v2/photos/wide-large/3/47320126.jpg"
+      ],
+      "bookingLink": "http://www.opentable.es/restaurant/profile/267996?lang=en-gb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3832085",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3832085",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Hummus Barcelona",
+      "shortDescription": "Vegetariana/vegana, Vegetariana, Mediterránea",
+      "description": "Vegetariana/vegana, Vegetariana, Mediterránea",
+      "geoCode": {
+        "latitude": 41.39129,
+        "longitude": 2.161134
+      },
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://resizer.otstatic.com/v2/photos/wide-large/1/25199240.jpg"
+      ],
+      "bookingLink": "http://www.opentable.es/restaurant/profile/144903?lang=en-gb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3832276",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3832276",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "MR PORTER BARCELONA",
+      "shortDescription": "Steakhouse",
+      "description": "Steakhouse",
+      "geoCode": {
+        "latitude": 41.396214,
+        "longitude": 2.160968
+      },
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://resizer.otstatic.com/v2/photos/wide-large/2/26468957.jpg"
+      ],
+      "bookingLink": "http://www.opentable.es/restaurant/profile/171195?lang=en-gb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3832656",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3832656",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Indian Herbs",
+      "shortDescription": "Indian",
+      "description": "Indian",
+      "geoCode": {
+        "latitude": 41.400723,
+        "longitude": 2.164615
+      },
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://resizer.otstatic.com/v2/photos/wide-large/2/42295813.jpg"
+      ],
+      "bookingLink": "http://www.opentable.es/restaurant/profile/252978?lang=en-gb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3832061",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3832061",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Restaurant Pau Claris 190",
+      "shortDescription": "Mediterránea, Internacional, Vegetariana/vegana",
+      "description": "Mediterránea, Internacional, Vegetariana/vegana",
+      "geoCode": {
+        "latitude": 41.396655,
+        "longitude": 2.162197
+      },
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://resizer.otstatic.com/v2/photos/wide-large/1/30332526.jpg"
+      ],
+      "bookingLink": "http://www.opentable.es/restaurant/profile/143601?lang=en-gb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3832224",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3832224",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Rumbo Bar & Eatery",
+      "shortDescription": "Mediterránea, Española, Coctelería",
+      "description": "Mediterránea, Española, Coctelería",
+      "geoCode": {
+        "latitude": 41.392788,
+        "longitude": 2.167397
+      },
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://resizer.otstatic.com/v2/photos/wide-large/3/27790602.jpg"
+      ],
+      "bookingLink": "http://www.opentable.es/restaurant/profile/159921?lang=en-gb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3832283",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3832283",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Season Resaurant",
+      "shortDescription": "Tapas/pequeños platos",
+      "description": "Tapas/pequeños platos",
+      "geoCode": {
+        "latitude": 41.391354,
+        "longitude": 2.155211
+      },
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://resizer.otstatic.com/v2/photos/wide-large/3/43830648.jpg"
+      ],
+      "bookingLink": "http://www.opentable.es/restaurant/profile/171972?lang=en-gb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3832299",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3832299",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Colella",
+      "shortDescription": "Italian, Contemporary Italian, Bistro",
+      "description": "Italian, Contemporary Italian, Bistro",
+      "geoCode": {
+        "latitude": 41.396622,
+        "longitude": 2.162196
+      },
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://resizer.otstatic.com/v2/photos/wide-large/3/47270271.jpg"
+      ],
+      "bookingLink": "http://www.opentable.es/restaurant/profile/175035?lang=en-gb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3832310",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3832310",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "L'illa de Rossello Restaurant - Evenia Rosello Hotel",
+      "shortDescription": "Mediterránea",
+      "description": "Mediterránea",
+      "geoCode": {
+        "latitude": 41.392064,
+        "longitude": 2.155524
+      },
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://resizer.otstatic.com/v2/photos/wide-large/3/26471434.jpg"
+      ],
+      "bookingLink": "http://www.opentable.es/restaurant/profile/176301?lang=en-gb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3832653",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3832653",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "La Paella de Su",
+      "shortDescription": "Spanish, Mediterranean, Tapas / Small Plates",
+      "description": "Spanish, Mediterranean, Tapas / Small Plates",
+      "geoCode": {
+        "latitude": 41.397301,
+        "longitude": 2.161556
+      },
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://resizer.otstatic.com/v2/photos/wide-large/3/42113207.jpg"
+      ],
+      "bookingLink": "http://www.opentable.es/restaurant/profile/252183?lang=en-gb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3044851",
+      "self": {
+        "href": "https://api-sandbox.amadeus-discover.com/api/activity/3044851",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Casa Milà",
+      "description": "",
+      "geoCode": {
+        "latitude": 41.3952155,
+        "longitude": 2.1619024
+      },
+      "rating": "4.6",
+      "price": {},
+      "pictures": [],
+      "bookingLink": "",
+      "minimumDuration": ""
+    }
+  ],
+  "meta": {
+    "count": 17,
+    "self": "https://api-sandbox.amadeus-discover.com/api/shopping/activities?latitude=41.397158&longitude=2.160873&radius=1"
+  }
+}

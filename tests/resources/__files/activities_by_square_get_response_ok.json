@@ -1,0 +1,1490 @@
+{
+  "data": [
+    {
+      "type": "activity",
+      "id": "163599",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/163599",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Casa Milà-La Pedrera entrance ticket and audio tour",
+      "shortDescription": "<div><p><p>Explore Casa Milà (La Pedrera) with an audio tour on your phone.\n\nWith its flowing exterior and the whimsical chimney pots on its roof, Casa Milà – known locally as La Pedrera – represents Gaudí at the top of his game. The ornate interior is also the handiwork of the great Catalan architect. Skip the line and get right into this modernist masterpiece.\n\nGaudí designed Casa Milà for the wealthy businessman Pere Milà and his wife. It&#39;s the architect&#39;s final residential building in Barcelona. It&#39;s the only building in the city that offers a comprehensive overview of this architectural genius.\n\nCasa Milà features a museum, the reproduction of an early 20th-century apartment (El Pis de la Pedrera), an exhibition of Gaudí­&#39;s work in the attic, and the grand roof terrace.</p></p></div>",
+      "description": "<div><p><p>Explore Casa Milà (La Pedrera) with an audio tour on your phone.\n\nWith its flowing exterior and the whimsical chimney pots on its roof, Casa Milà – known locally as La Pedrera – represents Gaudí at the top of his game. The ornate interior is also the handiwork of the great Catalan architect. Skip the line and get right into this modernist masterpiece.\n\nGaudí designed Casa Milà for the wealthy businessman Pere Milà and his wife. It&#39;s the architect&#39;s final residential building in Barcelona. It&#39;s the only building in the city that offers a comprehensive overview of this architectural genius.\n\nCasa Milà features a museum, the reproduction of an early 20th-century apartment (El Pis de la Pedrera), an exhibition of Gaudí­&#39;s work in the attic, and the grand roof terrace.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3951814,
+        "longitude": 2.1617077
+      },
+      "price": {
+        "amount": "51.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzA2NTIzOWVhLWIwOWQtNDQ2Yi04MDA1LTFmMmFmOTY2ZTgyZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/57fdde40-ef3b-4192-805d-622a77618c41",
+      "minimumDuration": "1 hour 30 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "3507350",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/3507350",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Guided tour “Love stories of Barcelona\"",
+      "shortDescription": "<div><p><p>An exclusive tour for all the romantics of the world! Together with the professional local guide, you will visit the most romantic places in the city. You will feel spellbound in a charming atmosphere. What is considered as one of the best places to have a date in the city? Where can you make lovely photos? You will be surprised how many historical love stories are hidden in the streets, buildings, parks of the city. From heartbreaking and tragic, to the hilarious or spicy ones. What could make your stay even more perfect for a romantic escape? What so special about the neighborhood of El Born? This tour is especially recommended in the Saint Valentine period!</p></p></div>",
+      "description": "<div><p><p>An exclusive tour for all the romantics of the world! Together with the professional local guide, you will visit the most romantic places in the city. You will feel spellbound in a charming atmosphere. What is considered as one of the best places to have a date in the city? Where can you make lovely photos? You will be surprised how many historical love stories are hidden in the streets, buildings, parks of the city. From heartbreaking and tragic, to the hilarious or spicy ones. What could make your stay even more perfect for a romantic escape? What so special about the neighborhood of El Born? This tour is especially recommended in the Saint Valentine period!</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3952144,
+        "longitude": 2.1616748
+      },
+      "price": {
+        "amount": "500.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzBlMmQ4ZjY5LWVhZGYtNDBkMC04ZDgyLWEwYzcxMzg2YmYwYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/356ef7a0-453c-4016-a38b-4009e6f7394a",
+      "minimumDuration": "2 hours"
+    },
+    {
+      "type": "activity",
+      "id": "162637",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/162637",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "MACBA - Barcelona Museum of Contemporary Art tickets",
+      "shortDescription": "<div><p><p>Located in the centre of Barcelona’s historic old town, the MACBA has more than 20,000 square metres of floor space showcasing contemporary creativity. The programme explores the visual arts, performance, dance, film, music, events and includes pioneering educational activities.\n\nThe MACBA&#39;s programme of events explores the most complex visions of contemporary art in a space that is open to the exchange of ideas and experimentation set out around a landmark cultural plaza that includes a Gothic chapel and the iconic museum building designed by Richard Meier.\n\nExperiment with new ways of experiencing contemporary art. The Touch Artspace, daily tours are included in the admission price, and the augmented reality app will make your visit a memorable experience.</p></p></div>",
+      "description": "<div><p><p>Located in the centre of Barcelona’s historic old town, the MACBA has more than 20,000 square metres of floor space showcasing contemporary creativity. The programme explores the visual arts, performance, dance, film, music, events and includes pioneering educational activities.\n\nThe MACBA&#39;s programme of events explores the most complex visions of contemporary art in a space that is open to the exchange of ideas and experimentation set out around a landmark cultural plaza that includes a Gothic chapel and the iconic museum building designed by Richard Meier.\n\nExperiment with new ways of experiencing contemporary art. The Touch Artspace, daily tours are included in the admission price, and the augmented reality app will make your visit a memorable experience.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "11.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzcwNDI3ZWY4LWZiZWMtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/4fabc5dc-264d-4d3e-8051-fb4d6b149ab3",
+      "minimumDuration": "2 hours"
+    },
+    {
+      "type": "activity",
+      "id": "1469049",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1469049",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "La Pedrera Premium: Skip The Line & Open Date",
+      "shortDescription": "<div><div><p>Do you want to visit Casa Milà – La Pedrera during the daytime? Not sure which day, or when? This Premium admission ticket is for you!\r</p><p>\r</p><p>Skip the long queues and get to the good stuff via a special door on Passeig de Gràcia, reserved for Premium visitors only. Your guide will be waiting to escort you directly to the lift that will take you up to the Warrior Rooftop.\r</p><p>\r</p><p>The 360° views of Barcelona are a great way to start your audio tour of Gaudí&#39;s natural masterpiece, La Pedrera.</p></div></div>",
+      "description": "<div><div><p>Do you want to visit Casa Milà – La Pedrera during the daytime? Not sure which day, or when? This Premium admission ticket is for you!\r</p><p>\r</p><p>Skip the long queues and get to the good stuff via a special door on Passeig de Gràcia, reserved for Premium visitors only. Your guide will be waiting to escort you directly to the lift that will take you up to the Warrior Rooftop.\r</p><p>\r</p><p>The 360° views of Barcelona are a great way to start your audio tour of Gaudí&#39;s natural masterpiece, La Pedrera.</p></div></div>",
+      "geoCode": {
+        "latitude": 41.395359,
+        "longitude": 2.1619529
+      },
+      "price": {
+        "amount": "35.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAwZjVjN2ViLWNjOTItNGE4ZC04MmUwLTEzNmEwOTI5M2FjNSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/9bb36398-cc82-4b98-93ae-b6be323f0389",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "159603",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/159603",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "The Hidden Pedrera guided tour",
+      "shortDescription": "<div><p><p>Visit Casa Milà, popularly known as La Pedrera, a building that is a reference point in world architecture. This tour will allow you to visit some spaces that are normally closed to the public.</p><p>On this visit, you will discover the various areas of La Pedrera and explore its secrets. Enjoy a different experience and full of anecdotes that will allow you to visit this building inspired by nature from another perspective.</p></p></div>",
+      "description": "<div><p><p>Visit Casa Milà, popularly known as La Pedrera, a building that is a reference point in world architecture. This tour will allow you to visit some spaces that are normally closed to the public.</p><p>On this visit, you will discover the various areas of La Pedrera and explore its secrets. Enjoy a different experience and full of anecdotes that will allow you to visit this building inspired by nature from another perspective.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3954329,
+        "longitude": 2.1619855
+      },
+      "price": {
+        "amount": "28.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2E3ZmRlZDA2LWUzN2YtMTFlYi04MThhLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/f5da2395-c424-4549-a09d-614c925a1e64",
+      "minimumDuration": "1 hour 30 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "1525319",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1525319",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Luggage storage in Barcelona",
+      "shortDescription": "<div><p><p>Whether is your first or last day in Barcelona, enjoy your day hand free! Get your tickets and store your luggage in the location most suitable for you so you can discover the city without any stress.</p></p></div>",
+      "description": "<div><p><p>Whether is your first or last day in Barcelona, enjoy your day hand free! Get your tickets and store your luggage in the location most suitable for you so you can discover the city without any stress.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "7.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzM5ZTEwMGE3LTEzY2UtNGJlOC05ZWY3LWU3Njc5ZmI4M2FhMCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/de3c730d-deea-4744-a11b-1cf8a749c21c",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "159769",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/159769",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "La Pedrera: Night Experience",
+      "shortDescription": "<div><div><p>Enter The Casa Milà, also known as &#39;La Pedrera&#39;, at nightfall and watch it transform with natural imagery in an incredible audiovisual display on the rooftop! Another singular and spectacular building from Antoni Gaudí - the visionary Catalan architect.</p></div></div>",
+      "description": "<div><div><p>Enter The Casa Milà, also known as &#39;La Pedrera&#39;, at nightfall and watch it transform with natural imagery in an incredible audiovisual display on the rooftop! Another singular and spectacular building from Antoni Gaudí - the visionary Catalan architect.</p></div></div>",
+      "geoCode": {
+        "latitude": 41.395359,
+        "longitude": 2.1619529
+      },
+      "price": {
+        "amount": "35.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzg1NWZmODQzLWM0MjAtNDc1MC1hYWFhLTBmZGFmNjVkODYxNyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/633b4144-df75-42bd-b78c-1543c2d6fb9a",
+      "minimumDuration": "1 hour 30 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "159951",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/159951",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Guided tour to Barcelona's photogenic places with a local",
+      "shortDescription": "<div><p><p>Explore Barcelona&#39;s photogenic places on a guided tour provided by a private local and enjoy taking marvelous photos.</p><p>Join a local from Barcelona on this city walk for the unique opportunity of experiencing the city from an insider’s point of view and taking stunning pictures of it at the same time! Your walk will take you from Gaudí’s masterworks to the old Gothic Quarter. While using your camera to capture the beauty of Barcelona, you will also come across local spots and hidden gems that a typical tourist tour won’t show you. Discover an alternative side of Barcelona, full of history and unique beauty.</p><p>Once you reach the statue of Columbus, you can continue walking at the seaside to take amazing photos in either direction, including shots of the impressive Hotel W Barcelona!</p></p></div>",
+      "description": "<div><p><p>Explore Barcelona&#39;s photogenic places on a guided tour provided by a private local and enjoy taking marvelous photos.</p><p>Join a local from Barcelona on this city walk for the unique opportunity of experiencing the city from an insider’s point of view and taking stunning pictures of it at the same time! Your walk will take you from Gaudí’s masterworks to the old Gothic Quarter. While using your camera to capture the beauty of Barcelona, you will also come across local spots and hidden gems that a typical tourist tour won’t show you. Discover an alternative side of Barcelona, full of history and unique beauty.</p><p>Once you reach the statue of Columbus, you can continue walking at the seaside to take amazing photos in either direction, including shots of the impressive Hotel W Barcelona!</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3952155,
+        "longitude": 2.1619024
+      },
+      "price": {
+        "amount": "65.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2FhZWEwM2VkLTg4NjEtNDY4Mi1hNTUxLTc1ODgwYTE4MTQ5MCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/f0914415-9ab0-4200-bdb9-eb3c31d8401f",
+      "minimumDuration": "2 hours"
+    },
+    {
+      "type": "activity",
+      "id": "162975",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/162975",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "La Pedrera skip-the-line tickets with audio guide",
+      "shortDescription": "<div><p><p>Visit Casa Milà, popularly known as La Pedrera, a building that is a reference point in world architecture. This tour will allow you to understand and gain a deep knowledge of Antoni Gaudí&#39;s last civic work and more!</p><p>On this visit, you will see the various museum areas such as the Espai Gaudí and the Pedrera Apartment; together with the Provença and Passeig de Gràcia Courtyard, the Exhibition Room and the roof-terrace.</p><p>In the attic of the Espai Gaudí, you are able to see a broad view of the artist&#39;s works, showing the most basic traits of his clearly visual and empirical way of understanding architecture through models, audiovisuals, and objects. The route around the space is divided into seven areas, one of which is devoted entirely to La Pedrera. The Pedrera Apartment recreates the home and life of a Barcelona bourgeois family, of the first third of the twentieth century. It is also possible to visit the former residence of the Milà family, which houses the Temporary Exhibition Room, as long as there is an exhibition.</p><p>A total of 4,500 sq meters can be visited, spread over five floors. The only areas that cannot be visited are the private homes and offices that remain in the building.</p></p></div>",
+      "description": "<div><p><p>Visit Casa Milà, popularly known as La Pedrera, a building that is a reference point in world architecture. This tour will allow you to understand and gain a deep knowledge of Antoni Gaudí&#39;s last civic work and more!</p><p>On this visit, you will see the various museum areas such as the Espai Gaudí and the Pedrera Apartment; together with the Provença and Passeig de Gràcia Courtyard, the Exhibition Room and the roof-terrace.</p><p>In the attic of the Espai Gaudí, you are able to see a broad view of the artist&#39;s works, showing the most basic traits of his clearly visual and empirical way of understanding architecture through models, audiovisuals, and objects. The route around the space is divided into seven areas, one of which is devoted entirely to La Pedrera. The Pedrera Apartment recreates the home and life of a Barcelona bourgeois family, of the first third of the twentieth century. It is also possible to visit the former residence of the Milà family, which houses the Temporary Exhibition Room, as long as there is an exhibition.</p><p>A total of 4,500 sq meters can be visited, spread over five floors. The only areas that cannot be visited are the private homes and offices that remain in the building.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3954329,
+        "longitude": 2.1619855
+      },
+      "price": {
+        "amount": "25.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQyNTM1MWY0LWUzN2QtMTFlYi04MThhLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/fc0ca267-1bba-4a56-b94a-2cd02b915f84",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "1483128",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1483128",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Casa Batlló and La Pedrera skip-the-line tickets and guided visit",
+      "shortDescription": "<div><p><p>Meet your guide in one of the most popular areas of Barcelona, the Eixample, which means enlargement. That is the name of the urban project made by the Catalan architect Ildefons Cerdà to enlarge the extension of the city outside the ancient city walls and in consequence get better healthy conditions.</p><p>Passeig the Gracia Street is one of the most important avenues in Barcelona, where apart from prestigious brands shops you can find modernists buildings. At the beginning of the 19th century Passeig the Gracia became the main residential area for the bourgeoisie, who were main commitments of some important modernist architects such as: Gauí, Puig i Cadafalch, Domènech i Montaner or Sagnier. During the tour we will visit two great examples of domestic architecture from Antoni Gaudí. The explanations will be always put in context with the history of Barcelona and in parallel to other works from important modernist architects.\n\nAt the end of the tour the guide will give you the tickets to visit la Pedrera, Casa Batlló or both buildings.</p></p></div>",
+      "description": "<div><p><p>Meet your guide in one of the most popular areas of Barcelona, the Eixample, which means enlargement. That is the name of the urban project made by the Catalan architect Ildefons Cerdà to enlarge the extension of the city outside the ancient city walls and in consequence get better healthy conditions.</p><p>Passeig the Gracia Street is one of the most important avenues in Barcelona, where apart from prestigious brands shops you can find modernists buildings. At the beginning of the 19th century Passeig the Gracia became the main residential area for the bourgeoisie, who were main commitments of some important modernist architects such as: Gauí, Puig i Cadafalch, Domènech i Montaner or Sagnier. During the tour we will visit two great examples of domestic architecture from Antoni Gaudí. The explanations will be always put in context with the history of Barcelona and in parallel to other works from important modernist architects.\n\nAt the end of the tour the guide will give you the tickets to visit la Pedrera, Casa Batlló or both buildings.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3952155,
+        "longitude": 2.1619024
+      },
+      "price": {
+        "amount": "55.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU2NzhjNzg4LWZjYWUtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/af049d2d-4705-423d-a42d-3c27b47f122e",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "159991",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/159991",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Visit to the Monastery of Sant Benet de Bages with audioguide",
+      "shortDescription": "<div><p><p>Món Sant Benet is a unique cultural and leisure project. This unparalleled complex boasts the medieval monastery of Sant Benet just a few meters away from an innovative international culinary research center (Alicia Foundation), three restaurants, traditional shops ... all in a unique natural environment.</p><p>We invite you to travel in time and discover life in a monastery where the voices, everyday sounds and images of the past appear within thousand-year-old walls, making the tour a unique experience. You will visit the most emblematic parts of the monastery including the church, the cloister, the cellar and the cells of the Montserrat gallery, allowing you to get inside the skin of the monastery’s inhabitants.</p></p></div>",
+      "description": "<div><p><p>Món Sant Benet is a unique cultural and leisure project. This unparalleled complex boasts the medieval monastery of Sant Benet just a few meters away from an innovative international culinary research center (Alicia Foundation), three restaurants, traditional shops ... all in a unique natural environment.</p><p>We invite you to travel in time and discover life in a monastery where the voices, everyday sounds and images of the past appear within thousand-year-old walls, making the tour a unique experience. You will visit the most emblematic parts of the monastery including the church, the cloister, the cellar and the cells of the Montserrat gallery, allowing you to get inside the skin of the monastery’s inhabitants.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "14.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzU2OTM0MmVkLWZjYjAtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/1c5bfdf8-c402-4fd1-be5d-10beaadb96f7",
+      "minimumDuration": "1 hour 15 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "1745947",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1745947",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Feel like Gaudí: Barcelona mosaic workshop with guided city tour",
+      "shortDescription": "<div><p><p>Discover Barcelona’s architecture during a guided walking tour and have fun participating in a mosaic workshop.</p><p>Join a 2-hours guided walking tour and find out more about Modernism and the famous Catalan architect Gaudì. Learn more about Medieval histories and legends that inspired Gaudì when designing the buildings on Passeig de Gracia. Find out why there is a dragon on the rooftop and why a bat was decisive in a battle. See Casa Mila, Gaudì’s most famous work, and marvel at the building’s façade. Then, admire Gaudì’s Casa Batllo and learn more about the Manzana de la Discordia. See the Modernism gem Palau de la Musica Catalana and end the walking tour in the medieval quarter of El Born.</p><p>Participate in a 1-hour mosaic workshop in the historic center. Find out more about the mosaic art named “Trencadís”, and learn the basics and the handling of tools. Create your own masterpiece in Gaudì’s mosaic style.</p></p></div>",
+      "description": "<div><p><p>Discover Barcelona’s architecture during a guided walking tour and have fun participating in a mosaic workshop.</p><p>Join a 2-hours guided walking tour and find out more about Modernism and the famous Catalan architect Gaudì. Learn more about Medieval histories and legends that inspired Gaudì when designing the buildings on Passeig de Gracia. Find out why there is a dragon on the rooftop and why a bat was decisive in a battle. See Casa Mila, Gaudì’s most famous work, and marvel at the building’s façade. Then, admire Gaudì’s Casa Batllo and learn more about the Manzana de la Discordia. See the Modernism gem Palau de la Musica Catalana and end the walking tour in the medieval quarter of El Born.</p><p>Participate in a 1-hour mosaic workshop in the historic center. Find out more about the mosaic art named “Trencadís”, and learn the basics and the handling of tools. Create your own masterpiece in Gaudì’s mosaic style.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.394952,
+        "longitude": 2.162075
+      },
+      "price": {
+        "amount": "61.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzBiOGFkNDA0LTU0NzAtNGNlNS1iYzRkLWE5ODhlMDIzNmJmNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/0629cbad-1592-48c0-aa1f-ed054ed047d2",
+      "minimumDuration": "3 hours"
+    },
+    {
+      "type": "activity",
+      "id": "163236",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/163236",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Girona and Dali Museum in Figueres private tour from Barcelona",
+      "shortDescription": "<div><p><p>Leave the hustle and bustle of Barcelona behind and travel back in time to discover the medieval city of Girona. Walk through the defensive walls of the city to enjoy great bird’s eye views of the surrounding area. Visit the best-preserved Jewish Quarter of Europe and marvel at the Gothic Cathedral, famous for having the world’s widest Gothic nave.\nContinue to Dali’s hometown, travel to Figueres to visit the Dali Theatre-Museum, the largest surrealist object in the world and a present that Dali himself wanted to leave to his city.</p></p></div>",
+      "description": "<div><p><p>Leave the hustle and bustle of Barcelona behind and travel back in time to discover the medieval city of Girona. Walk through the defensive walls of the city to enjoy great bird’s eye views of the surrounding area. Visit the best-preserved Jewish Quarter of Europe and marvel at the Gothic Cathedral, famous for having the world’s widest Gothic nave.\nContinue to Dali’s hometown, travel to Figueres to visit the Dali Theatre-Museum, the largest surrealist object in the world and a present that Dali himself wanted to leave to his city.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "108.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2VmZjRmZjNmLWZjYWQtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/9e68f2c8-1fbc-4d89-959a-47e62b3bd216",
+      "minimumDuration": "10 hours"
+    },
+    {
+      "type": "activity",
+      "id": "160016",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/160016",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Besalú and Medieval towns private tour from Barcelona",
+      "shortDescription": "<div><p><p>Journey back in time to discover the charming medieval villages and stunning countryside outside Barcelona. Join this 4 medieval villages tour to discover the glorious past of Catalonia.</p><p>Your professional guide will show you the most important corners of the medieval city of Vic, home of the Roman Temple and the Episcopal Museum. Head to the Garrotxa Natural Park and enjoy stunning views of the volcanoes on the way to Santa Pau and Castellfollit de la Roca, a spectacular medieval town that hangs from the edge of a basalt cliff.</p><p>Discover the charming Besalú and its medieval synagogue, the crown jewel of medieval villages in Catalonia, home of the best-preserved Jewish Baths in Europe.</p></p></div>",
+      "description": "<div><p><p>Journey back in time to discover the charming medieval villages and stunning countryside outside Barcelona. Join this 4 medieval villages tour to discover the glorious past of Catalonia.</p><p>Your professional guide will show you the most important corners of the medieval city of Vic, home of the Roman Temple and the Episcopal Museum. Head to the Garrotxa Natural Park and enjoy stunning views of the volcanoes on the way to Santa Pau and Castellfollit de la Roca, a spectacular medieval town that hangs from the edge of a basalt cliff.</p><p>Discover the charming Besalú and its medieval synagogue, the crown jewel of medieval villages in Catalonia, home of the best-preserved Jewish Baths in Europe.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "90.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RjZDE5MGRmLWZjYjEtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/159f5484-6d9e-4a60-a92a-d100c08e8c2f",
+      "minimumDuration": "10 hours"
+    },
+    {
+      "type": "activity",
+      "id": "1758691",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1758691",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Unlimited Barcelona general admission tickets",
+      "shortDescription": "<div><p><p>Enjoy a 360º panoramic view of Barcelona in the best viewpoint of the city! Unlimited Barcelona is located in the Urquinaona Tower, built by the architect Antoni Bonet between 1968 and 1970.</p><p>The tower, which has 22 floors, stands out in Barcelona&#39;s landscape for its prismatic shapes and ceramic finishes. Get prepared to enjoy magnificent views of the city and to listen to your audioguide and learn about the most famous monuments and buildings of Barcelona such as Montjuïc, the Cathedral, Santa Maria del Mar, the Sagrada Familia and Tibidabo.</p></p></div>",
+      "description": "<div><p><p>Enjoy a 360º panoramic view of Barcelona in the best viewpoint of the city! Unlimited Barcelona is located in the Urquinaona Tower, built by the architect Antoni Bonet between 1968 and 1970.</p><p>The tower, which has 22 floors, stands out in Barcelona&#39;s landscape for its prismatic shapes and ceramic finishes. Get prepared to enjoy magnificent views of the city and to listen to your audioguide and learn about the most famous monuments and buildings of Barcelona such as Montjuïc, the Cathedral, Santa Maria del Mar, the Sagrada Familia and Tibidabo.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "12.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzg4YjRhYzY4LWI5NzYtNDkxYS04ZmM4LWJhYjcyMWU1MDg5OCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/6f8f03f7-c8e4-4bf6-8426-9201a355c45e",
+      "minimumDuration": "45 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "160390",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/160390",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Gaudí Houses: Access Casa Batlló and/or Casa Milà",
+      "shortDescription": "<div><p><p>Meet your guide in one of the most popular areas of Barcelona, the Eixample, which means enlargement. That is the name of the urban project made by the Catalan architect Ildefons Cerdà to enlarge the extension of the city outside the ancient city walls and in consequence get better healthy conditions.</p><p>\n</p><p>\n</p><p>Passeig the Gracia Street is one of the most important avenues in Barcelona, where apart from prestigious brands shops we can find modernists buildings. At the beginning of the XIX century Passeig the Gracia became the main residential area for the bourgeoisie, who were main commitments of some important modernist architects such as: Gauí, Puig i Cadafalch, Domènech i Montaner or Sagnier. During the tour we will visit two great examples of domestic architecture from Antoni Gaudí. The explanations will be always put in context with the history of Barcelona and in parallel to other works from important modernist architects.</p><p>\n</p><p>\n</p><p>At the end of the tour the guide will give you the tickets to visit la Pedrera, Casa Batlló or both buildings.</p></p></div>",
+      "description": "<div><p><p>Meet your guide in one of the most popular areas of Barcelona, the Eixample, which means enlargement. That is the name of the urban project made by the Catalan architect Ildefons Cerdà to enlarge the extension of the city outside the ancient city walls and in consequence get better healthy conditions.</p><p>\n</p><p>\n</p><p>Passeig the Gracia Street is one of the most important avenues in Barcelona, where apart from prestigious brands shops we can find modernists buildings. At the beginning of the XIX century Passeig the Gracia became the main residential area for the bourgeoisie, who were main commitments of some important modernist architects such as: Gauí, Puig i Cadafalch, Domènech i Montaner or Sagnier. During the tour we will visit two great examples of domestic architecture from Antoni Gaudí. The explanations will be always put in context with the history of Barcelona and in parallel to other works from important modernist architects.</p><p>\n</p><p>\n</p><p>At the end of the tour the guide will give you the tickets to visit la Pedrera, Casa Batlló or both buildings.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.395359,
+        "longitude": 2.1619529
+      },
+      "price": {
+        "amount": "55.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzJhYjBhNjBjLTYxOTctNDc4ZS1iNTdjLTFkMTRkOWEyM2Y1YyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/61a3ba95-f3ad-4f88-b511-7c56ea36f311",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "160286",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/160286",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Costa Brava Coast Path hiking and Tossa de Mar tour",
+      "shortDescription": "<div><p><p>You will start the day hiking around the famous Costa Brava “Camí de Ronda” coastal path from where you will enjoy the amazing views of the blue mediterranean sea and if there&#39;s good weather, you will be able to swim in one of the beautiful coves along the path. After the hike, you will go to Tossa de Mar to have a well-deserved Catalan traditional lunch in a local restaurant and visit this beautiful village filled with white houses. You will finish your day with a visit to St. Joan castle from where you will have a panoramic view of Blanes bay.</p></p></div>",
+      "description": "<div><p><p>You will start the day hiking around the famous Costa Brava “Camí de Ronda” coastal path from where you will enjoy the amazing views of the blue mediterranean sea and if there&#39;s good weather, you will be able to swim in one of the beautiful coves along the path. After the hike, you will go to Tossa de Mar to have a well-deserved Catalan traditional lunch in a local restaurant and visit this beautiful village filled with white houses. You will finish your day with a visit to St. Joan castle from where you will have a panoramic view of Blanes bay.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "130.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzM3Y2FhMDYzLWZjYWUtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/7f6cbe11-531e-4e8b-8441-d641a1aba2f8",
+      "minimumDuration": "9 hours"
+    },
+    {
+      "type": "activity",
+      "id": "163196",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/163196",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Barcelona love stories private guided tour",
+      "shortDescription": "<div><p><p>Join this private tour for all romantics of the world to explore the most romantic places in Barcelona together with your local guide.</p><p>Feel spellbound by the charming atmosphere of the city and visit the best places to have a date and where to take the most charming photos.</p><p>You will be surprised by the amount of historical love stories that are hidden in the streets, buildings, parks of the city. From heartbreaking and tragic, to funny or spicy ones. Discover what is special about neighborhood of El Born.</p><p>This tour is especially recommended in the Saint Valentine´s period!</p></p></div>",
+      "description": "<div><p><p>Join this private tour for all romantics of the world to explore the most romantic places in Barcelona together with your local guide.</p><p>Feel spellbound by the charming atmosphere of the city and visit the best places to have a date and where to take the most charming photos.</p><p>You will be surprised by the amount of historical love stories that are hidden in the streets, buildings, parks of the city. From heartbreaking and tragic, to funny or spicy ones. Discover what is special about neighborhood of El Born.</p><p>This tour is especially recommended in the Saint Valentine´s period!</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3952561,
+        "longitude": 2.1617607
+      },
+      "price": {
+        "amount": "27.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE4Y2JkZWNiLTRkYmQtNDU1YS05OTljLTE3MThlOWVjODc1ZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/bd3b0e92-ab42-4870-ab60-c496270b3242",
+      "minimumDuration": "2 hours"
+    },
+    {
+      "type": "activity",
+      "id": "160446",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/160446",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Barcelona wine and tapas tour",
+      "shortDescription": "<div><p><p>This evening tapas tour of Barcelona takes place in the elegant district of Eixample, the heart of Modernism and neo-classical buildings. You&#39;ll visit a very small group of tapas bodegas, wine bars, and fine dining restaurants that are serving some of the best tapas hot and cold appetizers and snacks in Barcelona.</p><p>The first stop takes place in a traditional bar/restaurant, very well-known by the people of Barcelona for its good atmosphere. This is where you will start your tour with a few appetizers and fresh, local white wine. You will become familiar with the basics of the local culture’s approach to dining. At our second stop, you’ll continue enjoying tapas, with a focus on organic food and wines, at a superb little place recognized for its products labeled “Km 0” (produced less than 100km away). Fresh, natural, local and so typical.</p><p>The third and last stop is a high-end restaurant. Winner of the Best Young Catalan chef award, the last stop restaurant is a supreme and culminating moment on our food &amp; wine tour in a must-see restaurant. You will enjoy tasty sophisticated small plates prepared just for you, including the best fresh local foods, seasonal meals, and wine pairings. With no doubt a serious candidate for the Michelin Star and a true culinary adventure for foodies.</p></p></div>",
+      "description": "<div><p><p>This evening tapas tour of Barcelona takes place in the elegant district of Eixample, the heart of Modernism and neo-classical buildings. You&#39;ll visit a very small group of tapas bodegas, wine bars, and fine dining restaurants that are serving some of the best tapas hot and cold appetizers and snacks in Barcelona.</p><p>The first stop takes place in a traditional bar/restaurant, very well-known by the people of Barcelona for its good atmosphere. This is where you will start your tour with a few appetizers and fresh, local white wine. You will become familiar with the basics of the local culture’s approach to dining. At our second stop, you’ll continue enjoying tapas, with a focus on organic food and wines, at a superb little place recognized for its products labeled “Km 0” (produced less than 100km away). Fresh, natural, local and so typical.</p><p>The third and last stop is a high-end restaurant. Winner of the Best Young Catalan chef award, the last stop restaurant is a supreme and culminating moment on our food &amp; wine tour in a must-see restaurant. You will enjoy tasty sophisticated small plates prepared just for you, including the best fresh local foods, seasonal meals, and wine pairings. With no doubt a serious candidate for the Michelin Star and a true culinary adventure for foodies.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3952144,
+        "longitude": 2.1616748
+      },
+      "price": {
+        "amount": "110.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Q4ZjAwNjlhLWZjYjctMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/d75bd906-5394-4703-a6f8-d41cbbcf9daf",
+      "minimumDuration": "4 hours"
+    },
+    {
+      "type": "activity",
+      "id": "160284",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/160284",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Palau Baró de Quadras: Guided Tour",
+      "shortDescription": "<div><div><p>Join your guide for a private tour of Palau Baró de Quadras, one of the finest examples of Catalan Modernism. Tour the beautiful insides, designed in the style of a gothic Catalan palace!</p></div></div>",
+      "description": "<div><div><p>Join your guide for a private tour of Palau Baró de Quadras, one of the finest examples of Catalan Modernism. Tour the beautiful insides, designed in the style of a gothic Catalan palace!</p></div></div>",
+      "geoCode": {
+        "latitude": 41.3967565,
+        "longitude": 2.1613672
+      },
+      "price": {
+        "amount": "12.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2M5NzU2Y2VkLTk2YzMtNDY2Mi1hNWUxLTFiMzY1NzM0MTgzZCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/7138b47a-4258-4578-b46e-3f01b4c78f24",
+      "minimumDuration": "1 hour"
+    },
+    {
+      "type": "activity",
+      "id": "160664",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/160664",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Game of Thrones private tour through Medieval Girona",
+      "shortDescription": "<div><p><p>Make your dreams come true and live the scenes of your favorite Game of Thrones actors. Join this walking tour of the spots of Girona where the famous TV-series was filmed. Explore the medieval city through Tyrion Lannister’s eyes. Follow your guide on the footsteps of the Lannisters and the Starks and walk on the same stairs and bridges, as Ayra, Sansa and Joffrey.</p><p>Escape from the hustle and bustle of Barcelona traveling back in time and diving into the medieval city of Girona. Walk through the best-preserved Jewish Quarter of Europe and marvel at the Medieval walls or other beautiful places of the city.</p></p></div>",
+      "description": "<div><p><p>Make your dreams come true and live the scenes of your favorite Game of Thrones actors. Join this walking tour of the spots of Girona where the famous TV-series was filmed. Explore the medieval city through Tyrion Lannister’s eyes. Follow your guide on the footsteps of the Lannisters and the Starks and walk on the same stairs and bridges, as Ayra, Sansa and Joffrey.</p><p>Escape from the hustle and bustle of Barcelona traveling back in time and diving into the medieval city of Girona. Walk through the best-preserved Jewish Quarter of Europe and marvel at the Medieval walls or other beautiful places of the city.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "90.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2U5MGU1ZmJlLWZiZWYtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/81664eb7-f001-47e1-b712-84544dca49ef",
+      "minimumDuration": "5 hours"
+    },
+    {
+      "type": "activity",
+      "id": "1941055",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1941055",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Breakfast winery experience and wine tour from Barcelona",
+      "shortDescription": "<div><p><p>Enjoy the opportunity to have an excellent Catalan breakfast in Alella’s vineyards, where you’ll also have great views of Barcelona and the coastline!</p><p>This experience also includes a visit to the winery which will give you the opportunity to visit a typical Catalan farmhouse and wander through the organic vineyards in its unique environment.</p><p>You will enjoy a tasty breakfast of <em>pa amb tomaquet</em> (a typical Catalan bruschetta), cheeses and cold meat with a wine-tasting in the garden of the 14th-century farmhouse<em>.</em></p><p>Your guide will come and pick you up at your hotel, more or less at 9.00am. You will make your way to the winery, located in Alella. You will start your journey with a welcome and you will begin to enjoy the fantastic landscape where the organic vineyards are located as well as the views of Barcelona and the coastline. As you stroll through the premises, your tour guide will introduce you to the winery, surrounded by vineyards, the beautiful 14th-century farmhouse, all near the town of Alella. Here is a place where traditional winemaking techniques coexist with the latest techniques to produce small quantities of quality organic wines with great qualities.\n\nAfter the tour, you will have the opportunity to taste a Catalan breakfast with wine tasting in the gardens. Once you have enjoyed and learnt all about the wines will make our way back to Barcelona.</p></p></div>",
+      "description": "<div><p><p>Enjoy the opportunity to have an excellent Catalan breakfast in Alella’s vineyards, where you’ll also have great views of Barcelona and the coastline!</p><p>This experience also includes a visit to the winery which will give you the opportunity to visit a typical Catalan farmhouse and wander through the organic vineyards in its unique environment.</p><p>You will enjoy a tasty breakfast of <em>pa amb tomaquet</em> (a typical Catalan bruschetta), cheeses and cold meat with a wine-tasting in the garden of the 14th-century farmhouse<em>.</em></p><p>Your guide will come and pick you up at your hotel, more or less at 9.00am. You will make your way to the winery, located in Alella. You will start your journey with a welcome and you will begin to enjoy the fantastic landscape where the organic vineyards are located as well as the views of Barcelona and the coastline. As you stroll through the premises, your tour guide will introduce you to the winery, surrounded by vineyards, the beautiful 14th-century farmhouse, all near the town of Alella. Here is a place where traditional winemaking techniques coexist with the latest techniques to produce small quantities of quality organic wines with great qualities.\n\nAfter the tour, you will have the opportunity to taste a Catalan breakfast with wine tasting in the gardens. Once you have enjoyed and learnt all about the wines will make our way back to Barcelona.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "99.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzc1MjVkZmI2LWZjYjUtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/e05421fa-adfb-44e2-98b8-9cc60077afe5",
+      "minimumDuration": "4 hours"
+    },
+    {
+      "type": "activity",
+      "id": "160926",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/160926",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "La Pedrera Essential: Skip The Line + Audio Guide",
+      "shortDescription": "<div><div><p>With its flowing exterior and the whimsical chimney pots on its roof, Casa Milà – known locally as La Pedrera – represents Gaudí at the top of his game. The ornate interior is also the handiwork of the great Catalan architect. Avoid burning up in Barcelona&#39;s daytime heat and get right into this modernist masterpiece, with Casa Milà skip-the-line tickets.</p></div></div>",
+      "description": "<div><div><p>With its flowing exterior and the whimsical chimney pots on its roof, Casa Milà – known locally as La Pedrera – represents Gaudí at the top of his game. The ornate interior is also the handiwork of the great Catalan architect. Avoid burning up in Barcelona&#39;s daytime heat and get right into this modernist masterpiece, with Casa Milà skip-the-line tickets.</p></div></div>",
+      "geoCode": {
+        "latitude": 41.395359,
+        "longitude": 2.1619529
+      },
+      "price": {
+        "amount": "25.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE2MTI2OWEyLTIyY2EtNGMwOS1hYWVlLTdiYjQ2ODY5MDYzNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/138d0032-bf8c-4110-88f5-5608b9ac56db",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "3507970",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/3507970",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "La Pedrera: Exclusive Morning Access",
+      "shortDescription": "<div><div><p>Get your Gaudí on with an exclusive early morning tour of his masterpiece _La Pedrera_. Explore the ornate interior of Casa Milà, see the rooftop with its famed chimneys and the attic&#39;s Espai Gaudí exhibition.</p></div></div>",
+      "description": "<div><div><p>Get your Gaudí on with an exclusive early morning tour of his masterpiece _La Pedrera_. Explore the ornate interior of Casa Milà, see the rooftop with its famed chimneys and the attic&#39;s Espai Gaudí exhibition.</p></div></div>",
+      "geoCode": {
+        "latitude": 41.395359,
+        "longitude": 2.1619529
+      },
+      "price": {
+        "amount": "39.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzI5MWU3MjRhLTUyMjUtNDA5OS05ODIwLTVmYjBkYzIzNGM4YSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/7964c6c0-061d-49be-b5f1-273fabbc9885",
+      "minimumDuration": "1 hour 15 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "1523988",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1523988",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Barcelona audio guide with TravelMate app",
+      "shortDescription": "<div><p><p>Book your Barcelona audio guide with TravelMate app and explore the city at your own pace but as if you have a personal guide at your side pointing out the highlights along the way. Hear curious facts and stories narrated by local experts in your own language.</p><p>Enjoy total immersion in the atmosphere of Barcelona as your audio guide takes you through the iconic streets and monuments of this vibrant city. Don&#39;t miss anything thanks to rich audio content created by top authors and interpreted by TV and radio professionals.</p></p></div>",
+      "description": "<div><p><p>Book your Barcelona audio guide with TravelMate app and explore the city at your own pace but as if you have a personal guide at your side pointing out the highlights along the way. Hear curious facts and stories narrated by local experts in your own language.</p><p>Enjoy total immersion in the atmosphere of Barcelona as your audio guide takes you through the iconic streets and monuments of this vibrant city. Don&#39;t miss anything thanks to rich audio content created by top authors and interpreted by TV and radio professionals.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "7.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzA1OWMzMGYyLWY2M2ItNGMzYS1hMmM4LWM2M2VjNTI5OGNhNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/ac84d2ab-14bf-4df2-aee1-e11d9a305ad2",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "1788149",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1788149",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Barcelona hop-on hop-off bus tour with eco catamaran cruise",
+      "shortDescription": "<div><p><p>Get ready to discover Barcelona from a different point of view. With your ticket, you&#39;ll explore the city on a comfortable double-decker bus and enjoy a 1-hour tour on an eco-catamaran. Don&#39;t miss the chance to hop on and hop off as many times as you wish and enjoy the city at your leisure.</p><p><strong>Hop-on Hop-off bus itinerary:</strong></p><ul><li><strong>West Route (orange line):</strong> Plaça Catalunya, Arc de Triomf, El Born-Ciutadella-Zoo, Passeig Colom, World Trade Center, Jardins de Miramar, Fundació Joan Miró, Anella Olímpica, MNAC Museo Nacional de Catalunya, Poble Espanyol, Caixa Fòrum-Pavelló Mies Van Der Rohe, Plaça d’Espanya, Estació de Sants, Camp Nou (FC Barcelona), Plaça Pius XII-Palau Reial-Pavellons Guell-Monestir de Pedralbes, Illa Diagonal, Av. Diagonal, La Pedrera, Casa Batlló.</li><li><strong>East Route (green line):</strong> Plaça Catalunya, Catedral-Barri Gòtic, Port Vell, Museu d’Història de Catalunya, Barceloneta, Port Olímpic, Platja de Bogatell*, Nova Mar Bella*, Forum*, Glòries-Torre Agbar, Sagrada Familia, Recinte Modernista de Sant Pau, Park Güell, Tibidabo, La Pedrera and Casa Batlló.</li></ul><p>Make the most of your ticket and enjoy a 1-hour catamaran cruise along the coast of Barcelona Coast. Leaving Port Vell, you&#39;ll admire monuments such as the World Trade Center and the largest yachts in the city. Relax and enjoy a unique perspective of the city skyline while you relish the bar service with BIO options onboard.</p></p></div>",
+      "description": "<div><p><p>Get ready to discover Barcelona from a different point of view. With your ticket, you&#39;ll explore the city on a comfortable double-decker bus and enjoy a 1-hour tour on an eco-catamaran. Don&#39;t miss the chance to hop on and hop off as many times as you wish and enjoy the city at your leisure.</p><p><strong>Hop-on Hop-off bus itinerary:</strong></p><ul><li><strong>West Route (orange line):</strong> Plaça Catalunya, Arc de Triomf, El Born-Ciutadella-Zoo, Passeig Colom, World Trade Center, Jardins de Miramar, Fundació Joan Miró, Anella Olímpica, MNAC Museo Nacional de Catalunya, Poble Espanyol, Caixa Fòrum-Pavelló Mies Van Der Rohe, Plaça d’Espanya, Estació de Sants, Camp Nou (FC Barcelona), Plaça Pius XII-Palau Reial-Pavellons Guell-Monestir de Pedralbes, Illa Diagonal, Av. Diagonal, La Pedrera, Casa Batlló.</li><li><strong>East Route (green line):</strong> Plaça Catalunya, Catedral-Barri Gòtic, Port Vell, Museu d’Història de Catalunya, Barceloneta, Port Olímpic, Platja de Bogatell*, Nova Mar Bella*, Forum*, Glòries-Torre Agbar, Sagrada Familia, Recinte Modernista de Sant Pau, Park Güell, Tibidabo, La Pedrera and Casa Batlló.</li></ul><p>Make the most of your ticket and enjoy a 1-hour catamaran cruise along the coast of Barcelona Coast. Leaving Port Vell, you&#39;ll admire monuments such as the World Trade Center and the largest yachts in the city. Relax and enjoy a unique perspective of the city skyline while you relish the bar service with BIO options onboard.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "42.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAwMzJlZTI4LTc1NTEtNGQ4MC1iNjczLTBmMTI2YzFhOTgyYyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/c4871753-171d-430f-9ac1-a17f69b3bb50",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "157459",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/157459",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "La Pedrera Premium open tickets with audioguide",
+      "shortDescription": "<div><p><p>A visit with no queues to visit Casa Milà, popularly known as La Pedrera, a building located in the middle of the Eixample and the last private residence designed by architect Antoni Gaudí</p><p>You can visit this masterpiece on whatever day you want, at whatever time you like (within the opening hours of the building by day) and you don’t even need to let the museum know, with no queues or waiting, of course, just as you deserve.</p><p>As a Premium visitor, you will receive a unique visual guide of La Pedrera.</p><p>The tour includes the following areas: Buttlerfly and Flower Courtyard, Warrior Rooftop, Whale Attic (Gaudí Exhibition), Tenants’ Apartment and Milà Family’s Apartment (Art Exhibition).</p></p></div>",
+      "description": "<div><p><p>A visit with no queues to visit Casa Milà, popularly known as La Pedrera, a building located in the middle of the Eixample and the last private residence designed by architect Antoni Gaudí</p><p>You can visit this masterpiece on whatever day you want, at whatever time you like (within the opening hours of the building by day) and you don’t even need to let the museum know, with no queues or waiting, of course, just as you deserve.</p><p>As a Premium visitor, you will receive a unique visual guide of La Pedrera.</p><p>The tour includes the following areas: Buttlerfly and Flower Courtyard, Warrior Rooftop, Whale Attic (Gaudí Exhibition), Tenants’ Apartment and Milà Family’s Apartment (Art Exhibition).</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3954329,
+        "longitude": 2.1619855
+      },
+      "price": {
+        "amount": "32.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2IxMDdhNjUyLWUxMjQtMTFlYi04MThhLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/ed5a3056-96a2-4938-b7b9-928b1fcf3607",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "160776",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/160776",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "La Pedrera night experience",
+      "shortDescription": "<div><p><p>A spectacular night-time experience that will amaze everyone. Live an absolutely unique immersive experience, full of surprises, set in one of Barcelona’s most emblematic buildings, that will allow you to understand Antoni Gaudí and his masterpiece.</p><p>Gaudí believed that nature is like a large open book; one we should make the effort to read and interpret. With this tour, you will experience an unforgettable journey through different areas of the building: Passeig de Gràcia and Provença Courtyards, Espai Gaudí (the attic) and the Roof Terrace (The Apartment not included), in which the highlight will be a video mapping on the roof terrace of La Pedrera. Enjoy a magnificent audiovisual show which will allow you to experience a truly unforgettable journey learning about the origins, life, and essence of Gaudí’s architecture. The show will be accompanied by multiple projections on the &#39;<em>badalots</em>&#39; (stairwells), special lighting and a special soundtrack.</p></p></div>",
+      "description": "<div><p><p>A spectacular night-time experience that will amaze everyone. Live an absolutely unique immersive experience, full of surprises, set in one of Barcelona’s most emblematic buildings, that will allow you to understand Antoni Gaudí and his masterpiece.</p><p>Gaudí believed that nature is like a large open book; one we should make the effort to read and interpret. With this tour, you will experience an unforgettable journey through different areas of the building: Passeig de Gràcia and Provença Courtyards, Espai Gaudí (the attic) and the Roof Terrace (The Apartment not included), in which the highlight will be a video mapping on the roof terrace of La Pedrera. Enjoy a magnificent audiovisual show which will allow you to experience a truly unforgettable journey learning about the origins, life, and essence of Gaudí’s architecture. The show will be accompanied by multiple projections on the &#39;<em>badalots</em>&#39; (stairwells), special lighting and a special soundtrack.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.395359,
+        "longitude": 2.1619529
+      },
+      "price": {
+        "amount": "35.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2IwZmM4YWVkLWUzN2MtMTFlYi04MThhLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/717a6e6e-9939-492c-a327-1cb9131c8f0b",
+      "minimumDuration": "1 hour 30 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "2499516",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/2499516",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Las Golondrinas - Puerto Barcelona 40'",
+      "shortDescription": "<div><p><p>Cuando las personas escuchan la palabra “puerto” no son conscientes de la importancia del transporte marítimo para su vida diaria. Con esta experiencia, te abrimos las puertas al desconocido y exótico mundo de la vida y el transporte marítimo.\n\nSe trata de una actividad que ofrece durante 40′ la oportunidad única de disfrutar del mar, contemplando los iconos más importantes del puerto y del frente marítimo. Visitarás el Maremagnum, el nuevo Puente Puerta de Europa (que es un impresionante puente levadizo), la Torre del Reloj (antiguo faro de la época de Carlos III y donde actualmente se encuentran los muelles de la flota pesquera), el Sideroploide (una escultura abstracta construido en 1963, del escultor Salvador Aulèstia, realizado con hierros recuperados del mar), estupendas vistas al castillo y montaña de Montjuïc donde se encuentra el actual faro de Barcelona (inaugurado el 1 de diciembre de 1906, que sigue en funcionamiento) ; el hotel W y el Port Vell.\n\nEntenderás la evolución del puerto en los últimos 300 años a través de la historia y detalles de sucesivas ampliaciones de muelles y dársenas. ¡Perfecto para grupos familiares, parejas curiosas o para dar una vuelta por el puerto solo!</p></p></div>",
+      "description": "<div><p><p>Cuando las personas escuchan la palabra “puerto” no son conscientes de la importancia del transporte marítimo para su vida diaria. Con esta experiencia, te abrimos las puertas al desconocido y exótico mundo de la vida y el transporte marítimo.\n\nSe trata de una actividad que ofrece durante 40′ la oportunidad única de disfrutar del mar, contemplando los iconos más importantes del puerto y del frente marítimo. Visitarás el Maremagnum, el nuevo Puente Puerta de Europa (que es un impresionante puente levadizo), la Torre del Reloj (antiguo faro de la época de Carlos III y donde actualmente se encuentran los muelles de la flota pesquera), el Sideroploide (una escultura abstracta construido en 1963, del escultor Salvador Aulèstia, realizado con hierros recuperados del mar), estupendas vistas al castillo y montaña de Montjuïc donde se encuentra el actual faro de Barcelona (inaugurado el 1 de diciembre de 1906, que sigue en funcionamiento) ; el hotel W y el Port Vell.\n\nEntenderás la evolución del puerto en los últimos 300 años a través de la historia y detalles de sucesivas ampliaciones de muelles y dársenas. ¡Perfecto para grupos familiares, parejas curiosas o para dar una vuelta por el puerto solo!</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "8.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzY4NDg5MDY2LWQyZmQtNGQ2ZC05N2FhLWQ1YjBkNmFiNjQyYiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/e86ba382-9bb3-4883-9c6d-f2be983db1ba",
+      "minimumDuration": "40 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "160582",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/160582",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Olympic and Sports Museum Juan Antonio Samaranch tickets",
+      "shortDescription": "<div><p><p>The Olympic and Sports Museum is located on the mountain of Montjuïc and offers a unique experience on sports (popular, minority, Olympic and non-Olympic, football, motorcycling, Formula 1, skiing, cycling, canoeing, baseball, chess, tennis...) This innovative museum offers its visitors an overview of the different sports disciplines, using state-of-the-art technology and interactive exhibitions, as well as multimedia installations.</p><p>Through its interactive screens and exhibits, visitors can experience the sport and relive moments of the history of Olympic sport. Thanks to their simulators you can run against Carl Lewis or Usain Bolt, check how Mark Spitz or Michael Phelps swam, improve the aerodynamics when cycling or compare the real weight that the great weightlifting champions can raise. A whole experience in sports!</p><p>In addition, the museum has a permanent exhibition on the host cities of the Olympics, from Barcelona 1992 to London 2012, and enjoy the first Olympics that were broadcasted on television. On the tour, you can enjoy Barcelona &#39;92, known as the best games in history. The museum has an impressive collection about &quot;Cobi&quot; and &quot;Petra&quot; on the Olympics, including the paraphernalia of the spectacular opening ceremony.</p><p>In the Idols space, you can find references, milestones and elements of the best athletes and moments in history and perform activities as diverse as comparing the shoes of great athletes such as Michael Jordan, Pau Gasol or Roberto Dueñas, discovering the Samaranch collection or enjoying the live sport among others.</p><p>The adapted sports for people with different types of disabilities occupies a prominent space in this museum. From the Goalball (football for the blind and visually impaired, with a ball that carries a bell inside) to the first wheelchair competition, or this sleigh adapted, among many others.</p></p></div>",
+      "description": "<div><p><p>The Olympic and Sports Museum is located on the mountain of Montjuïc and offers a unique experience on sports (popular, minority, Olympic and non-Olympic, football, motorcycling, Formula 1, skiing, cycling, canoeing, baseball, chess, tennis...) This innovative museum offers its visitors an overview of the different sports disciplines, using state-of-the-art technology and interactive exhibitions, as well as multimedia installations.</p><p>Through its interactive screens and exhibits, visitors can experience the sport and relive moments of the history of Olympic sport. Thanks to their simulators you can run against Carl Lewis or Usain Bolt, check how Mark Spitz or Michael Phelps swam, improve the aerodynamics when cycling or compare the real weight that the great weightlifting champions can raise. A whole experience in sports!</p><p>In addition, the museum has a permanent exhibition on the host cities of the Olympics, from Barcelona 1992 to London 2012, and enjoy the first Olympics that were broadcasted on television. On the tour, you can enjoy Barcelona &#39;92, known as the best games in history. The museum has an impressive collection about &quot;Cobi&quot; and &quot;Petra&quot; on the Olympics, including the paraphernalia of the spectacular opening ceremony.</p><p>In the Idols space, you can find references, milestones and elements of the best athletes and moments in history and perform activities as diverse as comparing the shoes of great athletes such as Michael Jordan, Pau Gasol or Roberto Dueñas, discovering the Samaranch collection or enjoying the live sport among others.</p><p>The adapted sports for people with different types of disabilities occupies a prominent space in this museum. From the Goalball (football for the blind and visually impaired, with a ball that carries a bell inside) to the first wheelchair competition, or this sleigh adapted, among many others.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "6.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Y1M2Q1ODJiLWZjYjYtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/97de8a31-110a-47a4-bc04-c732372eb3b5",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "157823",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/157823",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Agent 007 detective quest tour from Barcelona",
+      "shortDescription": "<div><p><p>Agent 007 needs your help to save the world! Download the app and start exploring the incredible city of Barcelona as you complete each task.</p><p>Start from Plaza Cataluya and have the freedom to find, with the help of your spy-themed robot assistant, famous churches, the Gothic Cathedral, and the Museum of Modern Art to name a few!</p><p>Once you have found at your own pace the iconic landmarks by solving each task and saved the world, it&#39;s up to you to decide what you will treat yourself to next.</p></p></div>",
+      "description": "<div><p><p>Agent 007 needs your help to save the world! Download the app and start exploring the incredible city of Barcelona as you complete each task.</p><p>Start from Plaza Cataluya and have the freedom to find, with the help of your spy-themed robot assistant, famous churches, the Gothic Cathedral, and the Museum of Modern Art to name a few!</p><p>Once you have found at your own pace the iconic landmarks by solving each task and saved the world, it&#39;s up to you to decide what you will treat yourself to next.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "18.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzM2MGNkNTUwLTk0OGQtNGMzMC1iNWM0LTgyYTMxNWFhY2M3MSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/bab17188-ef51-4569-ad35-94eb2c7c78b5",
+      "minimumDuration": "1 hour 30 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "157552",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/157552",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Costa Brava and Tossa de Mar private tour and panoramic boat ride",
+      "shortDescription": "<div><p><p>Dive into Costa Brava, the most beautiful coastal region in Catalonia. Escape from the mainstream and visit the charming fishing village of Tossa de Mar and the beautiful Old Town with its medieval fortress and incredibly well-preserved city walls.</p><p>Enjoy a glass-bottom boat ride in Lloret de Mar and take the chance to swim in an idyllic cove. Your passionate tour guide will make sure to bring you to the most intimate and hidden places of the Costa Brava, impossible to reach to big groups.</p><p>Don’t forget your swimsuit take this unique chance to dive surrounded by gorgeous nature.</p></p></div>",
+      "description": "<div><p><p>Dive into Costa Brava, the most beautiful coastal region in Catalonia. Escape from the mainstream and visit the charming fishing village of Tossa de Mar and the beautiful Old Town with its medieval fortress and incredibly well-preserved city walls.</p><p>Enjoy a glass-bottom boat ride in Lloret de Mar and take the chance to swim in an idyllic cove. Your passionate tour guide will make sure to bring you to the most intimate and hidden places of the Costa Brava, impossible to reach to big groups.</p><p>Don’t forget your swimsuit take this unique chance to dive surrounded by gorgeous nature.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "119.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzJjYzEyZjhiLWZjYjItMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/4c743e87-9378-42c5-a39a-dbcc4aea6964",
+      "minimumDuration": "10 hours"
+    },
+    {
+      "type": "activity",
+      "id": "160744",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/160744",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Medieval Girona private half-day tour",
+      "shortDescription": "<div><p><p>Join this walking tour of Girona Old Town that will bring you to one of the most fascinating cities of Catalonia. Your passionate tour guide will pick you up at your hotel or apartment in Barcelona to start your adventure. Busses are forbidden to enter the city walls, but your guile will be able to bring you to the heart of the Old Town since your transport is a private minivan or executive car. With its perfect location on a hill along the eastern shore of the Onyar River and near the French border, after the Roman settlement and during medieval times, Girona flourished into the perfect spot for commercial and cultural exchanges.</p><p>Walking through Girona Old Town is like traveling back in time since all the footprints of its glorious past are clearly in sight. Your expert guide will show you the most magical corners of the city. Have a look at the unmissable Girona Cathedral, famous for having the world’s widest Gothic nave and its monumental Baroque stairway. Walk around the Jewish Quarter, one of the best-preserved in Europe. Enjoy great views from the Medieval City Walls and from Gustave Eiffel’s bridge of 1877. Discover the Arabic baths in the Old Town as well as the synagogue. Stroll through Medieval architecture and get lost in a maze of winding streets.</p></p></div>",
+      "description": "<div><p><p>Join this walking tour of Girona Old Town that will bring you to one of the most fascinating cities of Catalonia. Your passionate tour guide will pick you up at your hotel or apartment in Barcelona to start your adventure. Busses are forbidden to enter the city walls, but your guile will be able to bring you to the heart of the Old Town since your transport is a private minivan or executive car. With its perfect location on a hill along the eastern shore of the Onyar River and near the French border, after the Roman settlement and during medieval times, Girona flourished into the perfect spot for commercial and cultural exchanges.</p><p>Walking through Girona Old Town is like traveling back in time since all the footprints of its glorious past are clearly in sight. Your expert guide will show you the most magical corners of the city. Have a look at the unmissable Girona Cathedral, famous for having the world’s widest Gothic nave and its monumental Baroque stairway. Walk around the Jewish Quarter, one of the best-preserved in Europe. Enjoy great views from the Medieval City Walls and from Gustave Eiffel’s bridge of 1877. Discover the Arabic baths in the Old Town as well as the synagogue. Stroll through Medieval architecture and get lost in a maze of winding streets.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "81.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzEyNTFiZGMyLWZiZTctMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/91a126c3-c934-40dd-b8bb-44756bb6d64c",
+      "minimumDuration": "5 hours"
+    },
+    {
+      "type": "activity",
+      "id": "1788711",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1788711",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Night experience at the Unlimited Barcelona admission tickets",
+      "shortDescription": "<div><p><p>Enjoy a drink with your family and friends on top of the best viewpoint of Barcelona! You&#39;ll climb up to the 20th floor of the Urquinaona Tower, built by the architect Antoni Bonet between 1968 and 1970, and enjoy a 360° view of the city.</p><p>You&#39;ll also have access to an audioguide to listen to the history of the building and discover interesting facts about Barcelona. Do not miss the chance to admire Barcelona at night!</p></p></div>",
+      "description": "<div><p><p>Enjoy a drink with your family and friends on top of the best viewpoint of Barcelona! You&#39;ll climb up to the 20th floor of the Urquinaona Tower, built by the architect Antoni Bonet between 1968 and 1970, and enjoy a 360° view of the city.</p><p>You&#39;ll also have access to an audioguide to listen to the history of the building and discover interesting facts about Barcelona. Do not miss the chance to admire Barcelona at night!</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "25.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzdjOWM0MjJkLTI1MDAtNDVhYi1hZmViLTE1ZTMxYWY3ZDQxZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/b06c3e88-4986-4e71-85ef-c0e66c932c07",
+      "minimumDuration": "1 hour 30 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "3505700",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/3505700",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Personalized private tour of Barcelona with a local",
+      "shortDescription": "<div><p><p>Admire Barcelona through the eyes of a local. In this experience, you&#39;ll connect with a passionate local who will design and guide you on a tailor-made private tour following your interests while sharing their knowledge and passion for the city.</p><p>Whether you&#39;re traveling with your loved ones or on your own, you&#39;ll be able to choose the duration that fits your schedule best, from 2 up to 6 hours, and get ready to explore Barcelona. Admire the city&#39;s top attractions or let your guide take you off the beaten path to less known locations only a local could share with you!</p></p></div>",
+      "description": "<div><p><p>Admire Barcelona through the eyes of a local. In this experience, you&#39;ll connect with a passionate local who will design and guide you on a tailor-made private tour following your interests while sharing their knowledge and passion for the city.</p><p>Whether you&#39;re traveling with your loved ones or on your own, you&#39;ll be able to choose the duration that fits your schedule best, from 2 up to 6 hours, and get ready to explore Barcelona. Admire the city&#39;s top attractions or let your guide take you off the beaten path to less known locations only a local could share with you!</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "15.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzZhYjk0ZmE5LThkNGUtNGExNi05Y2JmLTI1MjY3NDQwOTg5NiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/51cda6c8-c468-452a-88d2-5ecbc5cb46b7",
+      "minimumDuration": "6 hours"
+    },
+    {
+      "type": "activity",
+      "id": "158311",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/158311",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "The Unseen Pedrera: Guided Visit",
+      "shortDescription": "<div><div><p>Visiting La Pedrera is a dream for most Gaudí fans. A basic entrance ticket grants plenty of architectural access, but what if you could explore spaces inside Casa Milà that most people never get to see?\r</p><p>\r</p><p>On this guided tour, you&#39;ll see restricted areas of Gaudí&#39;s modernist wonder. Be led by an expert guide and hear fascinating anecdotes about the man dubbed &#39;God&#39;s Own Architect&#39;, as you visit the hidden basement car park, rear facade, and first-floor corridor of a UNESCO World Heritage Site.</p></div></div>",
+      "description": "<div><div><p>Visiting La Pedrera is a dream for most Gaudí fans. A basic entrance ticket grants plenty of architectural access, but what if you could explore spaces inside Casa Milà that most people never get to see?\r</p><p>\r</p><p>On this guided tour, you&#39;ll see restricted areas of Gaudí&#39;s modernist wonder. Be led by an expert guide and hear fascinating anecdotes about the man dubbed &#39;God&#39;s Own Architect&#39;, as you visit the hidden basement car park, rear facade, and first-floor corridor of a UNESCO World Heritage Site.</p></div></div>",
+      "geoCode": {
+        "latitude": 41.395359,
+        "longitude": 2.1619529
+      },
+      "price": {
+        "amount": "28.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2U3Yjc2OGQwLWRhNGUtNDdlNS05OWM3LTRiNGY3ODNlOWMyMyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/c74da18e-acd5-4080-9d8e-fa76ba3fb86d",
+      "minimumDuration": "1 hour 30 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "161263",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/161263",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Cardona and Salt Mountain guided tour from Barcelona",
+      "shortDescription": "<div><p><p>The charming town of Cardona is located just 100km from Barcelona, in the heart of Catalonia. One can feel the weight of history here just by walking through the streets, admiring the ancient buildings and exploring the unique natural environment that has shaped local culture for centuries.</p><p>A professional guide will pick you up at your hotel in a private transport, with which you will travel comfortably to Cardona. Here you will explore one of the most important salt deposits in the world at Salt Mountain Cultural Park.</p><p>The natural landscape surrounding Cardona is one of the most special of Catalonia. South of the town you will find the Salt Valley of Cardona, which has been put to human use since Neolithic times. The natural characteristics of the place make it unique in the world and so the site is well preserved. Enjoy a moment to take in the beautiful vistas and breathe in the fresh country air.</p><p>The salt mine opened in 1929 and stayed in function until 1990, becoming one of the most important globally. Today the area has been transformed into the Salt Mountain Cultural Park, allowing visitors to learn about its history.</p><p>In the outdoor museum area, the old mineshaft &#39;Maria Teresa&#39; still tells the story of the industrial exploitation of the valley. Your group will have the opportunity to descend 86m deep into the Salt Mountain. Here you will witness mysterious and beautiful natural formations, such as stalactites, stalagmites and the colorful folds and seams.</p><p>You will visit Cardona center, flanked by Romanesque and Gothic buildings still inhabited by the town’s historically brave population.</p><p>This place has survived some of the most important battles in Catalan history and strolling around its castle-fortress is like traveling ten centuries back in time. The castle of Cardona is one of the best-preserved medieval sites in Spain. In 1714, during the War of Spanish Succession, it served as an impregnable fortress. Even the mighty Napoleon could not capture its sturdy citadel!</p></p></div>",
+      "description": "<div><p><p>The charming town of Cardona is located just 100km from Barcelona, in the heart of Catalonia. One can feel the weight of history here just by walking through the streets, admiring the ancient buildings and exploring the unique natural environment that has shaped local culture for centuries.</p><p>A professional guide will pick you up at your hotel in a private transport, with which you will travel comfortably to Cardona. Here you will explore one of the most important salt deposits in the world at Salt Mountain Cultural Park.</p><p>The natural landscape surrounding Cardona is one of the most special of Catalonia. South of the town you will find the Salt Valley of Cardona, which has been put to human use since Neolithic times. The natural characteristics of the place make it unique in the world and so the site is well preserved. Enjoy a moment to take in the beautiful vistas and breathe in the fresh country air.</p><p>The salt mine opened in 1929 and stayed in function until 1990, becoming one of the most important globally. Today the area has been transformed into the Salt Mountain Cultural Park, allowing visitors to learn about its history.</p><p>In the outdoor museum area, the old mineshaft &#39;Maria Teresa&#39; still tells the story of the industrial exploitation of the valley. Your group will have the opportunity to descend 86m deep into the Salt Mountain. Here you will witness mysterious and beautiful natural formations, such as stalactites, stalagmites and the colorful folds and seams.</p><p>You will visit Cardona center, flanked by Romanesque and Gothic buildings still inhabited by the town’s historically brave population.</p><p>This place has survived some of the most important battles in Catalan history and strolling around its castle-fortress is like traveling ten centuries back in time. The castle of Cardona is one of the best-preserved medieval sites in Spain. In 1714, during the War of Spanish Succession, it served as an impregnable fortress. Even the mighty Napoleon could not capture its sturdy citadel!</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "115.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzE5MGUzNmI4LWZjYWEtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/740fad1e-8fd7-4fac-8a53-10c22417e5c0",
+      "minimumDuration": "10 hours"
+    },
+    {
+      "type": "activity",
+      "id": "158035",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/158035",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Besalú and Medieval towns small-group tour from Barcelona",
+      "shortDescription": "<div><p><p>This medieval tour will begin in Barcelona, where your guide will pick you up from your hotel and take you on an amazing journey back in time in a small group of a maximum of 8 people.</p><p>Pass by Barcelona’s main highlights on your way to Vic, a town that offers visitors one of the most memorable medieval settings in all Catalonia region. Due to the town’s destruction and reconstruction after the Saracen invasion in the 9th Century, Vic has been completely rebuilt. A whole new city grew around some of Catalunya’s most important landmarks, including the Episcopal Museum, Cathedral and Main Square (also home to a popular weekly market). After the walking tour and before heading to the next destination, savor authentic Catalan cuisine for lunch in one of the best places, recommended by your guide.</p><p>Continue your tour crossing la Garrotxa and observing volcanoes and other magnificent geological structures, before arriving to Santa Pau. Enjoy a walking tour through one of the most charming towns of Historic Catalunya, in the company of your guide and take the chance to walk down along the beautiful medieval streets of this town, visiting the main square. Stop at the foot of Castellfollit de la Roca, a spectacular medieval town that hangs from the edge of a basalt cliff. This is a great place to take some photos while enjoying the views.</p><p>End your back-in-time journey at the final and most important stop of the tour, Besalú. With its incredibly rich heritage and wide array of monuments, Besalú offers visitors one of the best-preserved medieval settings of Catalonia. The town was even classified a Historical and Artistic National Monument in 1966. Our guide will explain the importance of the Jewish community that once resided in the city, from the 9th to the 15th century, and share with you the patrimonial inheritance that this community left behind. Discover the most special corners of the city and get the chance to cross the famous Romanesque bridge of Besalú, which is a must for anyone visiting this medieval city.</p></p></div>",
+      "description": "<div><p><p>This medieval tour will begin in Barcelona, where your guide will pick you up from your hotel and take you on an amazing journey back in time in a small group of a maximum of 8 people.</p><p>Pass by Barcelona’s main highlights on your way to Vic, a town that offers visitors one of the most memorable medieval settings in all Catalonia region. Due to the town’s destruction and reconstruction after the Saracen invasion in the 9th Century, Vic has been completely rebuilt. A whole new city grew around some of Catalunya’s most important landmarks, including the Episcopal Museum, Cathedral and Main Square (also home to a popular weekly market). After the walking tour and before heading to the next destination, savor authentic Catalan cuisine for lunch in one of the best places, recommended by your guide.</p><p>Continue your tour crossing la Garrotxa and observing volcanoes and other magnificent geological structures, before arriving to Santa Pau. Enjoy a walking tour through one of the most charming towns of Historic Catalunya, in the company of your guide and take the chance to walk down along the beautiful medieval streets of this town, visiting the main square. Stop at the foot of Castellfollit de la Roca, a spectacular medieval town that hangs from the edge of a basalt cliff. This is a great place to take some photos while enjoying the views.</p><p>End your back-in-time journey at the final and most important stop of the tour, Besalú. With its incredibly rich heritage and wide array of monuments, Besalú offers visitors one of the best-preserved medieval settings of Catalonia. The town was even classified a Historical and Artistic National Monument in 1966. Our guide will explain the importance of the Jewish community that once resided in the city, from the 9th to the 15th century, and share with you the patrimonial inheritance that this community left behind. Discover the most special corners of the city and get the chance to cross the famous Romanesque bridge of Besalú, which is a must for anyone visiting this medieval city.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "95.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzNhZWY1NjI2LWZjYTktMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/9359c244-5984-42cd-8844-f1bc1edcb6b5",
+      "minimumDuration": "10 hours"
+    },
+    {
+      "type": "activity",
+      "id": "1493412",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1493412",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Casa Milà-La Pedrera: Skip The Line Ticket & Private Audio Tour",
+      "shortDescription": "<div><p><p>Explore Casa Milà (La Pedrera) with the private audio tour available on Wegotrip App (included).\n\nWith its flowing exterior and the whimsical chimney pots on its roof, Casa Milà – known locally as La Pedrera – represents Gaudí at the top of his game. The ornate interior is also the handiwork of the great Catalan architect. Skip the line and get right into this modernist masterpiece.\n\nGaudí designed Casa Milà for the wealthy businessman Pere Milà and his wife. It&#39;s the architect&#39;s final residential building in Barcelona. It&#39;s the only building in the city that offers a comprehensive overview of this architectural genius.\n\nCasa Milà features a museum, the reproduction of an early 20th-century apartment (El Pis de la Pedrera), an exhibition of Gaudí­&#39;s work in the attic, and the grand roof terrace.\n\nThe audio tour on the mobile app helps you experience this quirky – and architecturally sophisticated – construction.\nWegotrip App is available on App Store and Google Play and works offline.</p></p></div>",
+      "description": "<div><p><p>Explore Casa Milà (La Pedrera) with the private audio tour available on Wegotrip App (included).\n\nWith its flowing exterior and the whimsical chimney pots on its roof, Casa Milà – known locally as La Pedrera – represents Gaudí at the top of his game. The ornate interior is also the handiwork of the great Catalan architect. Skip the line and get right into this modernist masterpiece.\n\nGaudí designed Casa Milà for the wealthy businessman Pere Milà and his wife. It&#39;s the architect&#39;s final residential building in Barcelona. It&#39;s the only building in the city that offers a comprehensive overview of this architectural genius.\n\nCasa Milà features a museum, the reproduction of an early 20th-century apartment (El Pis de la Pedrera), an exhibition of Gaudí­&#39;s work in the attic, and the grand roof terrace.\n\nThe audio tour on the mobile app helps you experience this quirky – and architecturally sophisticated – construction.\nWegotrip App is available on App Store and Google Play and works offline.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.395359,
+        "longitude": 2.1619529
+      },
+      "price": {
+        "amount": "52.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2RmNjE3MTkwLTIxMTgtNDhkZS1iZDNhLWZiYjA5MjczMGIwMiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/af6ade77-28c9-4676-bd31-5a826e257b74",
+      "minimumDuration": "1 hour"
+    },
+    {
+      "type": "activity",
+      "id": "161353",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/161353",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "La Garrotxa Volcanic Zone Natural Park Hiking and Besalú medieval town",
+      "shortDescription": "<div><p><p>You will start hiking around La Fageda d’en Jordà, a unique beech tree forest on those latitudes. You will continue hiking through Santa Margarita and Croscat volcanoes and singular landscapes around. After this pleasant hike, you will enjoy a well deserved Catalan traditional lunch in a local restaurant. Before coming back to Barcelona you will visit the well-conserved medieval town of Besalú, which will bring you back in time.</p></p></div>",
+      "description": "<div><p><p>You will start hiking around La Fageda d’en Jordà, a unique beech tree forest on those latitudes. You will continue hiking through Santa Margarita and Croscat volcanoes and singular landscapes around. After this pleasant hike, you will enjoy a well deserved Catalan traditional lunch in a local restaurant. Before coming back to Barcelona you will visit the well-conserved medieval town of Besalú, which will bring you back in time.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "116.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzc4ZWVjNTIxLWZjYWQtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/ef3a6004-9bd9-4acd-91aa-b404e3ee4412",
+      "minimumDuration": "9 hours"
+    },
+    {
+      "type": "activity",
+      "id": "158441",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/158441",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Articket Barcelona skip-the-line museum pass",
+      "shortDescription": "<div><p><p>Barcelona Articket invites you to take a fascinating journey through the art at the six best museums in Barcelona.</p><p>Discover the finest collection of Romanesque mural paintings in the world, enjoy Modernisme and be surprised by the most contemporary art and creation. The universes of Miró, Picasso and Tàpies await you as you embark upon this unique experience.</p><p>Museu Nacional: The museum exhibits the best collection of Romanesque wall painting in the world; works by great European painters such as Rubens, Velázquez and El Greco and it is the center of reference for Modernisme.</p><p>Fundació Joan Miró is a space that showcases the artist&#39;s work as well as other contemporary pieces that keep that unique artistic legacy of Joan Miró.</p><p>Museu Picasso Immerse yourself in Pablo Picasso’s formative years in this exhaustive collection that clearly reflects his Blue Period accompanied by other amazing paintings form 1917 and Las Meninas series.</p><p>MACBA: This iconic building designed by Richard Meier features captivating exhibitions for art lovers and a permanent collection with works by Basquiat, Calder and Juan Muñoz, among others.</p><p>CCCB is a space meant to bring culture to the neighborhood with inclusive exhibitions and activities centered on the city and contemporary culture such as cinema, music, performing arts and experimental art.</p><p>The Fundació Antoni Tàpies was created to promote knowledge of modern art and houses one of the most complete public collections of Antoni Tàpies’ work.</p></p></div>",
+      "description": "<div><p><p>Barcelona Articket invites you to take a fascinating journey through the art at the six best museums in Barcelona.</p><p>Discover the finest collection of Romanesque mural paintings in the world, enjoy Modernisme and be surprised by the most contemporary art and creation. The universes of Miró, Picasso and Tàpies await you as you embark upon this unique experience.</p><p>Museu Nacional: The museum exhibits the best collection of Romanesque wall painting in the world; works by great European painters such as Rubens, Velázquez and El Greco and it is the center of reference for Modernisme.</p><p>Fundació Joan Miró is a space that showcases the artist&#39;s work as well as other contemporary pieces that keep that unique artistic legacy of Joan Miró.</p><p>Museu Picasso Immerse yourself in Pablo Picasso’s formative years in this exhaustive collection that clearly reflects his Blue Period accompanied by other amazing paintings form 1917 and Las Meninas series.</p><p>MACBA: This iconic building designed by Richard Meier features captivating exhibitions for art lovers and a permanent collection with works by Basquiat, Calder and Juan Muñoz, among others.</p><p>CCCB is a space meant to bring culture to the neighborhood with inclusive exhibitions and activities centered on the city and contemporary culture such as cinema, music, performing arts and experimental art.</p><p>The Fundació Antoni Tàpies was created to promote knowledge of modern art and houses one of the most complete public collections of Antoni Tàpies’ work.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "35.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2FlNWZmOTY1LWZjYTgtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/f3328914-1b54-46e7-adb7-6d8ca3773a38",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "345311",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/345311",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Barcelona old town tour with flamenco show and tapas",
+      "shortDescription": "<div><p><p>Explore the old town of Barcelona and immerse yourself in the Spanish tradition! Your guide will accompany you through El Born, a trendy district in Barcelona. You&#39;ll admire Santa Maria del Mar, famous for its Catalan gothic architecture, and learn about Catalonia&#39;s history at the Centre Cultural del Born.</p><p>After visiting El Born, you&#39;ll enjoy a flamenco show surrounded by the atmosphere of Dalmases Palace, a Baroque building that hosted several meetings in the 17th century for aristocrats and scholars.</p><p>End the evening with a drink at one of the best places in Barcelona with mini-snacks known as &quot;pintxos&quot; and then onto La Barceloneta for seafood tapas.</p></p></div>",
+      "description": "<div><p><p>Explore the old town of Barcelona and immerse yourself in the Spanish tradition! Your guide will accompany you through El Born, a trendy district in Barcelona. You&#39;ll admire Santa Maria del Mar, famous for its Catalan gothic architecture, and learn about Catalonia&#39;s history at the Centre Cultural del Born.</p><p>After visiting El Born, you&#39;ll enjoy a flamenco show surrounded by the atmosphere of Dalmases Palace, a Baroque building that hosted several meetings in the 17th century for aristocrats and scholars.</p><p>End the evening with a drink at one of the best places in Barcelona with mini-snacks known as &quot;pintxos&quot; and then onto La Barceloneta for seafood tapas.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "81.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzA4YTdmZjRkLTVjMGUtNDFhZS05ODE0LWU5NGNmODA5YWUzYSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/c1b12cdd-9f77-460a-b769-79910089b3cb",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "161831",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/161831",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Tarragona and Sitges private tour from Barcelona",
+      "shortDescription": "<div><p><p>Escape from the city and enjoy a full-day private tour to the old capital of Catalonia in Roman times. Travel back in time to visit the city of Tarragona, home to one of the most important and best-preserved Roman archaeological sites in Spain and declared a UNESCO World Heritage Site.</p><p>Discover the charming Sitges, a fishing village that has transformed into a vibrant and modern town, home of the famous Bacardi Rum and of fine examples of modernist architecture.</p><p>End the day on Playa San Sebastian, named “the best urban beach in Europe” by the New York Times. Relax on one of its scenic terraces or take a dip in the crystal blue waters of the Mediterranean Sea.</p></p></div>",
+      "description": "<div><p><p>Escape from the city and enjoy a full-day private tour to the old capital of Catalonia in Roman times. Travel back in time to visit the city of Tarragona, home to one of the most important and best-preserved Roman archaeological sites in Spain and declared a UNESCO World Heritage Site.</p><p>Discover the charming Sitges, a fishing village that has transformed into a vibrant and modern town, home of the famous Bacardi Rum and of fine examples of modernist architecture.</p><p>End the day on Playa San Sebastian, named “the best urban beach in Europe” by the New York Times. Relax on one of its scenic terraces or take a dip in the crystal blue waters of the Mediterranean Sea.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "90.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQyOWI4NDVlLWZjYWEtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/ddccfc8e-2bc9-4e36-a51f-eddfafe4c559",
+      "minimumDuration": "10 hours"
+    },
+    {
+      "type": "activity",
+      "id": "158723",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/158723",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Pyrenees hiking experience from Barcelona",
+      "shortDescription": "<div><p><p>Throughout one day, you will have the privilege of comparing the customs of the French Pyrenees and the Spanish, its different landscape, architecture, its gastronomy, its people, furthermore, the same valley offers two very distinct worlds in a very short distance. Hiking Pyrenees nearby the Cadi’s cliff, Carlit or Balandrau from where you will see an impressive view of the Pyrenees.</p><p>You&#39;ll be picked you up at your hotel in Barcelona and travel by private van on 1-2 hours drive to the Pyrenees range, where your hiking experience begins.</p><p>Choose from 3 different options, with different routes and durations. The walking or hiking tour will introduce you and your group of up to 7 persons to the Pyrenees range.</p><p>Along the way, you’ll not only take in spectacular natural beauty, but also the Romanesque, and middle-age village, since your guide will tell you how the mountain has become the core of the cultural origin of the Catalonia region.</p><p>This is a tour for lovers of hiking and travelers who want to experience the nature, history, and culture of this popular Mediterranean attraction. Therefore, more than a tourist activity, the hike is a way to learn about the history of Catalonia.</p><p>Finally, the private hike is guided by a local expert with years of experience in leading groups. You’ll be led, informed, entertained and you’ll be provided a snack along the way. At the end of your hike, in addition, you’ll be dropped off at your Barcelona accommodation.</p></p></div>",
+      "description": "<div><p><p>Throughout one day, you will have the privilege of comparing the customs of the French Pyrenees and the Spanish, its different landscape, architecture, its gastronomy, its people, furthermore, the same valley offers two very distinct worlds in a very short distance. Hiking Pyrenees nearby the Cadi’s cliff, Carlit or Balandrau from where you will see an impressive view of the Pyrenees.</p><p>You&#39;ll be picked you up at your hotel in Barcelona and travel by private van on 1-2 hours drive to the Pyrenees range, where your hiking experience begins.</p><p>Choose from 3 different options, with different routes and durations. The walking or hiking tour will introduce you and your group of up to 7 persons to the Pyrenees range.</p><p>Along the way, you’ll not only take in spectacular natural beauty, but also the Romanesque, and middle-age village, since your guide will tell you how the mountain has become the core of the cultural origin of the Catalonia region.</p><p>This is a tour for lovers of hiking and travelers who want to experience the nature, history, and culture of this popular Mediterranean attraction. Therefore, more than a tourist activity, the hike is a way to learn about the history of Catalonia.</p><p>Finally, the private hike is guided by a local expert with years of experience in leading groups. You’ll be led, informed, entertained and you’ll be provided a snack along the way. At the end of your hike, in addition, you’ll be dropped off at your Barcelona accommodation.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "151.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ZjM2M5MDVlLWZjYjEtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/6bcba08d-922e-4b53-b1fd-c4d32d9e2e64",
+      "minimumDuration": "9 hours"
+    },
+    {
+      "type": "activity",
+      "id": "3506444",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/3506444",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Illa Fantasia skip-the-line tickets",
+      "shortDescription": "<div><p><p>Visit Barcelona&#39;s most important water park in Vilassar de Dalt, Finca Mas Brassó s/n. This daily ticket will allow you to enjoy 22 rides, 3 macro swimming pools, 9 restaurants and a huge picnic area. A family-friendly water park with dedicated areas for all ages. Don&#39;t miss Aquasound Pool Party (all Thursdays during July and August), Barcelona&#39;s funniest party, open to all ages with artists, special performances, DJ and many surprises. A great option for everybody wishing to escape from the heat of Barcelona!</p></p></div>",
+      "description": "<div><p><p>Visit Barcelona&#39;s most important water park in Vilassar de Dalt, Finca Mas Brassó s/n. This daily ticket will allow you to enjoy 22 rides, 3 macro swimming pools, 9 restaurants and a huge picnic area. A family-friendly water park with dedicated areas for all ages. Don&#39;t miss Aquasound Pool Party (all Thursdays during July and August), Barcelona&#39;s funniest party, open to all ages with artists, special performances, DJ and many surprises. A great option for everybody wishing to escape from the heat of Barcelona!</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "29.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Q0ZTIwZmRmLWRmM2YtMTFlYi04MmYzLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/3a5f0100-9d12-4f67-a6ae-0fbc6c839743",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "1757601",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1757601",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Half-day Montserrat guided tour from Barcelona",
+      "shortDescription": "<div><p><p>Enjoy a half-day trip to Montserrat and discover the wonders of this famous mountain: a National Park and place of pilgrimage from millions of people around the world. You&#39;ll meet your guide in Barcelona and will embark on this journey outside the city on board of a private bus.</p><p>Once arrived, you&#39;ll enjoy a 45-minutes guided tour of the Montserrat’s Basilica and Monastery, home of La Moreneta (Black Madonna).</p><p>After the guided tour, you&#39;ll have 2 free hours to enjoy Montserrat on your own. You will have time to visit the museum, taste the monastery’s homemade liquor, go for a walk to the Saint Miguel Cross or take the Sant Joan Funicular and admire the breath-taking views of Montserrat.</p></p></div>",
+      "description": "<div><p><p>Enjoy a half-day trip to Montserrat and discover the wonders of this famous mountain: a National Park and place of pilgrimage from millions of people around the world. You&#39;ll meet your guide in Barcelona and will embark on this journey outside the city on board of a private bus.</p><p>Once arrived, you&#39;ll enjoy a 45-minutes guided tour of the Montserrat’s Basilica and Monastery, home of La Moreneta (Black Madonna).</p><p>After the guided tour, you&#39;ll have 2 free hours to enjoy Montserrat on your own. You will have time to visit the museum, taste the monastery’s homemade liquor, go for a walk to the Saint Miguel Cross or take the Sant Joan Funicular and admire the breath-taking views of Montserrat.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "66.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzIyNjZlNGUyLTI2YzktNDVmMi05Njc4LTdkNDc5YmZjOTUxNyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/fec87079-1100-42f6-abcd-15673d93bc9c",
+      "minimumDuration": "5 hours"
+    },
+    {
+      "type": "activity",
+      "id": "161949",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/161949",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "History Museum of Catalonia skip-the-line tickets and rooftop access",
+      "shortDescription": "<div><p><p>The History Museum of Catalonia was opened in 1996 by the Generalitat and it&#39;s situated in the antique Magatzems Generals de Comerç (MGC) or Palau de Mar, the only preserved building from the old industrial port in Barcelona. Its contemporary architecture can be appreciated in all the building.</p><p>The museum offers a variety of temporary and permanent exhibitions in relation with Catalonia&#39;s history as well as many organised activities such as puppet shows or plays for families, kids and schools.</p><p>The most outstanding view from the Port of Barcelona is right here, on the 4th floor of the museum. Enjoy a panoramic view of the city while relaxing in the chill out lounge bar or have some food and cocktails at the Mediterranean Restaurant.</p><p>Enjoy skip-the-line access, soak up some culture and make the most of the museum&#39;s viewpoint!</p></p></div>",
+      "description": "<div><p><p>The History Museum of Catalonia was opened in 1996 by the Generalitat and it&#39;s situated in the antique Magatzems Generals de Comerç (MGC) or Palau de Mar, the only preserved building from the old industrial port in Barcelona. Its contemporary architecture can be appreciated in all the building.</p><p>The museum offers a variety of temporary and permanent exhibitions in relation with Catalonia&#39;s history as well as many organised activities such as puppet shows or plays for families, kids and schools.</p><p>The most outstanding view from the Port of Barcelona is right here, on the 4th floor of the museum. Enjoy a panoramic view of the city while relaxing in the chill out lounge bar or have some food and cocktails at the Mediterranean Restaurant.</p><p>Enjoy skip-the-line access, soak up some culture and make the most of the museum&#39;s viewpoint!</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "8.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2ZhMzAwNGVkLWZjYWMtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/1144838b-2d10-4c57-9405-7e2ec8172b54",
+      "minimumDuration": "1 hour 30 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "345559",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/345559",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Montserrat hot-air balloon ride and monastery tour from Barcelona",
+      "shortDescription": "<div><p><p>Enjoy an exclusive hot-air balloon ride and admire the view of the Montserrat Mountain! You&#39;ll participate in the inflation of the balloon and, once ready, you&#39;ll enjoy one hour ride.</p><p>After the ride, with the upgrade option, you&#39;ll head towards the Monastery, but before the guided visit, you&#39;ll have time for a glass of Cava and some food tasting. During your visit of the Benectine Monastery, dating back to the 10th century, you&#39;ll learn about the history of &quot;La Moreneta&quot;, the saint patron of Catalonia and admire the boys choir singing of the &quot;Escolania de Montserrat&quot;.</p></p></div>",
+      "description": "<div><p><p>Enjoy an exclusive hot-air balloon ride and admire the view of the Montserrat Mountain! You&#39;ll participate in the inflation of the balloon and, once ready, you&#39;ll enjoy one hour ride.</p><p>After the ride, with the upgrade option, you&#39;ll head towards the Monastery, but before the guided visit, you&#39;ll have time for a glass of Cava and some food tasting. During your visit of the Benectine Monastery, dating back to the 10th century, you&#39;ll learn about the history of &quot;La Moreneta&quot;, the saint patron of Catalonia and admire the boys choir singing of the &quot;Escolania de Montserrat&quot;.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "231.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzFlYTMwMGQwLWIzYjctNDFjOS04ODgyLTE1YjY0NjYyMjVlNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/8f09578d-f195-4739-966e-58ce46c8ade0",
+      "minimumDuration": "6 hours 30 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "1567676",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1567676",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Apperitif winery experience and wine tour from Barcelona",
+      "shortDescription": "<div><p><p>Enjoy an excellent aperitif in Alella’s vineyards and admire great views of Barcelona and the coastline.</p><p>The guide will come and pick you up at your hotel. You will make your way to the winery, located in Alella. You will start your journey with a welcome and you will begin to enjoy the fantastic landscape where the organic vineyards are located as well as the views of Barcelona and the coastline. The guide will introduce you to the winery, surrounded by vineyards, is located inside a beautiful 14th-century farmhouse, near the town of Alella. The grapes are collected by hand in the vineyards, gentle pressing is carried out and only the free run juice is used, and fermentation (both in vats and in the barrels) is temperature controlled to ensure that the vinification is well managed.</p><p>Then you will taste gourmet appetisers. with a wine tasting in the garden.</p></p></div>",
+      "description": "<div><p><p>Enjoy an excellent aperitif in Alella’s vineyards and admire great views of Barcelona and the coastline.</p><p>The guide will come and pick you up at your hotel. You will make your way to the winery, located in Alella. You will start your journey with a welcome and you will begin to enjoy the fantastic landscape where the organic vineyards are located as well as the views of Barcelona and the coastline. The guide will introduce you to the winery, surrounded by vineyards, is located inside a beautiful 14th-century farmhouse, near the town of Alella. The grapes are collected by hand in the vineyards, gentle pressing is carried out and only the free run juice is used, and fermentation (both in vats and in the barrels) is temperature controlled to ensure that the vinification is well managed.</p><p>Then you will taste gourmet appetisers. with a wine tasting in the garden.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "90.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzEzYzY3ODg3LTI1YmItNDAyMS04NDIzLWEzOTBlNGRhZTNjNiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/cbfb1714-1905-411f-a47f-d9b775221a88",
+      "minimumDuration": "5 hours"
+    },
+    {
+      "type": "activity",
+      "id": "1799202",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1799202",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "La Pedrera Exclusive",
+      "shortDescription": "<div><p><p>Casa Milà, built between 1906 and 1912 is popularly known as La Pedrera or &#39;The stone quarry&#39;, a reference to its unconventional rough-hewn appearance. It was the last private residence designed by architect Antoni Gaudí.</p><p>With this tour, you&#39;ll have the opportunity to visit the spectacular building before it opens to the public. You will also get the chance to discover the different areas of the house, as well as learning about what inspired Antoni Gaudí to create this architectural treasure. This guided tour includes the whole building: roof-terrace, Espai Gaudí (the attic), the Apartment and Courtyards. You also visit some exclusive areas which are not open to normal tours.</p></p></div>",
+      "description": "<div><p><p>Casa Milà, built between 1906 and 1912 is popularly known as La Pedrera or &#39;The stone quarry&#39;, a reference to its unconventional rough-hewn appearance. It was the last private residence designed by architect Antoni Gaudí.</p><p>With this tour, you&#39;ll have the opportunity to visit the spectacular building before it opens to the public. You will also get the chance to discover the different areas of the house, as well as learning about what inspired Antoni Gaudí to create this architectural treasure. This guided tour includes the whole building: roof-terrace, Espai Gaudí (the attic), the Apartment and Courtyards. You also visit some exclusive areas which are not open to normal tours.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3954329,
+        "longitude": 2.1619855
+      },
+      "price": {
+        "amount": "39.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzMzNjQ0NGY0LWU1MjUtNDFjNi1hMjVhLWU1NjhiZmMwM2JlMSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/fdc21ee6-6ca9-46c3-b442-f6c8cd8bff83",
+      "minimumDuration": "1 hour 45 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "1757804",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1757804",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Unlimited Barcelona at sunset admission tickets",
+      "shortDescription": "<div><p><p>Admire the sun set on Barcelona from the 20th floor of the Unlimited Barcelona viewpoint! Located in the Urquinaona Tower, built by the architect Antoni Bonet, this viewpoint offers a 360° view of the city.</p><p>You&#39;ll also have access to an audioguide to learn about the history of the building and many other curiosities about the city. Do not miss the opportunity to admire the main attractions of Barcelona in the light of the setting sun!</p></p></div>",
+      "description": "<div><p><p>Admire the sun set on Barcelona from the 20th floor of the Unlimited Barcelona viewpoint! Located in the Urquinaona Tower, built by the architect Antoni Bonet, this viewpoint offers a 360° view of the city.</p><p>You&#39;ll also have access to an audioguide to learn about the history of the building and many other curiosities about the city. Do not miss the opportunity to admire the main attractions of Barcelona in the light of the setting sun!</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "22.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzAwMjRiM2RmLWE1YzAtNGM2Ni1hZjhkLTE3MzlhOGRkNjAyZiIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/dbccb2fd-441e-4632-a263-81fd965c464b",
+      "minimumDuration": "1 hour 30 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "182122",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/182122",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "DUO ticket for the Big Fun Museum and the Museum of Illusions",
+      "shortDescription": "<div><p><p>The DUO ticket will give you the chance to visit two family-friendly museums and enjoy the most entertaining activities to do in Barcelona.</p><p>Inside the Big Fun Museum, you&#39;ll find 7 museums and a time out zone under the same ceiling in the heart of Barcelona! the Guinness museum, an upside-down house, a sweet museum, a giant’s house, Alice through the looking glass, Food Art, a museum of madness, a time out zone with a dry pool! And it’s only five minutes far from you may see the Museum of Illusions with 3D paintings that come alive! Painted by the greatest artists in Barcelona! You can try to pet a dinosaur, lean out on the Grand Cannon, and travel through amazing places. Take endless pictures and in your best pose to share it on all your social media platforms!</p></p></div>",
+      "description": "<div><p><p>The DUO ticket will give you the chance to visit two family-friendly museums and enjoy the most entertaining activities to do in Barcelona.</p><p>Inside the Big Fun Museum, you&#39;ll find 7 museums and a time out zone under the same ceiling in the heart of Barcelona! the Guinness museum, an upside-down house, a sweet museum, a giant’s house, Alice through the looking glass, Food Art, a museum of madness, a time out zone with a dry pool! And it’s only five minutes far from you may see the Museum of Illusions with 3D paintings that come alive! Painted by the greatest artists in Barcelona! You can try to pet a dinosaur, lean out on the Grand Cannon, and travel through amazing places. Take endless pictures and in your best pose to share it on all your social media platforms!</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "25.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzFkNzc5ODZlLWZjYjQtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/8dfb2b6a-2fee-42ab-8153-bf9e76c8c296",
+      "minimumDuration": ""
+    },
+    {
+      "type": "activity",
+      "id": "159040",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/159040",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Food tasting tapas and wine tour in Barcelona",
+      "shortDescription": "<div><p><p>Delicious food, local wines and an incredible experience!\n\nIf you are a foodie, wine lover, food critic, vacationer, or just somebody who loves trying new and interesting things, this is the perfect experience for you! This tour is for everyone to come and enjoy and learn about the delicious Spanish cuisine and wine. You will be lead around four local hot spots and sample a variety of delicious tapas and wines with our knowledgeable and passionate guide.</p></p></div>",
+      "description": "<div><p><p>Delicious food, local wines and an incredible experience!\n\nIf you are a foodie, wine lover, food critic, vacationer, or just somebody who loves trying new and interesting things, this is the perfect experience for you! This tour is for everyone to come and enjoy and learn about the delicious Spanish cuisine and wine. You will be lead around four local hot spots and sample a variety of delicious tapas and wines with our knowledgeable and passionate guide.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "53.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2Q0OGE3YmRkLWZiZTYtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/d9f1b9e3-d266-4247-a15d-df941b18e0d3",
+      "minimumDuration": "3 hours"
+    },
+    {
+      "type": "activity",
+      "id": "1758071",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/1758071",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Southern Cross sailing experience in Barcelona",
+      "shortDescription": "<div><p><p>Get on board this unique 1962 sailing yacht and sail from the heart of the city along the Barcelona coast! Southern Cross traveled several times around the world, with an incredible list of famous people who sailed on!</p><p>Enjoy the view of Barcelona from the sea while the DJ will create the best soundtrack for you. The local operator will offer cheese, Spanish ham, and fresh vegetables stick with hummus, while having up to 2-3 drinks like white wine, beer, sangria, cava, and soft drinks.</p><p>Southern Cross is a steel-hulled ketch with wooden masts. It is the largest steel yacht built in Scotland by Yarrow &amp; Co. shipyards (Scotstoun, Glasgow).</p><p>In 1962, the ship was equipped with the best and most innovative technology of the time, as well as some of the top interior designs of the time. Even having spent a whopping six decades since her launch, the ship maintains the character and atmosphere of the British style, being the bridge a space museum, since it still retains the original machinery control elements and is in good working order.</p></p></div>",
+      "description": "<div><p><p>Get on board this unique 1962 sailing yacht and sail from the heart of the city along the Barcelona coast! Southern Cross traveled several times around the world, with an incredible list of famous people who sailed on!</p><p>Enjoy the view of Barcelona from the sea while the DJ will create the best soundtrack for you. The local operator will offer cheese, Spanish ham, and fresh vegetables stick with hummus, while having up to 2-3 drinks like white wine, beer, sangria, cava, and soft drinks.</p><p>Southern Cross is a steel-hulled ketch with wooden masts. It is the largest steel yacht built in Scotland by Yarrow &amp; Co. shipyards (Scotstoun, Glasgow).</p><p>In 1962, the ship was equipped with the best and most innovative technology of the time, as well as some of the top interior designs of the time. Even having spent a whopping six decades since her launch, the ship maintains the character and atmosphere of the British style, being the bridge a space museum, since it still retains the original machinery control elements and is in good working order.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "60.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzI4N2EzYmNkLWUwOTktNDZlOS04MTJkLTFiMWIxNmU5MDc3NyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/90b48345-0051-40a0-bbe0-e0e7bc085a00",
+      "minimumDuration": "2 hours"
+    },
+    {
+      "type": "activity",
+      "id": "640921",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/640921",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Private tour of Picasso and Barcelona",
+      "shortDescription": "<div><p><p>Are you ready to experience Barcelona and one of the city&#39;s most iconic artists? Immerse yourself in this enchanting reality where Picasso&#39;s modernism and Barcelona&#39;s bohemian vibe will take you on a sublime journey. This 4-hour private tour will allow you to discover Barcelona&#39;s gorgeous aesthetic and Picasso&#39;s artistic life. You&#39;ll explore some of Picasso&#39;s most important points of interest, such as the area where he had his art studio, the location where he first held his exhibition, and much more! You&#39;ll even get to stop at the «Els 4 Gats» restaurant, a place where local artists used to catch up and chat about art and their daily lives. Next up on the agendais a trip to la puertas de los palacios renacentistas on Calle Moncada with entry and skip-the-line tickets to the Picasso Museum. Get to know one of Picasso&#39;s biggest collections with your local expert guide, no queues, hassle-free!</p></p></div>",
+      "description": "<div><p><p>Are you ready to experience Barcelona and one of the city&#39;s most iconic artists? Immerse yourself in this enchanting reality where Picasso&#39;s modernism and Barcelona&#39;s bohemian vibe will take you on a sublime journey. This 4-hour private tour will allow you to discover Barcelona&#39;s gorgeous aesthetic and Picasso&#39;s artistic life. You&#39;ll explore some of Picasso&#39;s most important points of interest, such as the area where he had his art studio, the location where he first held his exhibition, and much more! You&#39;ll even get to stop at the «Els 4 Gats» restaurant, a place where local artists used to catch up and chat about art and their daily lives. Next up on the agendais a trip to la puertas de los palacios renacentistas on Calle Moncada with entry and skip-the-line tickets to the Picasso Museum. Get to know one of Picasso&#39;s biggest collections with your local expert guide, no queues, hassle-free!</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "405.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzQzOTg1MGVmLTU3ZjYtNDI2MC04MmVlLTM2OWY4Njc4MjE2ZSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/7c557141-d165-44c4-87d8-dc70c96e660f",
+      "minimumDuration": "4 hours"
+    },
+    {
+      "type": "activity",
+      "id": "2179519",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/2179519",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Mirador Torres Glories admission tickets",
+      "shortDescription": "<div><p><p>Admire the city of Barcelona from a 360° perspective! You&#39;ll enter the new observatory of MiradorTorre Glòries, located in one of the most emblematic buildings in Barcelona.</p><p>First, you&#39;ll visit the Hipermirador Barcelona, an exhibition that will let you discover the city through art, music and technology. Then, you&#39;ll climb to the 30th floor and enjoy the view. You&#39;ll also admire the Cloud Cities Barcelona sculpture, designed by the artist Tomás Saraceno and suspended at the top of the dome.</p></p></div>",
+      "description": "<div><p><p>Admire the city of Barcelona from a 360° perspective! You&#39;ll enter the new observatory of MiradorTorre Glòries, located in one of the most emblematic buildings in Barcelona.</p><p>First, you&#39;ll visit the Hipermirador Barcelona, an exhibition that will let you discover the city through art, music and technology. Then, you&#39;ll climb to the 30th floor and enjoy the view. You&#39;ll also admire the Cloud Cities Barcelona sculpture, designed by the artist Tomás Saraceno and suspended at the top of the dome.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "15.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzLzM1NjVhNWFkLWYxNDktNDQ1ZC04NzU4LWM1NGQ1ZjA2MWY1YyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/b2b5864c-0080-48cd-a2e0-591fe10db19a",
+      "minimumDuration": "50 minutes"
+    },
+    {
+      "type": "activity",
+      "id": "159467",
+      "self": {
+        "href": "https://api.amadeus-discover.com/api/activity/159467",
+        "methods": [
+          "GET"
+        ]
+      },
+      "name": "Rural Catalonia hike and Rupit medieval town",
+      "shortDescription": "<div><p><p>You will start hiking from Rupit around its impressive cliffs and forests, from where you will enjoy breathtaking views of Collsacabra mountain range and all the surrounding area. After this pleasant hike, you will come back to Rupit, where you will enjoy a well deserved 3 course Catalan traditional lunch in a local restaurant. Before going back to Barcelona, you will have a guided tour around this beautiful medieval town, one of Catalunya hidden gems.</p></p></div>",
+      "description": "<div><p><p>You will start hiking from Rupit around its impressive cliffs and forests, from where you will enjoy breathtaking views of Collsacabra mountain range and all the surrounding area. After this pleasant hike, you will come back to Rupit, where you will enjoy a well deserved 3 course Catalan traditional lunch in a local restaurant. Before going back to Barcelona, you will have a guided tour around this beautiful medieval town, one of Catalunya hidden gems.</p></p></div>",
+      "geoCode": {
+        "latitude": 41.3957565,
+        "longitude": 2.1748348
+      },
+      "price": {
+        "amount": "116.0",
+        "currencyCode": "EUR"
+      },
+      "pictures": [
+        "https://images.holibob.tech/eyJrZXkiOiJwcm9kdWN0SW1hZ2VzL2IwZGE4OTU5LWZjYjAtMTFlYi04MDFmLTA2YjgxYWQ0YzU3OSIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoxOTIwLCJoZWlnaHQiOjEwODB9fX0="
+      ],
+      "bookingLink": "https://amadeus.booking.holibob.tech/product/2e8bc54c-4333-434a-a965-ca0dc6fd3bbe",
+      "minimumDuration": "9 hours"
+    }
+  ],
+  "meta": {
+    "count": 57,
+    "self": "https://api.amadeus-discover.com/api/shopping/activities/by-square?north=41.397158&west=2.160873&south=41.394582&east=2.177181"
+  }
+}

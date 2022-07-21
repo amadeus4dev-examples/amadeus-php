@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Amadeus;
 
+use Amadeus\Shopping\Activities;
+use Amadeus\Shopping\Activity;
 use Amadeus\Shopping\Availability;
 use Amadeus\Shopping\FlightDates;
 use Amadeus\Shopping\FlightDestinations;
@@ -71,6 +73,14 @@ class Shopping
     private ?FlightDestinations $flightDestinations;
 
     /**
+     * <p>
+     *   A namespaced client for the
+     *   <code>/v1/shopping/activities</code> endpoints.
+     * </p>
+     */
+    private ?Activities $activities;
+
+    /**
      * @param Amadeus $amadeus
      */
     public function __construct(Amadeus $amadeus)
@@ -81,6 +91,7 @@ class Shopping
         $this->hotelOffers = new HotelOffers($amadeus);
         $this->flightDates = new FlightDates($amadeus);
         $this->flightDestinations = new FlightDestinations($amadeus);
+        $this->activities = new Activities($amadeus);
     }
 
     /**
@@ -154,5 +165,30 @@ class Shopping
     public function getFlightDestinations(): ?FlightDestinations
     {
         return $this->flightDestinations;
+    }
+
+    /**
+     * <p>
+     *   Get a namespaced client for the
+     *   <code>/v1/shopping/activities</code> endpoints.
+     * </p>
+     * @return Activities|null
+     */
+    public function getActivities(): ?Activities
+    {
+        return $this->activities;
+    }
+
+    /**
+     * <p>
+     *   Get a namespaced client for the
+     *   <code>/v1/shopping/activities/:activity_id</code> endpoints.
+     * </p>
+     * @param string $activityId
+     * @return Activity|null
+     */
+    public function getActivity(string $activityId): ?Activity
+    {
+        return new Activity($this->amadeus, $activityId);
     }
 }

@@ -289,6 +289,19 @@ $amadeus->getDutyOfCare()->getDiseases()->getCovid19AreaReport()->get(["countryC
 /* Flight Inspiration Search */
 // function get(array $params) :
 $amadeus->getShopping()->getFlightDestination()->get(["origin"=>"MUC"]);
+
+/* Tours and Activities */
+// What are the popular activities in Barcelona (based a geo location and a radius)
+// function get(array $params) :
+$activities = $amadeus->getShopping()->getActivities()->get(
+    ["longitude" => 2.160873, "latitude" => 41.397158]);
+// What are the popular activities in Barcelona? (based on a square)
+// function get(array $params) :
+$activities = $amadeus->getShopping()->getActivities()->getBySquare()->get(
+    ["west" => 2.160873, "north" => 41.397158, "south" => 41.394582, "east" => 2.177181]);
+// Get a single activity from a given id
+// function get() :
+$amadeus->getShopping()->getActivity("3044851")->get();
 ```
 
 ## Development & Contributing
