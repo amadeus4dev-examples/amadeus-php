@@ -244,6 +244,10 @@ $amadeus->getShopping()->getHotelOffer("XXX")->get();
 // function post(string $body) :
 $amadeus->getBooking()->getHotelBookings()->post($body);
 
+/* Hotel Ratings */
+// function get(array $params) :
+$amadeus->getEReputation()->getHotelSentiments()->get(["hotelIds" => "TELONMFS"]);
+
 /* Flight Availabilities Search */
 // function post(string $body) :
 $amadeus->getShopping()->getAvailability()->getFlightAvailabilities()->post($body);
@@ -281,6 +285,10 @@ $amadeus->getTravel()->getPredictions()->getFlightDelay()->get([
 /* Travel Restrictions */
 // function get(array $params) :
 $amadeus->getDutyOfCare()->getDiseases()->getCovid19AreaReport()->get(["countryCode"=>"US"]);
+
+/* Flight Inspiration Search */
+// function get(array $params) :
+$amadeus->getShopping()->getFlightDestination()->get(["origin"=>"MUC"]);
 
 /* Tours and Activities */
 // What are the popular activities in Barcelona (based a geo location and a radius)

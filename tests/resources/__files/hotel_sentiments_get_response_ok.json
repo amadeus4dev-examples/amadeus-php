@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "count": 1,
+    "links": {
+      "self": "https://test.api.amadeus.com/v2/e-reputation/hotel-sentiments?hotelIds=TELONMFS"
+    }
+  },
+  "data": [
+    {
+      "hotelId": "TELONMFS",
+      "overallRating": 81,
+      "numberOfReviews": 2667,
+      "numberOfRatings": 2666,
+      "type": "hotelSentiment",
+      "sentiments": {
+        "staff": 89,
+        "location": 89,
+        "service": 80,
+        "roomComforts": 87,
+        "internet": 72,
+        "sleepQuality": 78,
+        "valueForMoney": 75,
+        "facilities": 75,
+        "catering": 81,
+        "pointsOfInterest": 81
+      }
+    }
+  ]
+}

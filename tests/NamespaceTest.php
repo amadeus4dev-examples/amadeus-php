@@ -22,6 +22,8 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\DutyOfCare
  * @covers \Amadeus\DutyOfCare\Diseases
  * @covers \Amadeus\DutyOfCare\Diseases\Covid19AreaReport
+ * @covers \Amadeus\EReputation
+ * @covers \Amadeus\EReputation\HotelSentiments
  * @covers \Amadeus\ReferenceData
  * @covers \Amadeus\ReferenceData\Airlines
  * @covers \Amadeus\ReferenceData\Location
@@ -41,6 +43,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Shopping\Availability
  * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
  * @covers \Amadeus\Shopping\FlightDates
+ * @covers \Amadeus\Shopping\FlightDestinations
  * @covers \Amadeus\Shopping\FlightOffers
  * @covers \Amadeus\Shopping\FlightOffers\Pricing
  * @covers \Amadeus\Shopping\HotelOffer
@@ -82,6 +85,7 @@ final class NamespaceTest extends TestCase
         $this->assertNotNull($amadeus->getShopping()->getHotelOffer("XXX"));
         $this->assertNotNull($amadeus->getShopping()->getHotelOffers());
         $this->assertNotNull($amadeus->getShopping()->getFlightDates());
+        $this->assertNotNull($amadeus->getShopping()->getFlightDestinations());
 
         // ReferenceData
         $this->assertNotNull($amadeus->getReferenceData());
@@ -108,5 +112,9 @@ final class NamespaceTest extends TestCase
         $this->assertNotNull($amadeus->getDutyOfCare());
         $this->assertNotNull($amadeus->getDutyOfCare()->getDiseases());
         $this->assertNotNull($amadeus->getDutyOfCare()->getDiseases()->getCovid19AreaReport());
+
+        // EReputation
+        $this->assertNotNull($amadeus->getEReputation());
+        $this->assertNotNull($amadeus->getEReputation()->getHotelSentiments());
     }
 }
