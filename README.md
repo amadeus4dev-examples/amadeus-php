@@ -208,6 +208,13 @@ $amadeus->getBooking()->getFlightOrders()->post($body);
 // function postWithFlightOffersAndTravelers(array $flightOffers, array $travelers);
 $amadeus->getBooking()->getFlightOrders()->postWithFlightOffersAndTravelers($flightOffers, $travelers);
 
+/* Flight Choice Prediction */
+// function post(string $body) :
+$amadeus->getShopping()->getFlightOffers()->getPrediction()->post($body);
+// function postWithFlightOffers(array $flightOffers) : 
+$flightOffers = $this->getShopping()->getFlightOffers()->get(["originLocationCode"=>"LON", "destinationLocationCode"=>"NYC", "departureDate"=>"2022-12-06", "adults"=>1, "max"=>20]);
+$amadeus->getShopping()->getFlightOffers()->getPrediction()->postWithFlightOffers($flightOffers);
+
 /* Airport and City Search (autocomplete) */
 // Get a list of airports and cities matching a given keyword
 // function get(array $params) :

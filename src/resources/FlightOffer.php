@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Amadeus\Resources;
 
 /**
- * A FlightOffer object as returned by the Flight Offers Search API.
- * @see FlightOffers
+ * A FlightOffer object as returned by the Flight Offers Search API, Flight Choice Prediction API.
+ * @see FlightOffers, Prediction
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
+ * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-choice-prediction/api-reference
  */
 class FlightOffer extends Resource implements ResourceInterface
 {
@@ -26,6 +27,8 @@ class FlightOffer extends Resource implements ResourceInterface
     private ?array $validatingAirlineCodes = null;
     private ?array $travelerPricings = null;
     private ?bool $paymentCardRequired = null;
+    private ?string $choiceProbability = null;
+    private ?object $fareRules = null;
 
     /**
      * @return string|null
@@ -156,6 +159,25 @@ class FlightOffer extends Resource implements ResourceInterface
         return Resource::toResourceArray(
             $this->travelerPricings,
             TravelerPricing::class
+        );
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getChoiceProbability(): ?string
+    {
+        return $this->choiceProbability;
+    }
+
+    /**
+     * @return FareRules|null
+     */
+    public function getFareRules(): ?object
+    {
+        return Resource::toResourceObject(
+            $this->fareRules,
+            FareRules::class
         );
     }
 

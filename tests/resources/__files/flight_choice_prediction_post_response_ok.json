@@ -1,0 +1,509 @@
+{
+  "data": [
+    {
+      "choiceProbability": "0.5000000000000000",
+      "id": "1",
+      "instantTicketingRequired": false,
+      "itineraries": [
+        {
+          "duration": "PT15H55M",
+          "segments": [
+            {
+              "blacklistedInEU": false,
+              "id": "1",
+              "numberOfStops": 0,
+              "aircraft": {
+                "code": "788"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2020-08-02T13:10:00"
+              },
+              "carrierCode": "BA",
+              "departure": {
+                "iataCode": "GIG",
+                "terminal": "2",
+                "at": "2020-08-01T21:50:00"
+              },
+              "duration": "PT11H20M",
+              "number": "248",
+              "operating": {
+                "carrierCode": "BA"
+              }
+            },
+            {
+              "blacklistedInEU": false,
+              "id": "2",
+              "numberOfStops": 0,
+              "aircraft": {
+                "code": "321"
+              },
+              "arrival": {
+                "iataCode": "MAD",
+                "terminal": "4S",
+                "at": "2020-08-02T18:45:00"
+              },
+              "carrierCode": "BA",
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2020-08-02T15:15:00"
+              },
+              "duration": "PT2H30M",
+              "number": "462",
+              "operating": {
+                "carrierCode": "BA"
+              }
+            }
+          ]
+        },
+        {
+          "duration": "PT13H35M",
+          "segments": [
+            {
+              "blacklistedInEU": false,
+              "id": "5",
+              "numberOfStops": 0,
+              "aircraft": {
+                "code": "346"
+              },
+              "arrival": {
+                "iataCode": "GRU",
+                "terminal": "3",
+                "at": "2020-08-06T05:40:00"
+              },
+              "carrierCode": "IB",
+              "departure": {
+                "iataCode": "MAD",
+                "terminal": "4S",
+                "at": "2020-08-05T23:55:00"
+              },
+              "duration": "PT10H45M",
+              "number": "6827",
+              "operating": {
+                "carrierCode": "IB"
+              }
+            },
+            {
+              "blacklistedInEU": false,
+              "id": "6",
+              "numberOfStops": 0,
+              "aircraft": {
+                "code": "320"
+              },
+              "arrival": {
+                "iataCode": "GIG",
+                "terminal": "2",
+                "at": "2020-08-06T08:30:00"
+              },
+              "carrierCode": "LA",
+              "departure": {
+                "iataCode": "GRU",
+                "terminal": "2",
+                "at": "2020-08-06T07:30:00"
+              },
+              "duration": "PT1H",
+              "number": "4508"
+            }
+          ]
+        }
+      ],
+      "lastTicketingDate": "2020-01-16",
+      "nonHomogeneous": false,
+      "numberOfBookableSeats": 7,
+      "oneWay": false,
+      "price": {
+        "grandTotal": "3842.10",
+        "base": "3661.00",
+        "currency": "USD",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "total": "3842.10"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ]
+      },
+      "source": "GDS",
+      "travelerPricings": [
+        {
+          "fareDetailsBySegment": [
+            {
+              "brandedFare": "BUSINESS",
+              "cabin": "BUSINESS",
+              "class": "R",
+              "fareBasis": "RNNZ60S3",
+              "includedCheckedBags": {
+                "quantity": 2
+              },
+              "segmentId": "1"
+            },
+            {
+              "brandedFare": "BUSINESS",
+              "cabin": "BUSINESS",
+              "class": "J",
+              "fareBasis": "RNNZ60S3",
+              "includedCheckedBags": {
+                "quantity": 2
+              },
+              "segmentId": "2"
+            },
+            {
+              "brandedFare": "BAGSEAT",
+              "cabin": "ECONOMY",
+              "class": "V",
+              "fareBasis": "VDH0NNM3",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "segmentId": "5"
+            },
+            {
+              "brandedFare": "BAGSEAT",
+              "cabin": "ECONOMY",
+              "class": "V",
+              "fareBasis": "VDH0NNM3",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "segmentId": "6"
+            }
+          ],
+          "fareOption": "STANDARD",
+          "price": {
+            "base": "2088.00",
+            "currency": "USD",
+            "total": "2178.55"
+          },
+          "travelerId": "1",
+          "travelerType": "ADULT"
+        },
+        {
+          "fareDetailsBySegment": [
+            {
+              "brandedFare": "BUSINESS",
+              "cabin": "BUSINESS",
+              "class": "R",
+              "fareBasis": "RNNZ60S3",
+              "segmentId": "1"
+            },
+            {
+              "brandedFare": "BUSINESS",
+              "cabin": "BUSINESS",
+              "class": "J",
+              "fareBasis": "RNNZ60S3",
+              "segmentId": "2"
+            },
+            {
+              "brandedFare": "BAGSEAT",
+              "cabin": "ECONOMY",
+              "class": "V",
+              "fareBasis": "VDH0NNM3",
+              "segmentId": "5"
+            },
+            {
+              "brandedFare": "BAGSEAT",
+              "cabin": "ECONOMY",
+              "class": "V",
+              "fareBasis": "VDH0NNM3",
+              "segmentId": "6"
+            }
+          ],
+          "fareOption": "STANDARD",
+          "price": {
+            "base": "1573.00",
+            "currency": "USD",
+            "total": "1663.55"
+          },
+          "travelerId": "2",
+          "travelerType": "CHILD"
+        }
+      ],
+      "type": "flight-offer",
+      "validatingAirlineCodes": [
+        "BA"
+      ]
+    },
+    {
+      "choiceProbability": "0.5000000000000000",
+      "id": "2",
+      "instantTicketingRequired": false,
+      "itineraries": [
+        {
+          "duration": "PT15H55M",
+          "segments": [
+            {
+              "blacklistedInEU": false,
+              "id": "1",
+              "numberOfStops": 0,
+              "aircraft": {
+                "code": "788"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2020-08-02T13:10:00"
+              },
+              "carrierCode": "BA",
+              "departure": {
+                "iataCode": "GIG",
+                "terminal": "2",
+                "at": "2020-08-01T21:50:00"
+              },
+              "duration": "PT11H20M",
+              "number": "248",
+              "operating": {
+                "carrierCode": "BA"
+              }
+            },
+            {
+              "blacklistedInEU": false,
+              "id": "2",
+              "numberOfStops": 0,
+              "aircraft": {
+                "code": "321"
+              },
+              "arrival": {
+                "iataCode": "MAD",
+                "terminal": "4S",
+                "at": "2020-08-02T18:45:00"
+              },
+              "carrierCode": "BA",
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2020-08-02T15:15:00"
+              },
+              "duration": "PT2H30M",
+              "number": "462",
+              "operating": {
+                "carrierCode": "BA"
+              }
+            }
+          ]
+        },
+        {
+          "duration": "PT19H5M",
+          "segments": [
+            {
+              "blacklistedInEU": false,
+              "id": "3",
+              "numberOfStops": 0,
+              "aircraft": {
+                "code": "346"
+              },
+              "arrival": {
+                "iataCode": "GRU",
+                "terminal": "3",
+                "at": "2020-08-06T05:40:00"
+              },
+              "carrierCode": "IB",
+              "departure": {
+                "iataCode": "MAD",
+                "terminal": "4S",
+                "at": "2020-08-05T23:55:00"
+              },
+              "duration": "PT10H45M",
+              "number": "6827",
+              "operating": {
+                "carrierCode": "IB"
+              }
+            },
+            {
+              "blacklistedInEU": false,
+              "id": "4",
+              "numberOfStops": 0,
+              "aircraft": {
+                "code": "321"
+              },
+              "arrival": {
+                "iataCode": "GIG",
+                "terminal": "2",
+                "at": "2020-08-06T14:00:00"
+              },
+              "carrierCode": "LA",
+              "departure": {
+                "iataCode": "GRU",
+                "terminal": "2",
+                "at": "2020-08-06T13:00:00"
+              },
+              "duration": "PT1H",
+              "number": "4537"
+            }
+          ]
+        }
+      ],
+      "lastTicketingDate": "2020-01-16",
+      "nonHomogeneous": false,
+      "numberOfBookableSeats": 7,
+      "oneWay": false,
+      "price": {
+        "grandTotal": "3842.10",
+        "base": "3661.00",
+        "currency": "USD",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "total": "3842.10"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ]
+      },
+      "source": "GDS",
+      "travelerPricings": [
+        {
+          "fareDetailsBySegment": [
+            {
+              "brandedFare": "BUSINESS",
+              "cabin": "BUSINESS",
+              "class": "R",
+              "fareBasis": "RNNZ60S3",
+              "includedCheckedBags": {
+                "quantity": 2
+              },
+              "segmentId": "1"
+            },
+            {
+              "brandedFare": "BUSINESS",
+              "cabin": "BUSINESS",
+              "class": "J",
+              "fareBasis": "RNNZ60S3",
+              "includedCheckedBags": {
+                "quantity": 2
+              },
+              "segmentId": "2"
+            },
+            {
+              "brandedFare": "BAGSEAT",
+              "cabin": "ECONOMY",
+              "class": "V",
+              "fareBasis": "VDH0NNM3",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "segmentId": "3"
+            },
+            {
+              "brandedFare": "BAGSEAT",
+              "cabin": "ECONOMY",
+              "class": "V",
+              "fareBasis": "VDH0NNM3",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "segmentId": "4"
+            }
+          ],
+          "fareOption": "STANDARD",
+          "price": {
+            "base": "2088.00",
+            "currency": "USD",
+            "total": "2178.55"
+          },
+          "travelerId": "1",
+          "travelerType": "ADULT"
+        },
+        {
+          "fareDetailsBySegment": [
+            {
+              "brandedFare": "BUSINESS",
+              "cabin": "BUSINESS",
+              "class": "R",
+              "fareBasis": "RNNZ60S3",
+              "segmentId": "1"
+            },
+            {
+              "brandedFare": "BUSINESS",
+              "cabin": "BUSINESS",
+              "class": "J",
+              "fareBasis": "RNNZ60S3",
+              "segmentId": "2"
+            },
+            {
+              "brandedFare": "BAGSEAT",
+              "cabin": "ECONOMY",
+              "class": "V",
+              "fareBasis": "VDH0NNM3",
+              "segmentId": "3"
+            },
+            {
+              "brandedFare": "BAGSEAT",
+              "cabin": "ECONOMY",
+              "class": "V",
+              "fareBasis": "VDH0NNM3",
+              "segmentId": "4"
+            }
+          ],
+          "fareOption": "STANDARD",
+          "price": {
+            "base": "1573.00",
+            "currency": "USD",
+            "total": "1663.55"
+          },
+          "travelerId": "2",
+          "travelerType": "CHILD"
+        }
+      ],
+      "type": "flight-offer",
+      "validatingAirlineCodes": [
+        "BA"
+      ]
+    }
+  ],
+  "dictionaries": {
+    "aircraft": {
+      "320": "AIRBUS INDUSTRIE A320-100/200",
+      "321": "AIRBUS INDUSTRIE A321",
+      "346": "AIRBUS INDUSTRIE A340-600",
+      "788": "BOEING 787-8"
+    },
+    "carriers": {
+      "BA": "BRITISH AIRWAYS",
+      "IB": "IBERIA",
+      "LA": "LATAM AIRLINES GROUP"
+    },
+    "currencies": {
+      "USD": "US DOLLAR"
+    },
+    "locations": {
+      "GIG": {
+        "cityCode": "RIO",
+        "countryCode": "BR"
+      },
+      "GRU": {
+        "cityCode": "SAO",
+        "countryCode": "BR"
+      },
+      "LHR": {
+        "cityCode": "LON",
+        "countryCode": "GB"
+      },
+      "MAD": {
+        "cityCode": "MAD",
+        "countryCode": "ES"
+      }
+    }
+  },
+  "meta": {
+    "count": 2
+  }
+}

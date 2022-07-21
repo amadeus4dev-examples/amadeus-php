@@ -8,6 +8,7 @@ use Amadeus\Amadeus;
 use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\FlightOffer;
 use Amadeus\Resources\Resource;
+use Amadeus\Shopping\FlightOffers\Prediction;
 use Amadeus\Shopping\FlightOffers\Pricing;
 
 /**
@@ -38,12 +39,21 @@ class FlightOffers
     private Pricing $pricing;
 
     /**
+     * <p>
+     *   A namespaced client for the
+     *   <code>/v2/shopping/flight-offers/prediction</code> endpoints.
+     * </p>
+     */
+    private Prediction $prediction;
+
+    /**
      * @param Amadeus $amadeus
      */
     public function __construct(Amadeus $amadeus)
     {
         $this->amadeus = $amadeus;
         $this->pricing = new Pricing($amadeus);
+        $this->prediction = new Prediction($amadeus);
     }
 
     /**
@@ -56,6 +66,18 @@ class FlightOffers
     public function getPricing(): Pricing
     {
         return $this->pricing;
+    }
+
+    /**
+     * <p>
+     *   Get a namespaced client for the
+     *   <code>/v2/shopping/flight-offers/prediction</code> endpoints.
+     * </p>
+     * @return Prediction
+     */
+    public function getPrediction(): Prediction
+    {
+        return $this->prediction;
     }
 
     /**
