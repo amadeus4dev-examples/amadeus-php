@@ -24,6 +24,7 @@ use PHPUnit\Framework\TestCase;
  * This test covers the endpoint and its related returned resources.
  * @covers \Amadeus\Shopping\FlightOffers
  * @covers \Amadeus\Shopping\FlightOffers\Pricing
+ * @covers \Amadeus\Shopping\FlightOffers\Prediction
  *
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\FlightOffer
