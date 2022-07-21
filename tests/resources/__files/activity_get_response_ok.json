@@ -1,0 +1,26 @@
+{
+  "data": {
+    "type": "activity",
+    "id": "3044851",
+    "self": {
+      "href": "https://api.amadeus-discover.com/api/shopping/activities/3044851",
+      "methods": [
+        "GET"
+      ]
+    },
+    "name": "Casa Milà",
+    "description": "",
+    "geoCode": {
+      "latitude": 41.3952155,
+      "longitude": 2.1619024
+    },
+    "rating": "4.6",
+    "price": {},
+    "pictures": [],
+    "bookingLink": "",
+    "minimumDuration": ""
+  },
+  "meta": {
+    "self": "https://api.amadeus-discover.com/api/shopping/activities/3044851"
+  }
+}

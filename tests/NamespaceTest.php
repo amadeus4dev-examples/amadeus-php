@@ -35,6 +35,9 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Schedule
  * @covers \Amadeus\Schedule\Flights
  * @covers \Amadeus\Shopping
+ * @covers \Amadeus\Shopping\Activities
+ * @covers \Amadeus\Shopping\Activities\BySquare
+ * @covers \Amadeus\Shopping\Activity
  * @covers \Amadeus\Shopping\Availability
  * @covers \Amadeus\Shopping\Availability\FlightAvailabilities
  * @covers \Amadeus\Shopping\FlightDates
@@ -69,6 +72,9 @@ final class NamespaceTest extends TestCase
 
         // Shopping
         $this->assertNotNull($amadeus->getShopping());
+        $this->assertNotNull($amadeus->getShopping()->getActivities());
+        $this->assertNotNull($amadeus->getShopping()->getActivities()->getBySquare());
+        $this->assertNotNull($amadeus->getShopping()->getActivity("XXX"));
         $this->assertNotNull($amadeus->getShopping()->getAvailability());
         $this->assertNotNull($amadeus->getShopping()->getAvailability()->getFlightAvailabilities());
         $this->assertNotNull($amadeus->getShopping()->getFlightOffers());
