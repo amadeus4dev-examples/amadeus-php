@@ -1,4 +1,35 @@
 # Changelog
+## 0.2.0 - 2022-07-21
+
+Add support for the [Flight Cheapest Dates Search API](https://developers.amadeus.com/self-service/category/air/api-doc/flight-cheapest-date-search/api-reference)
+
+Add support for the [Airline Code Lookup API](https://developers.amadeus.com/self-service/category/air/api-doc/airline-code-lookup/api-reference)
+
+Add support for the [On-Demand Flight Status API](https://developers.amadeus.com/self-service/category/air/api-doc/on-demand-flight-status/api-reference)
+
+Add support for the [Airport Nearest Relevant API](https://developers.amadeus.com/self-service/category/air/api-doc/airport-nearest-relevant/api-reference)
+
+Add support for the [Flight Delay Prediction API](https://developers.amadeus.com/self-service/category/air/api-doc/flight-delay-prediction/api-reference)
+
+Add support for the [Travel Restrictions API](https://developers.amadeus.com/self-service/category/covid-19-and-travel-safety/api-doc/travel-restrictions/api-reference)
+
+Add support for the [Tour and Activities API](https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference)
+
+Add support for the [Flight Inspiration Search API](https://developers.amadeus.com/self-service/category/air/api-doc/flight-inspiration-search/api-reference)
+
+Add support for the [Hotel Ratings API](https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-ratings/api-reference)
+
+Add support for the [Flight Choice Prediction API](https://developers.amadeus.com/self-service/category/air/api-doc/flight-choice-prediction/api-reference)
+
+Add support for the endpoint ```/reference-data/locations/{locationId}``` in the [Airport & City Search API](https://developers.amadeus.com/self-service/category/air/api-doc/airport-and-city-search/api-reference)
+
+Modify the way of calling ```/shopping/hotel-offers/{offerId}``` to ```$amadeus->getShopping().getHotelOffer("XXX")->get()``` in the [Hotel Search API](https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference)
+
+Add support for initializing without variables, which supports ```Amadeus::builder()->build()``` if the environment variables ``AMADEUS_CLIENT_ID`` and ``AMADEUS_CLIENT_SECRET`` are present.
+
+Add minimum logging & debugging feature, which supports to log ```AccessToken/Request/Response/ResponseException``` in the ```debug``` level.
+
+Improve Test Line Coverage until 85%.
 
 ## 0.1.1 - 2022-06-30
 
