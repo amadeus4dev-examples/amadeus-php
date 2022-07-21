@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Amadeus\Resources;
 
 /**
- * A HotelSentiment object as returned by the Hotel Rating API.
+ * A HotelSentiment object as returned by the Hotel Ratings API.
  * @see HotelSentiments
  * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-ratings/api-reference
  */
