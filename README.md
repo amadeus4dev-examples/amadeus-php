@@ -9,7 +9,7 @@ Amadeus provides a rich set of APIs for the travel industry. For more details, c
 This library requires PHP 7.4+. You can install the SDK via Composer
 
 ``` 
-composer require amadeus4dev/amadeus-php:0.1.1
+composer require amadeus4dev/amadeus-php:0.2.0
 ```
 
 ## Getting Started
