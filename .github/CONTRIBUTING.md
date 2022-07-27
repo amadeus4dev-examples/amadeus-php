@@ -3,7 +3,7 @@
 To run the project locally, clone the repository and install the dependencies.
 
 ```
-git clone 
+git clone https://github.com/amadeus4dev/amadeus-php.git
 cd amadeus-php
 composer install
 ```
