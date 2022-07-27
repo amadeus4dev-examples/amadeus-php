@@ -29,7 +29,7 @@ class Travel
      *   <code>/v1/travel/predictions</code> endpoints.
      * </p>
      */
-    private ?Predictions $predictions;
+    private Predictions $predictions;
 
     /**
      * @param Amadeus $amadeus
@@ -44,9 +44,9 @@ class Travel
      *   Get a namespaced client for the
      *   <code>/v1/travel/predictions</code> endpoints.
      * </p>
-     * @return Predictions|null
+     * @return Predictions
      */
-    public function getPredictions(): ?Predictions
+    public function getPredictions(): Predictions
     {
         return $this->predictions;
     }

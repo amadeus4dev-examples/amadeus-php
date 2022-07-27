@@ -38,7 +38,7 @@ class Shopping
      *   <code>/v1/shopping/availability</code> endpoints.
      * </p>
      */
-    private ?Availability $availability;
+    private Availability $availability;
 
     /**
      * <p>
@@ -46,7 +46,7 @@ class Shopping
      *   <code>/v2/shopping/flight-offers</code> endpoints.
      * </p>
      */
-    private ?FlightOffers $flightOffers;
+    private FlightOffers $flightOffers;
 
     /**
      * <p>
@@ -54,7 +54,7 @@ class Shopping
      *   <code>/v3/shopping/hotel-offers</code> endpoints.
      * </p>
      */
-    private ?HotelOffers $hotelOffers;
+    private HotelOffers $hotelOffers;
 
     /**
      * <p>
@@ -62,7 +62,7 @@ class Shopping
      *   <code>/v1/shopping/flight-dates</code> endpoints.
      * </p>
      */
-    private ?FlightDates $flightDates;
+    private FlightDates $flightDates;
 
     /**
      * <p>
@@ -70,7 +70,7 @@ class Shopping
      *   <code>/v1/shopping/flight-destinations</code> endpoints.
      * </p>
      */
-    private ?FlightDestinations $flightDestinations;
+    private FlightDestinations $flightDestinations;
 
     /**
      * <p>
@@ -78,7 +78,7 @@ class Shopping
      *   <code>/v1/shopping/activities</code> endpoints.
      * </p>
      */
-    private ?Activities $activities;
+    private Activities $activities;
 
     /**
      * @param Amadeus $amadeus
@@ -99,9 +99,9 @@ class Shopping
      *   Get a namespaced client for the
      *   <code>/v1/shopping/availability</code> endpoints.
      * </p>
-     * @return Availability|null
+     * @return Availability
      */
-    public function getAvailability(): ?Availability
+    public function getAvailability(): Availability
     {
         return $this->availability;
     }
@@ -111,9 +111,9 @@ class Shopping
      *   Get a namespaced client for the
      *   <code>/v2/shopping/flight-offers</code> endpoints.
      * </p>
-     * @return FlightOffers|null
+     * @return FlightOffers
      */
-    public function getFlightOffers(): ?FlightOffers
+    public function getFlightOffers(): FlightOffers
     {
         return $this->flightOffers;
     }
@@ -124,9 +124,9 @@ class Shopping
      *   <code>/v3/shopping/hotel-offers/:offer_id</code> endpoints.
      * </p>
      * @param string $offerId
-     * @return HotelOffer|null
+     * @return HotelOffer
      */
-    public function getHotelOffer(string $offerId): ?HotelOffer
+    public function getHotelOffer(string $offerId): HotelOffer
     {
         return new HotelOffer($this->amadeus, $offerId);
     }
@@ -136,9 +136,9 @@ class Shopping
      *   Get a namespaced client for the
      *   <code>/v3/shopping/hotel-offers</code> endpoints.
      * </p>
-     * @return HotelOffers|null
+     * @return HotelOffers
      */
-    public function getHotelOffers(): ?HotelOffers
+    public function getHotelOffers(): HotelOffers
     {
         return $this->hotelOffers;
     }
@@ -148,9 +148,9 @@ class Shopping
      *   Get a namespaced client for the
      *   <code>/v1/shopping/flight-dates</code> endpoints.
      * </p>
-     * @return FlightDates|null
+     * @return FlightDates
      */
-    public function getFlightDates(): ?FlightDates
+    public function getFlightDates(): FlightDates
     {
         return $this->flightDates;
     }
@@ -160,9 +160,9 @@ class Shopping
      *   Get a namespaced client for the
      *   <code>/v1/shopping/flight-destinations</code> endpoints.
      * </p>
-     * @return FlightDestinations|null
+     * @return FlightDestinations
      */
-    public function getFlightDestinations(): ?FlightDestinations
+    public function getFlightDestinations(): FlightDestinations
     {
         return $this->flightDestinations;
     }
@@ -172,9 +172,9 @@ class Shopping
      *   Get a namespaced client for the
      *   <code>/v1/shopping/activities</code> endpoints.
      * </p>
-     * @return Activities|null
+     * @return Activities
      */
-    public function getActivities(): ?Activities
+    public function getActivities(): Activities
     {
         return $this->activities;
     }
@@ -185,9 +185,9 @@ class Shopping
      *   <code>/v1/shopping/activities/:activity_id</code> endpoints.
      * </p>
      * @param string $activityId
-     * @return Activity|null
+     * @return Activity
      */
-    public function getActivity(string $activityId): ?Activity
+    public function getActivity(string $activityId): Activity
     {
         return new Activity($this->amadeus, $activityId);
     }

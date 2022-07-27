@@ -30,7 +30,7 @@ class Booking
      *   <code>/v1/booking/flightOrders</code> endpoints.
      * </p>
      */
-    private ?FlightOrders  $flightOrders;
+    private FlightOrders  $flightOrders;
 
     /**
      * <p>
@@ -38,7 +38,7 @@ class Booking
      *   <code>/v1/booking/hotelBookings</code> endpoints.
      * </p>
      */
-    private ?HotelBookings $hotelBookings;
+    private HotelBookings $hotelBookings;
 
     /**
      * @param Amadeus $amadeus
@@ -54,9 +54,9 @@ class Booking
      *   Get a namespaced client for the
      *   <code>/v1/booking/flightOrders</code> endpoints.
      * </p>
-     * @return FlightOrders|null
+     * @return FlightOrders
      */
-    public function getFlightOrders(): ?FlightOrders
+    public function getFlightOrders(): FlightOrders
     {
         return $this->flightOrders;
     }
@@ -66,9 +66,9 @@ class Booking
      *   Get a namespaced client for the
      *   <code>/v1/booking/hotelBookings</code> endpoints.
      * </p>
-     * @return HotelBookings|null
+     * @return HotelBookings
      */
-    public function getHotelBookings(): ?HotelBookings
+    public function getHotelBookings(): HotelBookings
     {
         return $this->hotelBookings;
     }
