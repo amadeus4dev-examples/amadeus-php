@@ -30,7 +30,7 @@ class Availability
      *   <code>/v1/shopping/availability/flight-availabilities</code> endpoints.
      * </p>
      */
-    private ?FlightAvailabilities $flightAvailabilities;
+    private FlightAvailabilities $flightAvailabilities;
 
     /**
      * Constructor
@@ -46,7 +46,7 @@ class Availability
      *   Get a namespaced client for the
      *   <code>/v1/shopping/availability/flight-availabilities</code> endpoints.
      * </p>
-     * @return FlightAvailabilities|null
+     * @return FlightAvailabilities
      */
     public function getFlightAvailabilities(): ?FlightAvailabilities
     {
