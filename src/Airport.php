@@ -30,7 +30,7 @@ class Airport
      *   <code>/v1/airport/direct-destinations</code> endpoints.
      * </p>
      */
-    private ?DirectDestinations $directDestinations;
+    private DirectDestinations $directDestinations;
 
     /**
      * <p>
@@ -54,9 +54,9 @@ class Airport
      *   Get a namespaced client for the
      *   <code>/v1/airport/direct-destinations</code> endpoints.
      * </p>
-     * @return DirectDestinations|null
+     * @return DirectDestinations
      */
-    public function getDirectDestinations(): ?DirectDestinations
+    public function getDirectDestinations(): DirectDestinations
     {
         return $this->directDestinations;
     }

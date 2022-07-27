@@ -29,7 +29,7 @@ class Schedule
      *   <code>/v2/schedule/flights</code> endpoints.
      * </p>
      */
-    private ?Flights $flights;
+    private Flights $flights;
 
     /**
      * @param Amadeus $amadeus
@@ -44,9 +44,9 @@ class Schedule
      *   Get a namespaced client for the
      *   <code>/v2/schedule/flights</code> endpoints.
      * </p>
-     * @return Flights|null
+     * @return Flights
      */
-    public function getFlights(): ?Flights
+    public function getFlights(): Flights
     {
         return $this->flights;
     }

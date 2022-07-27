@@ -33,7 +33,7 @@ class ReferenceData
      *   <code>/v1/reference-data/locations</code> endpoints.
      * </p>
      */
-    private ?Locations $locations;
+    private Locations $locations;
 
     /**
      * <p>
@@ -41,7 +41,7 @@ class ReferenceData
      *   <code>/v1/reference-data/airlines</code> endpoints.
      * </p>
      */
-    private ?Airlines $airlines;
+    private Airlines $airlines;
 
     /**
      * @param Amadeus $amadeus
@@ -58,9 +58,9 @@ class ReferenceData
      *   Get a namespaced client for the
      *   <code>/v1/reference-data/locations</code> endpoints.
      * </p>
-     * @return Locations|null
+     * @return Locations
      */
-    public function getLocations(): ?Locations
+    public function getLocations(): Locations
     {
         return $this->locations;
     }
@@ -72,9 +72,9 @@ class ReferenceData
      *   <code>/v1/reference-data/locations/:location_id</code> endpoints.
      * </p>
      * @param string $locationId
-     * @return Location|null
+     * @return Location
      */
-    public function getLocation(string $locationId): ?Location
+    public function getLocation(string $locationId): Location
     {
         return new Location($this->amadeus, $locationId);
     }
@@ -84,9 +84,9 @@ class ReferenceData
      *   Get a namespaced client for the
      *   <code>/v1/reference-data/airlines</code> endpoints.
      * </p>
-     * @return Airlines|null
+     * @return Airlines
      */
-    public function getAirlines(): ?Airlines
+    public function getAirlines(): Airlines
     {
         return $this->airlines;
     }

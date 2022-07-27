@@ -170,6 +170,14 @@ class Response
     }
 
     /**
+     * @return object|null
+     */
+    public function getMeta(): ?object
+    {
+        return $this->getBodyAsJsonObject()->{'meta'};
+    }
+
+    /**
      * @return string
      */
     public function __toString(): string
