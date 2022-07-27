@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * An OnTimePrediction object as returned by the Airport On-Time Prediction API.
- * @see OnTimePrediction
+ * @see OnTime
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-on-time-performance/api-reference
  */
 class OnTimePrediction extends Resource implements ResourceInterface

@@ -38,7 +38,7 @@ class Airport
      *   <code>/v1/airport/predictions</code> endpoints.
      * </p>
      */
-    private ?Predictions $predictions;
+    private Predictions $predictions;
 
     /**
      * @param Amadeus $amadeus
@@ -66,9 +66,9 @@ class Airport
      *   Get a namespaced client for the
      *   <code>/v1/airport/predictions</code> endpoints.
      * </p>
-     * @return Predictions|null
+     * @return Predictions
      */
-    public function getPredictions(): ?Predictions
+    public function getPredictions(): Predictions
     {
         return $this->predictions;
     }

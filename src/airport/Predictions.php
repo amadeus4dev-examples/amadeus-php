@@ -32,7 +32,7 @@ class Predictions
      *   <code>/v1/airport/predictions</code> endpoints.
      * </p>
      */
-    private ?OnTime $onTime;
+    private OnTime $onTime;
 
     /**
      * Constructor
