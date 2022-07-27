@@ -17,7 +17,7 @@
     "psr-4": {
       "Amadeus\\": "src/",
       "Amadeus\\Airport\\": "src/airport",
-      "Amadeus\\Airport\\Predictions": "src/airport/predictions",
+      "Amadeus\\Airport\\Predictions\\": "src/airport/predictions",
       "Amadeus\\Booking\\": "src/booking",
       "Amadeus\\Client\\": "src/client",
       "Amadeus\\DutyOfCare\\": "src/dutyOfCare",
