@@ -115,6 +115,6 @@ final class OnTimeTest extends TestCase
             ->willThrowException($exception);
 
         $this->expectException(ClientException::class); // Then
-        (new OnTimePrediction($this->amadeus))->get($params); // When
+        (new OnTime($this->amadeus))->get($params); // When
     }
 }

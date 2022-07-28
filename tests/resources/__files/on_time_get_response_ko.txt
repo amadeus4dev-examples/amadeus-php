@@ -1,0 +1,28 @@
+HTTP/1.1 400 Bad Request
+Date: Wed, 22 Jun 2022 15:33:18 GMT
+Content-Type: application/vnd.amadeus+json
+Content-Length: 267
+Connection: keep-alive
+Ama-Internal-Message-Version: 14.1
+Ama-Request-Id: 0001AP260DVXVI
+Ama-Gateway-Request-Id: rrt-03b41c3f8ef7e2518-b-de-18469-93196507-1
+Access-Control-Allow-Headers: origin, x-requested-with, accept, Content-Type, Authorization
+Access-Control-Max-Age: 3628800
+Access-Control-Allow-Methods: *
+Server: Amadeus
+Access-Control-Allow-Origin: *
+
+{
+    "errors": [
+        {
+            "code": 477,
+            "detail": "Invalid IATA Code",
+            "source": {
+                "example": "CDG",
+                "parameter": "Origin"
+            },
+            "status": 400,
+            "title": "INVALID FORMAT"
+        }
+    ]
+}
