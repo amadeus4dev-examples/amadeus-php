@@ -75,20 +75,19 @@ final class OnTimeTest extends TestCase
 
         // Then
         $this->assertNotNull($predictions);
-        $this->assertEquals(2, sizeof($predictions));
 
         // Resources
         // OnTimePrediction
-        $this->assertTrue($predictions[0] instanceof OnTimePrediction);
-        $this->assertIsString($predictions[0]->getType());
-        $this->assertIsString($predictions[0]->getSubtype());
-        $this->assertIsString($predictions[0]->getId());
-        $this->assertIsObject($predictions[0]->getResult());
+        $this->assertTrue($predictions instanceof OnTimePrediction);
+        $this->assertIsString($predictions->getType());
+        $this->assertIsString($predictions->getSubtype());
+        $this->assertIsString($predictions->getId());
+        $this->assertIsString($predictions->getResult());
 
         // __toString()
         $this->assertEquals(
-            PHPUnitUtil::toString($data[0]),
-            $predictions[0]->__toString()
+            PHPUnitUtil::toString($data),
+            $predictions->__toString()
         );
     }
 

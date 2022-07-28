@@ -12,10 +12,10 @@ namespace Amadeus\Resources;
 class OnTimePrediction extends Resource implements ResourceInterface
 {
     private ?string $id = null;
-    private ?string $type = null;
-    private ?string $subType = null;
-    private ?object $result = null;
     private ?string $probability = null;
+    private ?string $result = null;
+    private ?string $subType = null;
+    private ?string $type = null;
 
     /**
      * @return string|null
@@ -50,14 +50,11 @@ class OnTimePrediction extends Resource implements ResourceInterface
     }
 
     /**
-     * @return PredictionResultType|null
+     * @return string|null
      */
-    public function getResult(): ?object
+    public function getResult(): ?string
     {
-        return Resource::toResourceObject(
-            $this->result,
-            PredictionResultType::class
-        );
+        return $this->result;
     }
 
     public function __set($name, $value): void
