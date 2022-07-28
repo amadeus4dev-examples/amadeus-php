@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in FlightExtendedSegment
- * @see FlightExtendedSegment
+ * @see FlightExtendedSegment::getCo2Emissions()
  */
 class Co2Emission implements ResourceInterface
 {

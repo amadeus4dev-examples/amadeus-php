@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in FlightDate.
- * @see FlightDate
+ * @see FlightDate::getLinks()
  */
 class FlightDateLinks implements ResourceInterface
 {

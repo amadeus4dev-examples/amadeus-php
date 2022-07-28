@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+use Amadeus\Schedule\Flights;
+
 /**
  * A DatedFlight object as returned by the On-Demand Flight Status API.
- * @see
+ * @see Flights::get()
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/on-demand-flight-status/api-reference
  */
 class DatedFlight extends Resource implements ResourceInterface

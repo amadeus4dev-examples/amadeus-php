@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in FlightFareDetailsBySegment.
+ * @see FlightFareDetailsBySegment::getAllotmentDetails()
+ */
 class FlightAllotmentDetails implements ResourceInterface
 {
     private ?string $tourName = null;

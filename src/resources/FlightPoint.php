@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in DatedFlight
- * @see DatedFlight
+ * @see DatedFlight::getFlightPoints()
  */
 class FlightPoint implements ResourceInterface
 {

@@ -6,7 +6,8 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in FlightOffer, FlightDestination etc.
- * @see FlightOffer, FlightDestination
+ * @see FlightOffer::getPrice()
+ * @see FlightDestination::getPrice()
  */
 class FlightPrice implements ResourceInterface
 {

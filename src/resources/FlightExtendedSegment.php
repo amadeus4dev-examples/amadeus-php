@@ -6,8 +6,8 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in Itineraries, FlightAvailability, etc.
- * @see FlightItineraries
- * @see FlightAvailability
+ * @see FlightItineraries::getSegments()
+ * @see FlightAvailability::getSegments()
  */
 class FlightExtendedSegment implements ResourceInterface
 {

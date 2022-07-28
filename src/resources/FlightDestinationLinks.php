@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in FlightDestination.
- * @see FlightDestination
+ * @see FlightDestination::getLinks()
  */
 class FlightDestinationLinks implements ResourceInterface
 {

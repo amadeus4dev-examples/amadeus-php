@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Amadeus\Resources;
 
 /**
- * Sub-resource in DatedFlight
- * @see DatedFlight
+ * Sub-resource in FlightPoint.
+ * @see FlightPoint::getDeparture()
  */
 class FlightPointDeparture implements ResourceInterface
 {

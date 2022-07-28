@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in HotelProductPriceVariations.
+ * @see HotelProductPriceVariations::getChanges()
+ */
 class HotelProductPriceVariation implements ResourceInterface
 {
     private ?string $startDate = null;

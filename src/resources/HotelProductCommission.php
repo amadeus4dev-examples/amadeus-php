@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in HotelOffer.
+ * @see HotelOffer::getCommission()
+ */
 class HotelProductCommission implements ResourceInterface
 {
     private ?string $percentage = null;

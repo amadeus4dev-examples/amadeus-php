@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in Timing
- * @see FlightPointTiming
+ * @see FlightPointTiming::getDelays()
  */
 class FlightPointTimingDelay implements ResourceInterface
 {

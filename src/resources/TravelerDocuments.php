@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in TravelerElement
+ * @see TravelerElement::getDocuments()
+ */
 class TravelerDocuments implements ResourceInterface
 {
     private ?string $documentType = null;

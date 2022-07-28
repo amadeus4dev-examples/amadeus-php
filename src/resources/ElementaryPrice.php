@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in Activity
- * @see Activity
+ * @see Activity::getPrice()
  */
 class ElementaryPrice implements ResourceInterface
 {

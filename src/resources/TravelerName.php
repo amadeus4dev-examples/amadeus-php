@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in TravelerElement
+ * @see TravelerElement::getName()
+ */
 class TravelerName implements ResourceInterface
 {
     private ?string $firstName = null;
