@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * A DiseaseAreaReport object as returned by the Travel Restrictions API.
- * @see Covid19AreaReport
+ * @see Covid19AreaReport::get()
  * @see https://developers.amadeus.com/self-service/category/covid-19-and-travel-safety/api-doc/travel-restrictions/api-reference
  */
 class DiseaseAreaReport extends Resource implements ResourceInterface

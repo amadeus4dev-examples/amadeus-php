@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in AreaAccessRestriction
- * @see AreaAccessRestriction
+ * @see AreaAccessRestriction::getMask()
  */
 class MaskRestriction implements ResourceInterface
 {

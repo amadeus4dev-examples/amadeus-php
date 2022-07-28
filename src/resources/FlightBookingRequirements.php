@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in FlightOfferPricingOutput, etc.
+ * @see FlightOfferPricingOutput::getBookingRequirements()
+ */
 class FlightBookingRequirements implements ResourceInterface
 {
     private ?bool $invoiceAddressRequired = null;

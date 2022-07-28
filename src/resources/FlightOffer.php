@@ -4,10 +4,14 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+use Amadeus\Shopping\FlightOffers;
+use Amadeus\Shopping\FlightOffers\Prediction;
+
 /**
  * A FlightOffer object as returned by the Flight Offers Search API, Flight Choice Prediction API.
- * @see FlightOffers, Prediction
+ * @see FlightOffers::get(), FlightOffers::post()
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
+ * @see Prediction::post(), Prediction::postWithFlightOffers()
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-choice-prediction/api-reference
  */
 class FlightOffer extends Resource implements ResourceInterface

@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in FareRules
- * @see FareRules
+ * @see FareRules::getRules()
  */
 class TermAndCondition implements ResourceInterface
 {

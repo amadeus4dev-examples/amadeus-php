@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in FlightOrder
+ * @see FlightOrder::getTravelers()
+ */
 class TravelerElement implements ResourceInterface
 {
     private ?string $id = null;

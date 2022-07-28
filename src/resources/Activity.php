@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+use Amadeus\Shopping\Activities;
+
 /**
  * An Activity-related object as returned by the Tours and Activities API.
- * @see Activities
- * @see //https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
+ * @see Activities::get(), \Amadeus\Shopping\Activity::get()
+ * @see https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
  */
 class Activity extends Resource implements ResourceInterface
 {

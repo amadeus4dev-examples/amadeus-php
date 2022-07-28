@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in FlightDestination, Location
+ * @see FlightDestination::getLinks()
+ * @see \Amadeus\Resources\Location::getSelf()
+ */
 class Links implements ResourceInterface
 {
     private ?string $href = null;

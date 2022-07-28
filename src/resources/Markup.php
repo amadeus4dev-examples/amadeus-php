@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in HotelOfferAveragePrice, HotelProductPriceVariation, HotelProductHotelPrice.
+ * @see HotelOfferAveragePrice::getMarkups()
+ * @see HotelProductPriceVariation::getMarkups()
+ * @see HotelProductHotelPrice::getMarkups()
+ */
 class Markup implements ResourceInterface
 {
     private ?string $amount = null;

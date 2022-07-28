@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in AreaAccessRestriction
- * @see AreaAccessRestriction
+ * @see AreaAccessRestriction::getQuarantineModality()
  */
 class DatedQuarantineRestriction implements ResourceInterface
 {

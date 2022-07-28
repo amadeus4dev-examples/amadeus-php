@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in TermAnaCondition
- * @see TermAndCondition
+ * @see TermAndCondition::getDescriptions()
  */
 class Description implements ResourceInterface
 {

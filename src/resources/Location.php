@@ -7,9 +7,9 @@ namespace Amadeus\Resources;
 use Amadeus\ReferenceData\Locations\Airports;
 
 /**
- * A Location object as returned by the Airport and City Search API, Airport Nearest Relevant API and Travel Recommendations API .
- * @see Locations
- * @see Airports
+ * A Location object as returned by the Airport and City Search API, Airport Nearest Relevant API.
+ * @see Locations::get()
+ * @see Airports::get()
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-and-city-search/api-reference
  * @see RecommendedLocations::get()
  * @see https://developers.amadeus.com/self-service/category/trip/api-doc/travel-recommendations/api-reference

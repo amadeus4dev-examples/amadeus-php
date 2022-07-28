@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in TravelerContact
+ * @see TravelerContact::getAddress()
+ */
 class TravelerAddress implements ResourceInterface
 {
     private ?array $lines = null;

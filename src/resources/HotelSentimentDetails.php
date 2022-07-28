@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in HotelSentiment
- * @see HotelSentiment
+ * @see HotelSentiment::getSentiments()
  */
 class HotelSentimentDetails implements ResourceInterface
 {

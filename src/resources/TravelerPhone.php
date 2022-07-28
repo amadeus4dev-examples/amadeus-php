@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in TravelerContact
+ * @see TravelerContact::getPhones()
+ */
 class TravelerPhone implements ResourceInterface
 {
     private ?string $deviceType = null;

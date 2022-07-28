@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in FlightOrder.
+ * @see FlightOrder::getAssociatedRecords()
+ */
 class FlightOrderAssociatedRecord implements ResourceInterface
 {
     private ?string $reference = null;

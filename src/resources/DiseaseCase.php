@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in DiseaseAreaReport
- * @see DiseaseAreaReport
+ * @see DiseaseAreaReport::getDiseaseCases()
  */
 class DiseaseCase implements ResourceInterface
 {

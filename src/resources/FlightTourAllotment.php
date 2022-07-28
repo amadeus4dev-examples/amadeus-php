@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in FlightAvailabilityClass
- * @see FlightAvailabilityClass
+ * @see FlightAvailabilityClass::getTourAllotment()
  */
 class FlightTourAllotment implements ResourceInterface
 {

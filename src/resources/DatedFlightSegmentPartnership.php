@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in Segment
- * @see DatedFlightSegment
+ * @see DatedFlightSegment::getPartnership()
  */
 class DatedFlightSegmentPartnership implements ResourceInterface
 {

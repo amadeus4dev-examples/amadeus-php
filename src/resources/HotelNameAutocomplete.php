@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * A HotelNameAutocomplete object as returned by the Hotel Name Autocomplete API.
- * @see \Amadeus\ReferenceData\Locations\Hotel
+ * @see \Amadeus\ReferenceData\Locations\Hotel::get()
  * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-name-autocomplete/api-reference
  */
 class HotelNameAutocomplete extends Resource implements ResourceInterface
