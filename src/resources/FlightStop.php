@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in FlightExtendedSegment
- * @see FlightExtendedSegment
+ * @see FlightExtendedSegment::getStops()
  */
 class FlightStop implements ResourceInterface
 {

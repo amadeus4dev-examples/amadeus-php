@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in HotelOffers.
+ * @see \Amadeus\Resources\HotelOffers::getHotel()
+ */
 class HotelContent implements ResourceInterface
 {
     private ?string $type = null;

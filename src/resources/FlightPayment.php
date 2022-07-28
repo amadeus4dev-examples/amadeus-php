@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+use Amadeus\Shopping\FlightOffers\Pricing;
+
+/**
+ * Optional parameter resource for calling Flight Offer Price API.
+ * @see Pricing::postWithFlightOffers()
+ */
 class FlightPayment implements ResourceInterface
 {
     private ?string $brand = null;

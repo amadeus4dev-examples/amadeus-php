@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in DiseaseTestingRestriction
- * @see DiseaseTestingRestriction
+ * @see DiseaseTestingRestriction::getValidityPeriod()
  */
 class ValidityPeriod implements ResourceInterface
 {

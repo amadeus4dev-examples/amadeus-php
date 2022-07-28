@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in EntryRestriction
- * @see EntryRestriction
+ * @see EntryRestriction::getBorderBan()
  */
 class Border implements ResourceInterface
 {

@@ -8,7 +8,7 @@ use Amadeus\Shopping\FlightDates;
 
 /**
  * A FlightDate object as returned by the Flight Cheapest Date Search API.
- * @see FlightDates
+ * @see FlightDates::get()
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-cheapest-date-search/api-reference
  */
 class FlightDate extends Resource implements ResourceInterface

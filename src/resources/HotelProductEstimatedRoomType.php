@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in HotelProductRoomDetails.
+ * @see HotelProductRoomDetails::getTypeEstimated()
+ */
 class HotelProductEstimatedRoomType implements ResourceInterface
 {
     private ?string $category = null;

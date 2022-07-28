@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in HotelBookingLight.
+ * @see HotelBookingLight::getAssociatedRecords()
+ */
 class HotelBookingAssociatedRecord implements ResourceInterface
 {
     private ?string $reference = null;

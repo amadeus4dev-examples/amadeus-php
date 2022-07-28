@@ -6,9 +6,9 @@ namespace Amadeus\Resources;
 
 /**
  * A Hotel object as returned by the Hotel List API.
- * @see ByCity
- * @see ByGeocode
- * @see ByHotels
+ * @see ByCity::get()
+ * @see ByGeocode::get()
+ * @see ByHotels::get()
  * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-list/api-reference
  */
 class Hotel extends Resource implements ResourceInterface

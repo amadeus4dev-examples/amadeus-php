@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in HotelProductPriceVariations.
+ * @see HotelProductPriceVariations::getAverage()
+ */
 class HotelOfferAveragePrice implements ResourceInterface
 {
     private ?string $currency = null;

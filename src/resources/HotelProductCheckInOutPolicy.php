@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in HotelProductPolicyDetails.
+ * @see HotelProductPolicyDetails::getCheckInOut()
+ */
 class HotelProductCheckInOutPolicy implements ResourceInterface
 {
     private ?string $checkIn = null;

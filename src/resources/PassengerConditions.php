@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in FlightBookingRequirements.
+ * @see FlightBookingRequirements::getTravelerRequirements()
+ */
 class PassengerConditions implements ResourceInterface
 {
     private ?string $travelerId = null;

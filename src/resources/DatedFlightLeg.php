@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in DatedFlight
- * @see DatedFlight
+ * @see DatedFlight::getLegs()
  */
 class DatedFlightLeg implements ResourceInterface
 {

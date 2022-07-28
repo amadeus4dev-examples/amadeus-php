@@ -6,7 +6,8 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in Arrival, Departure
- * @see FlightPointArrival, FlightPointDepartue
+ * @see FlightPointArrival::getGate()
+ * @see FlightPointDeparture::getGate()
  */
 class FlightPointGate implements ResourceInterface
 {

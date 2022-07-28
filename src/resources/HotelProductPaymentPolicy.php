@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in HotelProductGuaranteePolicy, HotelProductDepositPolicy.
+ * @see HotelProductGuaranteePolicy::getAcceptedPayments()
+ * @see HotelProductDepositPolicy::getAcceptedPayments()
+ */
 class HotelProductPaymentPolicy implements ResourceInterface
 {
     private ?array $creditCards = null;
