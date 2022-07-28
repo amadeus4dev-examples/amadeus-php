@@ -3,7 +3,7 @@
 To run the project locally, clone the repository and install the dependencies.
 
 ```
-git clone 
+git clone https://github.com/amadeus4dev/amadeus-php.git
 cd amadeus-php
 composer install
 ```
@@ -12,7 +12,7 @@ Make sure you have [Composer](https://getcomposer.org/) installed as well.
 
 ### Static Analysis
 
-To find errors before running test, simply run `vendor/bin/phpstan analyse src --level 4`.
+To find errors before running test, simply run `vendor/bin/phpstan analyse src tests --level 4`.
 
 ### Running tests
 
