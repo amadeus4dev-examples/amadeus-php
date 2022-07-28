@@ -8,11 +8,7 @@ use Amadeus\Amadeus;
 use Amadeus\Client\HTTPClient;
 use Amadeus\Client\Response;
 use Amadeus\Exceptions\ResponseException;
-use Amadeus\ReferenceData\Airlines;
 use Amadeus\ReferenceData\RecommendedLocations;
-use Amadeus\Resources\Airline;
-use Amadeus\Resources\GeoCode;
-use Amadeus\Resources\RecommendedLocation;
 use Amadeus\Tests\PHPUnitUtil;
 use PHPUnit\Framework\TestCase;
 
@@ -21,7 +17,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\ReferenceData\RecommendedLocations
  *
  * @covers \Amadeus\Resources\Resource
- * @covers \Amadeus\Resources\RecommendedLocation
+ * @covers \Amadeus\Resources\Location
  *
  * @see https://developers.amadeus.com/self-service/category/trip/api-doc/travel-recommendations/api-reference
  */
