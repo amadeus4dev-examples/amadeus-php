@@ -6,7 +6,8 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in Arrival, Departure
- * @see FlightPointArrival, FlightPointDepartue
+ * @see FlightPointArrival::getTimings()
+ * @see FlightPointDeparture::getTimings()
  */
 class FlightPointTiming implements ResourceInterface
 {

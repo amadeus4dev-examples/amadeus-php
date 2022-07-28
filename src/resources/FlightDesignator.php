@@ -6,7 +6,8 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in DatedFlight, Partnership
- * @see DatedFlight, DatedFlightSegmentPartnership
+ * @see DatedFlight::getFlightDesignator()
+ * @see DatedFlightSegmentPartnership::getOperatingFlight()
  */
 class FlightDesignator implements ResourceInterface
 {

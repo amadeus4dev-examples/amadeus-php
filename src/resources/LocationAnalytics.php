@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in Location.
+ * @see \Amadeus\Resources\Location::getAnalytics()
+ */
 class LocationAnalytics implements ResourceInterface
 {
     private ?object $travelers = null;

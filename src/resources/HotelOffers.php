@@ -6,8 +6,8 @@ namespace Amadeus\Resources;
 
 /**
  * A HotelOffers object as returned by the Hotel Search API.
- * @see \Amadeus\Shopping\HotelOffer
- * @see \Amadeus\Shopping\HotelOffers
+ * @see \Amadeus\Shopping\HotelOffer::get()
+ * @see \Amadeus\Shopping\HotelOffers::get()
  * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference
  */
 class HotelOffers extends Resource implements ResourceInterface

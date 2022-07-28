@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+use Amadeus\Shopping\FlightOffers\Pricing;
+
 /**
  * A FlightOfferPricingOutput object as returned by the Flight Offers Price API.
- * @see Pricing
+ * @see Pricing::post(), Pricing::postWithFlightOffers()
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-price/api-reference
  */
 class FlightOfferPricingOutput extends Resource implements ResourceInterface

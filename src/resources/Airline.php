@@ -8,7 +8,7 @@ use Amadeus\ReferenceData\Airlines;
 
 /**
  * An Airline object as returned by the Airline Code Lookup API.
- * @see Airlines
+ * @see Airlines::get()
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/airline-code-lookup/api-reference
  */
 class Airline extends Resource implements ResourceInterface

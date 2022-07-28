@@ -4,6 +4,14 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in Hotel, HotelNameAutocomplete, Activity, Location, Area, etc.
+ * @see \Amadeus\Resources\Hotel::getGeoCode()
+ * @see HotelNameAutocomplete::getGeoCode()
+ * @see \Amadeus\Resources\Activity::getGeoCode()
+ * @see \Amadeus\Resources\Location::getGeoCode()
+ * @see Area::getGeoCode()
+ */
 class GeoCode implements ResourceInterface
 {
     private ?float $latitude = null;

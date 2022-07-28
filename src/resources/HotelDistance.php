@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in Hotel.
+ * @see \Amadeus\Resources\Hotel::getDistance()
+ */
 class HotelDistance implements ResourceInterface
 {
     private ?float $value = null;

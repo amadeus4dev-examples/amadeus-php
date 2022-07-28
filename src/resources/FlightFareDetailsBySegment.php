@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in TravelerPricing, etc.
- * @see TravelerPricing
+ * @see TravelerPricing::getFareDetailsBySegment()
  */
 class FlightFareDetailsBySegment implements ResourceInterface
 {
@@ -100,7 +100,7 @@ class FlightFareDetailsBySegment implements ResourceInterface
     }
 
     /**
-     * @return object|null
+     * @return FlightAdditionalServicesRequest|null
      */
     public function getAdditionalServices(): ?object
     {

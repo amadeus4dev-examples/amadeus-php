@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+use Amadeus\Booking\FlightOrders;
+
 /**
  * A FlightOrder object as returned by the Flight Create Orders API.
- * @see FlightOrders
+ * @see FlightOrders::post(), FlightOrders::postWithFlightOffersAndTravelers()
  * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-create-orders/api-reference
  */
 class FlightOrder extends Resource implements ResourceInterface

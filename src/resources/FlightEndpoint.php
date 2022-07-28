@@ -6,7 +6,8 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in FlightExtendedSegment
- * @see FlightExtendedSegment
+ * @see FlightExtendedSegment::getArrival()
+ * @see FlightExtendedSegment::getDeparture()
  */
 class FlightEndpoint implements ResourceInterface
 {

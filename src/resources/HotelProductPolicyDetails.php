@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in HotelOffer.
+ * @see \Amadeus\Resources\HotelOffer::getPolicies()
+ */
 class HotelProductPolicyDetails implements ResourceInterface
 {
     private ?string $paymentType = null;

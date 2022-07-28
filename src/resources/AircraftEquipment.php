@@ -6,7 +6,8 @@ namespace Amadeus\Resources;
 
 /**
  * Sub-resource in FlightExtendedSegment, Leg
- * @see FlightExtendedSegment, DatedFlightLeg
+ * @see FlightExtendedSegment::getAircraft()
+ * @see DatedFlightLeg::getAircraftEquipment()
  */
 class AircraftEquipment implements ResourceInterface
 {

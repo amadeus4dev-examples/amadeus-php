@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in HotelProductHotelPrice.
+ * @see HotelProductHotelPrice::getVariations()
+ */
 class HotelProductPriceVariations implements ResourceInterface
 {
     private ?object $average = null;

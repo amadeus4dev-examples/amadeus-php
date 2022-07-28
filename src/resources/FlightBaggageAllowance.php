@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in FlightFareDetailsBySegment.
+ * @see FlightFareDetailsBySegment::getIncludedCheckedBags()
+ */
 class FlightBaggageAllowance implements ResourceInterface
 {
     private ?int $quantity = null;

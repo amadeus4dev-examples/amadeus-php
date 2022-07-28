@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Amadeus\Resources;
 
+/**
+ * Sub-resource in Hotel, HotelNameAutocomplete.
+ * @see \Amadeus\Resources\Hotel::getAddress()
+ * @see HotelNameAutocomplete::getAddress()
+ */
 class HotelAddress implements ResourceInterface
 {
     private ?string $category = null;
