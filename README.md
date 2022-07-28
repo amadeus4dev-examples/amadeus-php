@@ -309,6 +309,11 @@ $activities = $amadeus->getShopping()->getActivities()->getBySquare()->get(
 // Get a single activity from a given id
 // function get() :
 $amadeus->getShopping()->getActivity("3044851")->get();
+
+/* Airport On-Time Performance */
+// function get(array $params) :
+$amadeus->getAirport()->getPredictions()->getOnTime()->get(
+    ["airportCode" => "NCE", "date" => 2022-11-01]);
 ```
 
 ## Development & Contributing
