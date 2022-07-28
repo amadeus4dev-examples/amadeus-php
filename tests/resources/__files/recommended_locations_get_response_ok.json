@@ -1,0 +1,65 @@
+{
+    "data": [
+      {
+        "subtype": "CITY",
+        "name": "Algiers",
+        "iataCode": "ALG",
+        "geoCode": {
+          "latitude": 36.6985,
+          "longitude": 3.2067200000000002
+        },
+        "type": "recommended-location",
+        "relevance": 0.97968028
+      },
+      {
+        "subtype": "CITY",
+        "name": "Marseille",
+        "iataCode": "MRS",
+        "geoCode": {
+          "latitude": 43.435559999999995,
+          "longitude": 5.21361
+        },
+        "type": "recommended-location",
+        "relevance": 0.9627265
+      },
+      {
+        "subtype": "CITY",
+        "name": "Tunis",
+        "iataCode": "TUN",
+        "geoCode": {
+          "latitude": 36.85103,
+          "longitude": 10.227219999999999
+        },
+        "type": "recommended-location",
+        "relevance": 0.95988677
+      },
+      {
+        "subtype": "CITY",
+        "name": "Barcelona",
+        "iataCode": "BCN",
+        "geoCode": {
+          "latitude": 41.297078000000006,
+          "longitude": 2.078464
+        },
+        "type": "recommended-location",
+        "relevance": 0.94314606
+      },
+      {
+        "subtype": "CITY",
+        "name": "Lisbon",
+        "iataCode": "LIS",
+        "geoCode": {
+          "latitude": 38.78131,
+          "longitude": -9.13592
+        },
+        "type": "recommended-location",
+        "relevance": 0.93192222
+      }
+    ],
+    "meta": {
+      "count": 5,
+      "links": {
+        "self": "https://test.api.amadeus.com/v1/reference-data/recommended-locations?cityCodes=PAR&travelerCountryCode=FR"
+      }
+    }
+  }
