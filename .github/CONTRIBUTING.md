@@ -12,7 +12,7 @@ Make sure you have [Composer](https://getcomposer.org/) installed as well.
 
 ### Static Analysis
 
-To find errors before running test, simply run `vendor/bin/phpstan analyse src --level 4`.
+To find errors before running test, simply run `vendor/bin/phpstan analyse src tests --level 4`.
 
 ### Running tests
 
