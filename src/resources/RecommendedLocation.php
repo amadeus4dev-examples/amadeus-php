@@ -6,7 +6,7 @@ namespace Amadeus\Resources;
 
 /**
  * A RecommendedLocation-related object as returned by the Travel Recommendations API
- * @see 
+ * @see
  * @see https://developers.amadeus.com/self-service/category/trip/api-doc/travel-recommendations/api-reference
  */
 class RecommendedLocation extends Resource implements ResourceInterface

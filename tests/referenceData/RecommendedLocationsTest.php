@@ -76,6 +76,5 @@ final class RecommendedLocationsTest extends TestCase
         // Resources
         // Location
         // See LocationsTest.php
-
     }
 }
