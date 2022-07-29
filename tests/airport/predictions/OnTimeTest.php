@@ -90,30 +90,4 @@ final class OnTimeTest extends TestCase
             $predictions->__toString()
         );
     }
-
-    /**
-     * @throws ResponseException
-     */
-    public function test_given_client_when_call_on_time_then_ko(): void
-    {
-        // Prepare exception
-        $result = PHPUnitUtil::readFile(
-            PHPUnitUtil::RESOURCE_PATH_ROOT . "on_time_get_response_ko.txt"
-        );
-        $request = $this->createMock(Request::class);
-        $info = ["http_code"=>400, "header_size"=>497];
-        $response = new Response($request, $info, $result);
-        $exception = new ClientException($response);
-
-        // Given
-        $params = ["airportCode" => "NC", "date" => "2022-11-01"];
-        /* @phpstan-ignore-next-line */
-        $this->client->expects($this->any())
-            ->method("getWithArrayParams")
-            ->with("/v1/airport/predictions/on-time", $params)
-            ->willThrowException($exception);
-
-        $this->expectException(ClientException::class); // Then
-        (new OnTime($this->amadeus))->get($params); // When
-    }
 }
