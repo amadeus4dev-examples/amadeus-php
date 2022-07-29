@@ -309,6 +309,11 @@ $activities = $amadeus->getShopping()->getActivities()->getBySquare()->get(
 // Get a single activity from a given id
 // function get() :
 $amadeus->getShopping()->getActivity("3044851")->get();
+
+/* Travel Recommendations */
+// function get(array $params) :
+$amadeus->getReferenceData()->getRecommendedLocations()->get(["cityCodes"=>"PAR", "travelerCountryCode"=>"FR"]);
+
 ```
 
 ## Development & Contributing
