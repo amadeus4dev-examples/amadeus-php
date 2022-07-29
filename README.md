@@ -310,10 +310,15 @@ $activities = $amadeus->getShopping()->getActivities()->getBySquare()->get(
 // function get() :
 $amadeus->getShopping()->getActivity("3044851")->get();
 
+/* Travel Recommendations */
+// function get(array $params) :
+$amadeus->getReferenceData()->getRecommendedLocations()->get(["cityCodes"=>"PAR", "travelerCountryCode"=>"FR"]);
+
 /* Airport On-Time Performance */
 // function get(array $params) :
 $amadeus->getAirport()->getPredictions()->getOnTime()->get(
     ["airportCode" => "NCE", "date" => 2022-11-01]);
+
 ```
 
 ## Development & Contributing

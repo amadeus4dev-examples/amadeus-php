@@ -7,6 +7,7 @@ namespace Amadeus;
 use Amadeus\ReferenceData\Airlines;
 use Amadeus\ReferenceData\Location;
 use Amadeus\ReferenceData\Locations;
+use Amadeus\ReferenceData\RecommendedLocations;
 
 /**
  * <p>
@@ -44,6 +45,14 @@ class ReferenceData
     private Airlines $airlines;
 
     /**
+     * <p>
+     *   A namespaced client for the
+     *   <code>/v1/reference-data/recommended-locations</code> endpoints.
+     * </p>
+     */
+    private RecommendedLocations $recommendedlocations;
+
+    /**
      * @param Amadeus $amadeus
      */
     public function __construct(Amadeus $amadeus)
@@ -51,6 +60,7 @@ class ReferenceData
         $this->amadeus = $amadeus;
         $this->locations = new Locations($amadeus);
         $this->airlines = new Airlines($amadeus);
+        $this->recommendedlocations = new RecommendedLocations($amadeus);
     }
 
     /**
@@ -89,5 +99,17 @@ class ReferenceData
     public function getAirlines(): Airlines
     {
         return $this->airlines;
+    }
+
+    /**
+     * <p>
+     *   Get a namespaced client for the
+     *   <code>/v1/reference-data/recommended-locations</code> endpoints.
+     * </p>
+     * @return RecommendedLocations
+     */
+    public function getRecommendedLocations(): RecommendedLocations
+    {
+        return $this->recommendedlocations;
     }
 }
