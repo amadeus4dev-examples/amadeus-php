@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Amadeus;
 
+use Amadeus\Airport\Predictions;
 use Amadeus\Airport\DirectDestinations;
 
 /**
@@ -32,11 +33,20 @@ class Airport
     private DirectDestinations $directDestinations;
 
     /**
+     * <p>
+     *   A namespaced client for the
+     *   <code>/v1/airport/predictions</code> endpoints.
+     * </p>
+     */
+    private Predictions $predictions;
+
+    /**
      * @param Amadeus $amadeus
      */
     public function __construct(Amadeus $amadeus)
     {
         $this->directDestinations = new DirectDestinations($amadeus);
+        $this->predictions = new Predictions($amadeus);
     }
 
     /**
@@ -49,5 +59,17 @@ class Airport
     public function getDirectDestinations(): DirectDestinations
     {
         return $this->directDestinations;
+    }
+
+    /**
+     * <p>
+     *   Get a namespaced client for the
+     *   <code>/v1/airport/predictions</code> endpoints.
+     * </p>
+     * @return Predictions
+     */
+    public function getPredictions(): Predictions
+    {
+        return $this->predictions;
     }
 }

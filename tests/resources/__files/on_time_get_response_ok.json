@@ -1,0 +1,14 @@
+{
+    "data": {
+        "id": "NCE20221101",
+        "probability": "0.928",
+        "result": "0.86615133",
+        "subType": "on-time",
+        "type": "prediction"
+    },
+    "meta": {
+        "links": {
+            "self": "https://test.api.amadeus.com/v1/airport/predictions/on-time?airportCode=NCE&date=2022-11-01"
+        }
+    }
+}
