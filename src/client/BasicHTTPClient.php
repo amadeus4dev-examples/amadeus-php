@@ -255,8 +255,8 @@ class BasicHTTPClient implements HTTPClient
             curl_setopt($curlHandle, CURLOPT_CAINFO, $request->getSslCertificate());
         } else {
             //for debug only!
-            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, false);
-            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYHOST, $request->getSslCertificate());
+            curl_setopt($curlHandle, CURLOPT_SSL_VERIFYPEER, $request->getSslCertificate());
         }
 
         if ($request->getVerb() == Constants::POST) {
@@ -307,6 +307,11 @@ class BasicHTTPClient implements HTTPClient
      */
     public function getSSLCertificate(): ?string
     {
+        $this->log(
+            "****************************************"."\n".
+            "** WARNING: SSL VERIFICATION DISABLED **"."\n".
+            "****************************************"
+        );
         return $this->sslCertificate;
     }
 
