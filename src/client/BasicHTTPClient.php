@@ -307,6 +307,11 @@ class BasicHTTPClient implements HTTPClient
      */
     public function getSSLCertificate(): ?string
     {
+        $this->log(
+            "****************************************"."\n".
+            "** WARNING: SSL VERIFICATION DISABLED **"."\n".
+            "****************************************"
+        );
         return $this->sslCertificate;
     }
 
