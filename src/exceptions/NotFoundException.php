@@ -6,13 +6,12 @@ namespace Amadeus\Exceptions;
 
 use Amadeus\Client\Response;
 
+/**
+ * Inherit __construct() from parent class
+ *
+ * HTTP status Code : 404
+ * @see BasicHTTPClient::detectError()
+ */
 class NotFoundException extends ResponseException
 {
-    /**
-     * @param Response|null $response
-     */
-    public function __construct(?Response $response)
-    {
-        parent::__construct($response);
-    }
 }
