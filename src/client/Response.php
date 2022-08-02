@@ -192,19 +192,16 @@ class Response
      */
     public function headersToArray(string $str): array
     {
-        $headers = array();
-        $headersTmpArray = explode("\r\n", $str);
+        $headersArray = array();
+        $headersTmpArray = explode("\r\n", $str);  // we don't care about the two \r\n lines at the end of the headers
         for ($i = 0 ; $i < count($headersTmpArray) ; ++$i) {
-            // we don't care about the two \r\n lines at the end of the headers
-            if (strlen($headersTmpArray[$i]) > 0) {
-                // the headers start with HTTP status codes, which do not contain a colon, so we can filter them out too
-                if (strpos($headersTmpArray[$i], ":")) {
-                    $headerName = substr($headersTmpArray[$i], 0, strpos($headersTmpArray[$i], ":"));
-                    $headerValue = substr($headersTmpArray[$i], strpos($headersTmpArray[$i], ":") + 2);
-                    $headers[$headerName] = $headerValue;
-                }
+            // the headers start with HTTP status codes, which do not contain a colon, so we can filter them out too
+            if ((strlen($headersTmpArray[$i]) > 0) && (strpos($headersTmpArray[$i], ":"))) {
+                $headerName = substr($headersTmpArray[$i], 0, strpos($headersTmpArray[$i], ":"));
+                $headerValue = substr($headersTmpArray[$i], strpos($headersTmpArray[$i], ":") + 2);
+                $headersArray[$headerName] = $headerValue;
             }
         }
-        return $headers;
+        return $headersArray;
     }
 }
