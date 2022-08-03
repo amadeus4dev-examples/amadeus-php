@@ -102,11 +102,10 @@ final class RequestTest extends TestCase
 
     public function testBuildUriForGetRequest(): void
     {
-        $params = array("foo" => "bar");
         $request = new Request(
             "GET",
             $this->path,
-            $params,
+            $this->params,
             null,
             "token",
             $this->client
