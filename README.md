@@ -1,15 +1,18 @@
 # Amadeus PHP SDK
 
+[![Tests](https://github.com/amadeus4dev/amadeus-php/actions/workflows/build.yml/badge.svg)](https://github.com/amadeus4dev/amadeus-php/actions/workflows/build.yml)
+[![Packagist](https://img.shields.io/packagist/v/amadeus4dev/amadeus-php.svg)](https://packagist.org/packages/amadeus4dev/amadeus-php)
+[![Packagist](https://img.shields.io/packagist/dt/amadeus4dev/amadeus-php.svg)](https://packagist.org/packages/amadeus4dev/amadeus-php)
 [![Discord](https://img.shields.io/discord/696822960023011329?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/cVrFBqx)
 
 Amadeus provides a rich set of APIs for the travel industry. For more details, check out the [Amadeus for Developers Portal](https://developers.amadeus.com).
 
 ## Installation
 
-This library requires PHP 7.4+. You can install the SDK via Composer
+This library requires PHP 7.4+. You can install the SDK via [Composer](https://getcomposer.org/)
 
 ``` 
-composer require amadeus4dev/amadeus-php:0.2.0
+composer require amadeus4dev/amadeus-php
 ```
 
 ## Getting Started
@@ -28,7 +31,6 @@ require __DIR__ . '/vendor/autoload.php'; // include composer autoloader
 
 try {
     $amadeus = Amadeus::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")
-        ->setSsl(true)
         ->build();
 
     // Flight Offers Search GET
@@ -100,7 +102,7 @@ $amadeus = Amadeus
 ```
 
 ## Use SSL certificate
-This library is using PHP core extension cURL for making Http Request but disabling the options for SSL verification. 
+This library is using PHP core extension cURL for making Http Request but disabling the options for SSL certificate verification. 
 Thus it is highly suggested using a certificate with PHP’s cURL functions.
 
 You can download the ```cacert.pem``` certificate bundle from the [official cURL website](https://curl.se/docs/caextract.html). 
