@@ -7,6 +7,18 @@
 
 Amadeus provides a rich set of APIs for the travel industry. For more details, check out the [Amadeus for Developers Portal](https://developers.amadeus.com).
 
+Jump To:
+* [Installation](#Installation)
+* [Getting Started](#Getting-Started)
+* [Initialization](#Initialization)
+* [Using SSL Certificate](#Using-SSL-Certificate)
+* [Making API Calls](#Making-API-Calls)
+* [Response](#Response)
+* [Logging & Debugging](#Logging-&-Debugging)
+* [List of Supported Endpoints](#List-of-Supported-Endpoints)
+* [Development & Contributing](#Development-&-Contributing)
+* [Getting Help](#Getting-Help)
+
 ## Installation
 
 This library requires PHP 7.4+. You can install the SDK via [Composer](https://getcomposer.org/)
@@ -101,7 +113,7 @@ $amadeus = Amadeus
     ->build();
 ```
 
-## Use SSL certificate
+## Using SSL Certificate
 This library is using PHP core extension cURL for making Http Request but disabling the options for SSL certificate verification. 
 Thus it is highly suggested using a certificate with PHP’s cURL functions.
 
@@ -113,7 +125,7 @@ Once you have downloaded the ```cacert.pem``` file, you should move it to whatev
 $amadeus->getClient()->setSslCertificate($REPLACE_BY_YOUR_SSL_CERT_PATH);
 ```
 
-## Making API calls
+## Making API Calls
 
 This library conveniently maps every API path to a similar path. 
 
@@ -181,7 +193,7 @@ $amadeus = Amadeus::builder()
     ->build();
 ```
 
-## List of supported endpoints
+## List of Supported Endpoints
 ```PHP
 /* Flight Offers Search GET */
 // function get(array $params) :
@@ -333,7 +345,7 @@ guidance on installing and running this code in a development environment.
 
 This library is released under the [MIT License](LICENSE).
 
-## Help
+## Getting Help
 
 You can find us on [StackOverflow](https://stackoverflow.com/questions/tagged/amadeus) or join our developer community on
 [Discord](https://discord.gg/cVrFBqx).
