@@ -58,18 +58,17 @@ final class HotelBookingsTest extends TestCase
             ->willReturn($data);
 
         // Given
-        $body = PHPUnitUtil::readFile(
+        $requestBody4HotelBookings = PHPUnitUtil::readFile(
             PHPUnitUtil::RESOURCE_PATH_ROOT . "hotel_bookings_post_request_ok.json"
         );
         /* @phpstan-ignore-next-line */
         $this->client->expects($this->any())
             ->method("postWithStringBody")
-            ->with("/v1/booking/hotel-bookings", $body)
+            ->with("/v1/booking/hotel-bookings", $requestBody4HotelBookings)
             ->willReturn($response);
 
-
         // When
-        $hotelBookings = (new HotelBookings($this->amadeus))->post($body);
+        $hotelBookings = (new HotelBookings($this->amadeus))->post($requestBody4HotelBookings);
 
         // Then
         $this->assertNotNull($hotelBookings);

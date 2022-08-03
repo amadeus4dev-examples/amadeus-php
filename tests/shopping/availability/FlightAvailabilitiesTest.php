@@ -72,18 +72,18 @@ final class FlightAvailabilitiesTest extends TestCase
             ->willReturn($data);
 
         // Given
-        $body = PHPUnitUtil::readFile(
+        $requestBody4FlightAvailabilities = PHPUnitUtil::readFile(
             PHPUnitUtil::RESOURCE_PATH_ROOT . "flight_availabilities_post_request_ok.json"
         );
         /* @phpstan-ignore-next-line */
         $this->client->expects($this->any())
             ->method("postWithStringBody")
-            ->with("/v1/shopping/availability/flight-availabilities", $body)
+            ->with("/v1/shopping/availability/flight-availabilities", $requestBody4FlightAvailabilities)
             ->willReturn($response);
 
         // When
         $flightAvailabilitiesSearch = new FlightAvailabilities($this->amadeus);
-        $flightAvailabilities = $flightAvailabilitiesSearch->post($body);
+        $flightAvailabilities = $flightAvailabilitiesSearch->post($requestBody4FlightAvailabilities);
 
         // Then
         $this->assertNotNull($flightAvailabilities);
