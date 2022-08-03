@@ -84,7 +84,7 @@ final class HotelOfferTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function test_given_client_when_call_hotel_offer_then_ok(): void
+    public function test_given_client_when_call_hotel_offer_then_ok(): array
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(
@@ -110,6 +110,19 @@ final class HotelOfferTest extends TestCase
         // Then
         $this->assertNotNull($hotelOffers);
 
+        return ["offerId"=>$params, "data"=>$data, "hotelOffers"=>$hotelOffers];
+    }
+
+    /**
+     * @param array $fixtures
+     * @depends test_given_client_when_call_hotel_offer_then_ok
+     */
+    public function test_returned_resource_given_client_when_call_hotel_offer_then_ok(array $fixtures): void
+    {
+        $data = $fixtures['data'];
+        $hotelOffers = $fixtures['hotelOffers'];
+        $offerId = $fixtures['offerId'];
+
         // Resource
         // HotelOffers
         // See HotelOffersTest.php
@@ -125,10 +138,7 @@ final class HotelOfferTest extends TestCase
         $hotelOffer = $hotelOffers->getOffers()[0];
         $this->assertTrue($hotelOffer instanceof \Amadeus\Resources\HotelOffer);
         $this->assertEquals("hotel-offer", $hotelOffer->getType());
-        $this->assertEquals(
-            "63A93695B58821ABB0EC2B33FE9FAB24D72BF34B1BD7D707293763D8D9378FC3",
-            $hotelOffer->getId()
-        );
+        $this->assertEquals($offerId, $hotelOffer->getId());
         $this->assertEquals("2020-12-30", $hotelOffer->getCheckInDate());
         $this->assertEquals("2020-12-31", $hotelOffer->getCheckOutDate());
         $this->assertEquals("1", $hotelOffer->getRoomQuantity());
@@ -136,8 +146,7 @@ final class HotelOfferTest extends TestCase
         $this->assertEquals("FAMILY_PLAN", $hotelOffer->getCategory());
         $this->assertEquals("ROOM_ONLY", $hotelOffer->getBoardType());
         $this->assertEquals(
-            "https://test.travel.api.amadeus.com/v2/shopping/hotel-offers/"
-            ."63A93695B58821ABB0EC2B33FE9FAB24D72BF34B1BD7D707293763D8D9378FC3",
+            "https://test.travel.api.amadeus.com/v2/shopping/hotel-offers/" . $offerId,
             $hotelOffer->getSelf()
         );
 

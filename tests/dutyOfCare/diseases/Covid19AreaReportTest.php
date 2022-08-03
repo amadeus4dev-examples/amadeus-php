@@ -18,6 +18,7 @@ use Amadeus\Resources\Border;
 use Amadeus\Resources\DatedQuarantineRestriction;
 use Amadeus\Resources\DatedTracingApplicationRestriction;
 use Amadeus\Resources\DeclarationDocuments;
+use Amadeus\Resources\DiseaseAreaReport;
 use Amadeus\Resources\DiseaseCase;
 use Amadeus\Resources\DiseaseDataSources;
 use Amadeus\Resources\DiseaseInfection;
@@ -80,7 +81,7 @@ final class Covid19AreaReportTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function test_given_client_when_call_covid_19_area_report_then_ok(): void
+    public function test_given_client_when_call_covid_19_area_report_then_ok(): array
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(
@@ -105,6 +106,18 @@ final class Covid19AreaReportTest extends TestCase
 
         // Then
         $this->assertNotNull($covid19AreaReport);
+
+        return ["data"=>$data, "covid19AreaReport"=>$covid19AreaReport];
+    }
+
+    /**
+     * @param array $fixtures
+     * @depends test_given_client_when_call_covid_19_area_report_then_ok
+     */
+    public function test_returned_resource_given_client_when_call_covid_19_area_report_then_ok(array $fixtures): void
+    {
+        $data = $fixtures['data'];
+        $covid19AreaReport = $fixtures['covid19AreaReport'];
 
         // Resources
         // DiseaseAreaReport

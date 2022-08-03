@@ -59,7 +59,7 @@ final class FlightAvailabilitiesTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function test_given_client_when_call_flight_availabilities_then_ok(): void
+    public function test_given_client_when_call_flight_availabilities_then_ok(): array
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(
@@ -88,6 +88,18 @@ final class FlightAvailabilitiesTest extends TestCase
         // Then
         $this->assertNotNull($flightAvailabilities);
         $this->assertEquals(4, sizeof($flightAvailabilities));
+
+        return ["data"=>$data, "flightAvailabilities"=>$flightAvailabilities];
+    }
+
+    /**
+     * @param array $fixtures
+     * @depends test_given_client_when_call_flight_availabilities_then_ok
+     */
+    public function test_returned_resource_given_client_when_call_flight_availabilities_then_ok(array $fixtures): void
+    {
+        $data = $fixtures['data'];
+        $flightAvailabilities = $fixtures['flightAvailabilities'];
 
         // Resources
         // FlightAvailability
