@@ -15,7 +15,26 @@
   },
   "autoload": {
     "psr-4": {
-      "Amadeus\\": "src/"
+      "Amadeus\\": "src/",
+      "Amadeus\\Airport\\": "src/airport",
+      "Amadeus\\Airport\\Predictions\\": "src/airport/predictions",
+      "Amadeus\\Booking\\": "src/booking",
+      "Amadeus\\Client\\": "src/client",
+      "Amadeus\\DutyOfCare\\": "src/dutyOfCare",
+      "Amadeus\\DutyOfCare\\Diseases\\": "src/dutyOfCare/diseases",
+      "Amadeus\\EReputation\\": "src/eReputation",
+      "Amadeus\\Exceptions\\": "src/exceptions",
+      "Amadeus\\ReferenceData\\": "src/referenceData",
+      "Amadeus\\ReferenceData\\Locations\\": "src/referenceData/locations",
+      "Amadeus\\ReferenceData\\Locations\\Hotels\\": "src/referenceData/locations/hotels",
+      "Amadeus\\Resources\\": "src/resources",
+      "Amadeus\\Schedule\\": "src/schedule",
+      "Amadeus\\Shopping\\": "src/shopping",
+      "Amadeus\\Shopping\\Activities\\": "src/shopping/activities",
+      "Amadeus\\Shopping\\Availability\\": "src/shopping/availability",
+      "Amadeus\\Shopping\\FlightOffers\\": "src/shopping/flightOffers",
+      "Amadeus\\Travel\\": "src/travel",
+      "Amadeus\\Travel\\Predictions\\": "src/travel/predictions"
     }
   },
   "require-dev": {
@@ -25,7 +44,25 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Amadeus\\Tests\\": "tests/"
+      "Amadeus\\Tests\\": "tests/",
+      "Amadeus\\Tests\\Airport\\": "tests/airport",
+      "Amadeus\\Tests\\Booking\\": "tests/booking",
+      "Amadeus\\Tests\\Client\\": "tests/client",
+      "Amadeus\\Tests\\DutyOfCare\\": "tests/dutyOfCare",
+      "Amadeus\\Tests\\DutyOfCare\\Diseases\\": "tests/dutyOfCare/diseases",
+      "Amadeus\\Tests\\EReputation\\": "tests/eReputation",
+      "Amadeus\\Tests\\Exceptions\\": "tests/exceptions",
+      "Amadeus\\Tests\\ReferenceData\\": "tests/referenceData",
+      "Amadeus\\Tests\\ReferenceData\\Locations\\": "tests/referenceData/locations",
+      "Amadeus\\Tests\\ReferenceData\\Locations\\Hotels\\": "tests/referenceData/locations/hotels",
+      "Amadeus\\Tests\\Resources\\": "tests/resources",
+      "Amadeus\\Tests\\Schedule\\": "tests/schedule",
+      "Amadeus\\Tests\\Shopping\\": "tests/shopping",
+      "Amadeus\\Tests\\Shopping\\Activities\\": "tests/shopping/activities",
+      "Amadeus\\Tests\\Shopping\\Availability\\": "tests/shopping/availability",
+      "Amadeus\\Tests\\Shopping\\FlightOffers\\": "tests/shopping/flightOffers",
+      "Amadeus\\Tests\\Travel\\": "tests/travel",
+      "Amadeus\\Tests\\Travel\\Predictions\\": "tests/travel/predictions"
     }
   }
 }
