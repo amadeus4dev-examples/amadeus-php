@@ -20,7 +20,9 @@ To run tests, simply run the `vendor/bin/phpunit tests`.
 
 ### Code coverage
 
-To generate the code coverage report in HTML format, simply run `vendor/bin/phpunit ----coverage-html=coverage tests`
+To generate the code coverage report in HTML format, simply run `vendor/bin/phpunit --coverage-html coverageReport`.
+
+Or, you can also run `vendor/bin/phpunit --coverage-text` to directly generate the code coverage report in text format.
 
 We are trying to keep 100% coverage, so keep an eye on the report to review the code coverage.
 
