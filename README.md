@@ -14,9 +14,9 @@ Jump To:
 * [Using SSL Certificate](#Using-SSL-Certificate)
 * [Making API Calls](#Making-API-Calls)
 * [Response](#Response)
-* [Logging & Debugging](#Logging-and-Debugging)
+* [Logging and Debugging](#Logging-and-Debugging)
 * [List of Supported Endpoints](#List-of-Supported-Endpoints)
-* [Development & Contributing](#Development-and-Contributing)
+* [Development and Contributing](#Development-and-Contributing)
 * [Getting Help](#Getting-Help)
 
 ## Installation
