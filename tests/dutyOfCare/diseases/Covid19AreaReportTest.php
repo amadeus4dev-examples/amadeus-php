@@ -18,6 +18,7 @@ use Amadeus\Resources\Border;
 use Amadeus\Resources\DatedQuarantineRestriction;
 use Amadeus\Resources\DatedTracingApplicationRestriction;
 use Amadeus\Resources\DeclarationDocuments;
+use Amadeus\Resources\DiseaseAreaReport;
 use Amadeus\Resources\DiseaseCase;
 use Amadeus\Resources\DiseaseDataSources;
 use Amadeus\Resources\DiseaseInfection;
@@ -80,7 +81,7 @@ final class Covid19AreaReportTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function test_given_client_when_call_covid_19_area_report_then_ok(): void
+    public function test_given_client_when_call_covid_19_area_report_then_ok(): array
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(
@@ -105,6 +106,19 @@ final class Covid19AreaReportTest extends TestCase
 
         // Then
         $this->assertNotNull($covid19AreaReport);
+        $this->assertTrue($covid19AreaReport instanceof DiseaseAreaReport);
+
+        return ["data"=>$data, "covid19AreaReport"=>$covid19AreaReport];
+    }
+
+    /**
+     * @param array $fixtures
+     * @depends test_given_client_when_call_covid_19_area_report_then_ok
+     */
+    public function test_returned_resource_given_client_when_call_covid_19_area_report_then_ok(array $fixtures): void
+    {
+        $data = $fixtures['data'];
+        $covid19AreaReport = $fixtures['covid19AreaReport'];
 
         // Resources
         // DiseaseAreaReport
@@ -147,6 +161,77 @@ final class Covid19AreaReportTest extends TestCase
         $this->assertEquals("2022-05-19", $areaRestrictions[0]->getDate());
         $this->assertNotNull($areaRestrictions[0]->getText());
         $this->assertEquals("Domestic Travel", $areaRestrictions[0]->getRestrictionType());
+
+        // AreaPolicy
+        $areaPolicy = $covid19AreaReport->getAreaPolicy();
+        $this->assertTrue($areaPolicy instanceof AreaPolicy);
+        $this->assertEquals("2022-05-19", $areaPolicy->getDate());
+        $this->assertNotNull($areaPolicy->getText());
+        $this->assertEquals("Distancing", $areaPolicy->getStatus());
+        $this->assertEquals("2020-03-16", $areaPolicy->getStartDate());
+        $this->assertEquals("indef", $areaPolicy->getEndDate());
+        $this->assertNotNull($areaPolicy->getReferenceLink());
+
+        // Link
+        $relatedArea = $covid19AreaReport->getRelatedArea();
+        $this->assertTrue($relatedArea[0] instanceof Link);
+        $this->assertIsArray($relatedArea[0]->getMethods());
+        $this->assertEquals("Parent", $relatedArea[0]->getRel());
+
+        // AreaVaccinated
+        $areaVaccinated = $covid19AreaReport->getAreaVaccinated();
+        $this->assertTrue($areaVaccinated[0] instanceof AreaVaccinated);
+        $this->assertEquals("2022-05-20", $areaVaccinated[0]->getDate());
+        $this->assertEquals("oneDose", $areaVaccinated[0]->getVaccinationDoseStatus());
+        $this->assertEquals(78.876, $areaVaccinated[0]->getPercentage());
+
+        // __toString()
+        $this->assertEquals(
+            PHPUnitUtil::toString($data),
+            $covid19AreaReport->__toString()
+        );
+        $this->assertEquals(
+            PHPUnitUtil::toString($data->{'area'}),
+            $area->__toString()
+        );
+        $this->assertEquals(
+            PHPUnitUtil::toString($data->{'diseaseInfection'}),
+            $diseaseInfection->__toString()
+        );
+        $this->assertEquals(
+            PHPUnitUtil::toString($data->{'diseaseCases'}),
+            $diseaseCases->__toString()
+        );
+        $this->assertEquals(
+            PHPUnitUtil::toString($data->{'dataSources'}),
+            $dataSources->__toString()
+        );
+        $this->assertEquals(
+            PHPUnitUtil::toString($data->{'areaRestrictions'}[0]),
+            $areaRestrictions[0]->__toString()
+        );
+        $this->assertEquals(
+            PHPUnitUtil::toString($data->{'areaPolicy'}),
+            $areaPolicy->__toString()
+        );
+        $this->assertEquals(
+            PHPUnitUtil::toString($data->{'relatedArea'}[0]),
+            $relatedArea[0]->__toString()
+        );
+        $this->assertEquals(
+            PHPUnitUtil::toString($data->{'areaVaccinated'}[0]),
+            $areaVaccinated[0]->__toString()
+        );
+    }
+
+    /**
+     * @param array $fixtures
+     * @depends test_given_client_when_call_covid_19_area_report_then_ok
+     */
+    public function test_returned_resource2_given_client_when_call_covid_19_area_report_then_ok(array $fixtures): void
+    {
+        $data = $fixtures['data'];
+        $covid19AreaReport = $fixtures['covid19AreaReport'];
 
         // AreaAccessRestriction
         $areaAccessRestriction = $covid19AreaReport->getAreaAccessRestriction();
@@ -241,54 +326,7 @@ final class Covid19AreaReportTest extends TestCase
         $this->assertEquals("Yes", $diseaseVaccination->getPolicy());
         $this->assertEquals("Entry Ban, Quarantine", $diseaseVaccination->getExemptions());
 
-        // AreaPolicy
-        $areaPolicy = $covid19AreaReport->getAreaPolicy();
-        $this->assertTrue($areaPolicy instanceof AreaPolicy);
-        $this->assertEquals("2022-05-19", $areaPolicy->getDate());
-        $this->assertNotNull($areaPolicy->getText());
-        $this->assertEquals("Distancing", $areaPolicy->getStatus());
-        $this->assertEquals("2020-03-16", $areaPolicy->getStartDate());
-        $this->assertEquals("indef", $areaPolicy->getEndDate());
-        $this->assertNotNull($areaPolicy->getReferenceLink());
-
-        // Link
-        $relatedArea = $covid19AreaReport->getRelatedArea();
-        $this->assertTrue($relatedArea[0] instanceof Link);
-        $this->assertIsArray($relatedArea[0]->getMethods());
-        $this->assertEquals("Parent", $relatedArea[0]->getRel());
-
-        // AreaVaccinated
-        $areaVaccinated = $covid19AreaReport->getAreaVaccinated();
-        $this->assertTrue($areaVaccinated[0] instanceof AreaVaccinated);
-        $this->assertEquals("2022-05-20", $areaVaccinated[0]->getDate());
-        $this->assertEquals("oneDose", $areaVaccinated[0]->getVaccinationDoseStatus());
-        $this->assertEquals(78.876, $areaVaccinated[0]->getPercentage());
-
         // __toString()
-        $this->assertEquals(
-            PHPUnitUtil::toString($data),
-            $covid19AreaReport->__toString()
-        );
-        $this->assertEquals(
-            PHPUnitUtil::toString($data->{'area'}),
-            $area->__toString()
-        );
-        $this->assertEquals(
-            PHPUnitUtil::toString($data->{'diseaseInfection'}),
-            $diseaseInfection->__toString()
-        );
-        $this->assertEquals(
-            PHPUnitUtil::toString($data->{'diseaseCases'}),
-            $diseaseCases->__toString()
-        );
-        $this->assertEquals(
-            PHPUnitUtil::toString($data->{'dataSources'}),
-            $dataSources->__toString()
-        );
-        $this->assertEquals(
-            PHPUnitUtil::toString($data->{'areaRestrictions'}[0]),
-            $areaRestrictions[0]->__toString()
-        );
         $this->assertEquals(
             PHPUnitUtil::toString($data->{'areaAccessRestriction'}),
             $areaAccessRestriction->__toString()
@@ -328,18 +366,6 @@ final class Covid19AreaReportTest extends TestCase
         $this->assertEquals(
             PHPUnitUtil::toString($data->{'areaAccessRestriction'}->{'diseaseVaccination'}),
             $diseaseVaccination->__toString()
-        );
-        $this->assertEquals(
-            PHPUnitUtil::toString($data->{'areaPolicy'}),
-            $areaPolicy->__toString()
-        );
-        $this->assertEquals(
-            PHPUnitUtil::toString($data->{'relatedArea'}[0]),
-            $relatedArea[0]->__toString()
-        );
-        $this->assertEquals(
-            PHPUnitUtil::toString($data->{'areaVaccinated'}[0]),
-            $areaVaccinated[0]->__toString()
         );
     }
 }

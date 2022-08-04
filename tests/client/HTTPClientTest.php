@@ -45,21 +45,21 @@ final class HTTPClientTest extends TestCase
 
     /**
      * @Before
-     * @throws ReflectionException
      */
     protected function setUp(): void
     {
         $this->path = "/foo";
         $this->params = array("foo" => "bar");
-        $this->body = "[{}]";
+        $this->body = "{foo: bar}";
 
         $this->info = array(
             "url" => '/v1/security/oauth2/token',
             "http_code" => 200,
-            "header_size" => 8
+            "header_size" => 39
         );
         $this->result =
-            "foo: bar"
+            "HTTP/1.1 200 OK"
+            ."HeadersKey: HeadersValue"
             ." "
             ."{"
             ."\"data\" : [ {"
@@ -171,7 +171,7 @@ final class HTTPClientTest extends TestCase
             ->onlyMethods(array('execute'))
             ->getMock();
 
-        $params = array(
+        $params4FetchAccessToken = array(
             'client_id' => $this->configuration->getClientId(),
             'client_secret' => $this->configuration->getClientSecret(),
             'grant_type' => 'client_credentials'
@@ -180,7 +180,7 @@ final class HTTPClientTest extends TestCase
         $request = new Request(
             "POST",
             '/v1/security/oauth2/token',
-            $params,
+            $params4FetchAccessToken,
             null,
             null,
             $obj
@@ -200,9 +200,7 @@ final class HTTPClientTest extends TestCase
     public function testDetectResponseException(): void
     {
         $response = $this->createMock(Response::class);
-        $response->expects($this->any())->method("getUrl")->willReturn("/foo/bar");
         $response->expects($this->any())->method("getStatusCode")->willReturn(-1);
-        $response->expects($this->any())->method("getResult")->willReturn($this->result);
 
         $this->expectException(ResponseException::class);
         PHPUnitUtil::callMethod($this->client, 'detectError', array($response));
@@ -227,6 +225,7 @@ final class HTTPClientTest extends TestCase
     {
         $response = $this->createMock(Response::class);
         $response->expects($this->any())->method("getStatusCode")->willReturn(404);
+
         $this->expectException(NotFoundException::class);
         PHPUnitUtil::callMethod($this->client, 'detectError', array($response));
     }
@@ -298,9 +297,7 @@ final class HTTPClientTest extends TestCase
             ->setConstructorArgs(array($this->configuration))
             ->getMock();
 
-        $request = $this->getMockBuilder(Request::class)
-            ->setConstructorArgs(array("GET", $this->path, null, null, null, $obj))
-            ->getMock();
+        $request = $this->createMock(Request::class);
 
         $request->expects($this->once())->method('getUri');
         $request->expects($this->once())->method('getHeaders');
@@ -317,11 +314,9 @@ final class HTTPClientTest extends TestCase
             ->setConstructorArgs(array($this->configuration))
             ->getMock();
 
-        $request = $this->getMockBuilder(Request::class)
-            ->setConstructorArgs(array("GET", $this->path, null, null, 'my_token', $obj))
-            ->getMock();
+        $request = $this->createMock(Request::class);
 
-        $request->expects($this->any())->method('getSslCertificate')->willReturn('/foo');
+        $request->expects($this->any())->method('getSslCertificate')->willReturn($this->path);
 
         $request->expects($this->exactly(2))->method('getSslCertificate');
 
@@ -330,7 +325,6 @@ final class HTTPClientTest extends TestCase
 
     /**
      * @throws ReflectionException
-     * TODO Review
      */
     public function testSetCurlOptionsWithPostWithBody(): void
     {
@@ -338,13 +332,11 @@ final class HTTPClientTest extends TestCase
             ->setConstructorArgs(array($this->configuration))
             ->getMock();
 
-        $request = $this->getMockBuilder(Request::class)
-            ->setConstructorArgs(array("POST", $this->path, array("foo" => "bar"), "foo: bar", 'my_token', $obj))
-            ->getMock();
+        $request = $this->createMock(Request::class);
 
         $request->expects($this->any())->method('getVerb')->willReturn("POST");
-        $request->expects($this->any())->method('getParams')->willReturn(array("foo" => "bar"));
-        $request->expects($this->any())->method('getBody')->willReturn("foo: bar");
+        $request->expects($this->any())->method('getParams')->willReturn($this->params);
+        $request->expects($this->any())->method('getBody')->willReturn($this->body);
 
         $request->expects($this->once())->method('getVerb');
         $request->expects($this->exactly(2))->method('getBody');
@@ -355,7 +347,6 @@ final class HTTPClientTest extends TestCase
 
     /**
      * @throws ReflectionException
-     * TODO Review
      */
     public function testSetCurlOptionsWithPostWithParams(): void
     {
@@ -363,12 +354,10 @@ final class HTTPClientTest extends TestCase
             ->setConstructorArgs(array($this->configuration))
             ->getMock();
 
-        $request = $this->getMockBuilder(Request::class)
-            ->setConstructorArgs(array("POST", $this->path, array("foo" => "bar"), null, 'my_token', $obj))
-            ->getMock();
+        $request = $this->createMock(Request::class);
 
         $request->expects($this->any())->method('getVerb')->willReturn("POST");
-        $request->expects($this->any())->method('getParams')->willReturn(array("foo" => "bar"));
+        $request->expects($this->any())->method('getParams')->willReturn($this->params);
         $request->expects($this->any())->method('getBody')->willReturn(null);
 
         $request->expects($this->once())->method('getVerb');

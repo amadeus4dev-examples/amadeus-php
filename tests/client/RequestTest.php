@@ -21,6 +21,8 @@ use PHPUnit\Framework\TestCase;
 final class RequestTest extends TestCase
 {
     private HTTPClient $client;
+    private string $path;
+    private array $params;
 
     /**
      * @Before
@@ -28,15 +30,16 @@ final class RequestTest extends TestCase
     public function setUp(): void
     {
         $this->client = new BasicHTTPClient(new Configuration("id", "secret"));
+        $this->path = "/foo/bar";
+        $this->params = array("foo" => "bar");
     }
 
     public function testInitializer(): void
     {
-        $params = array("foo" => "bar");
         $request = new Request(
             "GET",
-            "/foo/bar",
-            $params,
+            $this->path,
+            $this->params,
             null,
             "token",
             $this->client
@@ -44,8 +47,8 @@ final class RequestTest extends TestCase
 
         $this->assertEquals("GET", $request->getVerb());
         $this->assertEquals("test.api.amadeus.com", $request->getHost());
-        $this->assertEquals("/foo/bar", $request->getPath());
-        $this->assertEquals($params, $request->getParams());
+        $this->assertEquals($this->path, $request->getPath());
+        $this->assertEquals($this->params, $request->getParams());
         $this->assertNull($request->getBody());
         $this->assertEquals("token", $request->getBearerToken());
         $this->assertEquals(Amadeus::VERSION, $request->getClientVersion());
@@ -70,11 +73,10 @@ final class RequestTest extends TestCase
 
     public function testInitializerWithoutBearerToken(): void
     {
-        $params = array("foo" => "bar");
         $request = new Request(
             "GET",
-            "/foo/bar",
-            $params,
+            $this->path,
+            $this->params,
             null,
             null,
             $this->client
@@ -85,14 +87,14 @@ final class RequestTest extends TestCase
 
     public function testInitializerWithHTTP(): void
     {
-        $client = new BasicHTTPClient((new Configuration("id", "secret"))->setSsl(false));
+        $clientDisableSSL = new BasicHTTPClient((new Configuration("id", "secret"))->setSsl(false));
         $request = new Request(
             "GET",
-            "/foo/bar",
+            $this->path,
             null,
             null,
             null,
-            $client
+            $clientDisableSSL
         );
 
         $this->assertEquals("http", $request->getScheme());
@@ -100,11 +102,10 @@ final class RequestTest extends TestCase
 
     public function testBuildUriForGetRequest(): void
     {
-        $params = array("foo" => "bar");
         $request = new Request(
             "GET",
-            "/foo/bar",
-            $params,
+            $this->path,
+            $this->params,
             null,
             "token",
             $this->client
@@ -117,7 +118,7 @@ final class RequestTest extends TestCase
     {
         $request = new Request(
             "GET",
-            "/foo/bar",
+            $this->path,
             null,
             null,
             null,
@@ -129,11 +130,10 @@ final class RequestTest extends TestCase
 
     public function testBuildUriForPostRequest(): void
     {
-        $params = array("foo" => "bar");
         $request = new Request(
-            "GET",
-            "/foo/bar",
-            $params,
+            "POST",
+            $this->path,
+            $this->params,
             null,
             "token",
             $this->client
@@ -146,7 +146,7 @@ final class RequestTest extends TestCase
     {
         $request = new Request(
             "GET",
-            "/foo/bar",
+            $this->path,
             null,
             null,
             "token",
@@ -175,11 +175,10 @@ final class RequestTest extends TestCase
     public function testBuildRequestWithSslCert(): void
     {
         $this->client->setSslCertificate("./cert.pem");
-        $params = array("foo" => "bar");
         $request = new Request(
             "GET",
-            "/foo/bar",
-            $params,
+            $this->path,
+            $this->params,
             null,
             null,
             $this->client

@@ -24,15 +24,20 @@ use PHPUnit\Framework\TestCase;
  */
 final class ExceptionsTest extends TestCase
 {
+    private string $dateFormat = "F j, Y, g:i a";
+    private string $exception = "Amadeus\Exceptions\ResponseException: ";
+    private string $message = "Message: ";
+    private string $url = "Url: ";
+
     public function testNoResponse(): void
     {
         $error = new ResponseException(null);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
-            '['.date("F j, Y, g:i a").']'."\n"
-            ."Amadeus\Exceptions\ResponseException: [0]"."\n"
-            ."Message: "."\n"
-            ."Url: "."\n",
+            '['.date($this->dateFormat).']'."\n"
+            .$this->exception."[0]"."\n"
+            .$this->message."\n"
+            .$this->url."\n",
             join("\n", array_slice($error, 0, 4))."\n"
         );
     }
@@ -48,10 +53,10 @@ final class ExceptionsTest extends TestCase
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
-            '['.date("F j, Y, g:i a").']'."\n"
-            ."Amadeus\Exceptions\ResponseException: [0]"."\n"
-            ."Message: message"."\n"
-            ."Url: "."\n",
+            '['.date($this->dateFormat).']'."\n"
+            .$this->exception."[0]"."\n"
+            .$this->message."message"."\n"
+            .$this->url."\n",
             join("\n", array_slice($error, 0, 4))."\n"
         );
     }
@@ -69,10 +74,10 @@ final class ExceptionsTest extends TestCase
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
-            '['.date("F j, Y, g:i a").']'."\n"
-            ."Amadeus\Exceptions\ResponseException: [400]"."\n"
-            ."Message: "."\n"
-            ."Url: "."\n",
+            '['.date($this->dateFormat).']'."\n"
+            .$this->exception."[400]"."\n"
+            .$this->message."\n"
+            .$this->url."\n",
             join("\n", array_slice($error, 0, 4))."\n"
         );
     }
@@ -82,7 +87,7 @@ final class ExceptionsTest extends TestCase
         $request = null;
         $info = array(
             "url" => null,
-            "http_code" => 200,
+            "http_code" => 400,
             "header_size" => 0
         );
         $result = "message";
@@ -90,10 +95,10 @@ final class ExceptionsTest extends TestCase
         $error = new ResponseException($response);
         $error = explode("\n", $error->__toString());
         $this->assertEquals(
-            '['.date("F j, Y, g:i a").']'."\n"
-            ."Amadeus\Exceptions\ResponseException: [200]"."\n"
-            ."Message: message"."\n"
-            ."Url: "."\n",
+            '['.date($this->dateFormat).']'."\n"
+            .$this->exception."[400]"."\n"
+            .$this->message."message"."\n"
+            .$this->url."\n",
             join("\n", array_slice($error, 0, 4))."\n"
         );
     }

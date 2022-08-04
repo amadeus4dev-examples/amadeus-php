@@ -84,7 +84,7 @@ final class HotelOfferTest extends TestCase
     /**
      * @throws ResponseException
      */
-    public function test_given_client_when_call_hotel_offer_then_ok(): void
+    public function test_given_client_when_call_hotel_offer_then_ok(): array
     {
         // Prepare Response
         $fileContent = PHPUnitUtil::readFile(
@@ -110,6 +110,19 @@ final class HotelOfferTest extends TestCase
         // Then
         $this->assertNotNull($hotelOffers);
 
+        return ["offerId"=>$params, "data"=>$data, "hotelOffers"=>$hotelOffers];
+    }
+
+    /**
+     * @param array $fixtures
+     * @depends test_given_client_when_call_hotel_offer_then_ok
+     */
+    public function test_returned_resource_given_client_when_call_hotel_offer_then_ok(array $fixtures): void
+    {
+        $data = $fixtures['data'];
+        $hotelOffers = $fixtures['hotelOffers'];
+        $offerId = $fixtures['offerId'];
+
         // Resource
         // HotelOffers
         // See HotelOffersTest.php
@@ -125,10 +138,7 @@ final class HotelOfferTest extends TestCase
         $hotelOffer = $hotelOffers->getOffers()[0];
         $this->assertTrue($hotelOffer instanceof \Amadeus\Resources\HotelOffer);
         $this->assertEquals("hotel-offer", $hotelOffer->getType());
-        $this->assertEquals(
-            "63A93695B58821ABB0EC2B33FE9FAB24D72BF34B1BD7D707293763D8D9378FC3",
-            $hotelOffer->getId()
-        );
+        $this->assertEquals($offerId, $hotelOffer->getId());
         $this->assertEquals("2020-12-30", $hotelOffer->getCheckInDate());
         $this->assertEquals("2020-12-31", $hotelOffer->getCheckOutDate());
         $this->assertEquals("1", $hotelOffer->getRoomQuantity());
@@ -136,8 +146,7 @@ final class HotelOfferTest extends TestCase
         $this->assertEquals("FAMILY_PLAN", $hotelOffer->getCategory());
         $this->assertEquals("ROOM_ONLY", $hotelOffer->getBoardType());
         $this->assertEquals(
-            "https://test.travel.api.amadeus.com/v2/shopping/hotel-offers/"
-            ."63A93695B58821ABB0EC2B33FE9FAB24D72BF34B1BD7D707293763D8D9378FC3",
+            "https://test.travel.api.amadeus.com/v2/shopping/hotel-offers/" . $offerId,
             $hotelOffer->getSelf()
         );
 
@@ -228,57 +237,6 @@ final class HotelOfferTest extends TestCase
         $this->assertEquals("string", $changes[0]->getBase());
         $this->assertNotNull($changes[0]->getMarkups());
 
-        // HotelProductPolicyDetails
-        $policies = $hotelOffer->getPolicies();
-        $this->assertTrue($policies instanceof  HotelProductPolicyDetails);
-        $this->assertEquals("GUARANTEE", $policies->getPaymentType());
-
-        // HotelProductGuaranteePolicy
-        $guarantee = $policies->getGuarantee();
-        $this->assertTrue($guarantee instanceof HotelProductGuaranteePolicy);
-        $this->assertNotNull($guarantee->getDescription());
-
-        // HotelProductPaymentPolicy
-        $acceptedPayments = $guarantee->getAcceptedPayments();
-        $this->assertTrue($acceptedPayments instanceof HotelProductPaymentPolicy);
-        $this->assertEquals(["string"], $acceptedPayments->getCreditCards());
-        $this->assertEquals(["CREDIT_CARD"], $acceptedPayments->getMethods());
-
-        // HotelProductDepositPolicy
-        $deposit = $policies->getDeposit();
-        $this->assertTrue($deposit instanceof HotelProductDepositPolicy);
-        $this->assertEquals("string", $deposit->getAmount());
-        $this->assertEquals("2022-06-20T12:10:33.006Z", $deposit->getDeadline());
-        $this->assertNotNull($deposit->getDescription());
-        $this->assertNotNull($deposit->getAcceptedPayments());
-
-        $prepay = $policies->getPrepay();
-        $this->assertNotNull($prepay);
-        $this->assertTrue($prepay instanceof HotelProductDepositPolicy);
-
-        // HotelProductHoldPolicy
-        $holdTime = $policies->getHoldTime();
-        $this->assertTrue($holdTime instanceof HotelProductHoldPolicy);
-        $this->assertEquals("2022-06-20T12:10:33.006Z", $holdTime->getDeadline());
-
-        // HotelProductCancellationPolicy
-        $cancellation = $policies->getCancellation();
-        $this->assertTrue($cancellation instanceof HotelProductCancellationPolicy);
-        $this->assertEquals("FULL_STAY", $cancellation->getType());
-        $this->assertEquals("string", $cancellation->getAmount());
-        $this->assertEquals(0, $cancellation->getNumberOfNights());
-        $this->assertEquals("string", $cancellation->getPercentage());
-        $this->assertEquals("2022-06-20T12:10:33.006Z", $cancellation->getDeadline());
-        $this->assertNotNull($cancellation->getDescription());
-
-        // HotelProductCheckInOutPolicy
-        $checkInOut = $policies->getCheckInOut();
-        $this->assertTrue($checkInOut instanceof HotelProductCheckInOutPolicy);
-        $this->assertEquals("13:00:00", $checkInOut->getCheckIn());
-        $this->assertNotNull($checkInOut->getCheckInDescription());
-        $this->assertEquals("11:00:00", $checkInOut->getCheckOut());
-        $this->assertNotNull($checkInOut->getCheckOutDescription());
-
         // __toString()
         $this->assertEquals(
             PHPUnitUtil::toString($data),
@@ -340,6 +298,70 @@ final class HotelOfferTest extends TestCase
             PHPUnitUtil::toString($data->{'offers'}[0]->{'price'}->{'variations'}->{'changes'}[0]),
             $changes[0]->__toString()
         );
+    }
+
+    /**
+     * @param array $fixtures
+     * @depends test_given_client_when_call_hotel_offer_then_ok
+     */
+    public function test_returned_resource2_given_client_when_call_hotel_offer_then_ok(array $fixtures): void
+    {
+        $data = $fixtures['data'];
+        $hotelOffers = $fixtures['hotelOffers'];
+        $hotelOffer = $hotelOffers->getOffers()[0];
+
+        // HotelProductPolicyDetails
+        $policies = $hotelOffer->getPolicies();
+        $this->assertTrue($policies instanceof  HotelProductPolicyDetails);
+        $this->assertEquals("GUARANTEE", $policies->getPaymentType());
+
+        // HotelProductGuaranteePolicy
+        $guarantee = $policies->getGuarantee();
+        $this->assertTrue($guarantee instanceof HotelProductGuaranteePolicy);
+        $this->assertNotNull($guarantee->getDescription());
+
+        // HotelProductPaymentPolicy
+        $acceptedPayments = $guarantee->getAcceptedPayments();
+        $this->assertTrue($acceptedPayments instanceof HotelProductPaymentPolicy);
+        $this->assertEquals(["string"], $acceptedPayments->getCreditCards());
+        $this->assertEquals(["CREDIT_CARD"], $acceptedPayments->getMethods());
+
+        // HotelProductDepositPolicy
+        $deposit = $policies->getDeposit();
+        $this->assertTrue($deposit instanceof HotelProductDepositPolicy);
+        $this->assertEquals("string", $deposit->getAmount());
+        $this->assertEquals("2022-06-20T12:10:33.006Z", $deposit->getDeadline());
+        $this->assertNotNull($deposit->getDescription());
+        $this->assertNotNull($deposit->getAcceptedPayments());
+
+        $prepay = $policies->getPrepay();
+        $this->assertNotNull($prepay);
+        $this->assertTrue($prepay instanceof HotelProductDepositPolicy);
+
+        // HotelProductHoldPolicy
+        $holdTime = $policies->getHoldTime();
+        $this->assertTrue($holdTime instanceof HotelProductHoldPolicy);
+        $this->assertEquals("2022-06-20T12:10:33.006Z", $holdTime->getDeadline());
+
+        // HotelProductCancellationPolicy
+        $cancellation = $policies->getCancellation();
+        $this->assertTrue($cancellation instanceof HotelProductCancellationPolicy);
+        $this->assertEquals("FULL_STAY", $cancellation->getType());
+        $this->assertEquals("string", $cancellation->getAmount());
+        $this->assertEquals(0, $cancellation->getNumberOfNights());
+        $this->assertEquals("string", $cancellation->getPercentage());
+        $this->assertEquals("2022-06-20T12:10:33.006Z", $cancellation->getDeadline());
+        $this->assertNotNull($cancellation->getDescription());
+
+        // HotelProductCheckInOutPolicy
+        $checkInOut = $policies->getCheckInOut();
+        $this->assertTrue($checkInOut instanceof HotelProductCheckInOutPolicy);
+        $this->assertEquals("13:00:00", $checkInOut->getCheckIn());
+        $this->assertNotNull($checkInOut->getCheckInDescription());
+        $this->assertEquals("11:00:00", $checkInOut->getCheckOut());
+        $this->assertNotNull($checkInOut->getCheckOutDescription());
+
+        // __toString()
         $this->assertEquals(
             PHPUnitUtil::toString($data->{'offers'}[0]->{'policies'}),
             $policies->__toString()
