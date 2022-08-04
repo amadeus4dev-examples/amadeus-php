@@ -14,9 +14,9 @@ Jump To:
 * [Using SSL Certificate](#Using-SSL-Certificate)
 * [Making API Calls](#Making-API-Calls)
 * [Response](#Response)
-* [Logging & Debugging](#Logging-&-Debugging)
+* [Logging & Debugging](#Logging-and-Debugging)
 * [List of Supported Endpoints](#List-of-Supported-Endpoints)
-* [Development & Contributing](#Development-&-Contributing)
+* [Development & Contributing](#Development-and-Contributing)
 * [Getting Help](#Getting-Help)
 
 ## Installation
@@ -184,7 +184,7 @@ $locations[0]->getResponse()->getBodyAsJsonObject();
 $locations[0]->getResponse()->getData();
 ```
 
-## Logging & Debugging
+## Logging and Debugging
 You can enable debugging in the default HTTP client via a parameter during initialization, or using the ```AMADEUS_LOG_LEVEL``` environment variable.
 
 ```PHP
@@ -335,7 +335,7 @@ $amadeus->getAirport()->getPredictions()->getOnTime()->get(
 
 ```
 
-## Development & Contributing
+## Development and Contributing
 
 Want to contribute? Read our [Contributors Guide](.github/CONTRIBUTING.md) for
 guidance on installing and running this code in a development environment.
