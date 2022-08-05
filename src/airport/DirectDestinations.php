@@ -10,19 +10,14 @@ use Amadeus\Resources\Destination;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/airport/direct-destinations</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/airport/direct-destinations" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getAirport()->getDirectDestinations();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getAirport()->getDirectDestinations();
+ *
  */
 class DirectDestinations
 {
@@ -38,18 +33,15 @@ class DirectDestinations
     }
 
     /**
-     * ###Airport Routes API
-     * <p>
-     *    Find all destinations served by a given airport.
-     * </p>
+     * Airport Routes API:
      *
-     * <code>
-     *  $amadeus->getAirport()->getDirectDestinations()->get(
-     *      ["departureAirportCode" => "MAD", "max" => 2]
-     *  );
-     * </code>
+     * Find all destinations served by a given airport.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
+     *      $amadeus->getAirport()->getDirectDestinations()->get(
+     *          ["departureAirportCode" => "MAD", "max" => 2]
+     *      );
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
      *
      * @param   array $params       the parameters to send to the API
      * @return  Destination[]       an API resource

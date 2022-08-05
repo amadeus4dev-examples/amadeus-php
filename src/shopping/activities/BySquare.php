@@ -10,19 +10,14 @@ use Amadeus\Resources\Activity;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/shopping/activities/by-square</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/shopping/activities/by-square" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getShopping()->getActivities()->getBySquare();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getShopping()->getActivities()->getBySquare();
+ *
  */
 class BySquare
 {
@@ -38,18 +33,15 @@ class BySquare
     }
 
     /**
-     * ###Tours and Activities API
-     * <p>
-     *  Find a list of activities within a square defined by cardinal points.
-     * </p>
+     * Tours and Activities API:
      *
-     * <code>
-     *  $amadeus->getShopping()->getActivities()->getBySquare()->get(
-     *      ["west" => 2.160873, "north" => 41.397158, "south" => 41.394582, "east" => 2.177181]
-     *  );
-     * </code>
+     * Find a list of activities within a square defined by cardinal points.
      *
-     * @see https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
+     *      $amadeus->getShopping()->getActivities()->getBySquare()->get(
+     *          ["west" => 2.160873, "north" => 41.397158, "south" => 41.394582, "east" => 2.177181]
+     *      );
+     *
+     * @link https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
      *
      * @param   array $params       the parameters to send to the API
      * @return  Activity[]            an API resource

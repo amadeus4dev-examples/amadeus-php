@@ -193,7 +193,10 @@ class Configuration
 
     /**
      * Set the log level for debugging.
-     * eg. setLogLevel("debug");
+     * eg.
+     *
+     *      setLogLevel("debug");
+     *
      * @param string $logLevel
      * @return Configuration
      */

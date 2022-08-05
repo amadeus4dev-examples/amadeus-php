@@ -10,19 +10,14 @@ use Amadeus\Resources\FlightDestination;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/shopping/flight-destinations</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/shopping/flight-destinations" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getShopping()->getFlightDestinations();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getShopping()->getFlightDestinations();
+ *
  */
 class FlightDestinations
 {
@@ -37,16 +32,13 @@ class FlightDestinations
     }
 
     /**
-     * ###Flight Inspiration Search API
-     * <p>
-     *   Find the cheapest destinations where you can fly to.
-     * </p>
+     * Flight Inspiration Search API:
      *
-     * <code>
-     *  $amadeus->getShopping()->getFlightDestination()->get(["origin"=>"MUC"]);
-     * </code>
+     * Find the cheapest destinations where you can fly to.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-inspiration-search/api-reference
+     *      $amadeus->getShopping()->getFlightDestination()->get(["origin"=>"MUC"]);
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-inspiration-search/api-reference
      *
      * @param array $params             the parameters to send to the API
      * @return FlightDestination[]      an API resource

@@ -11,29 +11,22 @@ use Amadeus\Resources\Resource;
 use Amadeus\Shopping\Activities\BySquare;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/shopping/activities</code> endpoints.
- * </p>
+ *  A namespaced client for the
+ *  "/v1/shopping/activities" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ *  Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getShopping()->getActivities();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getShopping()->getActivities();
+ *
  */
 class Activities
 {
     private Amadeus $amadeus;
 
     /**
-     * <p>
      *   A namespaced client for the
-     *   <code>/v1/shopping/activities/by-square</code> endpoints.
-     * </p>
+     *   "/v1/shopping/activities/by-square" endpoints.
      */
     private BySquare $bySquare;
 
@@ -48,10 +41,9 @@ class Activities
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/shopping/activities/by-square</code> endpoints.
-     * </p>
+     *  Get a namespaced client for the
+     *  "/v1/shopping/activities/by-square" endpoints.
+     *
      * @return BySquare
      */
     public function getBySquare(): BySquare
@@ -60,18 +52,15 @@ class Activities
     }
 
     /**
-     * ###Tours and Activities API
-     * <p>
-     *    Find a list of activities around a given location.
-     * </p>
+     * Tours and Activities API:
      *
-     * <code>
-     *  $amadeus->getShopping()->getActivities()->get(
-     *      ["longitude" => 2.160873, "latitude" => 41.397158]
-     *  );
-     * </code>
+     * Find a list of activities around a given location.
      *
-     * @see https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
+     *      $amadeus->getShopping()->getActivities()->get(
+     *              ["longitude" => 2.160873, "latitude" => 41.397158]
+     *      );
+     *
+     * @link https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
      *
      * @param   array $params       the parameters to send to the API
      * @return  Activity[]          an API resource

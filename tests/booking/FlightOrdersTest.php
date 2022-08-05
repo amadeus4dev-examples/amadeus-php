@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\TravelerPhone
  * @covers \Amadeus\Resources\TravelerDocuments
  *
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-create-orders/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-create-orders/api-reference
  */
 final class FlightOrdersTest extends TestCase
 {

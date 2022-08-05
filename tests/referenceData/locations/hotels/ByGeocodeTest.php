@@ -22,7 +22,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\HotelAddress
  * @covers \Amadeus\Resources\HotelDistance
  *
- * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-list/api-reference
+ * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-list/api-reference
  */
 final class ByGeocodeTest extends TestCase
 {

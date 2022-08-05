@@ -10,19 +10,14 @@ use Amadeus\Resources\Location;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/reference-data/locations/airports</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/reference-data/locations/airports" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getReferenceData()->getLocations()->getAirports();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getReferenceData()->getLocations()->getAirports();
+ *
  */
 class Airports
 {
@@ -37,21 +32,19 @@ class Airports
     }
 
     /**
-     * ###Airport Nearest Relevant API
-     * <p>
-     *    Returns a list of relevant airports near to a given point.
-     * </p>
+     * Airport Nearest Relevant API:
      *
-     * <code>
-     *  $amadeus->getReferenceData()->getLocations()->getAirports()->get(
-     *      ["latitude"=>51.57285, "longitude"=>-0.44161, "radius"=>500]
-     *  );
-     * </code>
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-nearest-relevant/api-reference
+     * Returns a list of relevant airports near to a given point.
      *
-     * @param array $params
-     * @return Location[]
-     * @throws ResponseException
+     *      $amadeus->getReferenceData()->getLocations()->getAirports()->get(
+     *          ["latitude"=>51.57285, "longitude"=>-0.44161, "radius"=>500]
+     *      );
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/airport-nearest-relevant/api-reference
+     *
+     * @param  array $params        the parameters to send to the API
+     * @return Location[]           an API resource
+     * @throws ResponseException    when an exception occurs
      */
     public function get(array $params): array
     {

@@ -14,69 +14,52 @@ use Amadeus\Shopping\HotelOffer;
 use Amadeus\Shopping\HotelOffers;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/shopping</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/shopping" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getShopping();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getShopping();
+ *
  */
 class Shopping
 {
     private Amadeus $amadeus;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/shopping/availability</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/shopping/availability" endpoints.
      */
     private Availability $availability;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v2/shopping/flight-offers</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v2/shopping/flight-offers" endpoints.
      */
     private FlightOffers $flightOffers;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v3/shopping/hotel-offers</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v3/shopping/hotel-offers" endpoints.
      */
     private HotelOffers $hotelOffers;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/shopping/flight-dates</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/shopping/flight-dates" endpoints.
      */
     private FlightDates $flightDates;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/shopping/flight-destinations</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/shopping/flight-destinations" endpoints.
      */
     private FlightDestinations $flightDestinations;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/shopping/activities</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/shopping/activities" endpoints.
      */
     private Activities $activities;
 
@@ -95,10 +78,8 @@ class Shopping
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/shopping/availability</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/shopping/availability" endpoints.
      * @return Availability
      */
     public function getAvailability(): Availability
@@ -107,10 +88,8 @@ class Shopping
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v2/shopping/flight-offers</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v2/shopping/flight-offers" endpoints.
      * @return FlightOffers
      */
     public function getFlightOffers(): FlightOffers
@@ -119,10 +98,8 @@ class Shopping
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v3/shopping/hotel-offers/:offer_id</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v3/shopping/hotel-offers/:offer_id" endpoints.
      * @param string $offerId
      * @return HotelOffer
      */
@@ -132,10 +109,8 @@ class Shopping
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v3/shopping/hotel-offers</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v3/shopping/hotel-offers" endpoints.
      * @return HotelOffers
      */
     public function getHotelOffers(): HotelOffers
@@ -144,10 +119,8 @@ class Shopping
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/shopping/flight-dates</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/shopping/flight-dates" endpoints.
      * @return FlightDates
      */
     public function getFlightDates(): FlightDates
@@ -156,10 +129,8 @@ class Shopping
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/shopping/flight-destinations</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/shopping/flight-destinations" endpoints.
      * @return FlightDestinations
      */
     public function getFlightDestinations(): FlightDestinations
@@ -168,10 +139,8 @@ class Shopping
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/shopping/activities</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/shopping/activities" endpoints.
      * @return Activities
      */
     public function getActivities(): Activities
@@ -180,10 +149,8 @@ class Shopping
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/shopping/activities/:activity_id</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/shopping/activities/:activity_id" endpoints.
      * @param string $activityId
      * @return Activity
      */

@@ -26,7 +26,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Exceptions\ResponseException
  * @covers \Amadeus\Exceptions\ClientException
  *
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
  */
 final class DirectDestinationsTest extends TestCase
 {

@@ -9,7 +9,7 @@ use Amadeus\Shopping\FlightDestinations;
 /**
  * A FlightDestination object as returned by the Flight Inspiration Search API.
  * @see FlightDestinations::get()
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-inspiration-search/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-inspiration-search/api-reference
  */
 class FlightDestination extends Resource implements ResourceInterface
 {

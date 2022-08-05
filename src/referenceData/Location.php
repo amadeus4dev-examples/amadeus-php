@@ -9,19 +9,14 @@ use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/reference-data/locations/:location_id</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/reference-data/locations/:location_id" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getReferenceData()->getLocation();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getReferenceData()->getLocation();
+ *
  */
 class Location
 {
@@ -39,16 +34,13 @@ class Location
     }
 
     /**
-     * ###Airport and City Search API
-     * <p>
-     *    Returns a specific airport or city based on its id.
-     * </p>
+     * Airport and City Search API:
      *
-     * <code>
-     *  $amadeus->getReferenceData()->getLocation("CMUC")->get();
-     * </code>
+     * Returns a specific airport or city based on its id.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-and-city-search/api-reference
+     *      $amadeus->getReferenceData()->getLocation("CMUC")->get();
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/airport-and-city-search/api-reference
      *
      * @return \Amadeus\Resources\Location  an API resource
      * @throws ResponseException            when an exception occurs

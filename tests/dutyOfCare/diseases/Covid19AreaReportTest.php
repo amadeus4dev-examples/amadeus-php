@@ -58,7 +58,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\Transportation
  *
- * @see https://developers.amadeus.com/self-service/category/covid-19-and-travel-safety/api-doc/travel-restrictions/api-reference
+ * @link https://developers.amadeus.com/self-service/category/covid-19-and-travel-safety/api-doc/travel-restrictions/api-reference
  */
 final class Covid19AreaReportTest extends TestCase
 {

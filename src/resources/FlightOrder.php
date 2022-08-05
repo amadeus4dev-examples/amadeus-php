@@ -8,8 +8,9 @@ use Amadeus\Booking\FlightOrders;
 
 /**
  * A FlightOrder object as returned by the Flight Create Orders API.
- * @see FlightOrders::post(), FlightOrders::postWithFlightOffersAndTravelers()
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-create-orders/api-reference
+ * @see FlightOrders::post()
+ * @see FlightOrders::postWithFlightOffersAndTravelers()
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-create-orders/api-reference
  */
 class FlightOrder extends Resource implements ResourceInterface
 {

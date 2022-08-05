@@ -26,7 +26,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Exceptions\ResponseException
  * @covers \Amadeus\Exceptions\ClientException
  *
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-on-time-performance/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/airport-on-time-performance/api-reference
  */
 final class OnTimeTest extends TestCase
 {

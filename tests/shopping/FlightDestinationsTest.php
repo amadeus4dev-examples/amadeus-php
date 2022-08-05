@@ -23,7 +23,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\FlightPrice
  * @covers \Amadeus\Resources\FlightDestinationLinks
  * @covers \Amadeus\Resources\Resource
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-inspiration-search/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-inspiration-search/api-reference
  */
 final class FlightDestinationsTest extends TestCase
 {

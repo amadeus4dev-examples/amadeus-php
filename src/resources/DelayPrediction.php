@@ -9,7 +9,7 @@ use Amadeus\Travel\Predictions\FlightDelay;
 /**
  * A DelayPrediction object as returned by the Airport Routes API.
  * @see FlightDelay::get()
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-delay-prediction/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-delay-prediction/api-reference
  */
 class DelayPrediction extends Resource implements ResourceInterface
 {

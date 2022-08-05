@@ -10,19 +10,14 @@ use Amadeus\Resources\DatedFlight;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v2/schedule/flights</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v2/schedule/flights" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getSchedule()->getFlights();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getSchedule()->getFlights();
+ *
  */
 class Flights
 {
@@ -38,18 +33,15 @@ class Flights
     }
 
     /**
-     * ###On-Demand Flight Status API
-     * <p>
-     *    Retrieve a unique flight by search criteria..
-     * </p>
+     * On-Demand Flight Status API:
      *
-     * <code>
-     *  $amadeus->getSchedule()->getFlights()->get(
-     *      ["carrierCode"=>"IB", "flightNumber"=>532, "scheduledDepartureDate"=>"2022-09-23"]
-     *  );
-     * </code>
+     * Retrieve a unique flight by search criteria..
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/on-demand-flight-status/api-reference
+     *      $amadeus->getSchedule()->getFlights()->get(
+     *          ["carrierCode"=>"IB", "flightNumber"=>532, "scheduledDepartureDate"=>"2022-09-23"]
+     *      );
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/on-demand-flight-status/api-reference
      *
      * @param   array $params       the parameters to send to the API
      * @return  DatedFlight[]       an API resource

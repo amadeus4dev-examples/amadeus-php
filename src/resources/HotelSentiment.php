@@ -7,7 +7,7 @@ namespace Amadeus\Resources;
 /**
  * A HotelSentiment object as returned by the Hotel Ratings API.
  * @see HotelSentiments::get()
- * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-ratings/api-reference
+ * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-ratings/api-reference
  */
 class HotelSentiment extends Resource implements ResourceInterface
 {

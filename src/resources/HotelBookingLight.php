@@ -7,7 +7,7 @@ namespace Amadeus\Resources;
 /**
  * A HotelBookingLight object as returned by the Hotel Booking API.
  * @see HotelBookings::post()
- * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-booking/api-reference
+ * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-booking/api-reference
  */
 class HotelBookingLight extends Resource implements ResourceInterface
 {

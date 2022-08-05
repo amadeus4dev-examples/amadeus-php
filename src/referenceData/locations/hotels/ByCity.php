@@ -10,19 +10,14 @@ use Amadeus\Resources\Hotel;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/reference-data/locations/hotels/by-city</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/reference-data/locations/hotels/by-city" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getReferenceData()->getLocations()->getHotels()->getByCity();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getReferenceData()->getLocations()->getHotels()->getByCity();
+ *
  */
 class ByCity
 {
@@ -38,18 +33,15 @@ class ByCity
     }
 
     /**
-     * ###Hotel List API
-     * <p>
-     *    Returns a list of relevant hotels inside a city.
-     * </p>
+     * Hotel List API:
      *
-     * <code>
-     *  $amadeus->getReferenceData()->getLocations()->getHotels()->getByCity->get(
-     *      ["cityCode" => "PAR"]
-     *  );
-     * </code>
+     * Returns a list of relevant hotels inside a city.
      *
-     * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-list/api-reference
+     *      $amadeus->getReferenceData()->getLocations()->getHotels()->getByCity->get(
+     *          ["cityCode" => "PAR"]
+     *      );
+     *
+     * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-list/api-reference
      *
      * @param array $params         the parameters to send to the API
      * @return Hotel[]              an API resource

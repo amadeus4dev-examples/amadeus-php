@@ -10,19 +10,14 @@ use Amadeus\Resources\Location;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/reference-data/recommended-locations</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/reference-data/recommended-locations" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getReferenceData()->getRecommendedLocations();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getReferenceData()->getRecommendedLocations();
+ *
  */
 class RecommendedLocations
 {
@@ -37,16 +32,14 @@ class RecommendedLocations
     }
 
     /**
-     * ###Travel Recommendations API
-     * <p>
-     *    Returns a list of destination recommendations.
-     * </p>
+     * Travel Recommendations API:
      *
-     * <code>
-     *  $amadeus->getReferenceData()->getRecommendedLocations()->get(["cityCodes"=>"PAR", "travelerCountryCode"=>"FR"]);
-     * </code>
+     * Returns a list of destination recommendations.
      *
-     * @see https://developers.amadeus.com/self-service/category/trip/api-doc/travel-recommendations/api-reference
+     *      $amadeus->getReferenceData()->getRecommendedLocations()->get(["cityCodes"=>"PAR", "travelerCountryCode"=>"FR"]);
+     *
+     * @link https://developers.amadeus.com/self-service/category/trip/api-doc/travel-recommendations/api-reference
+     *
      * @param array $params                 the parameters to send to the API
      * @return Location[]        an API resource
      * @throws ResponseException            when an exception occurs

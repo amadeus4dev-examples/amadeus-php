@@ -26,7 +26,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\GeoCode
  * @covers \Amadeus\Resources\Link
  * @covers \Amadeus\Resources\Resource
- * @see https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
+ * @link https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
  */
 final class ActivitiesTest extends TestCase
 {

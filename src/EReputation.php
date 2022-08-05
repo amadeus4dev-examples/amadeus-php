@@ -7,27 +7,20 @@ namespace Amadeus;
 use Amadeus\EReputation\HotelSentiments;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/e-reputation</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/e-reputation" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getEReputation();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getEReputation();
+ *
  */
 class EReputation
 {
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v2/e-reputation/hotel-sentiments</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v2/e-reputation/hotel-sentiments" endpoints.
      */
     private HotelSentiments $hotelSentiments;
 
@@ -40,10 +33,8 @@ class EReputation
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v2/e-reputation/hotel-sentiments</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v2/e-reputation/hotel-sentiments" endpoints.
      * @return HotelSentiments
      */
     public function getHotelSentiments(): HotelSentiments

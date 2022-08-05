@@ -39,7 +39,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\FlightPointTiming
  * @covers \Amadeus\Schedule\Flights
  *
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/on-demand-flight-status/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/on-demand-flight-status/api-reference
  */
 final class FlightsTest extends TestCase
 {

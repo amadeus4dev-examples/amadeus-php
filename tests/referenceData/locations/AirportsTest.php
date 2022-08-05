@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\Location
  * @covers \Amadeus\Resources\LocationDistance
  *
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-nearest-relevant/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/airport-nearest-relevant/api-reference
  */
 final class AirportsTest extends TestCase
 {

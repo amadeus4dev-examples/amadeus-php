@@ -23,7 +23,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\HotelAddress
  * @covers \Amadeus\Resources\GeoCode
  *
- * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-name-autocomplete/api-reference
+ * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-name-autocomplete/api-reference
  */
 final class HotelTest extends TestCase
 {

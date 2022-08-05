@@ -10,19 +10,14 @@ use Amadeus\Resources\FlightOrder;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/booking/flight-orders</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/booking/flight-orders" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getBooking()->getFlightOrders();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getBooking()->getFlightOrders();
+ *
  */
 class FlightOrders
 {
@@ -38,16 +33,13 @@ class FlightOrders
     }
 
     /**
-     * ###Flight Create Orders API
-     * <p>
-     *    The Flight Create Orders API allows you to perform flight booking.
-     * </p>
+     * Flight Create Orders API:
      *
-     * <code>
-     *  $amadeus->getBooking()->getFlightOrders()->post($body);
-     * </code>
+     * The Flight Create Orders API allows you to perform flight booking.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
+     *      $amadeus->getBooking()->getFlightOrders()->post($body);
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
      *
      * @param  string $body         the parameters to send to the API as a String
      * @return FlightOrder          an API resource
@@ -64,16 +56,13 @@ class FlightOrders
     }
 
     /**
-     * ###Flight Create Orders API
-     * <p>
-     *    The Flight Create Orders API allows you to perform flight booking.
-     * </p>
+     * Flight Create Orders API:
      *
-     * <code>
-     *  $amadeus->getBooking()->getFlightOrders()->post($fightOffer, $travelers);
-     * </code>
+     * The Flight Create Orders API allows you to perform flight booking.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
+     *      $amadeus->getBooking()->getFlightOrders()->post($fightOffer, $travelers);
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
      *
      * @param array $flightOffers   Lists of flight offers as FlightOffer[]
      * @param array $travelers      List of travelers as TravelerElement[]

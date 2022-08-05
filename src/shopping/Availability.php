@@ -8,27 +8,20 @@ use Amadeus\Amadeus;
 use Amadeus\Shopping\Availability\FlightAvailabilities;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/shopping/availability</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/shopping/availability" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getShopping()->getAvailability();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getShopping()->getAvailability();
+ *
  */
 class Availability
 {
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/shopping/availability/flight-availabilities</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/shopping/availability/flight-availabilities" endpoints.
      */
     private FlightAvailabilities $flightAvailabilities;
 
@@ -42,10 +35,8 @@ class Availability
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/shopping/availability/flight-availabilities</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/shopping/availability/flight-availabilities" endpoints.
      * @return FlightAvailabilities
      */
     public function getFlightAvailabilities(): ?FlightAvailabilities

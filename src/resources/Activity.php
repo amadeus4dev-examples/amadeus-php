@@ -8,8 +8,9 @@ use Amadeus\Shopping\Activities;
 
 /**
  * An Activity-related object as returned by the Tours and Activities API.
- * @see Activities::get(), \Amadeus\Shopping\Activity::get()
- * @see https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
+ * @see Activities::get()
+ * @see \Amadeus\Shopping\Activity::get()
+ * @link https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
  */
 class Activity extends Resource implements ResourceInterface
 {

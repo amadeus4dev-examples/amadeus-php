@@ -10,19 +10,14 @@ use Amadeus\Resources\FlightOffer;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v2/shopping/flight-offers/prediction</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v2/shopping/flight-offers/prediction" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getShopping()->getFlightOffers()->getPrediction();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getShopping()->getFlightOffers()->getPrediction();
+ *
  */
 class Prediction
 {
@@ -38,18 +33,15 @@ class Prediction
     }
 
     /**
-     * ###Flight Choice Prediction API
-     * <p>
+     * Flight Choice Prediction API:
+     *
      * This Machine Learning API is based on a prediction model that takes the response of a flight
      * search as input (Flight Offers Search) and predicts, for each itinerary, the probability to
      * be selected.
-     * </p>
      *
-     * <code>
-     *  $amadeus->getShopping()->getFlightOffers()->getPrediction()->post($body);
-     * </code>
+     *      $amadeus->getShopping()->getFlightOffers()->getPrediction()->post($body);
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-choice-prediction/api-reference
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-choice-prediction/api-reference
      *
      * @param string $body                  JSON body of flight offers as String to price
      * @return FlightOffer[]                an API resource
@@ -66,19 +58,16 @@ class Prediction
     }
 
     /**
-     * ###Flight Choice Prediction API
-     * <p>
+     * Flight Choice Prediction API:
+     *
      * This Machine Learning API is based on a prediction model that takes the response of a flight
      * search as input (Flight Offers Search) and predicts, for each itinerary, the probability to
      * be selected.
-     * </p>
      *
-     * <code>
-     *  $flightOffers = $amadeus->getShopping()->getFlightOffers()->get($params);
-     *  $amadeus->getShopping()->getFlightOffers()->getPrediction()->postWithFlightOffers($flightOffers);
-     * </code>
+     *      $flightOffers = $amadeus->getShopping()->getFlightOffers()->get($params);
+     *      $amadeus->getShopping()->getFlightOffers()->getPrediction()->postWithFlightOffers($flightOffers);
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-choice-prediction/api-reference
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-choice-prediction/api-reference
      * @param array $flightOffers           Lists of flight offers as FlightOffer[]
      * @return FlightOffer[]                an API resource
      * @throws ResponseException            when an exception occurs

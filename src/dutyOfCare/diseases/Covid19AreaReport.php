@@ -10,19 +10,14 @@ use Amadeus\Resources\DiseaseAreaReport;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/duty-of-care/diseases/covid19-area-report</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/duty-of-care/diseases/covid19-area-report" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getDutyOfCare()->getDiseases()->getCovid19AreaReport();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getDutyOfCare()->getDiseases()->getCovid19AreaReport();
+ *
  */
 class Covid19AreaReport
 {
@@ -38,17 +33,14 @@ class Covid19AreaReport
     }
 
     /**
-     * ###Travel Restrictions API
-     * <p>
-     *    Get up-to-date data on COVID-19 caseloads and travel restrictions
-     *    for a given country, city or region.
-     * </p>
+     * Travel Restrictions API:
      *
-     * <code>
-     *  $amadeus->getDutyOfCare()->getDiseases()->getCovid19AreaReport()->get(["countryCode"=>"US"]);
-     * </code>
+     * Get up-to-date data on COVID-19 caseloads and travel restrictions
+     * for a given country, city or region.
      *
-     * @see https://developers.amadeus.com/self-service/category/covid-19-and-travel-safety/api-doc/travel-restrictions/api-reference
+     *      $amadeus->getDutyOfCare()->getDiseases()->getCovid19AreaReport()->get(["countryCode"=>"US"]);
+     *
+     * @link https://developers.amadeus.com/self-service/category/covid-19-and-travel-safety/api-doc/travel-restrictions/api-reference
      *
      * @param   array $params       the parameters to send to the API
      * @return  DiseaseAreaReport   an API resource

@@ -10,27 +10,20 @@ use Amadeus\Resources\Resource;
 use Amadeus\Airport\Predictions\OnTime;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/airport/predictions</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/airport/predictions" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getAirport()->getPredictions();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getAirport()->getPredictions();
+ *
  */
 class Predictions
 {
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/airport/predictions</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/airport/predictions" endpoints.
      */
     private OnTime $onTime;
 
@@ -44,10 +37,9 @@ class Predictions
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/airport/predictions/on-time</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/airport/predictions/on-time" endpoints.
+     *
      * @return OnTime
      */
     public function getOnTime(): OnTime

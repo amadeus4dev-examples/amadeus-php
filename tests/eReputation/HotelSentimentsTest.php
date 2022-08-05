@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\HotelSentiment
  * @covers \Amadeus\Resources\HotelSentimentDetails
- * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-ratings/api-reference
+ * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-ratings/api-reference
  */
 final class HotelSentimentsTest extends TestCase
 {

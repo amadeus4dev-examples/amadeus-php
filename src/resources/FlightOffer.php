@@ -9,10 +9,12 @@ use Amadeus\Shopping\FlightOffers\Prediction;
 
 /**
  * A FlightOffer object as returned by the Flight Offers Search API, Flight Choice Prediction API.
- * @see FlightOffers::get(), FlightOffers::post()
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
- * @see Prediction::post(), Prediction::postWithFlightOffers()
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-choice-prediction/api-reference
+ * @see FlightOffers::get()
+ * @see FlightOffers::post()
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
+ * @see Prediction::post()
+ * @see Prediction::postWithFlightOffers()
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-choice-prediction/api-reference
  */
 class FlightOffer extends Resource implements ResourceInterface
 {

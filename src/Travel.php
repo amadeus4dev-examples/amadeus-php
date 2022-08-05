@@ -7,27 +7,20 @@ namespace Amadeus;
 use Amadeus\Travel\Predictions;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/travel</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/travel" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getTravel();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getTravel();
+ *
  */
 class Travel
 {
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/travel/predictions</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/travel/predictions" endpoints.
      */
     private Predictions $predictions;
 
@@ -40,10 +33,8 @@ class Travel
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/travel/predictions</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/travel/predictions" endpoints.
      * @return Predictions
      */
     public function getPredictions(): Predictions
