@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @covers \Amadeus\Resources\Activity
  * @covers \Amadeus\Resources\Resource
- * @see https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
+ * @link https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
  */
 final class BySquareTest extends TestCase
 {

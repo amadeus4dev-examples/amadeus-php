@@ -36,7 +36,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\LocationAnalyticsTravelers
  *
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-and-city-search/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/airport-and-city-search/api-reference
  */
 final class LocationsTest extends TestCase
 {

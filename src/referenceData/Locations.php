@@ -13,45 +13,34 @@ use Amadeus\Resources\Location;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/reference-data/locations</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/reference-data/locations" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getReferenceData()->getLocations();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getReferenceData()->getLocations();
+ *
  */
 class Locations
 {
     private Amadeus $amadeus;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/reference-data/locations/hotels</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/reference-data/locations/hotels" endpoints.
      */
     private Hotels $hotels;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/reference-data/locations/hotel</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/reference-data/locations/hotel" endpoints.
      */
     private Hotel $hotel;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/reference-data/locations/airports</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/reference-data/locations/airports" endpoints.
      */
     private Airports $airports;
 
@@ -67,10 +56,8 @@ class Locations
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/reference-data/locations/hotels</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/reference-data/locations/hotels" endpoints.
      * @return Hotels
      */
     public function getHotels(): Hotels
@@ -79,10 +66,8 @@ class Locations
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/reference-data/locations/hotel</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/reference-data/locations/hotel" endpoints.
      * @return Hotel
      */
     public function getHotel(): Hotel
@@ -91,10 +76,8 @@ class Locations
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/reference-data/locations/airports</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/reference-data/locations/airports" endpoints.
      * @return Airports
      */
     public function getAirports(): Airports
@@ -103,18 +86,15 @@ class Locations
     }
 
     /**
-     * ###Airport and City Search API
-     * <p>
-     *    Returns a list of airports and cities matching a given keyword.
-     * </p>
+     * Airport and City Search API
      *
-     * <code>
-     *  $amadeus->getReferenceData()->getLocations()->get(
-     *      ["keyword" => "PAR", "subType" => "CITY"]
-     *  );
-     * </code>
+     * Returns a list of airports and cities matching a given keyword.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-and-city-search/api-reference
+     *      $amadeus->getReferenceData()->getLocations()->get(
+     *          ["keyword" => "PAR", "subType" => "CITY"]
+     *      );
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/airport-and-city-search/api-reference
      *
      * @param array $query          the parameters to send to the API
      * @return Location[]           an API resource

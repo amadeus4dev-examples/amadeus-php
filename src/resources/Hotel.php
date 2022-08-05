@@ -9,7 +9,7 @@ namespace Amadeus\Resources;
  * @see ByCity::get()
  * @see ByGeocode::get()
  * @see ByHotels::get()
- * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-list/api-reference
+ * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-list/api-reference
  */
 class Hotel extends Resource implements ResourceInterface
 {

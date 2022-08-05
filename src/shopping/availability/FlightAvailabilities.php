@@ -10,19 +10,14 @@ use Amadeus\Resources\FlightAvailability;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/shopping/availability/flight-availabilities</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/shopping/availability/flight-availabilities" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getShopping()->getAvailability()->getFlightAvailabilities();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getShopping()->getAvailability()->getFlightAvailabilities();
+ *
  */
 class FlightAvailabilities
 {
@@ -38,19 +33,16 @@ class FlightAvailabilities
     }
 
     /**
-     * ###Flight Availabilities Search API
-     * <p>
-     *   The Amadeus Flight Availability API provides a list of flights with seats for sale,
-     *   and the quantity of seats available in different fare classes on a given itinerary.
-     *   Additional information such as carrier and aircraft information,
-     *   the departure and arrival terminals, schedule, and route are also provided.
-     * </p>
+     * Flight Availabilities Search API:
      *
-     * <code>
-     *  $amadeus->getShopping()->getAvailability()->getFlightAvailabilities()->post(body);
-     * </code>
+     * The Amadeus Flight Availability API provides a list of flights with seats for sale,
+     * and the quantity of seats available in different fare classes on a given itinerary.
+     * Additional information such as carrier and aircraft information,
+     * the departure and arrival terminals, schedule, and route are also provided.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-availabilities-search/api-reference
+     *      $amadeus->getShopping()->getAvailability()->getFlightAvailabilities()->post(body);
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-availabilities-search/api-reference
      *
      * @param string $body              the parameters to send to the API as a JsonObject
      * @return FlightAvailability[]     an API resource

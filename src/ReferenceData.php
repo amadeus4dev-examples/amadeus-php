@@ -10,45 +10,34 @@ use Amadeus\ReferenceData\Locations;
 use Amadeus\ReferenceData\RecommendedLocations;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/referenceData</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/referenceData" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getShopping();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getShopping();
+ *
  */
 class ReferenceData
 {
     private Amadeus $amadeus;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/reference-data/locations</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/reference-data/locations" endpoints.
      */
     private Locations $locations;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/reference-data/airlines</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/reference-data/airlines" endpoints.
      */
     private Airlines $airlines;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/reference-data/recommended-locations</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/reference-data/recommended-locations" endpoints.
      */
     private RecommendedLocations $recommendedlocations;
 
@@ -64,10 +53,8 @@ class ReferenceData
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/reference-data/locations</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/reference-data/locations" endpoints.
      * @return Locations
      */
     public function getLocations(): Locations
@@ -75,12 +62,9 @@ class ReferenceData
         return $this->locations;
     }
 
-
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/reference-data/locations/:location_id</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/reference-data/locations/:location_id" endpoints.
      * @param string $locationId
      * @return Location
      */
@@ -90,10 +74,8 @@ class ReferenceData
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/reference-data/airlines</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/reference-data/airlines" endpoints.
      * @return Airlines
      */
     public function getAirlines(): Airlines
@@ -102,10 +84,8 @@ class ReferenceData
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/reference-data/recommended-locations</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/reference-data/recommended-locations" endpoints.
      * @return RecommendedLocations
      */
     public function getRecommendedLocations(): RecommendedLocations

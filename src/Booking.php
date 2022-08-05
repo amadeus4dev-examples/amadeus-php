@@ -8,35 +8,26 @@ use Amadeus\Booking\FlightOrders;
 use Amadeus\Booking\HotelBookings;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/booking</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/booking" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getBooking();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getBooking();
+ *
  */
 class Booking
 {
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/booking/flightOrders</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/booking/flightOrders" endpoints.
      */
     private FlightOrders  $flightOrders;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/booking/hotelBookings</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/booking/hotelBookings" endpoints.
      */
     private HotelBookings $hotelBookings;
 
@@ -50,10 +41,8 @@ class Booking
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/booking/flightOrders</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/booking/flightOrders" endpoints.
      * @return FlightOrders
      */
     public function getFlightOrders(): FlightOrders
@@ -62,10 +51,8 @@ class Booking
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/booking/hotelBookings</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/booking/hotelBookings" endpoints.
      * @return HotelBookings
      */
     public function getHotelBookings(): HotelBookings

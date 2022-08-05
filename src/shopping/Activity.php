@@ -9,19 +9,14 @@ use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/shopping/activities/:activity_id</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/shopping/activities/:activity_id" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getShopping()->getActivity();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getShopping()->getActivity();
+ *
  */
 class Activity
 {
@@ -40,16 +35,13 @@ class Activity
     }
 
     /**
-     * ###Tours and Activities API
-     * <p>
-     *    Find a single activity from a given id.
-     * </p>
+     * Tours and Activities API:
      *
-     * <code>
-     *  $amadeus->getShopping()->getActivity("4615")->get();
-     * </code>
+     * Find a single activity from a given id.
      *
-     * @see https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
+     *      $amadeus->getShopping()->getActivity("4615")->get();
+     *
+     * @link https://developers.amadeus.com/self-service/category/destination-content/api-doc/tours-and-activities/api-reference
      *
      * @return  \Amadeus\Resources\Activity          an API resource
      * @throws  ResponseException   when an exception occurs

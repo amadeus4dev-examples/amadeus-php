@@ -7,7 +7,7 @@ namespace Amadeus\Resources;
 /**
  * A Destination object as returned by the Airport Routes API.
  * @see DirectDestinations::get()
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/airport-routes/api-reference
  */
 class Destination extends Resource implements ResourceInterface
 {

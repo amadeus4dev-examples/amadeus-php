@@ -10,43 +10,32 @@ use Amadeus\ReferenceData\Locations\Hotels\ByGeocode;
 use Amadeus\ReferenceData\Locations\Hotels\ByHotels;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/reference-data/locations/hotels</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/reference-data/locations/hotels" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getReferenceData()->getLocations()->getHotels();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getReferenceData()->getLocations()->getHotels();
+ *
  */
 class Hotels
 {
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/reference-data/locations/hotels/by-city</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/reference-data/locations/hotels/by-city" endpoints.
      */
     private ByCity $byCity;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/reference-data/locations/hotels/by-geocode</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/reference-data/locations/hotels/by-geocode" endpoints.
      */
     private ByGeocode $byGeocode;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/reference-data/locations/hotels/by-hotels</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/reference-data/locations/hotels/by-hotels" endpoints.
      */
     private ByHotels $byHotels;
 
@@ -62,10 +51,8 @@ class Hotels
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/reference-data/locations/hotels/by-city</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/reference-data/locations/hotels/by-city" endpoints.
      * @return ByCity
      */
     public function getByCity(): ByCity
@@ -74,10 +61,8 @@ class Hotels
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/reference-data/locations/hotels/by-geocode</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/reference-data/locations/hotels/by-geocode" endpoints.
      * @return ByGeocode
      */
     public function getByGeocode(): ByGeocode
@@ -86,10 +71,8 @@ class Hotels
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/reference-data/locations/hotels/by-hotels</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/reference-data/locations/hotels/by-hotels" endpoints.
      * @return ByHotels
      */
     public function getByHotels(): ByHotels

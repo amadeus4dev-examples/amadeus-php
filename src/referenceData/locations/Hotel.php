@@ -10,19 +10,14 @@ use Amadeus\Resources\HotelNameAutocomplete;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/reference-data/locations/hotel</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/reference-data/locations/hotel" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getReferenceData()->getLocations()->getHotel();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getReferenceData()->getLocations()->getHotel();
+ *
  */
 class Hotel
 {
@@ -37,13 +32,17 @@ class Hotel
     }
 
     /**
-     * ###Hotel Name Autocomplete API
+     * Hotel Name Autocomplete API
      *
-     * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-name-autocomplete/api-reference
+     *      $amadeus->getReferenceData()->getLocations()->getHotel()->get(
+     *          ["keyword"=>"PARI", "subType"=>"HOTEL_GDS"]
+     *      );
      *
-     * @param array $params
-     * @return HotelNameAutocomplete[]
-     * @throws ResponseException
+     * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-name-autocomplete/api-reference
+     *
+     * @param array $params                 the parameters to send to the API
+     * @return HotelNameAutocomplete[]      an API resource
+     * @throws ResponseException            when an exception occurs
      */
     public function get(array $params): array
     {

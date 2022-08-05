@@ -10,19 +10,14 @@ use Amadeus\Resources\OnTimePrediction;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/airport/predictions/on-time</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/airport/predictions/on-time" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getAirport()->getPredictiions()->getOnTime();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getAirport()->getPredictions()->getOnTime();
+ *
  */
 class OnTime
 {
@@ -38,22 +33,19 @@ class OnTime
     }
 
     /**
-     * ###Airport On-Time Performance API
-     * <p>
-     *    Returns a percentage of on-time flight departures from a given airport.
-     * </p>
+     * Airport On-Time Performance API:
      *
-     * <code>
-     *  $$amadeus->getAirport()->getPredictions()->getOnTime()->get(
-     *      ["airportCode" => "NCE", "date" => 2022-11-01]);
-     *  );
-     * </code>
+     * Returns a percentage of on-time flight departures from a given airport.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/airport-on-time-performance/api-reference
+     *      $amadeus->getAirport()->getPredictions()->getOnTime()->get(
+     *          ["airportCode" => "NCE", "date" => 2022-11-01]
+     *      );
      *
-     * @param   array $params       the parameters to send to the API
-     * @return  OnTimePrediction       an API resource
-     * @throws  ResponseException   when an exception occurs
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/airport-on-time-performance/api-reference
+     *
+     * @param   array $params           the parameters to send to the API
+     * @return  OnTimePrediction        an API resource
+     * @throws  ResponseException       when an exception occurs
      */
     public function get(array $params): object
     {

@@ -23,7 +23,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\HotelContent
  * @covers \Amadeus\Resources\HotelOffer
  *
- * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference
+ * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference
  */
 final class HotelOffersTest extends TestCase
 {

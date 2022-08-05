@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\FlightOffer
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-choice-prediction/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-choice-prediction/api-reference
  */
 final class PredictionTest extends TestCase
 {

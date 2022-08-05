@@ -27,7 +27,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\FlightPayment
  * @covers \Amadeus\Resources\TravelerElement
  *
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-price/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-price/api-reference
  */
 final class PricingTest extends TestCase
 {

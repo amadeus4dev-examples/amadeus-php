@@ -22,7 +22,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\HotelBookingLight
  * @covers \Amadeus\Resources\HotelBookingAssociatedRecord
  *
- * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-booking/api-reference
+ * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-booking/api-reference
  */
 final class HotelBookingsTest extends TestCase
 {

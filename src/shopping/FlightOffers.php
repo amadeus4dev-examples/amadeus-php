@@ -12,37 +12,28 @@ use Amadeus\Shopping\FlightOffers\Prediction;
 use Amadeus\Shopping\FlightOffers\Pricing;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v2/shopping/flight-offers</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v2/shopping/flight-offers" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getShopping()->getFlightOffers();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getShopping()->getFlightOffers();
+ *
  */
 class FlightOffers
 {
     private Amadeus $amadeus;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/shopping/flight-offers/pricing</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/shopping/flight-offers/pricing" endpoints.
      */
     private Pricing $pricing;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v2/shopping/flight-offers/prediction</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v2/shopping/flight-offers/prediction" endpoints.
      */
     private Prediction $prediction;
 
@@ -57,10 +48,8 @@ class FlightOffers
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/shopping/flight-offers/pricing</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/shopping/flight-offers/pricing" endpoints.
      * @return Pricing
      */
     public function getPricing(): Pricing
@@ -69,10 +58,8 @@ class FlightOffers
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v2/shopping/flight-offers/prediction</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v2/shopping/flight-offers/prediction" endpoints.
      * @return Prediction
      */
     public function getPrediction(): Prediction
@@ -81,28 +68,25 @@ class FlightOffers
     }
 
     /**
-     * ###Flight Offers Search API
-     * <p>
-     *  The Flight Offers Search API allows to get the cheapest flight recommendations on a given journey.
-     *  It provides a list of flight recommendations and fares from a given origin,
-     *  for a given date and for a given list of passengers.
-     *  Additional information such as bag allowance,
-     *  first ancillary bag prices or fare details are also provided.
-     * </p>
+     * Flight Offers Search API:
      *
-     * <code>
-     *  $flightOffers = $amadeus->getShopping()->getFlightOffers()->get(
-     *      array(
-     *          "originLocationCode" => "LON",
-     *          "destinationLocationCode" => "NYC",
-     *          "departureDate" => "2022-07-06",
-     *          "adults" => "1",
-     *          "max" => 20
-     *      )
-     * );
-     * </code>
+     * The Flight Offers Search API allows to get the cheapest flight recommendations on a given journey.
+     * It provides a list of flight recommendations and fares from a given origin,
+     * for a given date and for a given list of passengers.
+     * Additional information such as bag allowance,
+     * first ancillary bag prices or fare details are also provided.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
+     *      $flightOffers = $amadeus->getShopping()->getFlightOffers()->get(
+     *          array(
+     *              "originLocationCode" => "LON",
+     *              "destinationLocationCode" => "NYC",
+     *              "departureDate" => "2022-07-06",
+     *              "adults" => "1",
+     *              "max" => 20
+     *          )
+     *      );
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
      *
      * @param array $params         the parameters to send to the API
      * @return FlightOffer[]        an API resource
@@ -119,20 +103,17 @@ class FlightOffers
     }
 
     /**
-     * ###Flight Offers Search API
-     * <p>
-     *  The Flight Offers Search API allows to get the cheapest flight recommendations on a given journey.
-     *  It provides a list of flight recommendations and fares from a given origin,
-     *  for a given date and for a given list of passengers.
-     *  Additional information such as bag allowance,
-     *  first ancillary bag prices or fare details are also provided.
-     * </p>
+     * Flight Offers Search API:
      *
-     * <code>
-     *  $flightOffers = $amadeus->getShopping()->getFlightOffers()->post($body);
-     * </code>
+     * The Flight Offers Search API allows to get the cheapest flight recommendations on a given journey.
+     * It provides a list of flight recommendations and fares from a given origin,
+     * for a given date and for a given list of passengers.
+     * Additional information such as bag allowance,
+     * first ancillary bag prices or fare details are also provided.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
+     *      $flightOffers = $amadeus->getShopping()->getFlightOffers()->post($body);
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
      *
      * @param string $body          the parameters to send to the API as a String
      * @return array                an API resource

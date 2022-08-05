@@ -10,19 +10,14 @@ use Amadeus\Resources\FlightDate;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/shopping/flight-dates</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/shopping/flight-dates" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getShopping()->getFlightDates();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getShopping()->getFlightDates();
+ *
  */
 class FlightDates
 {
@@ -37,21 +32,18 @@ class FlightDates
     }
 
     /**
-     * ###Flight Cheapest Dates Search API
-     * <p>
-     *   Find the cheapest flight dates from an origin to a destination.
-     * </p>
+     * Flight Cheapest Dates Search API:
      *
-     * <code>
-     *  $amadeus->getShopping()->getFlightDates()->get(
-     *      array(
-     *              "origin" => "MAD",
-     *              "destination" => "LON"
-     *      )
-     * );
-     * </code>
+     * Find the cheapest flight dates from an origin to a destination.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-cheapest-date-search/api-reference
+     *      $amadeus->getShopping()->getFlightDates()->get(
+     *          array(
+     *                  "origin" => "MAD",
+     *                  "destination" => "LON"
+     *          )
+     *      );
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-cheapest-date-search/api-reference
      *
      * @param array $params         the parameters to send to the API
      * @return FlightDate[]         an API resource

@@ -11,19 +11,14 @@ use Amadeus\Resources\HotelBookingLight;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/booking/hotel-bookings</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/booking/hotel-bookings" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getBooking()->getHotelBookings();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getBooking()->getHotelBookings();
+ *
  */
 class HotelBookings
 {
@@ -39,16 +34,13 @@ class HotelBookings
     }
 
     /**
-     * ###Hotel Booking API
-     * <p>
-     *    The Hotel Booking API allows you to perform hotel booking.
-     * </p>
+     * Hotel Booking API:
      *
-     * <code>
-     *  $amadeus->getBooking()->getHotelBookings()->post($body);
-     * </code>
+     * The Hotel Booking API allows you to perform hotel booking.
      *
-     * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-booking/api-reference
+     *      $amadeus->getBooking()->getHotelBookings()->post($body);
+     *
+     * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-booking/api-reference
      *
      * @param  string $body         the parameters to send to the API as a String
      * @return HotelBookingLight[]  an API resource

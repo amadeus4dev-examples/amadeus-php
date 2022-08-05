@@ -11,19 +11,14 @@ use Amadeus\Resources\DelayPrediction;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/travel/predictions/flight-delay</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/travel/predictions/flight-delay" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getTravel()->getPredictions()->getFlightDelay();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getTravel()->getPredictions()->getFlightDelay();
+ *
  */
 class FlightDelay
 {
@@ -39,22 +34,19 @@ class FlightDelay
     }
 
     /**
-     * ###Flight Delay Prediction API
-     * <p>
-     *    Return the delay segment where the flight is likely to lay.
-     * </p>
+     * Flight Delay Prediction API:
      *
-     * <code>
-     * $amadeus->getTravel()->getPredictions()->getFlightDelay()->get([
-     *      "originLocationCode"=>"NCE", "destinationLocationCode"=>"ATH",
-     *      "departureDate"=>"2022-10-06", "departureTime"=>"18:40:00",
-     *      "arrivalDate"=>"2022-10-06", "arrivalTime"=>"22:05:00",
-     *      "aircraftCode"=>"32N", "carrierCode"=>"A3",
-     *      "flightNumber"=>"691", "duration"=>"PT2H25M"
-     *  ]);
-     * </code>
+     * Return the delay segment where the flight is likely to lay.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-delay-prediction/api-reference
+     *      $amadeus->getTravel()->getPredictions()->getFlightDelay()->get([
+     *          "originLocationCode"=>"NCE", "destinationLocationCode"=>"ATH",
+     *          "departureDate"=>"2022-10-06", "departureTime"=>"18:40:00",
+     *          "arrivalDate"=>"2022-10-06", "arrivalTime"=>"22:05:00",
+     *          "aircraftCode"=>"32N", "carrierCode"=>"A3",
+     *          "flightNumber"=>"691", "duration"=>"PT2H25M"
+     *      ]);
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-delay-prediction/api-reference
      *
      * @param array $params the parameters to send to the API
      * @return  DelayPrediction[]       an API resource

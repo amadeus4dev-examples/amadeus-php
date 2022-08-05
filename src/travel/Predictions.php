@@ -8,27 +8,20 @@ use Amadeus\Amadeus;
 use Amadeus\Travel\Predictions\FlightDelay;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/travel/predictions</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/travel/predictions" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getTravel()->getPredictions();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getTravel()->getPredictions();
+ *
  */
 class Predictions
 {
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/travel/predictions/flight-delay</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/travel/predictions/flight-delay" endpoints.
      */
     private FlightDelay $flightDelay;
 
@@ -41,10 +34,8 @@ class Predictions
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/travel/predictions/flight-delay</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/travel/predictions/flight-delay" endpoints.
      * @return FlightDelay
      */
     public function getFlightDelay(): FlightDelay

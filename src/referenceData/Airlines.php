@@ -10,19 +10,14 @@ use Amadeus\Resources\Airline;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/reference-data/airlines</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/reference-data/airlines" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getReferenceData()->getAirlines();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getReferenceData()->getAirlines();
+ *
  */
 class Airlines
 {
@@ -37,18 +32,15 @@ class Airlines
     }
 
     /**
-     * ###Airline Code Lookup API
-     * <p>
-     *    Returns a list of Airlines information.
-     * </p>
+     * Airline Code Lookup API:
      *
-     * <code>
-     *  $amadeus->getReferenceData()->getAirlines()->get(
-     *      ["airlineCodes" => "BA"]
-     *  );
-     * </code>
+     * Returns a list of Airlines information.
      *
-     * @see https://developers.amadeus.com/self-service/category/air/api-doc/airline-code-lookup/api-reference
+     *      $amadeus->getReferenceData()->getAirlines()->get(
+     *          ["airlineCodes" => "BA"]
+     *      );
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/airline-code-lookup/api-reference
      *
      * @param array $params
      * @return Airline[]           an API resource

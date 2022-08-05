@@ -36,7 +36,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\OperatingFlight
  * @covers \Amadeus\Resources\FlightStop
  *
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-availabilities-search/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-availabilities-search/api-reference
  */
 final class FlightAvailabilitiesTest extends TestCase
 {

@@ -8,27 +8,20 @@ use Amadeus\Amadeus;
 use Amadeus\DutyOfCare\Diseases\Covid19AreaReport;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/duty-of-care/diseases</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/duty-of-care/diseases" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getDutyOfCare()->getDiseases();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getDutyOfCare()->getDiseases();
+ *
  */
 class Diseases
 {
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/duty-of-care/diseases/covid19-area-report</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/duty-of-care/diseases/covid19-area-report" endpoints.
      */
     private Covid19AreaReport $covid19AreaReport;
 
@@ -42,10 +35,8 @@ class Diseases
     }
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/duty-of-care/diseases/covid19-area-report</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/duty-of-care/diseases/covid19-area-report" endpoints.
      * @return Covid19AreaReport
      */
     public function getCovid19AreaReport(): Covid19AreaReport

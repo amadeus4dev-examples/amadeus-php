@@ -8,14 +8,11 @@ use Amadeus\Client\BasicHTTPClient;
 use Amadeus\Client\HTTPClient;
 
 /**
- * <p>
  * The Amadeus API client. To initialize, use the builder as follows:
- * </p>
  *
- * <code>
- * $amadeus =
- *     Amadeus::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")->build();
- * </code>
+ *      $amadeus =
+ *          Amadeus::builder("REPLACE_BY_YOUR_API_KEY", "REPLACE_BY_YOUR_API_SECRET")->build();
+ *
  */
 class Amadeus
 {
@@ -29,58 +26,42 @@ class Amadeus
     private HTTPClient $client;
 
     /**
-     * <p>
-     * A namespaced client for the <code>/airport</code> endpoints.
-     * </p>
+     * A namespaced client for the "/airport" endpoints.
      */
     private Airport $airport;
 
     /**
-     * <p>
-     * A namespaced client for the <code>/shopping</code> endpoints.
-     * </p>
+     * A namespaced client for the "/shopping" endpoints.
      */
     private Shopping $shopping;
 
     /**
-     * <p>
-     * A namespaced client for the <code>/reference-data</code> endpoints.
-     * </p>
+     * A namespaced client for the "/reference-data" endpoints.
      */
     private ReferenceData $referenceData;
 
     /**
-     * <p>
-     * A namespaced client for the <code>/booking</code> endpoints.
-     * </p>
+     * A namespaced client for the "/booking" endpoints.
      */
     private Booking $booking;
 
     /**
-     * <p>
-     * A namespaced client for the <code>/schedule</code> endpoints.
-     * </p>
+     * A namespaced client for the "/schedule" endpoints.
      */
     private Schedule $schedule;
 
     /**
-     * <p>
-     * A namespaced client for the <code>/travel</code> endpoints.
-     * </p>
+     * A namespaced client for the "/travel" endpoints.
      */
     private Travel $travel;
 
     /**
-     * <p>
-     *   A namespaced client for the<code>/v1/duty-of-care</code> endpoints.
-     * </p>
+     * A namespaced client for the "/duty-of-care" endpoints.
      */
     private DutyOfCare $dutyOfCare;
 
     /**
-     * <p>
-     *   A namespaced client for the<code>/e-reputation</code> endpoints.
-     * </p>
+     * A namespaced client for the "/e-reputation" endpoints.
      */
     private EReputation $eReputation;
 
@@ -107,9 +88,7 @@ class Amadeus
     /**
      * Creates an AmadeusBuilder object that can be used to build an Amadeus.
      *
-     * <code>
-     *  $amadeus = Amadeus::builder("CLIENT_ID", "CLIENT_SECRET")->build();
-     * </code>
+     *      $amadeus = Amadeus::builder("CLIENT_ID", "CLIENT_SECRET")->build();
      *
      * @param null|string $clientId      Your API Client ID
      * @param null|string $clientSecret  Your API Client Secret
@@ -142,9 +121,7 @@ class Amadeus
     }
 
     /**
-     * <p>
-     * Get a namespaced client for the <code>/airport</code> endpoints.
-     * </p>
+     * Get a namespaced client for the "airport" endpoints.
      * @return Airport
      */
     public function getAirport(): Airport
@@ -153,10 +130,7 @@ class Amadeus
     }
 
     /**
-     * <p>
-     * Get a namespaced client for the <code>/shopping</code> endpoints.
-     * </p>
-     *
+     * Get a namespaced client for the "/shopping" endpoints.
      * @return Shopping
      */
     public function getShopping(): Shopping
@@ -165,9 +139,7 @@ class Amadeus
     }
 
     /**
-     * <p>
-     * Get a namespaced client for the <code>/referenceData</code> endpoints.
-     * </p>
+     * Get a namespaced client for the "/referenceData" endpoints.
      * @return ReferenceData
      */
     public function getReferenceData(): ReferenceData
@@ -176,9 +148,7 @@ class Amadeus
     }
 
     /**
-     * <p>
-     * Get a namespaced client for the <code>/booking</code> endpoints.
-     * </p>
+     * Get a namespaced client for the "/booking" endpoints.
      * @return Booking
      */
     public function getBooking(): Booking
@@ -187,9 +157,7 @@ class Amadeus
     }
 
     /**
-     * <p>
-     * Get a namespaced client for the <code>/schedule</code> endpoints.
-     * </p>
+     * Get a namespaced client for the "/schedule" endpoints.
      * @return Schedule
      */
     public function getSchedule(): Schedule
@@ -198,9 +166,7 @@ class Amadeus
     }
 
     /**
-     * <p>
-     * Get a namespaced client for the <code>/travel</code> endpoints.
-     * </p>
+     * Get a namespaced client for the "/travel" endpoints.
      * @return Travel
      */
     public function getTravel(): Travel
@@ -209,9 +175,7 @@ class Amadeus
     }
 
     /**
-     * <p>
-     * Get a namespaced client for the <code>/dutyOfCare</code> endpoints.
-     * </p>
+     * Get a namespaced client for the "/dutyOfCare" endpoints.
      * @return DutyOfCare
      */
     public function getDutyOfCare(): DutyOfCare
@@ -220,9 +184,7 @@ class Amadeus
     }
 
     /**
-     * <p>
-     * Get a namespaced client for the <code>/e-reputation</code> endpoints.
-     * </p>
+     * Get a namespaced client for the "/e-reputation" endpoints.
      * @return EReputation
      */
     public function getEReputation(): EReputation

@@ -8,35 +8,26 @@ use Amadeus\Airport\Predictions;
 use Amadeus\Airport\DirectDestinations;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/airport</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/airport" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getAirport();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getAirport();
+ *
  */
 class Airport
 {
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/airport/direct-destinations</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/airport/direct-destinations" endpoints.
      */
     private DirectDestinations $directDestinations;
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/airport/predictions</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/airport/predictions" endpoints.
      */
     private Predictions $predictions;
 
@@ -50,10 +41,8 @@ class Airport
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/airport/direct-destinations</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/airport/direct-destinations" endpoints.
      * @return DirectDestinations
      */
     public function getDirectDestinations(): DirectDestinations
@@ -62,10 +51,8 @@ class Airport
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v1/airport/predictions</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/airport/predictions" endpoints.
      * @return Predictions
      */
     public function getPredictions(): Predictions

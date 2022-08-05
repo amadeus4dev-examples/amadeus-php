@@ -9,19 +9,14 @@ use Amadeus\Exceptions\ResponseException;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v3/shopping/hotel-offers</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v3/shopping/hotel-offers" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getShopping()->getHotelOffers();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getShopping()->getHotelOffers();
+ *
  */
 class HotelOffers
 {
@@ -36,25 +31,22 @@ class HotelOffers
     }
 
     /**
-     * ###Hotel Search API
-     * <p>
-     *   Search for hotels and retrieve availability and rates information.
-     * </p>
+     * Hotel Search API:
      *
-     * <code>
-     *  $amadeus->getShopping()->getHotelOffers()->get(
-     *      array(
-     *              "hotelId" => "MCLONGHM",
-     *              "adults" => 1,
-     *              "checkInDate" => "2022-12-29",
-     *              "roomQuantity" => 1,
-     *              "paymentPolicy" => "NONE",
-     *              "bestRateOnly" => true
-     *      )
-     * );
-     * </code>
+     * Search for hotels and retrieve availability and rates information.
      *
-     * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference
+     *      $amadeus->getShopping()->getHotelOffers()->get(
+     *          array(
+     *                  "hotelId" => "MCLONGHM",
+     *                  "adults" => 1,
+     *                  "checkInDate" => "2022-12-29",
+     *                  "roomQuantity" => 1,
+     *                  "paymentPolicy" => "NONE",
+     *                  "bestRateOnly" => true
+     *          )
+     *      );
+     *
+     * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference
      *
      * @param array $params                         the parameters to send to the API
      * @return \Amadeus\Resources\HotelOffers[]     an API resource

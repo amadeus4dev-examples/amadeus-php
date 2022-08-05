@@ -8,8 +8,9 @@ use Amadeus\Shopping\FlightOffers\Pricing;
 
 /**
  * A FlightOfferPricingOutput object as returned by the Flight Offers Price API.
- * @see Pricing::post(), Pricing::postWithFlightOffers()
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-price/api-reference
+ * @see Pricing::post()
+ * @see Pricing::postWithFlightOffers()
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-price/api-reference
  */
 class FlightOfferPricingOutput extends Resource implements ResourceInterface
 {

@@ -37,7 +37,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\FlightFareDetailsBySegment
  * @covers \Amadeus\Resources\FlightBaggageAllowance
  *
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-offers-search/api-reference
  */
 final class FlightOffersTest extends TestCase
 {

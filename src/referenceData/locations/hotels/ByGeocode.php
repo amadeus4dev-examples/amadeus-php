@@ -10,19 +10,14 @@ use Amadeus\Resources\Hotel;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v1/reference-data/locations/hotels/by-geocode</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v1/reference-data/locations/hotels/by-geocode" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getReferenceData()->getLocations()->getHotels()->getByGeocode();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getReferenceData()->getLocations()->getHotels()->getByGeocode();
+ *
  */
 class ByGeocode
 {
@@ -38,18 +33,15 @@ class ByGeocode
     }
 
     /**
-     * ###Hotel List API
-     * <p>
-     *    Returns a list of hotels result of the search using GeoCode.
-     * </p>
+     * Hotel List API:
      *
-     * <code>
-     *  $amadeus->getReferenceData()->getLocations()->getHotels()->getByGeocode->get(
-     *      ["latitude" => "41.397158", "longitude" => "2.31836"]
-     *  );
-     * </code>
+     * Returns a list of hotels result of the search using GeoCode.
      *
-     * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-list/api-reference
+     *      $amadeus->getReferenceData()->getLocations()->getHotels()->getByGeocode->get(
+     *          ["latitude" => "41.397158", "longitude" => "2.31836"]
+     *      );
+     *
+     * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-list/api-reference
      *
      * @param array $params         the parameters to send to the API
      * @return Hotel[]              an API resource

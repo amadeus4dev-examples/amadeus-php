@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\Location
  *
- * @see https://developers.amadeus.com/self-service/category/trip/api-doc/travel-recommendations/api-reference
+ * @link https://developers.amadeus.com/self-service/category/trip/api-doc/travel-recommendations/api-reference
  */
 final class RecommendedLocationsTest extends TestCase
 {

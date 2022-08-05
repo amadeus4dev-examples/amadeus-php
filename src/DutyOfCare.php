@@ -7,27 +7,20 @@ namespace Amadeus;
 use Amadeus\DutyOfCare\Diseases;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/dutyOfCare</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/dutyOfCare" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getDutyOfCare();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getDutyOfCare();
+ *
  */
 class DutyOfCare
 {
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/duty-of-care/diseases</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v1/duty-of-care/diseases" endpoints.
      */
     private Diseases $diseases;
 
@@ -41,10 +34,8 @@ class DutyOfCare
     }
 
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v1/duty-of-care/diseases</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v1/duty-of-care/diseases" endpoints.
      * @return Diseases
      */
     public function getDiseases(): Diseases

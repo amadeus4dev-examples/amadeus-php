@@ -7,7 +7,7 @@ namespace Amadeus\Resources;
 /**
  * A FlightAvailability object as returned by the Flight Availabilities Search API.
  * @see FlightAvailabilities::post()
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/flight-availabilities-search/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/flight-availabilities-search/api-reference
  */
 class FlightAvailability extends Resource implements ResourceInterface
 {

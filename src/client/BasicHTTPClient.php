@@ -41,23 +41,15 @@ class BasicHTTPClient implements HTTPClient
     }
 
     /**
-     * <p>
-     *   A helper module for making generic getWithOnlyPath requests calls.It is used by
-     *   every namespaced API getWithOnlyPath method.
-     * </p>
+     * A helper module for making generic getWithOnlyPath requests calls.It is used by
+     * every namespaced API getWithOnlyPath method.
      *
-     * <pre>
-     *  $amadeus->getShopping()->getHotelOffer()->get("XXX");
-     * </pre>
+     *      $amadeus->getShopping()->getHotelOffer("XXX")->get();
      *
-     * <p>
-     *   It can be used to make any generic API call that is automatically
-     *   authenticated using your API credentials:
-     * </p>
+     * It can be used to make any generic API call that is automatically
+     * authenticated using your API credentials:
      *
-     * <pre>
-     *  $this->amadeus->getClient()->getWithOnlyPath("/v3/shopping/hotel-offers"."/"."XXX");
-     * </pre>
+     *      $this->amadeus->getClient()->getWithOnlyPath("/v3/shopping/hotel-offers"."/"."XXX");
      *
      * @param string $path
      * @return Response
@@ -78,28 +70,20 @@ class BasicHTTPClient implements HTTPClient
     }
 
     /**
-     * <p>
-     *   A helper module for making generic getWithArrayParams requests calls.It is used by
-     *   every namespaced API getWithArrayParams method.
-     * </p>
+     * A helper module for making generic getWithArrayParams requests calls.It is used by
+     * every namespaced API getWithArrayParams method.
      *
-     * <pre>
-     *  $amadeus->getAirport()->getDirectDestinations()->get(
-     *      ["departureAirportCode" => "MAD", "max" => 2]
-     *  );
-     * </pre>
+     *      $amadeus->getAirport()->getDirectDestinations()->get(
+     *          ["departureAirportCode" => "MAD", "max" => 2]
+     *      );
      *
-     * <p>
-     *   It can be used to make any generic API call that is automatically
-     *   authenticated using your API credentials:
-     * </p>
+     * It can be used to make any generic API call that is automatically
+     * authenticated using your API credentials:
      *
-     * <pre>
-     *  $this->amadeus->getClient()->getWithArrayParams(
-     *      '/v1/airport/direct-destinations',
-     *      ["departureAirportCode" => "MAD", "max" => 2]
-     *  );
-     * </pre>
+     *      $this->amadeus->getClient()->getWithArrayParams(
+     *          '/v1/airport/direct-destinations',
+     *          ["departureAirportCode" => "MAD", "max" => 2]
+     *      );
      *
      * @param string $path
      * @param array $params
@@ -121,26 +105,18 @@ class BasicHTTPClient implements HTTPClient
     }
 
     /**
-     * <p>
-     *   A helper module for making generic postWithStringBody requests calls.It is used by
-     *   every namespaced API postWithStringBody method.
-     * </p>
+     * A helper module for making generic postWithStringBody requests calls.It is used by
+     * every namespaced API postWithStringBody method.
      *
-     * <pre>
-     *  $flightOffers = $amadeus->getShopping()->getFlightOffers()->post($body);
-     * </pre>
+     *      $flightOffers = $amadeus->getShopping()->getFlightOffers()->post($body);
      *
-     * <p>
-     *   It can be used to make any generic API call that is automatically
-     *   authenticated using your API credentials:
-     * </p>
+     * It can be used to make any generic API call that is automatically
+     * authenticated using your API credentials:
      *
-     * <pre>
-     *  $amadeus->getClient()->postWithStringBody(
-     *      '/v2/shopping/flight-offers',
-     *      $body
-     *  );
-     * </pre>
+     *      $amadeus->getClient()->postWithStringBody(
+     *          '/v2/shopping/flight-offers',
+     *          $body
+     *      );
      *
      * @param string $path
      * @param string $body

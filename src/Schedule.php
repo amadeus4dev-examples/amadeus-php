@@ -7,27 +7,20 @@ namespace Amadeus;
 use Amadeus\Schedule\Flights;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/schedule</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/schedule" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getSchedule();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getSchedule();
+ *
  */
 class Schedule
 {
     /**
-     * <p>
-     *   A namespaced client for the
-     *   <code>/v2/schedule/flights</code> endpoints.
-     * </p>
+     * A namespaced client for the
+     * "/v2/schedule/flights" endpoints.
      */
     private Flights $flights;
 
@@ -40,10 +33,8 @@ class Schedule
     }
 
     /**
-     * <p>
-     *   Get a namespaced client for the
-     *   <code>/v2/schedule/flights</code> endpoints.
-     * </p>
+     * Get a namespaced client for the
+     * "/v2/schedule/flights" endpoints.
      * @return Flights
      */
     public function getFlights(): Flights

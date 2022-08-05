@@ -10,19 +10,14 @@ use Amadeus\Resources\HotelSentiment;
 use Amadeus\Resources\Resource;
 
 /**
- * <p>
- *   A namespaced client for the
- *   <code>/v2/e-reputation/hotel-sentiments</code> endpoints.
- * </p>
+ * A namespaced client for the
+ * "/v2/e-reputation/hotel-sentiments" endpoints.
  *
- * <p>
- *   Access via the Amadeus client object.
- * </p>
+ * Access via the Amadeus client object.
  *
- * <code>
- *  $amadeus = Amadeus::builder("clientId", "secret")->build();
- *  $amadeus->getEReputation()->getHotelSentiments();
- * </code>
+ *      $amadeus = Amadeus::builder("clientId", "secret")->build();
+ *      $amadeus->getEReputation()->getHotelSentiments();
+ *
  */
 class HotelSentiments
 {
@@ -38,16 +33,13 @@ class HotelSentiments
     }
 
     /**
-     * ###Hotel Ratings API
-     * <p>
-     *    Get hotel sentiments by Amadeus Hotel Ids.
-     * </p>
+     * Hotel Ratings API:
      *
-     * <code>
-     *   $amadeus->getEReputation()->getHotelSentiments()->get(["hotelIds" => "TELONMFS"]);
-     * </code>
+     * Get hotel sentiments by Amadeus Hotel Ids.
      *
-     * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-ratings/api-reference
+     *      $amadeus->getEReputation()->getHotelSentiments()->get(["hotelIds" => "TELONMFS"]);
+     *
+     * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-ratings/api-reference
      *
      * @param   array $params       the parameters to send to the API
      * @return  HotelSentiment[]    an API resource

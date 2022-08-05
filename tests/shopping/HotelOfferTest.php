@@ -61,7 +61,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\Markup
  * @covers \Amadeus\Resources\QualifiedFreeText
  *
- * @see https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference
+ * @link https://developers.amadeus.com/self-service/category/hotel/api-doc/hotel-search/api-reference
  */
 final class HotelOfferTest extends TestCase
 {

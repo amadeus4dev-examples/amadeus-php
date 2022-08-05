@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \Amadeus\Resources\Resource
  * @covers \Amadeus\Resources\Airline
  *
- * @see https://developers.amadeus.com/self-service/category/air/api-doc/airline-code-lookup/api-reference
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/airline-code-lookup/api-reference
  */
 final class AirlinesTest extends TestCase
 {

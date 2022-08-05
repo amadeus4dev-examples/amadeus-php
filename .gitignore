@@ -4,3 +4,4 @@ composer.lock
 vendor/
 .phpunit.cache
 .php-cs-fixer.cache
+.phpdoc
