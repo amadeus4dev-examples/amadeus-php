@@ -1,4 +1,18 @@
 # Changelog
+## 0.3.0 - 2022-08-05
+
+Add support for the [Travel Recommendations API](https://developers.amadeus.com/self-service/category/trip/api-doc/travel-recommendations/api-reference)
+
+Add support for the [Airport On-Time Performance API](https://developers.amadeus.com/self-service/category/air/api-doc/airport-on-time-performance/api-reference)
+
+Fix security vulnerabilities and reduce code smells based on the analysis result from Sonar Cloud.
+
+Fix and improve documents including README.md, CONTRIBUTING.md, and composer.json.
+
+Standardize code comments.
+
+Generate [Amadeus PHP SDK Docs](https://github.com/amadeus4dev/amadeus-php)
+
 ## 0.2.0 - 2022-07-21
 
 Add support for the [Flight Cheapest Dates Search API](https://developers.amadeus.com/self-service/category/air/api-doc/flight-cheapest-date-search/api-reference)
