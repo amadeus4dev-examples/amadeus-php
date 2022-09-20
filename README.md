@@ -133,7 +133,7 @@ $amadeus->getClient()->setSslCertificate($REPLACE_BY_YOUR_SSL_CERT_PATH);
 
 ## Documentation
 
-Amadeus has a large set of APIs, and our documentation is here to get you started. Head over to our [reference documentation](https://amadeus4dev.github.io/amadeus-php/) for in-depth information about every SDK method, its arguments and return types.
+Amadeus has a large set of APIs, and our documentation is here to get you started. Head over to our [reference documentation](https://amadeus4dev-examples.github.io/amadeus-php/) for in-depth information about every SDK method, its arguments and return types.
 
 ## Making API Calls
 
