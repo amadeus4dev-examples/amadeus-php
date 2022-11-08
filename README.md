@@ -7,6 +7,11 @@
 
 Amadeus provides a rich set of APIs for the travel industry. For more details, check out the [Amadeus for Developers Portal](https://developers.amadeus.com).
 
+## :warning: Important message :warning:
+
+:heavy_exclamation_mark: This SDK is maintained **by the developer community only**. The Amadeus for Developers team doesn't support or maintain it. :heavy_exclamation_mark:
+
+
 Jump To:
 * [Installation](#Installation)
 * [Getting Started](#Getting-Started)
@@ -128,7 +133,7 @@ $amadeus->getClient()->setSslCertificate($REPLACE_BY_YOUR_SSL_CERT_PATH);
 
 ## Documentation
 
-Amadeus has a large set of APIs, and our documentation is here to get you started. Head over to our [reference documentation](https://amadeus4dev.github.io/amadeus-php/) for in-depth information about every SDK method, its arguments and return types.
+Amadeus has a large set of APIs, and our documentation is here to get you started. Head over to our [reference documentation](https://amadeus4dev-examples.github.io/amadeus-php/) for in-depth information about every SDK method, its arguments and return types.
 
 ## Making API Calls
 
