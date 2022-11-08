@@ -178,6 +178,14 @@ class Response
     }
 
     /**
+     * @return object|null
+     */
+    public function getDictionary(): ?object
+    {
+        return $this->getBodyAsJsonObject()->{'dictionaries'};
+    }
+
+    /**
      * @return string
      */
     public function __toString(): string

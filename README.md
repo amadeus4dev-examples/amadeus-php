@@ -187,6 +187,9 @@ $locations[0]->getResponse()->getBodyAsJsonObject();
 
 // Directly get the data part of response body
 $locations[0]->getResponse()->getData();
+
+// Directly get the dictionary part of the response body
+$locations[0]->getResponse()->getDictionary();
 ```
 
 ## Logging and Debugging

@@ -34,12 +34,14 @@ class Resource
     public static function fromArray(Response $response, string $class): array
     {
         $data = $response->getData(); // $data is an array
+        $dictionary = $response->getDictionary();
         $resources = array();
         foreach ($data as $object) {
             $resource = new $class();
             foreach ($object as $key => $value) {
                 $resource->__set($key, $value);
             }
+            $resource->dictionary = $dictionary;
             $resource->response = $response; // plan A
             $resources[] = $resource;
         }
