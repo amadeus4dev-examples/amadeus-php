@@ -46,6 +46,12 @@ class TravelerElement implements ResourceInterface
      */
     public function getName(): ?object
     {
+        // Note: Temporary work around, as get_object_vars returns empty on private properties
+        if (8 <= (int) phpversion('tidy')) {
+           return $this->name->toArray();
+        }
+
+
         return Resource::toResourceObject(
             $this->name,
             TravelerName::class

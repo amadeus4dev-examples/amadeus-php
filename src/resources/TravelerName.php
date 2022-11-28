@@ -52,6 +52,19 @@ class TravelerName implements ResourceInterface
         $this->$name = $value;
     }
 
+    /**
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return [
+            'firstName' => $this->firstName,
+            'middleName' => $this->middleName,
+            'secondMiddleName' => $this->secondLastName,
+            'lastName' => $this->firstName
+        ];
+    }
+
     public function __toString(): string
     {
         return Resource::toString(get_object_vars($this));
