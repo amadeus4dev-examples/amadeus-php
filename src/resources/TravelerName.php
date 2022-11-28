@@ -65,6 +65,16 @@ class TravelerName implements ResourceInterface
         ];
     }
 
+    public function toObject(): TravelerElement
+    {
+        $resourceObject = new TravelerElement();
+        $resourceObject->__set('firstName', $this->getFirstName());
+        $resourceObject->__set('middleName', $this->getMiddleName());
+        $resourceObject->__set('secondLastName', $this->getSecondLastName());
+        $resourceObject->__set('lastName', $this->getLastName());
+        return $resourceObject;
+    }
+
     public function __toString(): string
     {
         return Resource::toString(get_object_vars($this));
