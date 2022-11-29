@@ -51,8 +51,24 @@ class SeatMaps
         return Resource::fromArray($response, SeatMap::class);
     }
 
-    public function post()
+    /**
+     * Returns all the seat maps of a given flightOffer.
+     *
+     * @link https://developers.amadeus.com/self-service/category/air/api-doc/seatmap-display/api-reference
+     *
+     * @param string $body          Required POST parameters are an array data property with a JSON flightOffer.
+     * @param array|null $params
+     * @return array                Returns an array of SeatMap classes.
+     * @throws ResponseException    When an exception occurs
+     */
+    public function post(string $body, ?array $params = null): array
     {
+        $response = $this->amadeus->getClient()->postWithStringBody(
+            '/v1/shopping/seatmaps',
+            $body,
+            $params
+        );
 
+        return Resource::fromArray($response, SeatMap::class);
     }
 }
