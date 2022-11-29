@@ -2,6 +2,14 @@
 
 namespace Amadeus\Resources;
 
+use Amadeus\Shopping\SeatMaps;
+
+/**
+ * A SeatMap object as returned by the SeatMap Display API.
+ * @see SeatMaps::get()
+ * @see SeatMaps::post()
+ * @link https://developers.amadeus.com/self-service/category/air/api-doc/seatmap-display/api-reference
+ */
 class SeatMap extends Resource implements ResourceInterface
 {
     private ?string $type = null;
