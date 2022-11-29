@@ -14,12 +14,12 @@ class SeatMap extends Resource implements ResourceInterface
 {
     private ?string $type = null;
     private ?string $id = null;
-    private ?FlightEndpoint $departure = null;
-    private ?FlightEndpoint $arrival = null;
+    private ?object $departure = null;
+    private ?object $arrival = null;
     private ?string $carrierCode = null;
     private ?string $number = null;
-    private ?OperatingFlight $operating = null;
-    private ?AircraftEquipment $aircraft = null;
+    private ?object $operating = null;
+    private ?object $aircraft = null;
     private ?string $class = null;
     private ?string $flightOfferId = null;
     private ?string $segmentId = null;
