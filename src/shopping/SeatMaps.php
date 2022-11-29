@@ -39,16 +39,16 @@ class SeatMaps
      * @param array|null $params   Required URL parameters such with either:
      *                              flightOrderId : Identifier of the order
      *                              flight-orderId : (Deprecated) Identifier of the order.
-     * @return object              Returns an instance of the SeatMap class.
+     * @return array               Returns an array of SeatMap classes.
      * @throws ResponseException   When an exception occurs
      */
-    public function get(array $params): object
+    public function get(array $params): array
     {
         $response = $this->amadeus->getClient()->getWithArrayParams(
             '/v1/shopping/seatmaps',
             $params
         );
-        return Resource::fromObject($response, SeatMap::class);
+        return Resource::fromArray($response, SeatMap::class);
     }
 
     public function post()
