@@ -48,9 +48,8 @@ class TravelerElement implements ResourceInterface
     {
         // Note: Temporary work around, as get_object_vars returns empty on private properties
         if (8 <= (int) phpversion('tidy')) {
-            return $this->name->toObject();
+           return $this->name->toObject();
         }
-
 
         return Resource::toResourceObject(
             $this->name,
