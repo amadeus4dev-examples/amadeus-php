@@ -12,6 +12,7 @@ use Amadeus\Shopping\FlightDestinations;
 use Amadeus\Shopping\FlightOffers;
 use Amadeus\Shopping\HotelOffer;
 use Amadeus\Shopping\HotelOffers;
+use Amadeus\Shopping\SeatMaps;
 
 /**
  * A namespaced client for the
@@ -41,6 +42,12 @@ class Shopping
 
     /**
      * A namespaced client for the
+     * "/v1/shopping/seatmaps" endpoints.
+     */
+    private SeatMaps $seatMaps;
+
+    /**
+     * A namespaced client for the
      * "/v3/shopping/hotel-offers" endpoints.
      */
     private HotelOffers $hotelOffers;
@@ -63,6 +70,7 @@ class Shopping
      */
     private Activities $activities;
 
+
     /**
      * @param Amadeus $amadeus
      */
@@ -71,6 +79,7 @@ class Shopping
         $this->amadeus = $amadeus;
         $this->availability = new Availability($amadeus);
         $this->flightOffers = new FlightOffers($amadeus);
+        $this->seatMaps = new SeatMaps($amadeus);
         $this->hotelOffers = new HotelOffers($amadeus);
         $this->flightDates = new FlightDates($amadeus);
         $this->flightDestinations = new FlightDestinations($amadeus);
@@ -85,6 +94,16 @@ class Shopping
     public function getAvailability(): Availability
     {
         return $this->availability;
+    }
+
+    /**
+     * Get a namespaced client for the
+     * "/v1/shopping/seatmaps" endpoints.
+     * @return SeatMaps
+     */
+    public function getSeatMaps(): SeatMaps
+    {
+        return $this->seatMaps;
     }
 
     /**
