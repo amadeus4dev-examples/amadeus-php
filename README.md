@@ -222,6 +222,16 @@ $amadeus->getShopping()->getFlightOffers()->get(
 // function get(string $body) :
 $amadeus->getShopping()->getFlightOffers()->post($body);
 
+/* SeatMap Display */
+// function get(string $params)
+$amadeus->getShopping()->getSeatMaps()->get(
+    array(
+        "flightOrderId" => "eJzTd9f3NjIJdzUGAAp%2fAiY="   
+    )
+)
+// function post(string $body)
+$amadeus->getShopping()->getSeatMaps()->post($body)
+
 /* Flight Offers Price */
 // function post(string $body) :
 $amadeus->getShopping()->getFlightOffers()->getPricing()->post($body);
