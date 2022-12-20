@@ -36,6 +36,43 @@ class SeatMapTest extends TestCase
      * @return void
      * @throws ResponseException
      */
+    public function test_get_seatmap_success()
+    {
+        // Prepare Response
+        $fileContent = PHPUnitUtil::readFile(
+            PHPUnitUtil::RESOURCE_PATH_ROOT . "seatmap_get_response_ok.json"
+        );
+        $data4Get = json_decode($fileContent)->{'data'};
+        $response4Get = $this->createMock(Response::class);
+        $response4Get->expects($this->any())
+            ->method("getData")
+            ->willReturn($data4Get);
+
+        // GET Parameters
+        $params = array(
+            "flightOrderId" => "eJzTd9cP9fQ0MfUFAAsTAkM%3D",
+        );
+
+        $this->client->expects($this->any())
+            ->method("getWithArrayParams")
+            ->with("/v1/shopping/seatmaps", $params)
+            ->willReturn($response4Get);
+
+        $seatmaps = new SeatMaps($this->amadeus);
+        $seatmap = $seatmaps->get($params);
+
+        $this->assertNotNull($seatmap);
+
+        $this->assertTrue($seatmap[0] instanceof SeatMap);
+        $this->assertEquals("seatmap", $seatmap[0]->getType());
+    }
+
+    /**
+     * @covers \Amadeus\Shopping\SeatMaps
+     *
+     * @return void
+     * @throws ResponseException
+     */
     public function test_post_seatmap_success()
     {
         // Prepare Response
