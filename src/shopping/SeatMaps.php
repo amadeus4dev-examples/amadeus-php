@@ -36,11 +36,11 @@ class SeatMaps
      *
      * @link https://developers.amadeus.com/self-service/category/air/api-doc/seatmap-display/api-reference
      *
-     * @param array $params   Required URL parameters such with either:
-     *                              flightOrderId : Identifier of the order
-     *                              flight-orderId : (Deprecated) Identifier of the order.
-     * @return array               Returns an array of SeatMap classes.
-     * @throws ResponseException   When an exception occurs
+     * @param array $params         Required URL parameters such with either:
+     *                                  flightOrderId : Identifier of the order
+     *                                  flight-orderId : (Deprecated) Identifier of the order.
+     * @return array                Returns an array of SeatMap classes.
+     * @throws ResponseException    When an exception occurs
      */
     public function get(array $params): array
     {

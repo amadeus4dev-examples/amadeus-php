@@ -1,0 +1,235 @@
+{
+  "data": [
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "lastTicketingDate": "2022-12-23",
+      "numberOfBookableSeats": 3,
+      "itineraries": [
+        {
+          "duration": "PT11H45M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "BOS",
+                "terminal": "A",
+                "at": "2023-01-20T15:00:00"
+              },
+              "arrival": {
+                "iataCode": "LGA",
+                "terminal": "C",
+                "at": "2023-01-20T16:23:00"
+              },
+              "carrierCode": "DL",
+              "number": "5648",
+              "aircraft": {
+                "code": "E75"
+              },
+              "duration": "PT1H23M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "JFK",
+                "terminal": "4",
+                "at": "2023-01-20T19:25:00"
+              },
+              "arrival": {
+                "iataCode": "MAD",
+                "terminal": "1",
+                "at": "2023-01-21T08:45:00"
+              },
+              "carrierCode": "DL",
+              "number": "126",
+              "aircraft": {
+                "code": "76W"
+              },
+              "operating": {
+                "carrierCode": "DL"
+              },
+              "duration": "PT7H20M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT22H25M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "MAD",
+                "terminal": "2",
+                "at": "2023-02-20T20:25:00"
+              },
+              "arrival": {
+                "iataCode": "AMS",
+                "at": "2023-02-20T23:00:00"
+              },
+              "carrierCode": "KL",
+              "number": "1706",
+              "aircraft": {
+                "code": "73J"
+              },
+              "operating": {
+                "carrierCode": "KL"
+              },
+              "duration": "PT2H35M",
+              "id": "5",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "AMS",
+                "at": "2023-02-21T10:35:00"
+              },
+              "arrival": {
+                "iataCode": "BOS",
+                "at": "2023-02-21T12:50:00"
+              },
+              "carrierCode": "KL",
+              "number": "73",
+              "aircraft": {
+                "code": "781"
+              },
+              "operating": {
+                "carrierCode": "KL"
+              },
+              "duration": "PT8H15M",
+              "id": "6",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "USD",
+        "total": "6304.30",
+        "base": "4044.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "6304.30"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": false
+      },
+      "validatingAirlineCodes": [
+        "DL"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "USD",
+            "total": "3152.15",
+            "base": "2022.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "FIRST",
+              "fareBasis": "ZNW85NDL",
+              "brandedFare": "DLONEBIZ",
+              "class": "Z",
+              "includedCheckedBags": {
+                "quantity": 2
+              }
+            },
+            {
+              "segmentId": "2",
+              "cabin": "BUSINESS",
+              "fareBasis": "ZNW85NDL",
+              "brandedFare": "DLONEBIZ",
+              "class": "Z",
+              "includedCheckedBags": {
+                "quantity": 2
+              }
+            },
+            {
+              "segmentId": "5",
+              "cabin": "ECONOMY",
+              "fareBasis": "VLX46SM4",
+              "brandedFare": "STANDARD6",
+              "class": "L",
+              "includedCheckedBags": {
+                "quantity": 1
+              }
+            },
+            {
+              "segmentId": "6",
+              "cabin": "ECONOMY",
+              "fareBasis": "VLX46SM4",
+              "brandedFare": "STANDARD6",
+              "class": "V",
+              "includedCheckedBags": {
+                "quantity": 1
+              }
+            }
+          ]
+        },
+        {
+          "travelerId": "2",
+          "fareOption": "STANDARD",
+          "travelerType": "CHILD",
+          "price": {
+            "currency": "USD",
+            "total": "3152.15",
+            "base": "2022.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "FIRST",
+              "fareBasis": "ZNW85NDL",
+              "brandedFare": "DLONEBIZ",
+              "class": "Z"
+            },
+            {
+              "segmentId": "2",
+              "cabin": "BUSINESS",
+              "fareBasis": "ZNW85NDL",
+              "brandedFare": "DLONEBIZ",
+              "class": "Z"
+            },
+            {
+              "segmentId": "5",
+              "cabin": "ECONOMY",
+              "fareBasis": "VLX46SM4",
+              "brandedFare": "STANDARD6",
+              "class": "L"
+            },
+            {
+              "segmentId": "6",
+              "cabin": "ECONOMY",
+              "fareBasis": "VLX46SM4",
+              "brandedFare": "STANDARD6",
+              "class": "V"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
