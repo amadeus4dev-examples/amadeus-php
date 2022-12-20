@@ -36,7 +36,7 @@ class SeatMaps
      *
      * @link https://developers.amadeus.com/self-service/category/air/api-doc/seatmap-display/api-reference
      *
-     * @param array|null $params   Required URL parameters such with either:
+     * @param array $params   Required URL parameters such with either:
      *                              flightOrderId : Identifier of the order
      *                              flight-orderId : (Deprecated) Identifier of the order.
      * @return array               Returns an array of SeatMap classes.
