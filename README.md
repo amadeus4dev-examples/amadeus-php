@@ -192,6 +192,9 @@ $locations[0]->getResponse()->getBodyAsJsonObject();
 
 // Directly get the data part of response body
 $locations[0]->getResponse()->getData();
+
+// Directly get the dictionary part of the response body
+$locations[0]->getResponse()->getDictionary();
 ```
 
 ## Logging and Debugging
@@ -218,6 +221,16 @@ $amadeus->getShopping()->getFlightOffers()->get(
 /* Flight Offers Search POST */
 // function get(string $body) :
 $amadeus->getShopping()->getFlightOffers()->post($body);
+
+/* SeatMap Display */
+// function get(string $params)
+$amadeus->getShopping()->getSeatMaps()->get(
+    array(
+        "flightOrderId" => "eJzTd9f3NjIJdzUGAAp%2fAiY="   
+    )
+)
+// function post(string $body)
+$amadeus->getShopping()->getSeatMaps()->post($body)
 
 /* Flight Offers Price */
 // function post(string $body) :
