@@ -40,7 +40,7 @@ class Resource
             foreach ($object as $key => $value) {
                 $resource->__set($key, $value);
             }
-            $resource->dictionary = $response->getDictionary();;
+            $resource->dictionary = $response->getDictionary();
             $resource->response = $response; // plan A
             $resources[] = $resource;
         }
